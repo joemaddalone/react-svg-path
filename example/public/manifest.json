@@ -1,6 +1,6 @@
 {
-  "short_name": "react-path",
-  "name": "react-path",
+  "short_name": "react--svg-path",
+  "name": "react-svg-path",
   "icons": [
     {
       "src": "favicon.ico",
