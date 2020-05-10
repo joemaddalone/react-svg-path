@@ -91,8 +91,8 @@ const App = () => {
         </g>
       </svg>
       <hr />
-      <a href='https://joemaddalone.github.io/react-svg-path/'>
-        https://joemaddalone.github.io/react-svg-path/
+      <a href='https://github.com/joemaddalone/react-svg-path'>
+        https://github.com/joemaddalone/react-svg-path
       </a>
     </>
   );
