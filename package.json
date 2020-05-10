@@ -4,7 +4,11 @@
   "description": "Made with create-react-library",
   "author": "joemaddalone",
   "license": "MIT",
-  "repository": "joemaddalone/react-svg-path",
+  "homepage": "https://joemaddalone.github.io/react-svg-path/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joemaddalone/react-svg-path"
+  },
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.js",
