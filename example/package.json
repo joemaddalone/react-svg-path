@@ -1,5 +1,5 @@
 {
-  "name": "react-path-example",
+  "name": "react-svg-path-example",
   "homepage": "https://joemaddalone.github.io/react-path",
   "version": "0.0.0",
   "private": true,
@@ -7,7 +7,7 @@
     "react": "file:../node_modules/react",
     "react-dom": "file:../node_modules/react-dom",
     "react-scripts": "file:../node_modules/react-scripts",
-    "react-path": "file:.."
+    "react-svg-path": "file:.."
   },
   "scripts": {
     "start": "node ../node_modules/react-scripts/bin/react-scripts.js start",
