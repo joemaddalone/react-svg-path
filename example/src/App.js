@@ -68,28 +68,32 @@ const App = () => {
   const height = 500;
   return (
     <>
-    <h2>react-svg-path</h2>
-    <svg
-      xmlns='http://www.w3.org/2000/svg'
-      width={width}
-      height={height}
-      viewBox={`0 0 ${width} ${height}`}
-    >
-      <Grid x={0} y={0} width={width} height={height} cols={25} rows={25} />
-      <g transform='translate(105,125)'>
-        <Square x={50} y={50} size={50} />
-        <Circle x={200} y={75} radius={50} fill='green' />
-        <Circle x={215} y={90} radius={25} fill='white' />
-        <Circle x={220} y={90} radius={15} fill='black' />
-        <Circle x={215} y={80} radius={5} fill='white' />
-        <SparkLine
-          x={25}
-          y={200}
-          width={250}
-          data={[0, 10, 5, 25, 15, 35, 5, 18, 50, 3, 25, 2, 35, 10]}
-        />
-      </g>
-    </svg>
+      <h2>react-svg-path</h2>
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        width={width}
+        height={height}
+        viewBox={`0 0 ${width} ${height}`}
+      >
+        <Grid x={0} y={0} width={width} height={height} cols={25} rows={25} />
+        <g transform='translate(105,125)'>
+          <Square x={50} y={50} size={50} />
+          <Circle x={200} y={75} radius={50} fill='green' />
+          <Circle x={215} y={90} radius={25} fill='white' />
+          <Circle x={220} y={90} radius={15} fill='black' />
+          <Circle x={215} y={80} radius={5} fill='white' />
+          <SparkLine
+            x={25}
+            y={200}
+            width={250}
+            data={[0, 10, 5, 25, 15, 35, 5, 18, 50, 3, 25, 2, 35, 10]}
+          />
+        </g>
+      </svg>
+      <hr />
+      <a href='https://joemaddalone.github.io/react-svg-path/'>
+        https://joemaddalone.github.io/react-svg-path/
+      </a>
     </>
   );
 };
