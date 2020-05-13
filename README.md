@@ -6,7 +6,7 @@
 npm install --save react-svg-path
 ```
 
-## Usage
+## Basic Usage
 
 ```jsx
 import React from 'react'
@@ -38,9 +38,9 @@ const App = () => {
     </svg>
   );
 };
-
-
 ```
+
+### [documentation](https://joemaddalone.github.io/react-svg-path/)
 
 ## License
 
