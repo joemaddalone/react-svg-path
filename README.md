@@ -14,12 +14,12 @@ import Path from 'react-svg-path'
 
 const Square = ({ x, y, size }) => {
   const path = new Path()
-    .moveTo(x, y)
-    .lineTo(x + size, y)
-    .lineTo(x + size, y + size)
-    .lineTo(x, y + size)
-    .close()
-    .stroke('red');
+    .moveTo(x, y)   // move pen to x, y
+    .right(size)    // draw line right to relative "size" px
+    .down(size)     // draw line down to relative "size" px
+    .left(size)     // draw line left to relative "size" px
+    .close()        // draw line back to first point
+    .fill("green"); // set fill color
   return path.toElement();
 };
 
