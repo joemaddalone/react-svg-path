@@ -224,38 +224,6 @@ const App = () => {
         <ul>
           <li>Draw line from current position left by px</li>
         </ul>
-        <li>
-          <b>Down</b>(<i>px</i>)
-        </li>
-        <ul>
-          <li>
-            Draw line from current position down to an absolute position of px
-          </li>
-        </ul>
-        <li>
-          <b>Up</b>(<i>px</i>)
-        </li>
-        <ul>
-          <li>
-            Draw line from current position up to an absolute position of px
-          </li>
-        </ul>
-        <li>
-          <b>Right</b>(<i>px</i>)
-        </li>
-        <ul>
-          <li>
-            Draw line from current position right to an absolute position of px
-          </li>
-        </ul>
-        <li>
-          <b>Left</b>(<i>px</i>)
-        </li>
-        <ul>
-          <li>
-            Draw line from current position left to an absolute position of px
-          </li>
-        </ul>
       </ul>
       <p>One more path command helper</p>
       <ul>

@@ -117,11 +117,6 @@ class Path extends React.Component {
   right = (px) => this.h(px);
   left = (px) => this.h(px * -1);
 
-  Down = (px) => this.V(px);
-  Up = (px) => this.V(px * -1);
-  Right = (px) => this.H(px);
-  Left = (px) => this.H(px * -1);
-
   /**
    * Close path.
    */
