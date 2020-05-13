@@ -140,7 +140,9 @@ class Path extends React.Component {
    */
   toString = () => this.pathData.join(' ');
 
-  toComponent = (key) => () => this.toElement(key);
+  toComponent = (props) => (
+    <path d={this.toString()} {...this.attributes} {...props} />
+  );
 
   toElement = (key = Math.random()) => (
     <path key={key} d={this.toString()} {...this.attributes} />
