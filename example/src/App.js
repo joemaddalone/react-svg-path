@@ -4,8 +4,32 @@ import Circle from './components/Circle';
 import Grid from './components/Grid';
 import Sparkline from './components/Sparkline';
 import Svg from './components/Svg';
+import Steps from './components/demos/Steps';
+import Dag from './components/demos/Dag';
+import docs from './docs/docs.json';
 import './App.css';
 
+const CommandList = ({ section }) => (
+  <ul>
+    {Object.keys(docs[section]).map((key) => {
+      const command = docs[section][key];
+      return (
+        <li key={key}>
+          <b>{key}</b>(<i>{command.args.join(',')}</i>){}
+          {command.description && (
+            <ul>
+              <li
+                dangerouslySetInnerHTML={{
+                  __html: command.description
+                }}
+              />
+            </ul>
+          )}
+        </li>
+      );
+    })}
+  </ul>
+);
 
 const App = () => {
   return (
@@ -48,7 +72,15 @@ const App = () => {
         the "d" attribute of an svg path.
       </p>
       <p>
-        Most methods are direct translations from the SVG Path specification.
+        Most methods are direct translations from the{' '}
+        <a
+          rel='noopener noreferrer'
+          href='https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths'
+          target='_blank'
+        >
+          SVG Path specification
+        </a>
+        .
       </p>
       <h4 className='ui-header'>Example</h4>
       <code>&lt;path d="M0 0, L0 100">&lt;/path></code>
@@ -57,174 +89,18 @@ const App = () => {
       <code>console.log(path.toString()) // M0 0, L0 100</code>
       <h3 className='ui-header'>Path Commands</h3>
       <p>
-        So for every svg path command there is an equivalent command available
-        in react-svg-path.
+        For every svg path command there is an equivalent command available in
+        react-svg-path.
       </p>
-
-      <ul>
-        <li>
-          <b>A</b>(<i>rx, ry, rotation, arc, sweep, ex, ey</i>)
-        </li>
-        <li>
-          <b>a</b>(<i>rx, ry, rotation, arc, sweep, ex, ey</i>)
-        </li>
-        <li>
-          <b>C</b>(<i>cx1, cy1, cx2, cy2, ex, ey</i>)
-        </li>
-        <li>
-          <b>c</b>(<i>cx1, cy1, cx2, cy2, ex, ey</i>)
-        </li>
-        <li>
-          <b>H</b>(<i>x</i>)
-        </li>
-        <li>
-          <b>h</b>(<i>x</i>)
-        </li>
-        <li>
-          <b>L</b>(<i>x, y</i>)
-        </li>
-        <li>
-          <b>l</b>(<i>x, y</i>)
-        </li>
-        <li>
-          <b>M</b>(<i>x, y</i>)
-        </li>
-        <li>
-          <b>m</b>(<i>x, y</i>)
-        </li>
-        <li>
-          <b>Q</b>(<i>cx, cy, ex, ey</i>)
-        </li>
-        <li>
-          <b>q</b>(<i>cx, cy, ex, ey</i>)
-        </li>
-        <li>
-          <b>S</b>(<i>cx, cy, ex, ey</i>)
-        </li>
-        <li>
-          <b>s</b>(<i>cx, cy, ex, ey</i>)
-        </li>
-        <li>
-          <b>T</b>(<i>ex, ey</i>)
-        </li>
-        <li>
-          <b>t</b>(<i>ex, ey</i>)
-        </li>
-        <li>
-          <b>V</b>(<i>y</i>)
-        </li>
-        <li>
-          <b>v</b>(<i>y</i>)
-        </li>
-      </ul>
+      <CommandList section='commands' />
       <p>
         And then for most of these is there is a semantically named helper
         method. Not required, but for complex paths it may be easier to read for
         those not familiar with path commmands.
       </p>
-      <ul>
-        <li>
-          <b>arc</b>(
-          <i>rx, ry, rotation, arc, sweep, ex, ey, relative = false</i>)
-          <ul>
-            <li>
-              relative is optional, its default is false. Setting relative to
-              true is equivalent to <b>a</b>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <b>cCurveTo</b>(<i>cx, cy, ex, ey, relative = false</i>)
-          <ul>
-            <li>
-              relative is optional, its default is false. Setting relative to
-              true is equivalent to <b>c</b>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <b>horizontalTo</b>(<i>x, relative = false</i>)
-          <ul>
-            <li>
-              relative is optional, its default is false. Setting relative to
-              true is equivalent to <b>h</b>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <b>lineTo</b>(<i>x, y, relative = false</i>)
-          <ul>
-            <li>
-              relative is optional, its default is false. Setting relative to
-              true is equivalent to <b>l</b>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <b>moveTo</b>(<i>x, y, relative = false</i>)
-          <ul>
-            <li>
-              relative is optional, its default is false. Setting relative to
-              true is equivalent to <b>m</b>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <b>qCurveTo</b>(<i>cx, cy, ex, ey, relative = false</i>)
-          <ul>
-            <li>
-              relative is optional, its default is false. Setting relative to
-              true is equivalent to <b>q</b>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <b>sCurveTo</b>(<i>cx, cy, ex, ey, relative = false</i>)
-          <ul>
-            <li>
-              relative is optional, its default is false. Setting relative to
-              true is equivalent to <b>s</b>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <b>verticalTo</b>(<i>x, relative = false</i>)
-          <ul>
-            <li>
-              relative is optional, its default is false. Setting relative to
-              true is equivalent to <b>v</b>
-            </li>
-          </ul>
-        </li>
-      </ul>
-
+      <CommandList section='semanticCommands' />
       <p>Some additional path command helpers:</p>
-      <ul>
-        <li>
-          <b>down</b>(<i>px</i>)
-        </li>
-        <ul>
-          <li>Draw line from current position down by px</li>
-        </ul>
-        <li>
-          <b>up</b>(<i>px</i>)
-        </li>
-        <ul>
-          <li>Draw line from current position up by px</li>
-        </ul>
-        <li>
-          <b>right</b>(<i>px</i>)
-        </li>
-        <ul>
-          <li>Draw line from current position right by px</li>
-        </ul>
-        <li>
-          <b>left</b>(<i>px</i>)
-        </li>
-        <ul>
-          <li>Draw line from current position left by px</li>
-        </ul>
-      </ul>
+      <CommandList section='helpers' />
       <p>One more path command helper</p>
       <ul>
         <li>
@@ -237,11 +113,10 @@ const App = () => {
           </li>
         </ul>
       </ul>
-
       <h3 className='ui-header'>Path Attributes</h3>
       <p>
-        If you intend to output an actual path element ad not just the set of
-        commands attrubtes can be set on the element using the <b>attr</b>{' '}
+        If you intend to output an actual path element and not just the set of
+        commands attributes can be set on the element using the <b>attr</b>{' '}
         helper.
       </p>
       <ul>
@@ -301,6 +176,28 @@ const App = () => {
           </ul>
         </li>
       </ul>
+      <h3 className='ui-header'>Demos</h3>
+      <h4 className='ui-header'>Single paths</h4>
+      <p>
+        Each of the svg elements below contains only a single path. This may
+        not be ideal, depending on your needs, but it demonstrates the ability to
+        create complex shapes in a single path with react-svg-path
+      </p>
+      <div style={{ margin: 20 }}>
+        <Svg height={150} width={750}>
+          <Steps
+            width={750}
+            x={10}
+            y={80}
+            data={[10, 50, -50, 10, -25, 5, 32, 10]}
+            strokeWidth={2}
+            stroke='#aaa'
+          />
+        </Svg>
+      </div>
+      <div style={{ margin: 20 }}>
+        <Dag />
+      </div>
     </>
   );
 };

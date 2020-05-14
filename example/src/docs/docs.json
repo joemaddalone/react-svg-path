@@ -1,0 +1,86 @@
+{
+  "commands": {
+    "A": { "args": ["rx", "ry", "rotation", "arc", "sweep", "ex", "ey"] },
+    "a": { "args": ["rx, ry", "rotation", "arc", "sweep", "ex", "ey"] },
+    "C": { "args": ["cx1", "cy1", "cx2", "cy2", "ex", "ey"] },
+    "c": { "args": ["cx1", "cy1", "cx2", "cy2", "ex", "ey"] },
+    "H": { "args": ["x"] },
+    "h": { "args": ["x"] },
+    "L": { "args": ["x", "y"] },
+    "l": { "args": ["x", "y"] },
+    "M": { "args": ["x", "y"] },
+    "m": { "args": ["x", "y"] },
+    "Q": { "args": ["cx", "cy", "ex", "ey"] },
+    "q": { "args": ["cx", "cy", "ex", "ey"] },
+    "S": { "args": ["cx", "cy", "ex", "ey"] },
+    "s": { "args": ["cx", "cy", "ex", "ey"] },
+    "T": { "args": ["ex", "ey"] },
+    "t": { "args": ["ex", "ey"] },
+    "V": { "args": ["y"] },
+    "v": { "args": ["y"] }
+  },
+  "semanticCommands": {
+    "arc": {
+      "args": [
+        "rx",
+        "ry",
+        "rotation",
+        "arc",
+        "sweep",
+        "ex",
+        "ey",
+        "relative = false"
+      ],
+      "description": "relative is optional, its default is false. Setting relative to true is equivalent to <b>a</b>"
+    },
+    "cCurveTo": {
+      "args": ["cx", "cy", "ex", "ey", "relative = false"],
+      "description": "relative is optional, its default is false. Setting relative to true is equivalent to <b>c</b>"
+    },
+    "horizontalTo": {
+      "args": ["x", "relative = false"],
+      "description": "relative is optional, its default is false. Setting relative to true is equivalent to <b>h</b>"
+    },
+    "lineTo": {
+      "args": ["x", "y", "relative = false"],
+      "description": "relative is optional, its default is false. Setting relative to true is equivalent to <b>l</b>"
+    },
+    "moveTo": {
+      "args": ["x", "y", "relative = false"],
+      "description": "relative is optional, its default is false. Setting relative to true is equivalent to <b>m</b>"
+    },
+    "qCurveTo": {
+      "args": ["cx", "cy", "ex", "ey", "relative = false"],
+      "description": "relative is optional, its default is false. Setting relative to true is equivalent to <b>q</b>"
+    },
+    "sCurveTo": {
+      "args": ["cx", "cy", "ex", "ey", "relative = false"],
+      "description": "relative is optional, its default is false. Setting relative to true is equivalent to <b>s</b>"
+    },
+    "verticalTo": {
+      "args": ["x", "relative = false"],
+      "description": "relative is optional, its default is false. Setting relative to true is equivalent to <b>v</b>"
+    }
+  },
+  "helpers": {
+    "down": {
+      "args": ["px"],
+      "description": "Draw line from current position down by px"
+    },
+    "up": {
+      "args": ["px"],
+      "description": "Draw line from current position up by px"
+    },
+    "right": {
+      "args": ["px"],
+      "description": "Draw line from current position right by px"
+    },
+    "left": {
+      "args": ["px"],
+      "description": "Draw line from current position left by px"
+    }
+  },
+  "close": {
+    "description": "Produces a Z command which draws a stright line back to the first point of the path."
+  }
+}
