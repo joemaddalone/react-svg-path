@@ -5,7 +5,10 @@ import Grid from './components/Grid';
 import Sparkline from './components/Sparkline';
 import Svg from './components/Svg';
 import Steps from './components/demos/Steps';
-import Dag from './components/demos/Dag';
+import DagSinglePath from './components/demos/DagSinglePath';
+import DagTwoPaths from './components/demos/DagTwoPaths';
+import DagNodes from './components/demos/DagNodes';
+
 import docs from './docs/docs.json';
 import './App.css';
 
@@ -177,26 +180,25 @@ const App = () => {
         </li>
       </ul>
       <h3 className='ui-header'>Demos</h3>
-      <h4 className='ui-header'>Single paths</h4>
       <p>
-        Each of the svg elements below contains only a single path. This may
-        not be ideal, depending on your needs, but it demonstrates the ability to
+        The svg element below contains only a single path. This may not
+        be ideal, depending on your needs, but it demonstrates the ability to
         create complex shapes in a single path with react-svg-path
       </p>
       <div style={{ margin: 20 }}>
-        <Svg height={150} width={750}>
-          <Steps
-            width={750}
-            x={10}
-            y={80}
-            data={[10, 50, -50, 10, -25, 5, 32, 10]}
-            strokeWidth={2}
-            stroke='#aaa'
-          />
-        </Svg>
+        <DagSinglePath />
       </div>
+      <p>
+        We can easily convert this to two paths. One for the nodes and one for the connecting lines.
+      </p>
       <div style={{ margin: 20 }}>
-        <Dag />
+        <DagTwoPaths />
+      </div>
+      <p>
+        Likewise we can use .toComponent() to create reusable components for each node. Each of these nodes is clickable.
+      </p>
+      <div style={{ margin: 20 }}>
+        <DagNodes />
       </div>
     </>
   );
