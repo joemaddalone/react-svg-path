@@ -9,7 +9,7 @@ const Steps = ({ width, height, x, y, data, ...rest }) => {
   const steps = 10;
   useEffect(() => {
     const path = new Path().moveTo(x, y);
-    const radius = 4;
+    const radius = 5;
 
     const pointDistance = parseInt(width / data.length) - radius * 2;
     const shiftRight = pointDistance / 3;
@@ -56,8 +56,7 @@ const Steps = ({ width, height, x, y, data, ...rest }) => {
 
   return (
     <Svg width={width} height={height}>
-      <path d={currentPath} stroke='#f8f8f8' strokeWidth={6} />
-      <path d={currentPath} stroke='#222' strokeWidth={0.5} />
+      <path d={currentPath} stroke='#222' strokeWidth={0.5} shapeRendering="geometricPrecision" />
     </Svg>
   );
 };
