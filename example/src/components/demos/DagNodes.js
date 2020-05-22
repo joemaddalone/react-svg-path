@@ -1,6 +1,7 @@
 import React from 'react';
 import Path from 'react-svg-path';
 import dagSetup from './dagSetup';
+import Steps from './Steps'
 import Svg from '../Svg';
 import Square from '../Square';
 import Circle from '../Circle';
