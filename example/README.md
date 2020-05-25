@@ -24,7 +24,7 @@ const path = new Path().M(0,0).L(0,100);
 console.log(path.toString()) // M0 0, L0 100
 ```
 
-##Path Commands
+## Path Commands
 
 For every svg path command there is an equivalent command available in react-svg-path.
 
@@ -49,8 +49,6 @@ For every svg path command there is an equivalent command available in react-svg
 * **t(*ex,ey*)
 * **V(*y*)
 * **v(*y*)
-
----
 
 And then for most of these is there is a semantically named helper method. Not required, but for complex paths it may be easier to read for those not familiar with path commmands.
 
@@ -100,8 +98,6 @@ Built-in attribute helpers
 * **stroke**(*val*)
 * **strokeWidth**(*val*)
 * **style**(*val*)
-
----
 
 ## Rendering
 
