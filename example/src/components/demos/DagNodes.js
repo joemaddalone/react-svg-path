@@ -11,7 +11,7 @@ const Square = ({ x, y, size, ...rest }) => {
     .right(size)
     .down(size)
     .left(size)
-    .close()
+    .close();
   return path.toComponent(rest);
 };
 
@@ -64,7 +64,7 @@ const DagNodes = () => {
             y={y}
             radius={width / 2}
             style={{ fill: 'purple', cursor: 'pointer' }}
-            onClick={() => alert(`clicked node #${index+5}`)}
+            onClick={() => alert(`clicked node #${index + 5}`)}
           />
         );
       })}

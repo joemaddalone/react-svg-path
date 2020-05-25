@@ -56,7 +56,7 @@ const Steps = ({ width, height, x, y, data, ...rest }) => {
 
   return (
     <Svg width={width} height={height}>
-      <path d={currentPath} stroke='#222' strokeWidth={0.5} shapeRendering="geometricPrecision" />
+      <path d={currentPath} stroke='#222' strokeWidth={1} shapeRendering="geometricPrecision" />
     </Svg>
   );
 };

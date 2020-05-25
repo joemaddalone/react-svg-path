@@ -3,6 +3,7 @@ import Steps from './components/demos/Steps';
 import DagSinglePath from './components/demos/DagSinglePath';
 import DagTwoPaths from './components/demos/DagTwoPaths';
 import DagNodes from './components/demos/DagNodes';
+import Macros from './components/demos/Macros';
 
 import './App.css';
 
@@ -106,6 +107,12 @@ const App = () => {
         >
           source
         </a>
+      </div>
+      <p>
+        macros.
+      </p>
+      <div style={{ margin: 20 }}>
+        <Macros />
       </div>
     </>
   );
