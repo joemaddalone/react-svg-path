@@ -1,12 +1,29 @@
 import React from 'react';
 import Path from 'react-svg-path';
 import dagSetup from './dagSetup';
-import Steps from './Steps'
 import Svg from '../Svg';
-import Square from '../Square';
-import Circle from '../Circle';
 
 const dag = dagSetup();
+
+const Square = ({ x, y, size, ...rest }) => {
+  const path = new Path()
+    .moveTo(x, y)
+    .right(size)
+    .down(size)
+    .left(size)
+    .close()
+  return path.toComponent(rest);
+};
+
+const Circle = ({ x, y, radius, fill, ...rest }) => {
+  const path = new Path()
+    .M(x, y)
+    .m(-radius, 0)
+    .a(radius, radius, 0, 1, 0, radius * 2, 0)
+    .a(radius, radius, 0, 1, 0, -(radius * 2), 0)
+    .style({ fill });
+  return path.toComponent(rest);
+};
 
 const DagNodes = () => {
   const createConnectors = () => {
