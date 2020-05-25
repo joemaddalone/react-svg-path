@@ -109,7 +109,7 @@ const App = () => {
         </a>
       </div>
       <p>
-        macros.
+        macros
       </p>
       <div style={{ margin: 20 }}>
         <Macros />

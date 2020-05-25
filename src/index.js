@@ -9,6 +9,10 @@ class Path extends React.Component {
     return this;
   }
 
+  static macro = (name, fn) => {
+    this.prototype[name] = fn;
+  };
+
   attr = (key, val) => {
     this.attributes[key] = val;
     return this;
