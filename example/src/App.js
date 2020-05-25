@@ -1,40 +1,10 @@
 import React from 'react';
-import Steps from './components/demos/Steps';
 import DagSinglePath from './components/demos/DagSinglePath';
 import DagTwoPaths from './components/demos/DagTwoPaths';
 import DagNodes from './components/demos/DagNodes';
 import Macros from './components/demos/Macros';
 
 import './App.css';
-
-const stepData = [
-  23,
-  -45,
-  100,
-  -100,
-  12,
-  -23,
-  34,
-  -45,
-  56,
-  -67,
-  78,
-  -89,
-  0,
-  0,
-  0,
-  0,
-  10,
-  40,
-  80,
-  120,
-  0
-];
-
-const stepHeight = Math.abs(Math.min(...stepData) - Math.max(...stepData)) + 50;
-const stepX = 15;
-const stepY = stepHeight / 2;
-
 const App = () => {
   return (
     <>
@@ -88,31 +58,16 @@ const App = () => {
           source
         </a>
       </div>
-      <p>
-        Since we're using React we can also create a simple "drawing" effect by
-        iterating over the array produced with .toArray().
-      </p>
+      <p>Macros are a way to save a common set of path steps for reuse.</p>
       <div style={{ margin: 20 }}>
-        <Steps
-          x={stepX}
-          y={stepY}
-          width={755}
-          height={stepHeight}
-          data={stepData}
-        />
+        <Macros />
         <a
-          href='https://github.com/joemaddalone/react-svg-path/blob/master/example/src/components/demos/Steps.js'
+          href='https://github.com/joemaddalone/react-svg-path/blob/master/example/src/components/demos/Macros.js'
           rel='noopener noreferrer'
           target='_blank'
         >
           source
         </a>
-      </div>
-      <p>
-        macros
-      </p>
-      <div style={{ margin: 20 }}>
-        <Macros />
       </div>
     </>
   );

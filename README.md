@@ -9,17 +9,17 @@ npm install --save react-svg-path
 ## Basic Usage
 
 ```jsx
-import React from 'react'
-import Path from 'react-svg-path'
+import React from 'react';
+import Path from 'react-svg-path';
 
 const Square = ({ x, y, size }) => {
   const path = new Path()
-    .moveTo(x, y)   // move pen to x, y
-    .right(size)    // draw line right to relative "size" px
-    .down(size)     // draw line down to relative "size" px
-    .left(size)     // draw line left to relative "size" px
-    .close()        // draw line back to first point
-    .fill("green"); // set fill color
+    .moveTo(x, y) // move pen to x, y
+    .right(size) // draw line right to relative "size" px
+    .down(size) // draw line down to relative "size" px
+    .left(size) // draw line left to relative "size" px
+    .close() // draw line back to first point
+    .fill('green'); // set fill color
   return path.toElement();
 };
 
@@ -53,7 +53,8 @@ react-svg-path is mostly helpful for building the commands needed for the "d" at
 Most methods are direct translations from the [SVG Path specification](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths).
 
 ### Example
-```<path d="M0 0, L0 100"></path>```
+
+`<path d="M0 0, L0 100"></path>`
 
 This path can be produced with:
 
@@ -66,90 +67,110 @@ console.log(path.toString()) // M0 0, L0 100
 
 For every svg path command there is an equivalent command available in react-svg-path.
 
-* **A**(*rx,ry,rotation,arc,sweep,ex,ey*)
-* **a**(*rx, ry,rotation,arc,sweep,ex,ey*)
-* **C**(*cx1,cy1,cx2,cy2,ex,ey*)
-* **A**(*rx,ry,rotation,arc,sweep,ex,ey*)
-* **a**(*rx, ry,rotation,arc,sweep,ex,ey*)
-* **C**(*cx1,cy1,cx2,cy2,ex,ey*)
-* **c**(*cx1,cy1,cx2,cy2,ex,ey*)
-* **H**(*x*)
-* **h**(*x*)
-* **L**(*x,y*)
-* **l**(*x,y*)
-* **M**(*x,y*)
-* **m**(*x,y*)
-* **Q**(*cx,cy,ex,ey*)
-* **q**(*cx,cy,ex,ey*)
-* **S**(*cx,cy,ex,ey*)
-* **s**(*cx,cy,ex,ey*)
-* **T**(*ex,ey*)
-* **t**(*ex,ey*)
-* **V**(*y*)
-* **v**(*y*)
+- **A**(_rx,ry,rotation,arc,sweep,ex,ey_)
+- **a**(_rx, ry,rotation,arc,sweep,ex,ey_)
+- **C**(_cx1,cy1,cx2,cy2,ex,ey_)
+- **A**(_rx,ry,rotation,arc,sweep,ex,ey_)
+- **a**(_rx, ry,rotation,arc,sweep,ex,ey_)
+- **C**(_cx1,cy1,cx2,cy2,ex,ey_)
+- **c**(_cx1,cy1,cx2,cy2,ex,ey_)
+- **H**(_x_)
+- **h**(_x_)
+- **L**(_x,y_)
+- **l**(_x,y_)
+- **M**(_x,y_)
+- **m**(_x,y_)
+- **Q**(_cx,cy,ex,ey_)
+- **q**(_cx,cy,ex,ey_)
+- **S**(_cx,cy,ex,ey_)
+- **s**(_cx,cy,ex,ey_)
+- **T**(_ex,ey_)
+- **t**(_ex,ey_)
+- **V**(_y_)
+- **v**(_y_)
 
 And then for most of these is there is a semantically named helper method. Not required, but for complex paths it may be easier to read for those not familiar with path commmands.
 
-* **arc**(*rx,ry,rotation,arc,sweep,ex,ey,relative = false*)
-  * relative is optional, its default is false. Setting relative to true is equivalent to a
-* **cCurveTo**(*cx,cy,ex,ey,relative = false*)
-  * relative is optional, its default is false. Setting relative to true is equivalent to c
-* **horizontalTo**(*x,relative = false*)
-  * relative is optional, its default is false. Setting relative to true is equivalent to h
-* **lineTo**(*x,y,relative = false*)
-  * relative is optional, its default is false. Setting relative to true is equivalent to l
-* **moveTo**(*x,y,relative = false*)
-  * relative is optional, its default is false. Setting relative to true is equivalent to m
-* **qCurveTo**(*cx,cy,ex,ey,relative = false*)
-  * relative is optional, its default is false. Setting relative to true is equivalent to q
-* **sCurveTo**(*cx,cy,ex,ey,relative = false*)
-  * relative is optional, its default is false. Setting relative to true is equivalent to s
-* **verticalTo**(*x,relative = false*)
-  * relative is optional, its default is false. Setting relative to true is equivalent to v
+- **arc**(_rx,ry,rotation,arc,sweep,ex,ey,relative = false_)
+  - relative is optional, its default is false. Setting relative to true is equivalent to a
+- **cCurveTo**(_cx,cy,ex,ey,relative = false_)
+  - relative is optional, its default is false. Setting relative to true is equivalent to c
+- **horizontalTo**(_x,relative = false_)
+  - relative is optional, its default is false. Setting relative to true is equivalent to h
+- **lineTo**(_x,y,relative = false_)
+  - relative is optional, its default is false. Setting relative to true is equivalent to l
+- **moveTo**(_x,y,relative = false_)
+  - relative is optional, its default is false. Setting relative to true is equivalent to m
+- **qCurveTo**(_cx,cy,ex,ey,relative = false_)
+  - relative is optional, its default is false. Setting relative to true is equivalent to q
+- **sCurveTo**(_cx,cy,ex,ey,relative = false_)
+  - relative is optional, its default is false. Setting relative to true is equivalent to s
+- **verticalTo**(_x,relative = false_)
+  - relative is optional, its default is false. Setting relative to true is equivalent to v
 
 Some additional path command helpers:
 
-* **down**(*px*)
-  * Draw line from current position down by px
-* **up**(*px*)
-  * Draw line from current position up by px
-* **right**(*px*)
-  * Draw line from current position right by px
-* **left**(*px*)
-  * Draw line from current position left by px
-
+- **down**(_px_)
+  - Draw line from current position down by px
+- **up**(_px_)
+  - Draw line from current position up by px
+- **right**(_px_)
+  - Draw line from current position right by px
+- **left**(_px_)
+  - Draw line from current position left by px
 
 One more path command helper
 
-* **close**()
-  * Produces a "Z" command which draws a stright line back to the first point of the path.
+- **close**()
+  - Produces a "Z" command which draws a stright line back to the first point of the path.
 
 ## Path Attributes
+
 If you intend to output an actual path element and not just the set of commands attributes can be set on the element using the attr helper.
 
-* **attr**(*key, value*)
-  * example: `attr('id', 'my-id')` will result in `<path id="my-id"></path>`
+- **attr**(_key, value_)
+  - example: `attr('id', 'my-id')` will result in `<path id="my-id"></path>`
 
 Built-in attribute helpers
 
-* **fill**(*val*)
-* **stroke**(*val*)
-* **strokeWidth**(*val*)
-* **style**(*val*)
+- **fill**(_val_)
+- **stroke**(_val_)
+- **strokeWidth**(_val_)
+- **style**(_val_)
 
 ## Rendering
 
 Depending on your needs there are few ways to use the data generated by react-svg-path.
 
-* **toArray**
- * Returns an array of path commands
-* **toString**
-  * Returns a string of path commands
-* **toElement**
-  * Returns path jsx incuding attributes
-* **toComponent**(*props*)
-  * same as toElement, but allows additional props
+- **toArray**
+- Returns an array of path commands
+- **toString**
+  - Returns a string of path commands
+- **toElement**
+  - Returns path jsx incuding attributes
+- **toComponent**(_props_)
+  - same as toElement, but allows additional props
 
+## Macros
+
+Macros are a way to save a common set of path steps for reuse.
+
+**Example macro:**
+
+```js
+Path.macro('square', function (size, x, y) {
+  if (x && y) {
+    this.moveTo(x, y); // only move if x & y are defined
+  }
+  this.right(size).down(size).left(size).up(size);
+  return this;
+});
+```
+
+```
+const p = new Path();
+p.square(75, 18, 35);
+```
 
 ### [demos](https://joemaddalone.github.io/react-svg-path/)
 
