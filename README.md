@@ -70,9 +70,6 @@ For every svg path command there is an equivalent command available in react-svg
 - **A**(_rx,ry,rotation,arc,sweep,ex,ey_)
 - **a**(_rx, ry,rotation,arc,sweep,ex,ey_)
 - **C**(_cx1,cy1,cx2,cy2,ex,ey_)
-- **A**(_rx,ry,rotation,arc,sweep,ex,ey_)
-- **a**(_rx, ry,rotation,arc,sweep,ex,ey_)
-- **C**(_cx1,cy1,cx2,cy2,ex,ey_)
 - **c**(_cx1,cy1,cx2,cy2,ex,ey_)
 - **H**(_x_)
 - **h**(_x_)
@@ -159,11 +156,7 @@ Macros are a way to save a common set of path steps for reuse.
 
 ```js
 Path.macro('square', function (size, x, y) {
-  if (x && y) {
-    this.moveTo(x, y); // only move if x & y are defined
-  }
-  this.right(size).down(size).left(size).up(size);
-  return this;
+  return this.moveTo(x, y).right(size).down(size).left(size).up(size);
 });
 ```
 
