@@ -12,11 +12,41 @@ body {
 
 svg {
   background-color: #fff;
-  box-shadow: 0 0 16px rgba(0, 0, 0, 0.3);
+  border: 1px solid #ccc;
 }
 
 path {
+  shape-rendering: geometricPrecision;
+}
+
+.dag path {
   fill: none;
+  stroke-width: 0.5;
+}
+
+.basic-shapes path {
+  fill: none;
+  stroke: rebeccapurple;
+  stroke-width: 1;
+  shape-rendering: geometricPrecision;
+}
+
+.basic-shapes svg, .complex svg {
+  border: 0;
+}
+
+.basic-shapes path.filled {
+  fill: #ddd;
+  stroke-width: 0;
+}
+
+.basic-shapes a, .complex a {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.complex path {
+  stroke-width: none
 }
 
 p, li {
