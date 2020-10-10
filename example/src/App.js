@@ -81,7 +81,7 @@ const App = () => {
         <div style={{ margin: 20 }}>
           <DagSinglePath />
           <a
-            href="https://github.com/joemaddalone/react-svg-path/blob/master/example/src/components/demos/DagSinglePath.js"
+            href="https://github.com/joemaddalone/react-svg-path/blob/master/example/src/components/demos/dag/DagSinglePath.js"
             rel="noopener noreferrer"
             target="_blank"
           >
@@ -95,7 +95,7 @@ const App = () => {
         <div style={{ margin: 20 }}>
           <DagTwoPaths />
           <a
-            href="https://github.com/joemaddalone/react-svg-path/blob/master/example/src/components/demos/DagTwoPaths.js"
+            href="https://github.com/joemaddalone/react-svg-path/blob/master/example/src/components/demos/dag/DagTwoPaths.js"
             rel="noopener noreferrer"
             target="_blank"
           >
@@ -109,7 +109,7 @@ const App = () => {
         <div style={{ margin: 20 }}>
           <DagNodes />
           <a
-            href="https://github.com/joemaddalone/react-svg-path/blob/master/example/src/components/demos/DagNodes.js"
+            href="https://github.com/joemaddalone/react-svg-path/blob/master/example/src/components/demos/dag/DagNodes.js"
             rel="noopener noreferrer"
             target="_blank"
           >
