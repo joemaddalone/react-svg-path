@@ -1,8 +1,8 @@
 import React from 'react';
-import Path from 'react-svg-path';
+import { Sector, Circle} from 'react-svg-path';
 import Svg from '../../helpers/Svg';
 
-export const Sector = () => (
+export const SectorDemo = () => (
   <>
     <h3 className='ui-header'>.sector(cx, cy, radius, startAngle, endAngle)</h3>
     <p>
@@ -10,10 +10,11 @@ export const Sector = () => (
       the center point.
     </p>
     <Svg width={140} height={120}>
-      <path d={new Path().sector(60, 60, 50, 0, 270).toString()} />
-      <path d={new Path().circle(10, 60, 60).toString()} className='filled' />
+      <Sector cx={60} cy={60} radius={50} startAngle={0} endAngle={270} />
+      <Circle size={10} cx={60} cy={60} className='filled' />
     </Svg>
   </>
 );
 
-Sector.displayName = 'Sector'
+SectorDemo.displayName = 'Sector'
+

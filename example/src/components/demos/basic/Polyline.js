@@ -1,5 +1,5 @@
 import React from 'react';
-import Path from 'react-svg-path';
+import { Polyline } from 'react-svg-path';
 import Svg from '../../helpers/Svg';
 
 const pointsAbsolute = [
@@ -15,7 +15,7 @@ const pointsRelative = [
   [30, 60],
   [-30, 60]
 ];
-export const Polyline = () => (
+export const PolylineDemo = () => (
   <>
     <h3 className='ui-header'>.polyline([points], relative = false)</h3>
     <p>
@@ -25,13 +25,13 @@ export const Polyline = () => (
     </p>
     <h4 className='ui-header'>absolute</h4>
     <Svg width={260} height={160}>
-      <path d={new Path().polyline(pointsAbsolute).toString()} />
+      <Polyline points={pointsAbsolute} />
     </Svg>
     <h4 className='ui-header'>relative</h4>
     <Svg width={260} height={160}>
-      <path d={new Path().polyline(pointsRelative, true).toString()} />
+    <Polyline points={pointsRelative} relative />
     </Svg>
   </>
 );
 
-Polyline.displayName = 'Polyline'
+PolylineDemo.displayName = 'Polyline'

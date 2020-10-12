@@ -4,17 +4,20 @@ import DagTwoPaths from "./components/demos/dag/DagTwoPaths";
 import DagNodes from "./components/demos/dag/DagNodes";
 import Macros from "./components/demos/Macros";
 
+import { Circles } from './components/demos/path-combined/Circles';
+
+
 import {
-  Rect,
-  Square,
-  Circle,
-  Ellipse,
-  Segment,
-  Sector,
-  Polygon,
-  RegPolygon,
-  Triangle,
-  Polyline,
+  RectDemo,
+    SquareDemo,
+    TriangleDemo,
+    RegPolygonDemo,
+    EllipseDemo,
+    CircleDemo,
+    SectorDemo,
+    SegmentDemo,
+    PolylineDemo,
+    PolygonDemo,
 } from "./components/demos/basic";
 import Svg from "./components/helpers/Svg";
 import Pie from "./components/demos/complex/Pie";
@@ -24,16 +27,16 @@ import SparkLine from "./components/demos/complex/SparkLine";
 import "./App.css";
 const App = () => {
   const basicDemos = [
-    Rect,
-    Square,
-    Triangle,
-    RegPolygon,
-    Ellipse,
-    Circle,
-    Sector,
-    Segment,
-    Polyline,
-    Polygon,
+    RectDemo,
+    SquareDemo,
+    TriangleDemo,
+    RegPolygonDemo,
+    EllipseDemo,
+    CircleDemo,
+    SectorDemo,
+    SegmentDemo,
+    PolylineDemo,
+    PolygonDemo,
   ];
 
   const pieData = [
@@ -65,6 +68,9 @@ const App = () => {
   ];
   return (
     <>
+      <div>
+        <Circles />
+      </div>
       <h2>react-svg-path</h2>
       <hr />
       <a href="https://github.com/joemaddalone/react-svg-path">

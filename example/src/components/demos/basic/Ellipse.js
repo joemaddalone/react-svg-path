@@ -1,8 +1,8 @@
 import React from 'react';
-import Path from 'react-svg-path';
+import { Ellipse } from 'react-svg-path';
 import Svg from '../../helpers/Svg';
 
-export const Ellipse = () => (
+export const EllipseDemo = () => (
   <>
     <h3 className='ui-header'>.ellipse(width, height, cx, cy)</h3>
     <p>
@@ -10,13 +10,11 @@ export const Ellipse = () => (
       the center point.
     </p>
     <Svg width={155} height={120}>
-      <path d={new Path().ellipse(150, 75, 80, 50).toString()} />
-      <path
-        d={new Path().ellipse(15, 7.5, 80, 50).toString()}
-        className='filled'
+      <Ellipse width={150} height={75} cx={80} cy={50} />
+      <Ellipse width={15} height={7.5} cx={80} cy={50} className='filled'
       />
     </Svg>
   </>
 );
 
-Ellipse.displayName = 'Ellipse'
+EllipseDemo.displayName = 'Ellipse'
