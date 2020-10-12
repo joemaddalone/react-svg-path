@@ -1,5 +1,5 @@
 import React from 'react';
-import Path from 'react-svg-path';
+import { Segment } from 'react-svg-path';
 
 const Donut = ({ size, width, cx, cy, data, ...rest }) => {
   const percentToDegree = (p) => (p / 100) * 360;
@@ -8,15 +8,18 @@ const Donut = ({ size, width, cx, cy, data, ...rest }) => {
   data.forEach((d, i) => {
     const startAngle = percentToDegree(total);
     const endAngle = percentToDegree(total + d.percent);
-    const p = new Path();
-    p.segment(cx, cy, (size - width) / 2, startAngle, endAngle);
     segments.push(
-      p.toComponent({
-        key: i,
-        strokeWidth: width,
-        stroke: d.color,
-        fill: 'none'
-      })
+      <Segment
+      cx={cx}
+      cy={cy}
+      radius={(size - width) / 2}
+      startAngle={startAngle}
+      endAngle={endAngle}
+      key={i}
+        strokeWidth={width}
+        stroke={d.color}
+        fill='none'
+       />
     );
     total = total + d.percent;
   });

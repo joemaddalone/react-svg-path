@@ -1,8 +1,8 @@
 import React from 'react';
-import Path from 'react-svg-path';
+import { Rect } from 'react-svg-path';
 import Svg from '../../helpers/Svg';
 
-export const Rect = () => (
+export const RectDemo = () => (
   <>
     <h3 className='ui-header'>.rect(width, height, cx, cy)</h3>
     <p>
@@ -10,10 +10,10 @@ export const Rect = () => (
       the center point.
     </p>
     <Svg width={140} height={120}>
-      <path d={new Path().rect(120, 60, 60, 60).toString()} />
-      <path d={new Path().rect(10, 5, 60, 60).toString()} className='filled' />
+      <Rect width={120} height={60} cx={60} cy={60} />
+      <Rect width={10} height={5} cx={60} cy={60} className='filled' />
     </Svg>
   </>
 );
 
-Rect.displayName = 'Rect'
+RectDemo.displayName = 'Rect'

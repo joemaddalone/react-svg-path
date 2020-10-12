@@ -1,5 +1,5 @@
 import React from 'react';
-import Path from 'react-svg-path';
+import Path, { Circle } from 'react-svg-path';
 import dagSetup from './dagSetup';
 import Svg from '../../helpers/Svg';
 
@@ -15,15 +15,15 @@ const Square = ({ x, y, size, ...rest }) => {
   return path.toComponent(rest);
 };
 
-const Circle = ({ x, y, radius, fill, ...rest }) => {
-  const path = new Path()
-    .M(x, y)
-    .m(-radius, 0)
-    .a(radius, radius, 0, 1, 0, radius * 2, 0)
-    .a(radius, radius, 0, 1, 0, -(radius * 2), 0)
-    .style({ fill });
-  return path.toComponent(rest);
-};
+// const Circle = ({ x, y, radius, fill, ...rest }) => {
+//   const path = new Path()
+//     .M(x, y)
+//     .m(-radius, 0)
+//     .a(radius, radius, 0, 1, 0, radius * 2, 0)
+//     .a(radius, radius, 0, 1, 0, -(radius * 2), 0)
+//     .style({ fill });
+//   return path.toComponent(rest);
+// };
 
 const DagNodes = () => {
   const createConnectors = () => {
@@ -60,9 +60,9 @@ const DagNodes = () => {
         return (
           <Circle
             key={index}
-            x={x}
-            y={y}
-            radius={width / 2}
+            cx={x}
+            cy={y}
+            size={width}
             style={{ fill: 'purple', cursor: 'pointer' }}
             onClick={() => alert(`clicked node #${index + 5}`)}
           />

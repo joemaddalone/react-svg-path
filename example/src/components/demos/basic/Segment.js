@@ -1,8 +1,8 @@
 import React from 'react';
-import Path from 'react-svg-path';
+import { Segment, Circle} from 'react-svg-path';
 import Svg from '../../helpers/Svg';
 
-export const Segment = () => (
+export const SegmentDemo = () => (
   <>
     <h3 className='ui-header'>
       .segment(cx, cy, radius, startAngle, endAngle)
@@ -13,10 +13,10 @@ export const Segment = () => (
     </p>
 
     <Svg width={140} height={120}>
-      <path d={new Path().segment(60, 60, 50, 0, 270).toString()} />
-      <path d={new Path().circle(10, 60, 60).toString()} className='filled' />
+      <Segment  cx={60} cy={60} radius={50} startAngle={0} endAngle={270} />
+      <Circle size={10} cx={60} cy={60} className='filled' />
     </Svg>
   </>
 );
 
-Segment.displayName = 'Segment'
+SegmentDemo.displayName = 'Segment'

@@ -1,5 +1,5 @@
 import React from 'react';
-import Path from 'react-svg-path';
+import { Polygon } from 'react-svg-path';
 import Svg from '../../helpers/Svg';
 
 const points = [
@@ -9,7 +9,7 @@ const points = [
   [40, 120]
 ];
 
-export const Polygon = () => (
+export const PolygonDemo = () => (
   <>
     <h3 className='ui-header'>.polygon([points])</h3>
     <p>
@@ -18,9 +18,9 @@ export const Polygon = () => (
       on the first point - closing the shape.
     </p>
     <Svg width={140} height={120}>
-      <path d={new Path().polygon(points).toString()} />
+      <Polygon points={points} />
     </Svg>
   </>
 );
 
-Polygon.displayName = 'Polygon'
+PolygonDemo.displayName = 'Polygon'

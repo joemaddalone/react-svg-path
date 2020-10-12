@@ -1,8 +1,8 @@
 import React from 'react';
-import Path from 'react-svg-path';
+import { Square } from 'react-svg-path';
 import Svg from '../../helpers/Svg';
 
-export const Square = () => (
+export const SquareDemo = () => (
   <>
     <h3 className='ui-header'>.square(size, cx, cy)</h3>
     <p>
@@ -10,10 +10,10 @@ export const Square = () => (
       the center point.
     </p>
     <Svg width={140} height={120}>
-      <path d={new Path().square(100, 50, 50).toString()} />
-      <path d={new Path().square(10, 50, 50).toString()} className='filled' />
+      <Square size={100} cx={50} cy={50} />
+      <Square size={10} cx={50} cy={50} className='filled' />
     </Svg>
   </>
 );
 
-Square.displayName = 'Square'
+SquareDemo.displayName = 'Square'
