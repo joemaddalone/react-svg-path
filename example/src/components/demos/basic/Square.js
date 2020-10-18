@@ -1,6 +1,5 @@
 import React from 'react';
-import { Square } from 'react-svg-path';
-import Svg from '../../helpers/Svg';
+import { Square, Svg } from 'react-svg-path';
 
 export const SquareDemo = () => (
   <>

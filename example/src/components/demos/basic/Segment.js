@@ -1,6 +1,5 @@
 import React from 'react';
-import { Segment, Circle} from 'react-svg-path';
-import Svg from '../../helpers/Svg';
+import { Segment, Circle, Svg} from 'react-svg-path';
 
 export const SegmentDemo = () => (
   <>

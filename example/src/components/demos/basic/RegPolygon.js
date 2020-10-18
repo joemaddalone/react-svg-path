@@ -1,6 +1,5 @@
 import React from 'react';
-import { RegPolygon } from 'react-svg-path';
-import Svg from '../../helpers/Svg';
+import { RegPolygon, Svg } from 'react-svg-path';
 
 export const RegPolygonDemo = () => (
   <>

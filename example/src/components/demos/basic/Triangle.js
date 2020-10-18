@@ -1,6 +1,5 @@
 import React from 'react';
-import { Triangle} from 'react-svg-path';
-import Svg from '../../helpers/Svg';
+import { Triangle, Svg } from 'react-svg-path';
 
 export const TriangleDemo = () => (
   <>

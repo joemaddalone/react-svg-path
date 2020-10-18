@@ -1,6 +1,5 @@
 import React from 'react';
-import { Polyline } from 'react-svg-path';
-import Svg from '../../helpers/Svg';
+import { Polyline, Svg } from 'react-svg-path';
 
 const pointsAbsolute = [
   [10, 60],

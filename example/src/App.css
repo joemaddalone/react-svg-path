@@ -19,6 +19,12 @@ path {
   shape-rendering: geometricPrecision;
 }
 
+path.merged {
+  fill: none;
+  stroke-width: 1;
+  stroke: #222;
+}
+
 .dag path {
   fill: none;
   stroke-width: 0.5;
@@ -70,4 +76,8 @@ code {
 
 path {
   shape-rendering: geometricPrecision;
+}
+
+code {
+  margin-left: 0;
 }

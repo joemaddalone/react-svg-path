@@ -1,6 +1,5 @@
 import React from 'react';
-import { Ellipse } from 'react-svg-path';
-import Svg from '../../helpers/Svg';
+import { Ellipse, Svg } from 'react-svg-path';
 
 export const EllipseDemo = () => (
   <>

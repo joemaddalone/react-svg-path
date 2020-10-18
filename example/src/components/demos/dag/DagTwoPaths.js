@@ -1,7 +1,6 @@
 import React from 'react';
-import Path from 'react-svg-path';
+import Path, { Svg } from 'react-svg-path';
 import dagSetup from './dagSetup';
-import Svg from '../../helpers/Svg';
 
 const dag = dagSetup();
 

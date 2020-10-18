@@ -1,6 +1,5 @@
 import React from 'react';
-import { Rect } from 'react-svg-path';
-import Svg from '../../helpers/Svg';
+import { Rect, Svg } from 'react-svg-path';
 
 export const RectDemo = () => (
   <>

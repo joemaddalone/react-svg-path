@@ -1,6 +1,5 @@
 import React from 'react';
-import { Polygon } from 'react-svg-path';
-import Svg from '../../helpers/Svg';
+import { Polygon, Svg } from 'react-svg-path';
 
 const points = [
   [10, 60],

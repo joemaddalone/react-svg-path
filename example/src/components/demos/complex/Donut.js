@@ -10,12 +10,12 @@ const Donut = ({ size, width, cx, cy, data, ...rest }) => {
     const endAngle = percentToDegree(total + d.percent);
     segments.push(
       <Segment
-      cx={cx}
-      cy={cy}
-      radius={(size - width) / 2}
-      startAngle={startAngle}
-      endAngle={endAngle}
-      key={i}
+        cx={cx}
+        cy={cy}
+        radius={(size - width) / 2}
+        startAngle={startAngle}
+        endAngle={endAngle}
+        key={i}
         strokeWidth={width}
         stroke={d.color}
         fill='none'

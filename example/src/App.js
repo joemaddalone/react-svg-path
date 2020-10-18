@@ -2,8 +2,6 @@ import React from "react";
 import DagSinglePath from "./components/demos/dag/DagSinglePath";
 import DagTwoPaths from "./components/demos/dag/DagTwoPaths";
 import DagNodes from "./components/demos/dag/DagNodes";
-import Macros from "./components/demos/Macros";
-
 import { Circles } from './components/demos/path-combined/Circles';
 
 
@@ -19,7 +17,7 @@ import {
     PolylineDemo,
     PolygonDemo,
 } from "./components/demos/basic";
-import Svg from "./components/helpers/Svg";
+import { Svg } from "react-svg-path";
 import Pie from "./components/demos/complex/Pie";
 import Donut from "./components/demos/complex/Donut";
 import SparkLine from "./components/demos/complex/SparkLine";
@@ -124,18 +122,8 @@ const App = () => {
         </div>
       </div>
 
-      <p>Macros are a way to save a common set of path steps for reuse.</p>
-      <div style={{ margin: 20 }}>
-        <Macros />
-        <a
-          href="https://github.com/joemaddalone/react-svg-path/blob/master/example/src/components/demos/Macros.js"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          source
-        </a>
-      </div>
-      <p>Macros are so nice we included a bunch for you.</p>
+      <p>.toComponent() is a nice way to save a common set of path steps for reuse.</p>
+      <p>We have included a bunch for you.</p>
       <div className="basic-shapes">
         <h2 className="ui-header">Basic Shapes</h2>
         {basicDemos.map((C, i) => (

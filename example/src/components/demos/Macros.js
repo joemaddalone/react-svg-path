@@ -1,6 +1,5 @@
 import React from 'react';
-import Path from 'react-svg-path';
-import Svg from '../helpers/Svg';
+import Path, { Svg } from 'react-svg-path';
 
 Path.macro('squareTest', function (size, x, y) {
   if (x && y) {

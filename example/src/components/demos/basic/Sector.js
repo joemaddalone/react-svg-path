@@ -1,6 +1,5 @@
 import React from 'react';
-import { Sector, Circle} from 'react-svg-path';
-import Svg from '../../helpers/Svg';
+import { Sector, Circle, Svg} from 'react-svg-path';
 
 export const SectorDemo = () => (
   <>
