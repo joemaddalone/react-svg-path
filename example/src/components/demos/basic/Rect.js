@@ -3,9 +3,14 @@ import { Rect, Svg } from 'react-svg-path';
 
 export const RectDemo = () => (
   <>
-    <h3 className='ui-header'>.rect(width, height, cx, cy)</h3>
+    <h3>Rect</h3>
+    <code>
+      {`
+        <Rect width={number} height={number} cx={number} cy={number} />
+      `}
+    </code>
     <p>
-      .rect is drawn from center point (cx & cy). The cursor is then moved to
+      Rect is drawn from center point (cx & cy). The cursor is then moved to
       the center point.
     </p>
     <Svg width={140} height={120}>

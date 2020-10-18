@@ -8,3 +8,4 @@ export { SectorDemo } from './Sector';
 export { PolygonDemo } from './Polygon';
 export { RegPolygonDemo } from './RegPolygon';
 export { PolylineDemo } from './Polyline';
+export { LineDemo } from './Line';

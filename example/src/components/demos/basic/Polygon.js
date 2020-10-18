@@ -10,9 +10,21 @@ const points = [
 
 export const PolygonDemo = () => (
   <>
-    <h3 className='ui-header'>.polygon([points])</h3>
+    <h3>Polygon</h3>
+    <code>
+      {`
+      const points = [
+        [10, 60],
+        [40, 0],
+        [70, 60],
+        [40, 120]
+      ];
+
+      <Polygon points={points} />
+      `}
+    </code>
     <p>
-      .polygon accepts an array of [x, y] coordinates and then draws lines
+      Polygon accepts an array of [x, y] coordinates and then draws lines
       connecting those points. The path will start from the first point and end
       on the first point - closing the shape.
     </p>
@@ -22,4 +34,4 @@ export const PolygonDemo = () => (
   </>
 );
 
-PolygonDemo.displayName = 'Polygon'
+PolygonDemo.displayName = 'Polygon';

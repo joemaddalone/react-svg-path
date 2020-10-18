@@ -3,11 +3,12 @@ import { Circle, Svg } from 'react-svg-path';
 
 export const CircleDemo = () => (
   <>
-      <h3 className="ui-header">Circle</h3>
-    <code>{`
+    <h3 className='ui-header'>Circle</h3>
+    <code>
+      {`
         <Circle size={number} cx={number} cy={number} />
       `}
-      </code>
+    </code>
     <p>
       Circle is drawn from center points (cx & cy). The cursor is then moved to
       the center points.
@@ -19,4 +20,4 @@ export const CircleDemo = () => (
   </>
 );
 
-CircleDemo.displayName = 'CircleDemo'
+CircleDemo.displayName = 'CircleDemo';

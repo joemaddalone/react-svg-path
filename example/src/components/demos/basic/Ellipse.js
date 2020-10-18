@@ -3,9 +3,14 @@ import { Ellipse, Svg } from 'react-svg-path';
 
 export const EllipseDemo = () => (
   <>
-    <h3 className='ui-header'>.ellipse(width, height, cx, cy)</h3>
+    <h3>Ellipse</h3>
+    <code>
+      {`
+        <Ellipse width={number} height={number} cx={number} cy={number} />
+      `}
+    </code>
     <p>
-      .ellipse is drawn from center point (cx & cy). The cursor is then moved to
+      Ellipse is drawn from center point (cx & cy). The cursor is then moved to
       the center point.
     </p>
     <Svg width={155} height={120}>

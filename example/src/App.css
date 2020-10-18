@@ -1,5 +1,4 @@
 body {
-
 }
 
 #root {
@@ -37,7 +36,8 @@ path.merged {
   shape-rendering: geometricPrecision;
 }
 
-.basic-shapes svg, .complex svg {
+.basic-shapes svg,
+.complex svg {
   border: 0;
 }
 
@@ -46,16 +46,18 @@ path.merged {
   stroke-width: 0;
 }
 
-.basic-shapes a, .complex a {
+.basic-shapes a,
+.complex a {
   display: block;
   margin-bottom: 10px;
 }
 
 .complex path {
-  stroke-width: none
+  stroke-width: none;
 }
 
-p, li {
+p,
+li {
   font-size: 16px;
   line-height: 1.4;
   margin-top: 10px;
@@ -80,4 +82,7 @@ path {
 
 code {
   margin-left: 0;
+  white-space: pre;
+  display: block;
+  unicode-bidi: embed;
 }

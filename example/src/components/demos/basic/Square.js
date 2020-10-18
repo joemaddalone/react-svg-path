@@ -3,9 +3,14 @@ import { Square, Svg } from 'react-svg-path';
 
 export const SquareDemo = () => (
   <>
-    <h3 className='ui-header'>.square(size, cx, cy)</h3>
+    <h3>Square</h3>
+    <code>
+      {`
+        <Square size={number} cx={number} cy={number} />
+      `}
+    </code>
     <p>
-      .square is drawn from center point (cx & cy). The cursor is then moved to
+      Square is drawn from center point (cx & cy). The cursor is then moved to
       the center point.
     </p>
     <Svg width={140} height={120}>

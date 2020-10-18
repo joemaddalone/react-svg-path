@@ -3,9 +3,14 @@ import { Triangle, Svg } from 'react-svg-path';
 
 export const TriangleDemo = () => (
   <>
-    <h3 className='ui-header'>.triangle(size, cx, cy)</h3>
+    <h3>Triangle</h3>
+    <code>
+      {`
+        <Triangle size={number} cx={number} cy={number} />
+      `}
+    </code>
     <p>
-      .triangle draws an equilateral triangle from center point (cx & cy). The
+      Triangle draws an equilateral triangle from center point (cx & cy). The
       cursor is then moved to the center point.
     </p>
     <Svg width={140} height={120}>
