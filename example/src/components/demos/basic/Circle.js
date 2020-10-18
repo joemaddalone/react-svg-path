@@ -1,7 +1,6 @@
 import React from 'react';
 import { Circle, Svg } from 'react-svg-path';
 
-
 export const CircleDemo = () => (
   <>
       <h3 className="ui-header">Circle</h3>
