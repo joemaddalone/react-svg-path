@@ -5,5 +5,5 @@ export const PathMerge = ({ children, ...rest }) => {
   React.Children.forEach(children, (child) => {
     paths.push(child.type.path(child.props).toString());
   });
-  return <path d={paths.join(' ')} />;
+  return <path d={paths.join(' ')} {...rest} />;
 };

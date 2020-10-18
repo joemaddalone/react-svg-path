@@ -1,6 +1,12 @@
 import Path from './Path';
+import render from '../utils/render';
 
-export const Circle = ({ size, cx, cy, pathOnly, ...rest }) =>
-  new Path().circle(size, cx, cy).toComponent(rest);
+export const Circle = ({ size, cx, cy, children, ...rest }) => {
+  const p = new Path();
+  const pathMethod = p.circle.bind(p, size, cx, cy);
+  return render(pathMethod, rest, cy, cy, children);
+};
 
-Circle.path = ({ size, cx, cy }) => new Path().circle(size, cx, cy);
+Circle.path = ({ size, cx, cy }) => {
+  return new Path().circle(size, cx, cy);
+};

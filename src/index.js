@@ -9,5 +9,8 @@ export { RegPolygon } from './components/RegPolygon';
 export { Sector } from './components/Sector';
 export { Segment } from './components/Segment';
 export { Triangle } from './components/Triangle';
+export { Line } from './components/Line';
+export { Text } from './components/Text';
+export { Svg } from './components/Svg';
 export { PathMerge } from './components/PathMerge';
 export default Path;
