@@ -26,20 +26,14 @@ export const PolylineDemo = () => (
     <div style={{ marginBottom: 15 }}>
       <code>
         {`
-        const pointsAbsolute = [
-          [10, 60],
-          [40, 0],
-          [70, 60],
-          [40, 120]
-        ];
-      `.trim()}
-      </code>
-    </div>
-    <div style={{ marginBottom: 15 }}>
-      <code>
-        {`
-        <Polyline points={pointsAbsolute} />
-      `.trim()}
+const pointsAbsolute = [
+  [10, 60],
+  [40, 0],
+  [70, 60],
+  [40, 120]
+];
+
+<Polyline points={pointsAbsolute} />`.trim()}
       </code>
     </div>
     <Svg width={260} height={160}>
@@ -49,20 +43,14 @@ export const PolylineDemo = () => (
     <div style={{ marginBottom: 15 }}>
       <code>
         {`
-        const pointsRelative = [
-          [10, 60],
-          [30, -60],
-          [30, 60],
-          [-30, 60]
-        ];
-      `.trim()}
-      </code>
-    </div>
-    <div style={{ marginBottom: 15 }}>
-      <code>
-        {`
-        <Polyline points={pointsRelative} relative />
-      `.trim()}
+const pointsRelative = [
+  [10, 60],
+  [30, -60],
+  [30, 60],
+  [-30, 60]
+];
+
+<Polyline points={pointsRelative} relative />`.trim()}
       </code>
     </div>
     <Svg width={260} height={160}>

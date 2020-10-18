@@ -71,7 +71,6 @@ const NestingDemo2 = () => (
 </Line>
 <Line sx={10} sy={50} ex={130} ey={50} stroke='red'>
   <Square size={20} fill='red' />
-  <Square size={20} fill='red' />
 </Line>
 <Line sx={10} sy={75} ex={135} ey={75} stroke='green'>
   <Line ex={125} ey={70} stroke='green' />
