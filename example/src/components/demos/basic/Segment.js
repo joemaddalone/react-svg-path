@@ -7,7 +7,7 @@ export const SegmentDemo = () => (
     <code>
       {`
         <Segment cx={number} cy={number} radius={number} startAngle={number} endAngle={number} />
-      `}
+      `.trim()}
     </code>
     <p>
       Segment is drawn from center point (cx & cy). The cursor is then moved to

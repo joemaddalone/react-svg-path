@@ -4,7 +4,7 @@ import render from '../utils/render';
 export const Circle = ({ size, cx, cy, children, ...rest }) => {
   const p = new Path();
   const pathMethod = p.circle.bind(p, size, cx, cy);
-  return render(pathMethod, rest, cy, cy, children);
+  return render(pathMethod, rest, cx, cy, cx, cy, children);
 };
 
 Circle.path = ({ size, cx, cy }) => {

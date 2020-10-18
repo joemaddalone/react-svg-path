@@ -12,7 +12,7 @@ export const Line = ({
 }) => {
   const p = new Path().moveTo(sx, sy);
   const pathMethod = p.lineTo.bind(p, ex, ey, relative);
-  return render(pathMethod, rest, ex, ey, children);
+  return render(pathMethod, rest, sx, sy, ex, ey, children);
 };
 
 Line.path = ({ sx, sy, ex, ey, relative = false }) =>

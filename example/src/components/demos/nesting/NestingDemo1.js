@@ -7,7 +7,10 @@ import {
   Circle,
   Text,
   Triangle,
-  Square
+  Square,
+  Polyline,
+  Segment,
+  Sector,
 } from 'react-svg-path';
 import './NestingDemo1.css';
 

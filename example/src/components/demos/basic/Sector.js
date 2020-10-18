@@ -7,7 +7,7 @@ export const SectorDemo = () => (
     <code>
       {`
         <Sector cx={number} cy={number} radius={number} startAngle={number} endAngle={number} />
-      `}
+      `.trim()}
     </code>
     <p>
       Sector is drawn from center point (cx & cy). The cursor is then moved to

@@ -7,7 +7,7 @@ export const SquareDemo = () => (
     <code>
       {`
         <Square size={number} cx={number} cy={number} />
-      `}
+      `.trim()}
     </code>
     <p>
       Square is drawn from center point (cx & cy). The cursor is then moved to

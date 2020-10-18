@@ -7,7 +7,7 @@ export const CircleDemo = () => (
     <code>
       {`
         <Circle size={number} cx={number} cy={number} />
-      `}
+      `.trim()}
     </code>
     <p>
       Circle is drawn from center points (cx & cy). The cursor is then moved to

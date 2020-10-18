@@ -7,7 +7,7 @@ export const LineDemo = () => (
     <code>
       {`
         <Line sx={number} sy={number} ex={number} ey={number} />
-      `}
+      `.trim()}
     </code>
     <p>
       Line is drawn from starting points (sx & sy) to ending points (ex & ey).

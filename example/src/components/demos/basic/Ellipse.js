@@ -7,7 +7,7 @@ export const EllipseDemo = () => (
     <code>
       {`
         <Ellipse width={number} height={number} cx={number} cy={number} />
-      `}
+      `.trim()}
     </code>
     <p>
       Ellipse is drawn from center point (cx & cy). The cursor is then moved to

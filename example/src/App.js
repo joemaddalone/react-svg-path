@@ -2,7 +2,6 @@ import React from 'react';
 import DagSinglePath from './components/demos/dag/DagSinglePath';
 import DagTwoPaths from './components/demos/dag/DagTwoPaths';
 import DagNodes from './components/demos/dag/DagNodes';
-import { Circles } from './components/demos/path-combined/Circles';
 
 import {
   RectDemo,
@@ -71,9 +70,6 @@ const App = () => {
   ];
   return (
     <>
-      <div>
-        <Circles />
-      </div>
       <h2>react-svg-path</h2>
       <hr />
       <a href='https://github.com/joemaddalone/react-svg-path'>

@@ -32,14 +32,14 @@ export const PolylineDemo = () => (
           [70, 60],
           [40, 120]
         ];
-      `}
+      `.trim()}
       </code>
     </div>
     <div style={{ marginBottom: 15 }}>
       <code>
         {`
         <Polyline points={pointsAbsolute} />
-      `}
+      `.trim()}
       </code>
     </div>
     <Svg width={260} height={160}>
@@ -55,14 +55,14 @@ export const PolylineDemo = () => (
           [30, 60],
           [-30, 60]
         ];
-      `}
+      `.trim()}
       </code>
     </div>
     <div style={{ marginBottom: 15 }}>
       <code>
         {`
         <Polyline points={pointsRelative} relative />
-      `}
+      `.trim()}
       </code>
     </div>
     <Svg width={260} height={160}>

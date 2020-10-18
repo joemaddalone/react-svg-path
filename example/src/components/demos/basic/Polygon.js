@@ -13,15 +13,15 @@ export const PolygonDemo = () => (
     <h3>Polygon</h3>
     <code>
       {`
-      const points = [
-        [10, 60],
-        [40, 0],
-        [70, 60],
-        [40, 120]
-      ];
+const points = [
+  [10, 60],
+  [40, 0],
+  [70, 60],
+  [40, 120]
+];
 
-      <Polygon points={points} />
-      `}
+<Polygon points={points} />
+      `.trim()}
     </code>
     <p>
       Polygon accepts an array of [x, y] coordinates and then draws lines

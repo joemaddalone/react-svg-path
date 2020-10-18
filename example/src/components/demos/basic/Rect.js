@@ -7,7 +7,7 @@ export const RectDemo = () => (
     <code>
       {`
         <Rect width={number} height={number} cx={number} cy={number} />
-      `}
+      `.trim()}
     </code>
     <p>
       Rect is drawn from center point (cx & cy). The cursor is then moved to

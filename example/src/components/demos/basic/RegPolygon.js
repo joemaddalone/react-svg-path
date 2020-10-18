@@ -7,7 +7,7 @@ export const RegPolygonDemo = () => (
     <code>
       {`
         <RegPolygon size={number} sides={number} cx={number} cy={number} />
-      `}
+      `.trim()}
     </code>
     <p>
       RegPolygon is drawn from center point (cx & cy). The cursor is then moved

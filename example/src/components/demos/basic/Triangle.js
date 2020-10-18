@@ -7,7 +7,7 @@ export const TriangleDemo = () => (
     <code>
       {`
         <Triangle size={number} cx={number} cy={number} />
-      `}
+      `.trim()}
     </code>
     <p>
       Triangle draws an equilateral triangle from center point (cx & cy). The
