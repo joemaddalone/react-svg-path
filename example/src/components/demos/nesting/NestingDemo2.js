@@ -10,7 +10,8 @@ import {
   Polygon,
   Polyline,
   Square,
-  Rect
+  Rect,
+  Arc
 } from 'react-svg-path';
 import './NestingDemo2.css';
 
@@ -41,7 +42,7 @@ const NestingDemo2 = () => (
       Adding one or more shapes or even &lt;Text> to the end of any other shapes
       requires very little effort.
     </p>
-    <Svg width={200} height={140} className='nesting-example-2'>
+    <Svg width={200} height={200} className='nesting-example-2'>
       <Line sx={10} sy={25} ex={130} ey={25} stroke='#ccc'>
         <Circle size={15} fill='#ccc' />
       </Line>
@@ -61,6 +62,22 @@ const NestingDemo2 = () => (
         <Text dx={2} dy={5}>
           Line
         </Text>
+      </Line>
+
+      <Line sx={10} sy={150} ex={100} ey={150} stroke='red'>
+        <Arc
+          rx={10}
+          ry={10}
+          rotation={0}
+          arc={1}
+          sweep={0}
+          ex={175}
+          ey={150}
+          fill='none'
+          stroke='red'
+        >
+          <Circle size={15} fill='red' />
+        </Arc>
       </Line>
     </Svg>
     <div>
@@ -90,18 +107,18 @@ const NestingDemo2 = () => (
     </div>
     <p>
       This can be reversed to use the parent starting point with the{' '}
-      <em>inheritStart</em> prop.
+      <em>attach</em> prop.
     </p>
     <Svg width={200} height={45} className='nesting-example-2'>
       <Line sx={10} sy={25} ex={130} ey={25} stroke='#ccc'>
-        <Circle size={15} fill='#ccc' inheritStart />
+        <Circle size={15} fill='#ccc' attach='start' />
       </Line>
     </Svg>
     <div>
       <code>
         {`
 <Line sx={10} sy={25} ex={130} ey={25} stroke='#ccc'>
- <Circle size={15} fill='#ccc' inheritStart />
+ <Circle size={15} fill='#ccc' attach='start' />
 </Line>`.trim()}
       </code>
     </div>
@@ -111,7 +128,7 @@ const NestingDemo2 = () => (
         <Text dx={4} dy={5}>
           Polyline
         </Text>
-        <Circle size={10} fill='red' inheritStart />
+        <Circle size={10} fill='red' attach='start' />
       </Polyline>
     </Svg>
     <div>
@@ -121,7 +138,7 @@ const NestingDemo2 = () => (
   <Text dx={4} dy={5}>
     Polyline
   </Text>
-  <Circle size={10} fill='red' inheritStart />
+  <Circle size={10} fill='red' attach='start' />
 </Polyline>`.trim()}
       </code>
     </div>

@@ -11,3 +11,4 @@ export { PolylineDemo } from './Polyline';
 export { CubicDemo } from './Cubic';
 export { QuadDemo } from './Quad';
 export { LineDemo } from './Line';
+export { ArcDemo } from './Arc';

@@ -1,8 +1,8 @@
 import React from 'react';
 
-const determineStart = (childProps, sx, sy, ex, ey) => {
-  const { inheritStart, ...restOfChildProps} = childProps;
-  if (inheritStart) {
+const determineAttachment = (childProps, sx, sy, ex, ey) => {
+  const { attach = 'end', ...restOfChildProps} = childProps;
+  if (attach === 'start') {
     return {
       sx,
       sy,
@@ -31,7 +31,7 @@ const render = (pathMethod, componentProps, ex, ey, sx, sy, children) => {
       React.Children.map(children, (child, i) =>
         React.cloneElement(child, {
           key: i,
-          ...determineStart(child.props, ex, ey, sx, sy),
+          ...determineAttachment(child.props, ex, ey, sx, sy),
         })
       )
     ];

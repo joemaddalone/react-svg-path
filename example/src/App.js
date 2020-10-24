@@ -17,6 +17,7 @@ import {
   LineDemo,
   CubicDemo,
   QuadDemo,
+  ArcDemo,
 } from './components/demos/basic';
 import { Svg } from 'react-svg-path';
 import Pie from './components/demos/complex/Pie';
@@ -29,10 +30,13 @@ import NestingDemo3 from './components/demos/nesting/NestingDemo3';
 import './App.css';
 
 const App = () => {
-  const basicDemos = [
+  const primitives = [
     CubicDemo,
     QuadDemo,
     LineDemo,
+    ArcDemo,
+  ]
+  const basicShapes = [
     RectDemo,
     SquareDemo,
     TriangleDemo,
@@ -133,8 +137,23 @@ const App = () => {
       </p>
       <p>We have included a bunch of components for you.</p>
       <div className='basic-shapes'>
+        <h2 className='ui-header'>Primitives</h2>
+        {primitives.map((C, i) => (
+          <span key={i}>
+            <C />
+            <a
+              href={`https://github.com/joemaddalone/react-svg-path/blob/master/example/src/components/demos/basic/${C.displayName}.js`}
+              rel='noopener noreferrer'
+              target='_blank'
+            >
+              source
+            </a>
+          </span>
+        ))}
+      </div>
+      <div className='basic-shapes'>
         <h2 className='ui-header'>Basic Shapes</h2>
-        {basicDemos.map((C, i) => (
+        {basicShapes.map((C, i) => (
           <span key={i}>
             <C />
             <a
