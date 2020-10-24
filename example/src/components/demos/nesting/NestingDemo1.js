@@ -10,7 +10,7 @@ import {
   Square,
   Polyline,
   Segment,
-  Sector,
+  Sector
 } from 'react-svg-path';
 import './NestingDemo1.css';
 
@@ -21,22 +21,22 @@ const NestingDemo1 = () => (
       Since all of our shape components start and end in the center nesting
       multiple will result in all of them sharing the same center points.
     </p>
-    <Svg width={150} height={150} className='nesting-example-1'>
-      <RegPolygon size={120} sides={6} cx={75} cy={75}>
-        <Triangle size={105} />
-        <Circle size={60} />
+    <Svg width={200} height={200} className='nesting-example-1'>
+      <RegPolygon size={120} sides={4} cx={100} cy={100}>
+        <Circle size={55} />
         <Square size={60} />
+        <Circle size={25} cy={58} />
       </RegPolygon>
     </Svg>
     <div>
       <code>
         {`
-<RegPolygon size={120} sides={6} cx={75} cy={75}>
-  <Triangle size={105} /> // no need for cx or cy
-  <Circle size={60} />    // no need for cx or cy
-  <Square size={60} />    // no need for cx or cy
-</RegPolygon>`.trim()
-}
+<RegPolygon size={120} sides={4} cx={100} cy={100}>
+  <Circle size={55} /> // no need for cx or cy
+  <Square size={60} /> // no need for cx or cy
+  <Circle size={25} cy={58} /> // cx inherited, cy overwritten
+</RegPolygon>
+`.trim()}
       </code>
     </div>
   </>

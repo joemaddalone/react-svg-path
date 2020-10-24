@@ -65,17 +65,7 @@ const NestingDemo2 = () => (
       </Line>
 
       <Line sx={10} sy={150} ex={100} ey={150} stroke='red'>
-        <Arc
-          rx={10}
-          ry={10}
-          rotation={0}
-          arc={1}
-          sweep={0}
-          ex={175}
-          ey={150}
-          fill='none'
-          stroke='red'
-        >
+        <Arc rx={10} ry={10} ex={175} ey={150} fill='none' stroke='red'>
           <Circle size={15} fill='red' />
         </Arc>
       </Line>
@@ -93,7 +83,7 @@ const NestingDemo2 = () => (
   <Line ex={125} ey={70} stroke='green' />
   <Line ex={125} ey={80} stroke='green' />
 </Line>
-<Polyline points={genPolylineZag(100)} stroke='red' fill="none">
+<Polyline points={genPolylineZag(100)} stroke='red' fill='none'>
   <Text dx={2} dy={5}>
     Polyline
   </Text>
@@ -102,12 +92,18 @@ const NestingDemo2 = () => (
   <Text dx={2} dy={5}>
     Line
   </Text>
+</Line>
+<Line sx={10} sy={150} ex={100} ey={150} stroke='red'>
+  <Arc rx={10} ry={10} ex={175} ey={150} fill='none' stroke='red'>
+    <Circle size={15} fill='red' />
+  </Arc>
 </Line>`.trim()}
       </code>
     </div>
     <p>
       This can be reversed to use the parent starting point with the{' '}
-      <em>attach</em> prop.
+      <em>attach</em> prop. The attach prop is set to `end` by default and can
+      be set to `start`.
     </p>
     <Svg width={200} height={45} className='nesting-example-2'>
       <Line sx={10} sy={25} ex={130} ey={25} stroke='#ccc'>

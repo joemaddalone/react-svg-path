@@ -229,7 +229,6 @@ const App = () => {
         </p>
         <NestingDemo1 />
         <NestingDemo2 />
-        <NestingDemo3 />
       </div>
     </>
   );

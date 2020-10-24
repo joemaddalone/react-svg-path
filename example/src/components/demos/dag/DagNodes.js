@@ -4,16 +4,6 @@ import dagSetup from './dagSetup';
 
 const dag = dagSetup();
 
-// const Square = ({ x, y, size, ...rest }) => {
-//   const path = new Path()
-//     .moveTo(x, y)
-//     .right(size)
-//     .down(size)
-//     .left(size)
-//     .close();
-//   return path.toComponent(rest);
-// };
-
 const DagNodes = () => {
   const createConnectors = () => {
     const { edges } = dag;
@@ -39,7 +29,7 @@ const DagNodes = () => {
             key={index}
             cx={x}
             cy={y}
-            size={width*1.4}
+            size={width}
             style={{ fill: 'rebeccapurple', cursor: 'pointer' }}
             onClick={() => alert(`clicked node #${index}`)}
           />
