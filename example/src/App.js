@@ -33,10 +33,10 @@ const App = () => {
   const primitives = [
     CubicDemo,
     QuadDemo,
-    LineDemo,
     ArcDemo,
   ]
   const basicShapes = [
+    LineDemo,
     RectDemo,
     SquareDemo,
     TriangleDemo,
@@ -137,21 +137,6 @@ const App = () => {
       </p>
       <p>We have included a bunch of components for you.</p>
       <div className='basic-shapes'>
-        <h2 className='ui-header'>Primitives</h2>
-        {primitives.map((C, i) => (
-          <span key={i}>
-            <C />
-            <a
-              href={`https://github.com/joemaddalone/react-svg-path/blob/master/example/src/components/demos/basic/${C.displayName}.js`}
-              rel='noopener noreferrer'
-              target='_blank'
-            >
-              source
-            </a>
-          </span>
-        ))}
-      </div>
-      <div className='basic-shapes'>
         <h2 className='ui-header'>Basic Shapes</h2>
         {basicShapes.map((C, i) => (
           <span key={i}>
@@ -229,6 +214,22 @@ const App = () => {
         </p>
         <NestingDemo1 />
         <NestingDemo2 />
+      </div>
+
+      <div className='basic-shapes'>
+        <h2 className='ui-header'>Curve Primitives</h2>
+        {primitives.map((C, i) => (
+          <span key={i}>
+            <C />
+            <a
+              href={`https://github.com/joemaddalone/react-svg-path/blob/master/example/src/components/demos/basic/${C.displayName}.js`}
+              rel='noopener noreferrer'
+              target='_blank'
+            >
+              source
+            </a>
+          </span>
+        ))}
       </div>
     </>
   );

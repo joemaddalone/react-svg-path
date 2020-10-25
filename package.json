@@ -55,6 +55,6 @@
     "dist"
   ],
   "dependencies": {
-    "@joemaddalone/path": "^1.0.1"
+    "@joemaddalone/path": "^1.0.2"
   }
 }

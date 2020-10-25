@@ -14,6 +14,7 @@ export { Cubic } from './components/Cubic';
 export { Quad } from './components/Quad';
 export { Arc } from './components/Arc';
 export { Text } from './components/Text';
+export { Group } from './components/Group';
 export { Svg } from './components/Svg';
 export { PathMerge } from './components/PathMerge';
 export default Path;

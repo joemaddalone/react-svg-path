@@ -8,15 +8,39 @@ export const Quad = ({
   cy,
   ex,
   ey,
+  T = [],
+  t = [],
   children,
   relative = false,
   ...rest
 }) => {
+  let endX = ex;
+  let endY = ey;
   const p = new Path().moveTo(sx, sy);
-  const pathMethod = p.qCurve.bind(p, cx, cy, ex, ey, relative);
-  return render(pathMethod, rest, sx, sy, ex, ey, children);
+  const pathMethod = () => {
+    const cmd = p.qCurve.call(p, cx, cy, ex, ey, relative);
+    if (T.length) {
+      T.forEach((tcmd) => cmd.T.call(p, tcmd[0], tcmd[1]));
+    }
+    if (t.length) {
+      t.forEach((tcmd) => cmd.t.call(p, tcmd[0], tcmd[1]));
+    }
+    return cmd;
+  };
+  if (T.length) {
+    endX = T[T.length - 1][0];
+    endY = T[T.length - 1][1];
+  }
+  return render(pathMethod, rest, sx, sy, endX, endY, children);
 };
 
-Quad.path = ({ sx, sy, cx, cy, ex, ey, relative = false }) => {
-  return new Path().moveTo(sx, sy).qCurve(sx, sy, cx, cy, ex, ey, relative);
+Quad.path = ({ sx, sy, cx, cy, ex, ey, T = [], t = [], relative = false }) => {
+  const p = new Path().moveTo(sx, sy).qCurve(sx, sy, cx, cy, ex, ey, relative);
+  if (T.length) {
+    T.forEach((tcmd) => p.T(tcmd[0], tcmd[1]));
+  }
+  if (t.length) {
+    t.forEach((tcmd) => p.t(tcmd[0], tcmd[1]));
+  }
+  return p;
 };
