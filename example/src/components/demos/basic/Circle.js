@@ -1,19 +1,23 @@
 import React from 'react';
-import Path from 'react-svg-path';
-import Svg from '../../helpers/Svg';
+import { Circle, Svg } from 'react-svg-path';
 
-export const Circle = () => (
+export const CircleDemo = () => (
   <>
-    <h3 className='ui-header'>.circle(size, cx, cy)</h3>
+    <h3 className='ui-header'>Circle</h3>
+    <code>
+      {`
+        <Circle size={number} cx={number} cy={number} />
+      `.trim()}
+    </code>
     <p>
-      .circle is drawn from center points (cx & cy). The cursor is then moved to
+      Circle is drawn from center points (cx & cy). The cursor is then moved to
       the center points.
     </p>
     <Svg width={140} height={120}>
-      <path d={new Path().circle(95, 50, 50).toString()} />
-      <path d={new Path().circle(10, 50, 50).toString()} className='filled' />
+      <Circle size={95} cx={50} cy={50} />
+      <Circle size={10} cx={50} cy={50} className='filled' />
     </Svg>
   </>
 );
 
-Circle.displayName = 'Circle'
+CircleDemo.displayName = 'CircleDemo';

@@ -1,6 +1,5 @@
 import React from 'react';
-import Path from 'react-svg-path';
-import Svg from '../../helpers/Svg';
+import Path, { Svg } from 'react-svg-path';
 
 const Gear = ({ size, cx, cy }) => {
   const rect = new Path().square(size, cx, cy);

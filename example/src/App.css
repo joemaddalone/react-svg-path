@@ -1,5 +1,4 @@
 body {
-
 }
 
 #root {
@@ -19,6 +18,12 @@ path {
   shape-rendering: geometricPrecision;
 }
 
+path.merged {
+  fill: none;
+  stroke-width: 1;
+  stroke: #222;
+}
+
 .dag path {
   fill: none;
   stroke-width: 0.5;
@@ -31,7 +36,8 @@ path {
   shape-rendering: geometricPrecision;
 }
 
-.basic-shapes svg, .complex svg {
+.basic-shapes svg,
+.complex svg {
   border: 0;
 }
 
@@ -40,16 +46,18 @@ path {
   stroke-width: 0;
 }
 
-.basic-shapes a, .complex a {
+.basic-shapes a,
+.complex a {
   display: block;
   margin-bottom: 10px;
 }
 
 .complex path {
-  stroke-width: none
+  stroke-width: none;
 }
 
-p, li {
+p,
+li {
   font-size: 16px;
   line-height: 1.4;
   margin-top: 10px;
@@ -70,4 +78,11 @@ code {
 
 path {
   shape-rendering: geometricPrecision;
+}
+
+code {
+  margin-left: 0;
+  white-space: pre;
+  display: block;
+  unicode-bidi: embed;
 }

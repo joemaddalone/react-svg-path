@@ -1,19 +1,23 @@
 import React from 'react';
-import Path from 'react-svg-path';
-import Svg from '../../helpers/Svg';
+import { Square, Svg } from 'react-svg-path';
 
-export const Square = () => (
+export const SquareDemo = () => (
   <>
-    <h3 className='ui-header'>.square(size, cx, cy)</h3>
+    <h3>Square</h3>
+    <code>
+      {`
+        <Square size={number} cx={number} cy={number} />
+      `.trim()}
+    </code>
     <p>
-      .square is drawn from center point (cx & cy). The cursor is then moved to
+      Square is drawn from center point (cx & cy). The cursor is then moved to
       the center point.
     </p>
     <Svg width={140} height={120}>
-      <path d={new Path().square(100, 50, 50).toString()} />
-      <path d={new Path().square(10, 50, 50).toString()} className='filled' />
+      <Square size={100} cx={50} cy={50} />
+      <Square size={10} cx={50} cy={50} className='filled' />
     </Svg>
   </>
 );
 
-Square.displayName = 'Square'
+SquareDemo.displayName = 'Square'

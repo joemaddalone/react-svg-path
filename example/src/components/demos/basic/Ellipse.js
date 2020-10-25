@@ -1,22 +1,24 @@
 import React from 'react';
-import Path from 'react-svg-path';
-import Svg from '../../helpers/Svg';
+import { Ellipse, Svg } from 'react-svg-path';
 
-export const Ellipse = () => (
+export const EllipseDemo = () => (
   <>
-    <h3 className='ui-header'>.ellipse(width, height, cx, cy)</h3>
+    <h3>Ellipse</h3>
+    <code>
+      {`
+        <Ellipse width={number} height={number} cx={number} cy={number} />
+      `.trim()}
+    </code>
     <p>
-      .ellipse is drawn from center point (cx & cy). The cursor is then moved to
+      Ellipse is drawn from center point (cx & cy). The cursor is then moved to
       the center point.
     </p>
     <Svg width={155} height={120}>
-      <path d={new Path().ellipse(150, 75, 80, 50).toString()} />
-      <path
-        d={new Path().ellipse(15, 7.5, 80, 50).toString()}
-        className='filled'
+      <Ellipse width={150} height={75} cx={80} cy={50} />
+      <Ellipse width={15} height={7.5} cx={80} cy={50} className='filled'
       />
     </Svg>
   </>
 );
 
-Ellipse.displayName = 'Ellipse'
+EllipseDemo.displayName = 'Ellipse'

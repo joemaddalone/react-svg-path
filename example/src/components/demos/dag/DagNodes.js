@@ -1,29 +1,8 @@
 import React from 'react';
-import Path from 'react-svg-path';
+import Path, { Circle, Square, Svg } from 'react-svg-path';
 import dagSetup from './dagSetup';
-import Svg from '../../helpers/Svg';
 
 const dag = dagSetup();
-
-const Square = ({ x, y, size, ...rest }) => {
-  const path = new Path()
-    .moveTo(x, y)
-    .right(size)
-    .down(size)
-    .left(size)
-    .close();
-  return path.toComponent(rest);
-};
-
-const Circle = ({ x, y, radius, fill, ...rest }) => {
-  const path = new Path()
-    .M(x, y)
-    .m(-radius, 0)
-    .a(radius, radius, 0, 1, 0, radius * 2, 0)
-    .a(radius, radius, 0, 1, 0, -(radius * 2), 0)
-    .style({ fill });
-  return path.toComponent(rest);
-};
 
 const DagNodes = () => {
   const createConnectors = () => {
@@ -48,8 +27,8 @@ const DagNodes = () => {
         return (
           <Square
             key={index}
-            x={x - width / 2}
-            y={y - width / 2}
+            cx={x}
+            cy={y}
             size={width}
             style={{ fill: 'rebeccapurple', cursor: 'pointer' }}
             onClick={() => alert(`clicked node #${index}`)}
@@ -60,9 +39,9 @@ const DagNodes = () => {
         return (
           <Circle
             key={index}
-            x={x}
-            y={y}
-            radius={width / 2}
+            cx={x}
+            cy={y}
+            size={width}
             style={{ fill: 'purple', cursor: 'pointer' }}
             onClick={() => alert(`clicked node #${index + 5}`)}
           />

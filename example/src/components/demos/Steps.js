@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Path from 'react-svg-path';
-import Svg from '../Svg';
+import Path, { Svg } from 'react-svg-path';
 
 const Steps = ({ width, height, x, y, data, ...rest }) => {
   const [currentPath, setCurrentPath] = useState([]);

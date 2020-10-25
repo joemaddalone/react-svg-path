@@ -1,19 +1,23 @@
 import React from 'react';
-import Path from 'react-svg-path';
-import Svg from '../../helpers/Svg';
+import { Triangle, Svg } from 'react-svg-path';
 
-export const Triangle = () => (
+export const TriangleDemo = () => (
   <>
-    <h3 className='ui-header'>.triangle(size, cx, cy)</h3>
+    <h3>Triangle</h3>
+    <code>
+      {`
+        <Triangle size={number} cx={number} cy={number} />
+      `.trim()}
+    </code>
     <p>
-      .triangle draws an equilateral triangle from center point (cx & cy). The
+      Triangle draws an equilateral triangle from center point (cx & cy). The
       cursor is then moved to the center point.
     </p>
     <Svg width={140} height={120}>
-      <path d={new Path().triangle(95, 50, 60).toString()} />
-      <path d={new Path().triangle(10, 50, 60).toString()} className='filled' />
+      <Triangle size={95} cx={50} cy={60} />
+      <Triangle size={10} cx={50} cy={60} className='filled' />
     </Svg>
   </>
 );
 
-Triangle.displayName = 'Triangle'
+TriangleDemo.displayName = 'Triangle'

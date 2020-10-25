@@ -1,22 +1,23 @@
 import React from 'react';
-import Path from 'react-svg-path';
-import Svg from '../../helpers/Svg';
+import { RegPolygon, Svg } from 'react-svg-path';
 
-export const RegPolygon = () => (
+export const RegPolygonDemo = () => (
   <>
-    <h3 className='ui-header'>.regPolygon(size, sides, cx, cy)</h3>
+    <h3>RegPolygon</h3>
+    <code>
+      {`
+        <RegPolygon size={number} sides={number} cx={number} cy={number} />
+      `.trim()}
+    </code>
     <p>
-      .regPolygon is drawn from center point (cx & cy). The cursor is then moved
+      RegPolygon is drawn from center point (cx & cy). The cursor is then moved
       to the center point.
     </p>
     <Svg width={140} height={120}>
-      <path d={new Path().regPolygon(100, 6, 50, 50).toString()} />
-      <path
-        d={new Path().regPolygon(10, 6, 50, 50).toString()}
-        className='filled'
-      />
+      <RegPolygon size={100} sides={6} cx={50} cy={50} />
+      <RegPolygon size={10} sides={6} cx={50} cy={50} className='filled' />
     </Svg>
   </>
 );
 
-RegPolygon.displayName = 'RegPolygon'
+RegPolygonDemo.displayName = 'RegPolygon';

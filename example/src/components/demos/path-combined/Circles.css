@@ -1,0 +1,14 @@
+.p-gray {
+  stroke: #ddd;
+}
+
+
+.example-components path {
+    stroke-width: 0.5;
+    shape-rendering: geometricPrecision;
+}
+
+.example-components text {
+    font-size: 8px;
+    fill: blue;
+}

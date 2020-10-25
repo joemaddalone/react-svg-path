@@ -10,37 +10,33 @@ npm install --save react-svg-path
 
 ```jsx
 import React from 'react';
-import Path from 'react-svg-path';
+import Path, {Svg}  from 'react-svg-path';
 
-const Square = ({ x, y, size }) => {
+const CustomSquare = ({ x, y, size }) => {
   const path = new Path()
     .moveTo(x, y) // move pen to x, y
     .right(size) // draw line right to relative "size" px
     .down(size) // draw line down to relative "size" px
     .left(size) // draw line left to relative "size" px
     .close() // draw line back to first point
-    .fill('green'); // set fill color
-  return path.toComponent();
+  return path.toComponent({ fill: 'green'});
 };
 
 const App = () => {
   const width = 800;
   const height = 800;
   return (
-    <svg
-      xmlns='http://www.w3.org/2000/svg'
+    <Svg
       width={width}
       height={height}
-      viewBox={`0 0 ${width} ${height}`}
-      preserveAspectRatio='none'
     >
-      <Square x={50} y={50} size={50} />
+      <CustomSquare x={50} y={50} size={50} />
     </svg>
   );
 };
 ```
 
-## [demos](https://joemaddalone.github.io/react-svg-path/)
+### [demos & documentation](https://joemaddalone.github.io/react-svg-path/)
 
 # Getting started
 
@@ -70,8 +66,38 @@ This library adds one additional rendering method to `path`.
 - **toComponent**(_props_)
   - returns a jsx function including attributes and props.
 
+All of the functionality of https://github.com/joemaddalone/path is always available via `import Path from 'react-svg-path`
 
-### [demos](https://joemaddalone.github.io/react-svg-path/)
+Please read the docs on https://github.com/joemaddalone/path
+
+### Components
+
+Writing path commands via the library makes creating paths super simple and intuitive.  However it can seem like overkill for really common patterns you may need.  react-svg-path includes a number of components to allow for a declarative interface for generating the paths you need.
+
+The following components are available
+
+* `<Arc {...sx, sy, rx, ry, rotation, arc, sweep, ex, ey} />`
+* `<Circle {...cx, cy, size} />`
+* `<Cubic {...sx, sy, cx1, cy1, cx2, cy2, ex, ey} />`
+* `<Ellipse  {...cx, cy, width, height} />`
+* `<Group />`
+* `<Line {...sx, sy, ex, ey} />`
+* `<Polygon points={points} />`
+* `<Polyline points={points} />`
+* `<Quad {...sx, sy, cx1, cy1, ex, ey} />`
+* `<Rect  {...cx, cy, width, height} />`
+* `<RegPolygon {...cx, cy, size, sides} />`
+* `<Sector {...cx, cy, radius, startAngle, endAngle} />`
+* `<Segment {...cx, cy, radius, startAngle, endAngle} />`
+* `<Square {...cx, cy, size} />`
+* `<Svg {...width, height} />`
+* `<Text />`
+* `<Triangle {...cx, cy, size} />`
+
+
+
+
+### [demos & documentation](https://joemaddalone.github.io/react-svg-path/)
 
 ## License
 

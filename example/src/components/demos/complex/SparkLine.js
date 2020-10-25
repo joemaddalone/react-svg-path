@@ -1,6 +1,5 @@
 import React from 'react';
-import Path from 'react-svg-path';
-import Svg from '../../helpers/Svg';
+import Path, { Svg } from 'react-svg-path';
 
 const Grid = ({ x, y, width, height, cols, rows, close = true }) => {
   const lines = new Path().M(x, y);
