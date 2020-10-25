@@ -1,17 +1,9 @@
 import React from 'react';
 import {
   Svg,
-  PathMerge,
-  Line,
   RegPolygon,
   Circle,
-  Text,
-  Triangle,
   Square,
-  Polyline,
-  Segment,
-  Sector,
-  Group
 } from 'react-svg-path';
 import './NestingDemo1.css';
 

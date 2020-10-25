@@ -4,8 +4,8 @@ import render from '../utils/render';
 export const Quad = ({
   sx,
   sy,
-  cx,
-  cy,
+  cx1,
+  cy1,
   ex,
   ey,
   T = [],
@@ -18,7 +18,8 @@ export const Quad = ({
   let endY = ey;
   const p = new Path().moveTo(sx, sy);
   const pathMethod = () => {
-    const cmd = p.qCurve.call(p, cx, cy, ex, ey, relative);
+    // eslint-disable-next-line no-useless-call
+    const cmd = p.qCurve.call(p, cx1, cy1, ex, ey, relative);
     if (T.length) {
       T.forEach((tcmd) => cmd.T.call(p, tcmd[0], tcmd[1]));
     }
@@ -34,8 +35,20 @@ export const Quad = ({
   return render(pathMethod, rest, sx, sy, endX, endY, children);
 };
 
-Quad.path = ({ sx, sy, cx, cy, ex, ey, T = [], t = [], relative = false }) => {
-  const p = new Path().moveTo(sx, sy).qCurve(sx, sy, cx, cy, ex, ey, relative);
+Quad.path = ({
+  sx,
+  sy,
+  cx1,
+  cy1,
+  ex,
+  ey,
+  T = [],
+  t = [],
+  relative = false
+}) => {
+  const p = new Path()
+    .moveTo(sx, sy)
+    .qCurve(sx, sy, cx1, cy1, ex, ey, relative);
   if (T.length) {
     T.forEach((tcmd) => p.T(tcmd[0], tcmd[1]));
   }

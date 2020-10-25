@@ -1,12 +1,10 @@
 import React from 'react';
 import {
   Svg,
-  PathMerge,
   Line,
   RegPolygon,
   Circle,
   Text,
-  Triangle,
   Square
 } from 'react-svg-path';
 import './NestingDemo3.css';

@@ -5,7 +5,7 @@ export const Polyline = ({ points, relative, children, ...rest }) => {
   const p = new Path();
   const pathMethod = p.polyline.bind(p, points, relative);
   const [sx, sy] = points[0];
-  const [ex, ey] = points[points.length -1];
+  const [ex, ey] = points[points.length - 1];
   return render(pathMethod, rest, sx, sy, ex, ey, children);
 };
 

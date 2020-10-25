@@ -19,7 +19,7 @@ describe('Path', () => {
     { method: 'lineTo', command: 'L' },
     { method: 'moveTo', command: 'M' },
     { method: 'horizontalTo', command: 'H' },
-    { method: 'verticalTo', command: 'V' },
+    { method: 'verticalTo', command: 'V' }
   ].forEach(({ method, command }) => {
     it(`should create absolute version of ${method} containing ${command}`, () => {
       path[method](0, 0);

@@ -25,8 +25,6 @@ import Donut from './components/demos/complex/Donut';
 import SparkLine from './components/demos/complex/SparkLine';
 import NestingDemo1 from './components/demos/nesting/NestingDemo1';
 import NestingDemo2 from './components/demos/nesting/NestingDemo2';
-import NestingDemo3 from './components/demos/nesting/NestingDemo3';
-
 import './App.css';
 
 const App = () => {

@@ -1,25 +1,14 @@
 import React from 'react';
 import {
   Svg,
-  PathMerge,
   Line,
-  RegPolygon,
   Circle,
   Text,
-  Triangle,
-  Polygon,
   Polyline,
   Square,
-  Rect,
   Arc
 } from 'react-svg-path';
 import './NestingDemo2.css';
-
-const points = [
-  [210, 25],
-  [270, 25],
-  [240, 50]
-];
 
 const genPolylineZag = (centerY) => {
   const ypoints = Array.from({ length: 10 }).map((p, i) => {
