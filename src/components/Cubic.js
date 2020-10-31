@@ -14,7 +14,7 @@ export const Cubic = ({
   s = [],
   children,
   relative = false,
-  ...rest
+  ...attributes
 }) => {
   let endX = ex;
   let endY = ey;
@@ -34,7 +34,15 @@ export const Cubic = ({
     endX = S[S.length - 1][0];
     endY = S[S.length - 1][1];
   }
-  return render(pathMethod, rest, sx, sy, endX, endY, children);
+  return render({
+    pathMethod,
+    attributes,
+    ex: sx,
+    ey: sy,
+    sx: endX,
+    sy: endY,
+    children
+  });
 };
 
 Cubic.path = ({

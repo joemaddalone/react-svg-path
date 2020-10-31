@@ -12,7 +12,7 @@ export const Quad = ({
   t = [],
   children,
   relative = false,
-  ...rest
+  ...attributes
 }) => {
   let endX = ex;
   let endY = ey;
@@ -32,7 +32,15 @@ export const Quad = ({
     endX = T[T.length - 1][0];
     endY = T[T.length - 1][1];
   }
-  return render(pathMethod, rest, sx, sy, endX, endY, children);
+  return render({
+    pathMethod,
+    attributes,
+    ex: sx,
+    ey: sy,
+    sx: endX,
+    sy: endY,
+    children
+  });
 };
 
 Quad.path = ({

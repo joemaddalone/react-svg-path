@@ -1,13 +1,13 @@
 import React from 'react';
 import attach from './attach';
 
-const render = ({ pathMethod, attributes, ex, ey, sx, sy, children }) => {
+const merge = (pathMethod, componentProps, ex, ey, sx, sy, children) => {
   if (!children) {
-    const { inheritStart, ...restOfComponentProps } = attributes;
+    const { inheritStart, ...restOfComponentProps } = componentProps;
     return pathMethod().toComponent(restOfComponentProps);
   } else {
     return [
-      pathMethod().toComponent({ ...attributes, key: -1 }),
+      pathMethod().toComponent({ ...componentProps, key: -1 }),
       React.Children.map(children, (child, i) =>
         React.cloneElement(child, {
           key: i,
@@ -18,4 +18,4 @@ const render = ({ pathMethod, attributes, ex, ey, sx, sy, children }) => {
   }
 };
 
-export default render;
+export default merge;

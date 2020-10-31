@@ -8,11 +8,19 @@ export const Line = ({
   ey,
   relative = false,
   children,
-  ...rest
+  ...attributes
 }) => {
   const p = new Path().moveTo(sx, sy);
   const pathMethod = p.lineTo.bind(p, ex, ey, relative);
-  return render(pathMethod, rest, sx, sy, ex, ey, children);
+  return render({
+    pathMethod,
+    attributes,
+    ex: sx,
+    ey: sy,
+    sx: ex,
+    sy: ey,
+    children
+  });
 };
 
 Line.path = ({ sx, sy, ex, ey, relative = false }) =>

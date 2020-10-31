@@ -8,11 +8,19 @@ export const Sector = ({
   startAngle,
   endAngle,
   children,
-  ...rest
+  ...attributes
 }) => {
   const p = new Path();
   const pathMethod = p.sector.bind(p, cx, cy, radius, startAngle, endAngle);
-  return render(pathMethod, rest, cx, cy, cx, cy, children);
+  return render({
+    pathMethod,
+    attributes,
+    ex: cx,
+    ey: cy,
+    sx: cx,
+    sy: cy,
+    children
+  });
 };
 
 Sector.path = ({ cx, cy, radius, startAngle, endAngle, ...rest }) =>

@@ -13,7 +13,7 @@ export const Arc = ({
   ey,
   children,
   relative = false,
-  ...rest
+  ...attributes
 }) => {
   const p = new Path().moveTo(sx, sy);
   const pathMethod = p.arc.bind(
@@ -27,7 +27,15 @@ export const Arc = ({
     ey,
     relative
   );
-  return render(pathMethod, rest, sx, sy, ex, ey, children);
+  return render({
+    pathMethod,
+    attributes,
+    ex: sx,
+    ey: sy,
+    sx: ex,
+    sy: ey,
+    children
+  });
 };
 
 Arc.path = ({
