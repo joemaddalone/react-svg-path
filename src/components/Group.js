@@ -1,8 +1,8 @@
 import React from 'react';
 
-export const Group = ({ children, sx, sy, cx, cy, ex, ey, ...rest }) => {
+export const Group = ({ children, sx, sy, cx, cy, ex, ey, ...attributes }) => {
   return (
-    <g {...rest}>
+    <g {...attributes}>
       {React.Children.map(children, (child, i) =>
         React.cloneElement(child, {
           key: i,
