@@ -22,6 +22,3 @@ export const Sector = ({
     children
   });
 };
-
-Sector.path = ({ cx, cy, radius, startAngle, endAngle, ...rest }) =>
-  new Path().sector(cx, cy, radius, startAngle, endAngle);

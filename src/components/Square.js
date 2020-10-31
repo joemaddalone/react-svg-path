@@ -14,5 +14,3 @@ export const Square = ({ size, cx, cy, children, ...attributes }) => {
     children
   });
 };
-
-Square.path = ({ size, cx, cy }) => new Path().square(size, cx, cy);

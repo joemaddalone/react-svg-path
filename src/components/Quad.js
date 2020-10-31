@@ -42,26 +42,3 @@ export const Quad = ({
     children
   });
 };
-
-Quad.path = ({
-  sx,
-  sy,
-  cx1,
-  cy1,
-  ex,
-  ey,
-  T = [],
-  t = [],
-  relative = false
-}) => {
-  const p = new Path()
-    .moveTo(sx, sy)
-    .qCurve(sx, sy, cx1, cy1, ex, ey, relative);
-  if (T.length) {
-    T.forEach((tcmd) => p.T(tcmd[0], tcmd[1]));
-  }
-  if (t.length) {
-    t.forEach((tcmd) => p.t(tcmd[0], tcmd[1]));
-  }
-  return p;
-};

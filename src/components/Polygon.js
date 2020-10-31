@@ -8,5 +8,3 @@ export const Polygon = ({ points, relative, children, ...attributes }) => {
   const [ex, ey] = points[points.length - 1];
   return render({ pathMethod, attributes, sx, sy, ex, ey, children });
 };
-
-Polygon.path = ({ points, relative }) => new Path().polygon(points, relative);

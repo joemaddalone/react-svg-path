@@ -14,6 +14,3 @@ export const Ellipse = ({ width, height, cx, cy, children, ...attributes }) => {
     children
   });
 };
-
-Ellipse.path = ({ width, height, cx, cy }) =>
-  new Path().ellipse(width, height, cx, cy);

@@ -14,5 +14,3 @@ export const Triangle = ({ size, cx, cy, children, ...attributes }) => {
     children
   });
 };
-
-Triangle.path = ({ size, cx, cy }) => new Path().triangle(size, cx, cy);

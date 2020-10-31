@@ -22,6 +22,3 @@ export const Segment = ({
     children
   });
 };
-
-Segment.path = ({ cx, cy, radius, startAngle, endAngle, ...rest }) =>
-  new Path().segment(cx, cy, radius, startAngle, endAngle);

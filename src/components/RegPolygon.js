@@ -21,6 +21,3 @@ export const RegPolygon = ({
     children
   });
 };
-
-RegPolygon.path = ({ size, sides, cx, cy }) =>
-  new Path().regPolygon(size, sides, cx, cy);

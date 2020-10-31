@@ -16,5 +16,3 @@ export const Polyline = ({ points, relative, children, ...attributes }) => {
     children
   });
 };
-
-Polyline.path = ({ points, relative }) => new Path().polygon(points, relative);

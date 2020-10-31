@@ -22,6 +22,3 @@ export const Line = ({
     children
   });
 };
-
-Line.path = ({ sx, sy, ex, ey, relative = false }) =>
-  new Path().moveTo(sx, sy).lineTo(ex, ey, relative);

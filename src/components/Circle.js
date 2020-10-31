@@ -14,7 +14,3 @@ export const Circle = ({ size, cx, cy, children, ...attributes }) => {
     children
   });
 };
-
-Circle.path = ({ size, cx, cy }) => {
-  return new Path().circle(size, cx, cy);
-};

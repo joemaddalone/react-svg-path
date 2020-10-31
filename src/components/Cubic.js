@@ -44,28 +44,3 @@ export const Cubic = ({
     children
   });
 };
-
-Cubic.path = ({
-  sx,
-  sy,
-  cx1,
-  cy1,
-  cx2,
-  cy2,
-  ex,
-  ey,
-  S = [],
-  s = [],
-  relative = false
-}) => {
-  const p = new Path()
-    .moveTo(sx, sy)
-    .sCurve(cx1, cy1, cx2, cy2, ex, ey, relative);
-  if (S.length) {
-    S.forEach((scmd) => p.S(scmd[0], scmd[1]));
-  }
-  if (s.length) {
-    s.forEach((scmd) => p.s(scmd[0], scmd[1]));
-  }
-  return p;
-};

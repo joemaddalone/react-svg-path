@@ -37,20 +37,3 @@ export const Arc = ({
     children
   });
 };
-
-Arc.path = ({
-  sx,
-  sy,
-  rx,
-  ry,
-  rotation = 0,
-  arc = 0,
-  sweep = 0,
-  ex,
-  ey,
-  relative = false
-}) => {
-  return new Path()
-    .moveTo(sx, sy)
-    .arc(rx, ry, rotation, arc, sweep, ex, ey, relative);
-};

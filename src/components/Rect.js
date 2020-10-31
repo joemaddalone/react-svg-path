@@ -14,6 +14,3 @@ export const Rect = ({ width, height, cx, cy, children, ...attributes }) => {
     children
   });
 };
-
-Rect.path = ({ width, height, cx, cy }) =>
-  new Path().rect(width, height, cx, cy);
