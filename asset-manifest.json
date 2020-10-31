@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/react-svg-path/static/css/main.7ae63e88.chunk.css",
-    "main.js": "/react-svg-path/static/js/main.f1ab7920.chunk.js",
-    "main.js.map": "/react-svg-path/static/js/main.f1ab7920.chunk.js.map",
+    "main.css": "/react-svg-path/static/css/main.9dfc943e.chunk.css",
+    "main.js": "/react-svg-path/static/js/main.a6ca6b36.chunk.js",
+    "main.js.map": "/react-svg-path/static/js/main.a6ca6b36.chunk.js.map",
     "runtime-main.js": "/react-svg-path/static/js/runtime-main.dd07729f.js",
     "runtime-main.js.map": "/react-svg-path/static/js/runtime-main.dd07729f.js.map",
     "static/js/2.e4022428.chunk.js": "/react-svg-path/static/js/2.e4022428.chunk.js",
     "static/js/2.e4022428.chunk.js.map": "/react-svg-path/static/js/2.e4022428.chunk.js.map",
     "index.html": "/react-svg-path/index.html",
-    "precache-manifest.017f455503bcbfb3503a23ab01ba20ec.js": "/react-svg-path/precache-manifest.017f455503bcbfb3503a23ab01ba20ec.js",
+    "precache-manifest.2b34f4c36f6385d76656ba1dd00a6680.js": "/react-svg-path/precache-manifest.2b34f4c36f6385d76656ba1dd00a6680.js",
     "service-worker.js": "/react-svg-path/service-worker.js",
-    "static/css/main.7ae63e88.chunk.css.map": "/react-svg-path/static/css/main.7ae63e88.chunk.css.map",
+    "static/css/main.9dfc943e.chunk.css.map": "/react-svg-path/static/css/main.9dfc943e.chunk.css.map",
     "static/js/2.e4022428.chunk.js.LICENSE.txt": "/react-svg-path/static/js/2.e4022428.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.dd07729f.js",
     "static/js/2.e4022428.chunk.js",
-    "static/css/main.7ae63e88.chunk.css",
-    "static/js/main.f1ab7920.chunk.js"
+    "static/css/main.9dfc943e.chunk.css",
+    "static/js/main.a6ca6b36.chunk.js"
   ]
 }
