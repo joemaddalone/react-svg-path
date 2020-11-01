@@ -17,7 +17,8 @@ import {
   LineDemo,
   CubicDemo,
   QuadDemo,
-  ArcDemo
+  ArcDemo,
+  StarDemo,
 } from './components/demos/basic';
 import { Svg } from 'react-svg-path';
 import Pie from './components/demos/complex/Pie';
@@ -41,7 +42,8 @@ const App = () => {
     SectorDemo,
     SegmentDemo,
     PolylineDemo,
-    PolygonDemo
+    PolygonDemo,
+    StarDemo
   ];
 
   const pieData = [
