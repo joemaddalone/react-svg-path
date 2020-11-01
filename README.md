@@ -85,11 +85,13 @@ The following components are available
 * `<Polygon points={points} />`
 * `<Polyline points={points} />`
 * `<Quad {...sx, sy, cx1, cy1, ex, ey} />`
+* `<RadialLines  {...innerSize, outerSize, points, cx, cy} />`
 * `<Rect  {...cx, cy, width, height} />`
 * `<RegPolygon {...cx, cy, size, sides} />`
 * `<Sector {...cx, cy, radius, startAngle, endAngle} />`
 * `<Segment {...cx, cy, radius, startAngle, endAngle} />`
 * `<Square {...cx, cy, size} />`
+* `<Star  {...size, points, cx, cy, innerRadius} />`
 * `<Svg {...width, height} />`
 * `<Text />`
 * `<Triangle {...cx, cy, size} />`
