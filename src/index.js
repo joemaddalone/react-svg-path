@@ -7,6 +7,7 @@ export { Polygon } from './components/Polygon';
 export { Polyline } from './components/Polyline';
 export { RegPolygon } from './components/RegPolygon';
 export { Star } from './components/Star';
+export { RadialLines } from './components/RadialLines';
 export { Sector } from './components/Sector';
 export { Segment } from './components/Segment';
 export { Triangle } from './components/Triangle';
