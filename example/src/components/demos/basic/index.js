@@ -12,3 +12,5 @@ export { CubicDemo } from './Cubic';
 export { QuadDemo } from './Quad';
 export { LineDemo } from './Line';
 export { ArcDemo } from './Arc';
+export { StarDemo } from './Star';
+export { RadialLinesDemo } from './RadialLines';

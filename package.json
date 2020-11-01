@@ -1,6 +1,6 @@
 {
   "name": "react-svg-path",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Generate svg path commands.",
   "author": "joemaddalone",
   "license": "MIT",
@@ -65,6 +65,6 @@
     "dist"
   ],
   "dependencies": {
-    "@joemaddalone/path": "1.0.2"
+    "@joemaddalone/path": "1.0.3"
   }
 }
