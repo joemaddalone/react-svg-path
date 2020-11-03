@@ -1,19 +1,19 @@
 const attach = (childProps, sx, sy, ex, ey) => {
-  const { attach = 'end', ...restOfChildProps } = childProps;
+  const { attach = 'end', ox = 0, oy = 0, ...restOfChildProps } = childProps;
   if (attach === 'start') {
     return {
-      sx,
-      sy,
-      cx: sx,
-      cy: sy,
+      sx: sx + ox,
+      sy: sy + oy,
+      cx: sx + ox,
+      cy: sy + oy,
       ...restOfChildProps
     };
   } else {
     return {
-      sx: ex,
-      sy: ey,
-      cx: ex,
-      cy: ey,
+      sx: ex + ox,
+      sy: ey + oy,
+      cx: ex + ox,
+      cy: ey + oy,
       ...restOfChildProps
     };
   }
