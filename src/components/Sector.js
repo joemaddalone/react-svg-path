@@ -4,14 +4,14 @@ import render from '../utils/render';
 export const Sector = ({
   cx,
   cy,
-  radius,
+  size,
   startAngle,
   endAngle,
   children,
   ...attributes
 }) => {
   const p = new Path();
-  const pathMethod = p.sector.bind(p, cx, cy, radius, startAngle, endAngle);
+  const pathMethod = p.sector.bind(p, cx, cy, size, startAngle, endAngle);
   return render({
     pathMethod,
     attributes,

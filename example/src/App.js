@@ -19,7 +19,8 @@ import {
   QuadDemo,
   ArcDemo,
   StarDemo,
-  RadialLinesDemo
+  RadialLinesDemo,
+  PolygramDemo
 } from './components/demos/basic';
 import { Svg } from 'react-svg-path';
 import Pie from './components/demos/complex/Pie';
@@ -38,6 +39,7 @@ const App = () => {
     SquareDemo,
     TriangleDemo,
     RegPolygonDemo,
+    PolygramDemo,
     EllipseDemo,
     CircleDemo,
     SectorDemo,

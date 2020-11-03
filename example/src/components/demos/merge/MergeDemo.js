@@ -64,7 +64,7 @@ const MergeDemo = () => (
             <Square size={60} />
             <Circle size={25} cy={58} />
           </RegPolygon>
-          <Circle size='10' cx={100} cy={100} />
+          <Circle size={10} cx={100} cy={100} />
         </PathMerge>
       </Svg>
       <div>

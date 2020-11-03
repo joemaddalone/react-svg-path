@@ -2,8 +2,8 @@ import Path from './Path';
 import render from '../utils/render';
 
 export const RadialLines = ({
-  innerSize,
   outerSize,
+  innerSize,
   points,
   cx,
   cy,
@@ -13,8 +13,8 @@ export const RadialLines = ({
   const p = new Path();
   const pathMethod = p.radialLines.bind(
     p,
-    innerSize,
     outerSize,
+    innerSize,
     points,
     cx,
     cy

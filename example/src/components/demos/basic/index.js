@@ -14,3 +14,4 @@ export { LineDemo } from './Line';
 export { ArcDemo } from './Arc';
 export { StarDemo } from './Star';
 export { RadialLinesDemo } from './RadialLines';
+export { PolygramDemo } from './Polygram';

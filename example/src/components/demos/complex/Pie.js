@@ -14,7 +14,7 @@ const Pie = ({ size, cx, cy, data }) => {
         startAngle={startAngle}
         cx={cx}
         cy={cy}
-        radius={size/ 2}
+        size={size}
         key={i}
         fill={d.color} />
     );

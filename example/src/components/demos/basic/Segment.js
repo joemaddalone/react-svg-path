@@ -15,7 +15,7 @@ export const SegmentDemo = () => (
     </p>
 
     <Svg width={140} height={120}>
-      <Segment cx={60} cy={60} radius={50} startAngle={0} endAngle={270} />
+      <Segment cx={60} cy={60} size={100} startAngle={0} endAngle={270} />
       <Circle size={10} cx={60} cy={60} className='filled' />
     </Svg>
   </>

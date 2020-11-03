@@ -14,8 +14,15 @@ export const StarDemo = () => (
       center point.
     </p>
     <Svg width={140} height={120}>
-      <Star size={120} points={5} cx={70} cy={60} />
-      <Star size={15} points={5} cx={70} cy={60} className='filled' />
+      <Star outerSize={120} innerSize={40} points={5} cx={70} cy={60} />
+      <Star
+        outerSize={15}
+        innerSize={5}
+        points={5}
+        cx={70}
+        cy={60}
+        className='filled'
+      />
     </Svg>
   </>
 );

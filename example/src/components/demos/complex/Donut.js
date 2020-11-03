@@ -12,7 +12,7 @@ const Donut = ({ size, width, cx, cy, data, ...rest }) => {
       <Segment
         cx={cx}
         cy={cy}
-        radius={(size - width) / 2}
+        size={size - width}
         startAngle={startAngle}
         endAngle={endAngle}
         key={i}
