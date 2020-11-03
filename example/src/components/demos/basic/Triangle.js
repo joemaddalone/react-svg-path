@@ -1,5 +1,6 @@
 import React from 'react';
 import { Triangle, Svg } from 'react-svg-path';
+import docs from '../../../docs/docs.json'
 
 export const TriangleDemo = () => (
   <>
@@ -10,8 +11,7 @@ export const TriangleDemo = () => (
       `.trim()}
     </code>
     <p>
-      Triangle draws an equilateral triangle from center point (cx & cy). The
-      cursor is then moved to the center point.
+      {docs.triangle.description}
     </p>
     <Svg width={140} height={120}>
       <Triangle size={95} cx={50} cy={60} />

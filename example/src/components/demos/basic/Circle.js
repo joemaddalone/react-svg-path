@@ -1,5 +1,6 @@
 import React from 'react';
 import { Circle, Svg } from 'react-svg-path';
+import docs from '../../../docs/docs.json'
 
 export const CircleDemo = () => (
   <>
@@ -10,8 +11,7 @@ export const CircleDemo = () => (
       `.trim()}
     </code>
     <p>
-      Circle is drawn from center points (cx & cy). The cursor is then moved to
-      the center points.
+      {docs.circle.description}
     </p>
     <Svg width={140} height={120}>
       <Circle size={95} cx={50} cy={50} />

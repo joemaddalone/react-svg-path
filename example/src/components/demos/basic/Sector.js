@@ -1,5 +1,6 @@
 import React from 'react';
 import { Sector, Circle, Svg} from 'react-svg-path';
+import docs from '../../../docs/docs.json'
 
 export const SectorDemo = () => (
   <>
@@ -10,8 +11,7 @@ export const SectorDemo = () => (
       `.trim()}
     </code>
     <p>
-      Sector is drawn from center point (cx & cy). The cursor is then moved to
-      the center point.
+      {docs.sector.description}
     </p>
     <Svg width={140} height={120}>
       <Sector cx={60} cy={60} size={100} startAngle={0} endAngle={270} />

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Polygon, Svg } from 'react-svg-path';
+import docs from '../../../docs/docs.json'
 
 const points = [
   [10, 60],
@@ -24,9 +25,7 @@ const points = [
       `.trim()}
     </code>
     <p>
-      Polygon accepts an array of [x, y] coordinates and then draws lines
-      connecting those points. The path will start from the first point and end
-      on the first point - closing the shape.
+      {docs.polygon.description}
     </p>
     <Svg width={140} height={120}>
       <Polygon points={points} />

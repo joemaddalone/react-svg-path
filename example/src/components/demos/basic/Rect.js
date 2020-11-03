@@ -1,5 +1,6 @@
 import React from 'react';
 import { Rect, Svg } from 'react-svg-path';
+import docs from '../../../docs/docs.json'
 
 export const RectDemo = () => (
   <>
@@ -10,8 +11,7 @@ export const RectDemo = () => (
       `.trim()}
     </code>
     <p>
-      Rect is drawn from center point (cx & cy). The cursor is then moved to
-      the center point.
+      {docs.rect.description}
     </p>
     <Svg width={140} height={120}>
       <Rect width={120} height={60} cx={60} cy={60} />

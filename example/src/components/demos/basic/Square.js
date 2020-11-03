@@ -1,5 +1,6 @@
 import React from 'react';
 import { Square, Svg } from 'react-svg-path';
+import docs from '../../../docs/docs.json'
 
 export const SquareDemo = () => (
   <>
@@ -10,8 +11,7 @@ export const SquareDemo = () => (
       `.trim()}
     </code>
     <p>
-      Square is drawn from center point (cx & cy). The cursor is then moved to
-      the center point.
+      {docs.square.description}
     </p>
     <Svg width={140} height={120}>
       <Square size={100} cx={50} cy={50} />

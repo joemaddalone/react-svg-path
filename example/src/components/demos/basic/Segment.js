@@ -1,5 +1,6 @@
 import React from 'react';
 import { Segment, Circle, Svg } from 'react-svg-path';
+import docs from '../../../docs/docs.json'
 
 export const SegmentDemo = () => (
   <>
@@ -10,8 +11,7 @@ export const SegmentDemo = () => (
       `.trim()}
     </code>
     <p>
-      Segment is drawn from center point (cx & cy). The cursor is then moved to
-      the center point.
+      {docs.segment.description}
     </p>
 
     <Svg width={140} height={120}>

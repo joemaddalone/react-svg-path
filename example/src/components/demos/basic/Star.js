@@ -1,5 +1,6 @@
 import React from 'react';
 import { Star, Svg } from 'react-svg-path';
+import docs from '../../../docs/docs.json'
 
 export const StarDemo = () => (
   <>
@@ -10,8 +11,7 @@ export const StarDemo = () => (
       `.trim()}
     </code>
     <p>
-      Star is drawn from center point (cx & cy). The cursor is then moved to the
-      center point.
+      {docs.star.description}
     </p>
     <Svg width={140} height={120}>
       <Star outerSize={120} innerSize={40} points={5} cx={70} cy={60} />
