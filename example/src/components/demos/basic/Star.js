@@ -1,30 +1,31 @@
 import React from 'react';
-import { Star, Svg } from 'react-svg-path';
-import docs from '../../../docs/docs.json'
+import * as Shapes from 'react-svg-path';
+import docs from '../../../docs/docs.js';
+
+const { Component, props, description, demos } = docs.basicShapes.star;
+
+const C = Shapes[Component];
+const Svg = Shapes.Svg;
 
 export const StarDemo = () => (
   <>
-    <h3>Star</h3>
+    <h3>{Component}</h3>
     <code>
       {`
-        <Star size={number} points={number} cx={number} cy={number} innerRadius={number} />
+        <${Component}
+  ${Object.keys(props)
+    .map((k) => `${k}={${props[k].type}}`)
+    .join('\n  ')}
+/>
       `.trim()}
     </code>
-    <p>
-      {docs.star.description}
-    </p>
+    <p>{description}</p>
     <Svg width={140} height={120}>
-      <Star outerSize={120} innerSize={40} points={5} cx={70} cy={60} />
-      <Star
-        outerSize={15}
-        innerSize={5}
-        points={5}
-        cx={70}
-        cy={60}
-        className='filled'
-      />
+      {demos.map((d, i) => (
+      <C key={i} {...d} />
+      ))}
     </Svg>
   </>
 );
 
-StarDemo.displayName = 'Star';
+StarDemo.displayName = Component;
