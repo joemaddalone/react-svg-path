@@ -31,7 +31,7 @@ export const BasicShapeDemo = ({ shape }) => {
                 {`
         <${Component}
   ${Object.keys(rest)
-    .map((k) => `${k}={${rest[k]}}`)
+    .map((k) => `${k}={${JSON.stringify(rest[k])}}`)
     .join('\n  ')}
 />
       `.trim()}

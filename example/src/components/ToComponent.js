@@ -30,15 +30,19 @@ export const ToComponent = () => {
         By returning .toComponent in our Triangle component we have now created
         a re-usable building block for ourselves
       </p>
-      <Svg width={500} height={500}>
+      <div>
+      <Svg width={500} height={200}>
+        <g transform="translate(125,0)">
         {['red', 'blue', 'green'].map((c, i) => (
-          <Triangle key={c} x={i * 200} y={250} w={200} h={200} fill={c} />
+          <Triangle key={c} x={i * 100} y={25} w={150} h={150} fill={c} />
         ))}
+        </g>
       </Svg>
+      </div>
       <code>
         {`
 {['red', 'blue', 'green'].map((c, i) => (
-  <Triangle key={c} x={i * 50} y={250} w={100} h={100} fill={c} />
+  <Triangle key={c} x={i * 100} y={25} w={150} h={150} fill={c} />
 ))}`.trim()}
       </code>
     </>

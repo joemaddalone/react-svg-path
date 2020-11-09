@@ -11,7 +11,6 @@ const NestingDemo3 = () => (
     <h3>Nesting example #3</h3>
     <p>
       You can alter an inherited value using <b>ox</b> (offset x) or <b>oy</b> (offset y).
-      These props are only used when nesting.
     </p>
     <Svg width={500} height={150} className='nesting-example-3'>
       <Circle size={0} cx={75} cy={75}>

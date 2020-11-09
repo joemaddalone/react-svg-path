@@ -42,7 +42,7 @@ const Introduction = () => {
       <code>npm i react-svg-path</code>
       <h2>Stuff</h2>
       <p>
-        There are a lot of docs (always a work in progress), but here's some fun stuff I've made with react-svg-path.
+        There are a lot of docs (always a work in progress), but here's some fun stuff made with react-svg-path.
       </p>
       <div className='dag'>
         <div style={{ margin: 20, display: 'flex', flexDirection: 'column' }}>
@@ -56,11 +56,9 @@ const Introduction = () => {
           </a>
         </div>
       </div>
-
-      <h3>Combining Shapes</h3>
-      <div className='complex'>
-        <h3>multiple Sectors</h3>
-        <Svg width={250} height={160}>
+      <div className='complex flex items-center justify-around' style={{width: '800px'}}>
+        <div className="flex flex-column items-center justify-center">
+        <Svg width={160} height={160}>
           <Pie size={150} cx={80} cy={80} data={pieData} />
         </Svg>
         <a
@@ -70,8 +68,9 @@ const Introduction = () => {
         >
           source
         </a>
-        <h3>multiple Segments</h3>
-        <Svg width={250} height={160}>
+        </div>
+        <div className="flex flex-column items-center justify-center">
+        <Svg width={160} height={160}>
           <Donut width={25} size={150} cx={80} cy={80} data={pieData} />
         </Svg>
         <a
@@ -81,7 +80,7 @@ const Introduction = () => {
         >
           source
         </a>
-        <h3>multiple Sectors + Segments</h3>
+        </div>
         <Svg width={180} height={180}>
           <Pie size={130} cx={90} cy={90} data={pieData} />
           <Donut
@@ -93,9 +92,11 @@ const Introduction = () => {
             data={pieData.map((pd) => pd.nested).flat()}
           />
         </Svg>
-        <h3>fitted .polyline</h3>
+        </div>
+        <div style={{marginTop: 50}} className='complex flex flex-column'>
+        <div className="flex flex-column">
         <SparkLine
-          width={300}
+          width={800}
           height={150}
           data={[-10, -45, 10, 0, 35, 10, -9, 25, 15, 75]}
         />
@@ -106,10 +107,10 @@ const Introduction = () => {
         >
           source
         </a>
-        <h3>NFL Football field</h3>
-        <Football />
+        </div>
+        <Football width={775} />
         <a
-          href={`https://github.com/joemaddalone/react-svg-path/blob/master/example/src/components/demos/complex/Football.js`}
+          href={`https://github.com/joemaddalone/react-svg-path/blob/master/example/src/components/demos/complex/Football/Football.js`}
           rel='noopener noreferrer'
           target='_blank'
         >
