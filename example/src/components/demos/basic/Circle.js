@@ -1,6 +1,6 @@
 import React from 'react';
 import { Circle, Svg } from 'react-svg-path';
-import docs from '../../../docs/docs.json'
+import docs from '../../../docs/docs.js'
 
 export const CircleDemo = () => (
   <>
@@ -20,4 +20,4 @@ export const CircleDemo = () => (
   </>
 );
 
-CircleDemo.displayName = 'CircleDemo';
+CircleDemo.displayName = 'Circle';

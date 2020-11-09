@@ -2,9 +2,8 @@ import React from 'react';
 import Path, { Circle, Square, Svg } from 'react-svg-path';
 import dagSetup from './dagSetup';
 
-const dag = dagSetup();
-
 const DagNodes = () => {
+  const dag = dagSetup();
   const createConnectors = () => {
     const { edges } = dag;
     const p = new Path();

@@ -1,0 +1,13 @@
+.dimension-line {
+  vector-effect: non-scaling-stroke;
+  stroke: green !important;
+}
+
+.dimension-text {
+	font-size: 65%
+}
+
+.dimension-value {
+	fill: white !important;
+	stroke: #fff !important;
+}

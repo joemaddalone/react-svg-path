@@ -1,6 +1,6 @@
 import React from 'react';
 import { Polygram, Svg } from 'react-svg-path';
-import docs from '../../../docs/docs.json'
+import docs from '../../../docs/docs.js'
 
 export const PolygramDemo = () => (
   <>

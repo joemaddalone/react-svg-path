@@ -2,9 +2,14 @@ import React from 'react';
 import { Svg, RegPolygon, Circle, Square, PathMerge } from 'react-svg-path';
 import './MergeDemo.css';
 
-const MergeDemo = () => (
+export const MergeDemo = () => (
   <>
-    <h3>PathMerge example</h3>
+    <h2>PathMerge example</h2>
+    <p>
+      While having composable components make designing complex svg withmultiple
+      paths simple you may find a situation where a single path is more
+      desirable. Why not do both with &lt;PathMerge>?
+    </p>
     <p>As shown previously we can compose our paths from multiple components</p>
     <div style={{ display: 'flex', alignItems: 'center' }}>
       <Svg width={200} height={200} className='nesting-example-1'>
@@ -84,5 +89,3 @@ const MergeDemo = () => (
     </div>
   </>
 );
-
-export default MergeDemo;
