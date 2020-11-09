@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
+import { HashRouter as Router, Route, NavLink } from 'react-router-dom';
 import docs from './docs/docs';
 import Introduction from './components/Introduction';
 import Nav from './components/Nav';
@@ -16,7 +16,7 @@ const App = () => {
   const curves = Object.keys(docs.curves);
 
   return (
-    <Router>
+    <Router basename='/'>
       <header className='app-header'>
         <NavLink to='/'>react-svg-path</NavLink>
         <a
