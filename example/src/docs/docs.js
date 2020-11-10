@@ -80,7 +80,8 @@ export default {
           size: 120,
           points: 5,
           cx: basicSvgDimensions.w/2,
-          cy: basicSvgDimensions.h/2
+          cy: basicSvgDimensions.h/2,
+          vertexSkip: 2
         }
       ]
     },
