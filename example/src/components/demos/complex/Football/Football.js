@@ -153,9 +153,9 @@ const Football = ({ width }) => {
           markerId="arrow-marker"
         />
         <Dimension
-          sx={-20}
+          sx={-15}
           sy={0}
-          ex={-20}
+          ex={-15}
           ey={field.height}
           scale={field.scale}
           text="160'"
