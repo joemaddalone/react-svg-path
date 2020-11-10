@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import * as Shapes from 'react-svg-path';
+import { Knobs } from './Knobs';
 import docs from '../docs/docs';
 
 export const BasicShapeDemo = ({ shape }) => {
   const { Component, props, description, demos } = docs.basicShapes[shape];
+  const initialState = demos.map((d, i) => {
+    return Object.keys(d)
+      .filter((k) => k !== 'svgDimensions')
+      .reduce((accum, cur) => {
+        return { ...accum, [cur]: d[cur] };
+      }, {});
+  });
+
+
+  const [demoValues, setDemoValues] = useState(initialState);
   const C = Shapes[Component];
   const Svg = Shapes.Svg;
   return (
@@ -25,17 +36,35 @@ export const BasicShapeDemo = ({ shape }) => {
           return (
             <span key={i}>
               <Svg width={svgDimensions.w} height={svgDimensions.h}>
-                <C {...rest} />
+                <C {...demoValues[i]} />
               </Svg>
               <code>
                 {`
         <${Component}
-  ${Object.keys(rest)
-    .map((k) => `${k}={${JSON.stringify(rest[k])}}`)
+  ${Object.keys(demoValues[i])
+    .map((k) => `${k}={${JSON.stringify(demoValues[i][k])}}`)
     .join('\n  ')}
 />
       `.trim()}
               </code>
+              <div>
+                {Object.keys(demoValues[i]).map((k, index) => {
+                  return (
+                    <Knobs
+                      key={k}
+                      label={k}
+                      value={demoValues[i][k]}
+                      type={props[k].type}
+                      onChange={(k, v) => {
+                        setDemoValues((current) => {
+                          current[i][k] = v;
+                          return [...current];
+                        });
+                      }}
+                    />
+                  );
+                })}
+              </div>
             </span>
           );
         })}
