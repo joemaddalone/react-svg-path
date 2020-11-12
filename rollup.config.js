@@ -1,6 +1,7 @@
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import babel from '@rollup/plugin-babel';
+import { terser } from 'rollup-plugin-terser';
 import pkg from './package.json';
 
 const INPUT_FILE_PATH = 'src/index.js';
@@ -29,7 +30,8 @@ const PLUGINS = [
       /^(?!prop-types)/
     ]
   }),
-  commonjs()
+  commonjs(),
+  terser()
 ];
 
 // https://github.com/rollup/plugins/tree/master/packages/babel#babelhelpers
