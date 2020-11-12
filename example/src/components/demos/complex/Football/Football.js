@@ -47,7 +47,7 @@ const Football = ({ width }) => {
             points={[
               [0, 0],
               [8, 5],
-              [1, 10],
+              [0, 10],
             ]}
             stroke="green"
             fill="none"
