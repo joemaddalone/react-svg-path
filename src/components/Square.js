@@ -1,16 +1,7 @@
-import Path from './Path';
-import render from '../utils/render';
+import docs from '../docs/docs';
+import createSimpleComponent from '../utils/createSimpleComponent';
 
-export const Square = ({ size, cx, cy, children, ...attributes }) => {
-  const p = new Path();
-  const pathMethod = p.square.bind(p, size, cx, cy);
-  return render({
-    pathMethod,
-    attributes,
-    ex: cx,
-    ey: cy,
-    sx: cx,
-    sy: cy,
-    children
-  });
+export const Square = (props) => {
+  const doc = docs.basicShapes.square;
+  return createSimpleComponent(doc, props);
 };

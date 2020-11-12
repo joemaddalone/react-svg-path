@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import * as Shapes from 'react-svg-path';
 import { Knobs } from './Knobs';
 import docs from '../docs/docs';
+import demoDocs from '../docs/demos';
 
 export const BasicShapeDemo = ({ shape }) => {
-  const { Component, props, description, demos } = docs.basicShapes[shape];
+  const { Component, props, description } = docs.basicShapes[shape];
+  const demos = demoDocs.basicShapes[shape];
   const initialState = demos.map((d, i) => {
     return Object.keys(d)
       .filter((k) => k !== 'svgDimensions')
@@ -12,7 +14,6 @@ export const BasicShapeDemo = ({ shape }) => {
         return { ...accum, [cur]: d[cur] };
       }, {});
   });
-
 
   const [demoValues, setDemoValues] = useState(initialState);
   const C = Shapes[Component];

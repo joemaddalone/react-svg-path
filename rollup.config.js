@@ -8,19 +8,26 @@ const OUTPUT_NAME = 'react-svg-path';
 
 const GLOBALS = {
   react: 'React',
-  'react-dom': 'ReactDOM'
+  'react-dom': 'ReactDOM',
+  'react-dom/server': 'ReactDOMServer'
 };
 
-const EXTERNAL = ['react', 'react-dom'];
+const EXTERNAL = ['react', 'react-dom', 'react-dom/server'];
 
 const PLUGINS = [
   babel({
     babelHelpers: 'runtime',
-    exclude: 'node_modules/**'
+    exclude: 'node_modules/**',
+    skipPreflightCheck: true
   }),
   resolve({
     browser: true,
-    resolveOnly: [/^(?!react$)/, /^(?!react-dom$)/, /^(?!prop-types)/]
+    resolveOnly: [
+      /^(?!react$)/,
+      /^(?!react-dom$)/,
+      /^(?!react-dom\/server$)/,
+      /^(?!prop-types)/
+    ]
   }),
   commonjs()
 ];

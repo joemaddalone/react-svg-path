@@ -1,24 +1,7 @@
-import Path from './Path';
-import render from '../utils/render';
+import docs from '../docs/docs';
+import createSimpleComponent from '../utils/createSimpleComponent';
 
-export const Polygram = ({
-  size,
-  points,
-  vertexSkip,
-  cx,
-  cy,
-  children,
-  ...attributes
-}) => {
-  const p = new Path();
-  const pathMethod = p.polygram.bind(p, size, points, cx, cy, vertexSkip);
-  return render({
-    pathMethod,
-    attributes,
-    ex: cx,
-    ey: cy,
-    sx: cx,
-    sy: cy,
-    children
-  });
+export const Polygram = (props) => {
+  const doc = docs.basicShapes.polygram;
+  return createSimpleComponent(doc, props);
 };

@@ -1,23 +1,7 @@
-import Path from './Path';
-import render from '../utils/render';
+import docs from '../docs/docs';
+import createSimpleComponent from '../utils/createSimpleComponent';
 
-export const RegPolygon = ({
-  size,
-  sides,
-  cx,
-  cy,
-  children,
-  ...attributes
-}) => {
-  const p = new Path();
-  const pathMethod = p.regPolygon.bind(p, size, sides, cx, cy);
-  return render({
-    pathMethod,
-    attributes,
-    ex: cx,
-    ey: cy,
-    sx: cx,
-    sy: cy,
-    children
-  });
+export const RegPolygon = (props) => {
+  const doc = docs.basicShapes.regPolygon;
+  return createSimpleComponent(doc, props);
 };

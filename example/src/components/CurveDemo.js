@@ -1,9 +1,11 @@
 import React from 'react';
 import * as Shapes from 'react-svg-path';
 import docs from '../docs/docs';
+import demoDocs from '../docs/demos';
 
 export const CurveDemo = ({ curve }) => {
-  const { Component, props, description, demos } = docs.curves[curve];
+  const { Component, props, description } = docs.curves[curve];
+  const demos = demoDocs.curves[curve];
   const C = Shapes[Component];
   const Svg = Shapes.Svg;
   return (

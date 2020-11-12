@@ -1,24 +1,7 @@
-import Path from './Path';
-import render from '../utils/render';
+import docs from '../docs/docs';
+import createSimpleComponent from '../utils/createSimpleComponent';
 
-export const Segment = ({
-  cx,
-  cy,
-  size,
-  startAngle,
-  endAngle,
-  children,
-  ...attributes
-}) => {
-  const p = new Path();
-  const pathMethod = p.segment.bind(p, cx, cy, size, startAngle, endAngle);
-  return render({
-    pathMethod,
-    attributes,
-    ex: cx,
-    ey: cy,
-    sx: cx,
-    sy: cy,
-    children
-  });
+export const Segment = (props) => {
+  const doc = docs.basicShapes.segment;
+  return createSimpleComponent(doc, props);
 };
