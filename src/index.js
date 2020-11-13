@@ -20,4 +20,5 @@ export { Text } from './components/Text';
 export { Group } from './components/Group';
 export { Svg } from './components/Svg';
 export { PathMerge } from './components/PathMerge';
+export { MarkerArrow } from './components/markers/MarkerArrow';
 export default Path;

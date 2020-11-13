@@ -1,7 +1,8 @@
 import React from 'react';
-import './Marker';
+import { Marker } from './Marker';
+import { Polyline } from '../Polyline';
 
-export const MarkerOpenArrow = ({
+export const MarkerArrow = ({
   id,
   color = '#000',
   open = false,
@@ -12,7 +13,7 @@ export const MarkerOpenArrow = ({
     stroke: open ? color : 'none'
   };
   return (
-    <Marker id={id} markerWidth={10} markerHeight={11} refX={9} refY={5}>
+    <Marker id={id} markerWidth={10} markerHeight={11} refX={8} refY={5}>
       <Polyline
         points={[
           [0, 0],
