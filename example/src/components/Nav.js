@@ -56,6 +56,14 @@ const Nav = () => {
         </div>
       </div>
       <div className='item'>
+        <div className='active  header'>Misc</div>
+        <div className='menu'>
+          <NavLink className='item' to={`/markers`}>
+            Markers
+          </NavLink>
+        </div>
+      </div>
+      <div className='item'>
         <div className=' header'>Behaviors</div>
         <div className='menu'>
           <NavLink className='item' to='/nesting'>
