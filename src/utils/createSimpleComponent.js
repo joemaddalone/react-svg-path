@@ -2,7 +2,6 @@ import Path from '../components/Path';
 import render from '../utils/render';
 
 export default (doc, props) => {
-  console.log({ doc });
   const { args, command, props: componentProps, nestingProps } = doc;
 
   const propsValidation = (obj) => {
