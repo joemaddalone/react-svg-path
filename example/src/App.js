@@ -8,6 +8,7 @@ import { BasicShapeDemo } from './components/BasicShapeDemo';
 import { CurveDemo } from './components/CurveDemo';
 import { Nesting } from './components/demos/nesting';
 import { MergeDemo } from './components/demos/merge/MergeDemo';
+import { MarkerDemo } from './components/demos/markers/MarkerDemo';
 import { ToComponent } from './components/ToComponent';
 import './App.css';
 
@@ -35,6 +36,8 @@ const App = () => {
           <Route exact path={`/pathmerge`} render={() => <MergeDemo />} />
           <Route exact path={`/path`} render={() => <PathIntro />} />
           <Route exact path={`/tocomponent`} render={() => <ToComponent />} />
+          <Route exact path={`/markers`} render={() => <MarkerDemo />} />
+
           <div className='basic-shapes'>
             {basicShapes.map((s, i) => (
               <Route

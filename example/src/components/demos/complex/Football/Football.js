@@ -1,5 +1,5 @@
 import React from "react";
-import { Svg, Rect, Line, Text, Polyline } from "react-svg-path";
+import { Svg, Rect, Line, Text, MarkerArrow } from "react-svg-path";
 import Dimension from "./Dimension";
 import "./Football.css";
 
@@ -33,27 +33,7 @@ const Football = ({ width }) => {
 
   return (
     <Svg width={canvasWidth + marginX} height={canvasHeight + marginY}>
-      <defs>
-        <marker
-          id="arrow-marker"
-          markerWidth="10"
-          markerHeight="11"
-          refX="9"
-          refY="5"
-          orient="auto-start-reverse"
-          markerUnits="userSpaceOnUse"
-        >
-          <Polyline
-            points={[
-              [0, 0],
-              [8, 5],
-              [1, 10],
-            ]}
-            stroke="green"
-            fill="none"
-          />
-        </marker>
-      </defs>
+      <MarkerArrow id="arrow-marker" color="green" open/>
       <g
         transform={`translate(${marginX / 2},${marginY / 2})`}
         className="football-diagram"
@@ -139,7 +119,6 @@ const Football = ({ width }) => {
           sy={field.height + 15}
           ex={field.width}
           ey={field.height + 15}
-          scale={field.scale}
           text="360'"
           markerId="arrow-marker"
         />
@@ -148,7 +127,6 @@ const Football = ({ width }) => {
           sy={0}
           ex={field.width}
           ey={0}
-          scale={field.scale}
           text="30'"
           markerId="arrow-marker"
         />
@@ -157,7 +135,6 @@ const Football = ({ width }) => {
           sy={0}
           ex={-15}
           ey={field.height}
-          scale={field.scale}
           text="160'"
           markerId="arrow-marker"
         />
@@ -166,7 +143,6 @@ const Football = ({ width }) => {
           sy={0}
           ex={field.endzoneWidth}
           ey={field.topTickY}
-          scale={field.scale}
           text="60'"
           markerId="arrow-marker"
         />
@@ -175,7 +151,6 @@ const Football = ({ width }) => {
           sy={field.bottomTickY}
           ex={field.endzoneWidth}
           ey={field.height}
-          scale={field.scale}
           text="60'"
           markerId="arrow-marker"
         />

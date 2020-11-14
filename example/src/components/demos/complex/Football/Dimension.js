@@ -2,7 +2,7 @@ import React from "react";
 import { Rect, Line, Text } from "react-svg-path";
 import "./Dimension.css";
 
-const Dimension = ({ sx, sy, ex, ey, scale, text, markerId }) => {
+const Dimension = ({ sx, sy, ex, ey, text, markerId }) => {
   const rect = {
     width: text.length * 6.5,
     height: 20,

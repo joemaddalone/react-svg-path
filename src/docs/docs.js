@@ -7,7 +7,7 @@ const centeredShapeNestingProps = {
   sy: 'cy'
 };
 
-export default {
+const docs = {
   basicShapes: {
     circle: {
       Component: 'Circle',
@@ -539,3 +539,5 @@ export default {
     }
   }
 };
+
+export default docs;
