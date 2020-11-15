@@ -75,5 +75,4 @@ describe('Path', () => {
       expect(path.attributes[shortcut]).toBe(index);
     });
   });
-
 });

@@ -23,7 +23,7 @@ export default (doc, props) => {
       }
       return hasProp && componentProps[k].validator(obj[k]);
     });
-    return { result, augment }
+    return { result, augment };
   };
 
   const { result } = propsValidation(props);
