@@ -1,5 +1,5 @@
 import React from 'react';
-import { MarkerArrow, Polyline, Segment, Svg } from 'react-svg-path';
+import { MarkerArrow, Polyline, Svg } from 'react-svg-path';
 
 export const MarkerArrowDemo = () => (
   <>
