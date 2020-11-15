@@ -33,10 +33,15 @@ export default (doc, props) => {
   delete attributes.children;
 
   // Create nesting ex, ey, sx, and sy values.
-  const nesting = Object.keys(nestingProps).reduce(
-    (a, c) => ({ ...a, [c]: props[nestingProps[c]] }),
-    {}
-  );
+  let nesting;
+  if (typeof nestingProps === 'function') {
+    nesting = nestingProps(props);
+  } else {
+    nesting = Object.keys(nestingProps).reduce(
+      (a, c) => ({ ...a, [c]: props[nestingProps[c]] }),
+      {}
+    );
+  }
 
   const p = new Path();
   const pathMethod = p[command].bind(p, ...pathArgs);
