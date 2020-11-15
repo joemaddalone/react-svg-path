@@ -11,6 +11,9 @@ export default (doc, props) => {
       if (!componentProps[k].isRequired && !hasProp) {
         return true;
       }
+      if (componentProps[k].type === 'boolean') {
+        return true;
+      }
       if (componentProps[k].isRequired && !hasProp) {
         return false;
       }
