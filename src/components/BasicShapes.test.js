@@ -33,7 +33,7 @@ const BSP = {
   ]
 };
 
-describe('BBasic Shapes', () => {
+describe('Basic Shapes', () => {
   Object.keys(docs.basicShapes)
     .filter((k) => k !== 'line')
     .forEach((k) => {

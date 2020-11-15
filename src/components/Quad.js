@@ -4,8 +4,8 @@ import render from '../utils/render';
 export const Quad = ({
   sx,
   sy,
-  cx1,
-  cy1,
+  cx,
+  cy,
   ex,
   ey,
   T = [],
@@ -19,7 +19,7 @@ export const Quad = ({
   const p = new Path().moveTo(sx, sy);
   const pathMethod = () => {
     // eslint-disable-next-line no-useless-call
-    const cmd = p.qCurve.call(p, cx1, cy1, ex, ey, relative);
+    const cmd = p.qCurve.call(p, cx, cy, ex, ey, relative);
     if (T.length) {
       T.forEach((tcmd) => cmd.T.call(p, tcmd[0], tcmd[1]));
     }

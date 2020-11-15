@@ -5,10 +5,14 @@ export default (doc, props) => {
   const { args, command, props: componentProps, nestingProps } = doc;
 
   const propsValidation = (obj) => {
-    return Object.keys(componentProps).every((k) => {
+    const augment = {};
+    const result = Object.keys(componentProps).every((k) => {
       // eslint-disable-next-line no-prototype-builtins
       const hasProp = obj.hasOwnProperty(k);
       if (!componentProps[k].isRequired && !hasProp) {
+        if (componentProps[k].type !== 'boolean') {
+          augment[k] = null;
+        }
         return true;
       }
       if (componentProps[k].type === 'boolean') {
@@ -19,10 +23,11 @@ export default (doc, props) => {
       }
       return hasProp && componentProps[k].validator(obj[k]);
     });
+    return { result, augment }
   };
 
-  const isValid = propsValidation(props);
-  if (!isValid) {
+  const { result } = propsValidation(props);
+  if (!result) {
     throw new Error('invalid props');
   }
 

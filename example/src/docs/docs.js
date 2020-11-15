@@ -437,6 +437,7 @@ const docs = {
     arc: {
       Component: 'Arc',
       command: 'arc',
+      args: ['rx', 'ry', 'rotation', 'arc', 'sweep', 'ex', 'ey'],
       description: 'Arc is drawn...',
       props: {
         sx: {
@@ -461,17 +462,14 @@ const docs = {
         },
         rotation: {
           type: 'number',
-          isRequired: true,
           validator: commonNumberValidator
         },
         arc: {
           type: 'number',
-          isRequired: true,
           validator: commonNumberValidator
         },
         sweep: {
           type: 'number',
-          isRequired: true,
           validator: commonNumberValidator
         },
         ex: {
@@ -488,7 +486,8 @@ const docs = {
     },
     cubic: {
       Component: 'Cubic',
-      command: 'cCurveTo',
+      command: 'cCurve',
+      args: ['cx1', 'cy1', 'cx2', 'cy2', 'ex', 'ey'],
       description: 'Cubic is drawn...',
       props: {
         sx: {
@@ -537,7 +536,8 @@ const docs = {
     },
     quad: {
       Component: 'Quad',
-      command: 'qCurveTo',
+      command: 'qCurve',
+      args: ['cx', 'cy', 'ex', 'ey'],
       description: 'Quad is drawn...',
       props: {
         sx: {
@@ -550,12 +550,12 @@ const docs = {
           isRequired: true,
           validator: commonNumberValidator
         },
-        cx1: {
+        cx: {
           type: 'number',
           isRequired: true,
           validator: commonNumberValidator
         },
-        cy1: {
+        cy: {
           type: 'number',
           isRequired: true,
           validator: commonNumberValidator
