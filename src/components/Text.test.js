@@ -1,14 +1,14 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { Group } from './Group';
+import { Text } from './Text';
 
-describe('<Group />', () => {
+describe('<Text />', () => {
   it('should render correctly', () => {
     const { getByTestId } = render(
       <svg>
-        <Group>
-          <rect data-testid='child' />
-        </Group>
+        <Text>
+          <tspan data-testid='child' />
+        </Text>
       </svg>
     );
     expect(getByTestId('child')).toBeDefined();

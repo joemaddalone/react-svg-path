@@ -1,4 +1,4 @@
-import Path from '.';
+import Path from './Path';
 
 describe('Path', () => {
   let path;
@@ -69,10 +69,11 @@ describe('Path', () => {
     expect(path.attributes.fill).toBe('white');
   });
 
-  ['fill', 'stroke', 'style'].forEach((shortcut, index) => {
+  ['fill', 'stroke', 'style', 'strokeWidth'].forEach((shortcut, index) => {
     it(`correctly populates attr with shortcut ${shortcut}`, () => {
       path[shortcut](index);
       expect(path.attributes[shortcut]).toBe(index);
     });
   });
+
 });
