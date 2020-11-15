@@ -84,7 +84,7 @@ The following components are available
 * `<Line {...sx, sy, ex, ey} />`
 * `<Polygon points={points} />`
 * `<Polyline points={points} />`
-* `<Quad {...sx, sy, cx1, cy1, ex, ey} />`
+* `<Quad {...sx, sy, cx, cy, ex, ey} />`
 * `<RadialLines  {...innerSize, outerSize, points, cx, cy} />`
 * `<Rect  {...cx, cy, width, height} />`
 * `<RegPolygon {...cx, cy, size, sides} />`

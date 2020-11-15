@@ -18,7 +18,7 @@ export const QuadDemo = () => (
     </code>
     <p>Quad is drawn...</p>
     <Svg width={100} height={100}>
-      <Quad sx={10} sy={50} cx1={25} cy1={25} ex={40} ey={50} />
+      <Quad sx={10} sy={50} cx={25} cy={25} ex={40} ey={50} />
     </Svg>
     <p>
       The `T` or `t` command can be accessed by adding the appropriate `T` or
@@ -29,8 +29,8 @@ export const QuadDemo = () => (
       <Quad
         sx={10}
         sy={50}
-        cx1={25}
-        cy1={25}
+        cx={25}
+        cy={25}
         ex={40}
         ey={50}
         T={[

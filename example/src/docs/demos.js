@@ -168,8 +168,8 @@ const demos = {
       {
         sx: 10,
         sy: 50,
-        cx1: 25,
-        cy1: 25,
+        cx: 25,
+        cy: 25,
         ex: 40,
         ey: 50,
         T: [

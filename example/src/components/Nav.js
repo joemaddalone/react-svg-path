@@ -40,14 +40,6 @@ const Nav = () => {
         </div>
       </div>
       <div className='item'>
-        <div className='active  header'>Markers</div>
-        <div className='menu'>
-          <NavLink className='item' to={`/marker-arrow`}>
-            MarkerArrow
-          </NavLink>
-        </div>
-      </div>
-      <div className='item'>
         <div className='active  header'>Curves</div>
         <div className='menu'>
           {Object.keys(docs.curves)

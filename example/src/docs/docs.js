@@ -1,4 +1,19 @@
 const commonNumberValidator = (value) => !isNaN(value);
+const pointArrayValidator = (arr) => {
+  try {
+    if (
+      !(arr instanceof Array) ||
+      !arr.length ||
+      arr.some((p) => !(p instanceof Array))
+    ) {
+      throw new Error('bad points, bad!.');
+    }
+    const result = arr.every((points) => points.every((p) => !isNaN(p)));
+    return result;
+  } catch (err) {
+    return err.message;
+  }
+};
 
 const centeredShapeNestingProps = {
   ex: 'cx',
@@ -70,7 +85,18 @@ const docs = {
       args: ['points'],
       description:
         'Polygon accepts an array of [x, y] coordinates and then draws lines connecting those points.  The path will start from the first point and end on the first point - closing the shape.',
-      props: { points: { type: 'point-array' } }
+      props: {
+        points: {
+          type: 'point-array',
+          isRequired: true,
+          validator: pointArrayValidator
+        }
+      },
+      nestingProps: ({ points }) => {
+        const [sx, sy] = points[0];
+        const [ex, ey] = points[points.length - 1];
+        return { ex: sx, ey: sy, sx: ex, sy: ey };
+      }
     },
     polygram: {
       Component: 'Polygram',
@@ -101,7 +127,6 @@ const docs = {
         },
         vertexSkip: {
           type: 'number',
-          isRequired: true,
           validator: commonNumberValidator,
           default: 2
         }
@@ -114,7 +139,19 @@ const docs = {
       args: ['points', 'relative'],
       description:
         'Polyline accepts an array of [x, y] coordinates and then draws lines connecting those points.  The path will start from the first point and end on the last.  points can be absolute or relative.',
-      props: { points: { type: 'point-array' }, relative: { type: 'boolean' } }
+      props: {
+        points: {
+          type: 'point-array',
+          isRequired: true,
+          validator: pointArrayValidator
+        },
+        relative: { type: 'boolean' }
+      },
+      nestingProps: ({ points }) => {
+        const [sx, sy] = points[0];
+        const [ex, ey] = points[points.length - 1];
+        return { ex: sx, ey: sy, sx: ex, sy: ey };
+      }
     },
     line: {
       Component: 'Line',
@@ -400,6 +437,7 @@ const docs = {
     arc: {
       Component: 'Arc',
       command: 'arc',
+      args: ['rx', 'ry', 'rotation', 'arc', 'sweep', 'ex', 'ey'],
       description: 'Arc is drawn...',
       props: {
         sx: {
@@ -424,17 +462,14 @@ const docs = {
         },
         rotation: {
           type: 'number',
-          isRequired: true,
           validator: commonNumberValidator
         },
         arc: {
           type: 'number',
-          isRequired: true,
           validator: commonNumberValidator
         },
         sweep: {
           type: 'number',
-          isRequired: true,
           validator: commonNumberValidator
         },
         ex: {
@@ -451,7 +486,8 @@ const docs = {
     },
     cubic: {
       Component: 'Cubic',
-      command: 'cCurveTo',
+      command: 'cCurve',
+      args: ['cx1', 'cy1', 'cx2', 'cy2', 'ex', 'ey'],
       description: 'Cubic is drawn...',
       props: {
         sx: {
@@ -500,7 +536,8 @@ const docs = {
     },
     quad: {
       Component: 'Quad',
-      command: 'qCurveTo',
+      command: 'qCurve',
+      args: ['cx', 'cy', 'ex', 'ey'],
       description: 'Quad is drawn...',
       props: {
         sx: {
@@ -513,12 +550,12 @@ const docs = {
           isRequired: true,
           validator: commonNumberValidator
         },
-        cx1: {
+        cx: {
           type: 'number',
           isRequired: true,
           validator: commonNumberValidator
         },
-        cy1: {
+        cy: {
           type: 'number',
           isRequired: true,
           validator: commonNumberValidator

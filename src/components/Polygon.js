@@ -1,10 +1,7 @@
-import Path from './Path';
-import render from '../utils/render';
+import docs from '../docs/docs';
+import createSimpleComponent from '../utils/createSimpleComponent';
 
-export const Polygon = ({ points, relative, children, ...attributes }) => {
-  const p = new Path();
-  const pathMethod = p.polygon.bind(p, points, relative);
-  const [sx, sy] = points[0];
-  const [ex, ey] = points[points.length - 1];
-  return render({ pathMethod, attributes, sx, sy, ex, ey, children });
+export const Polygon = (props) => {
+  const doc = docs.basicShapes.polygon;
+  return createSimpleComponent(doc, props);
 };

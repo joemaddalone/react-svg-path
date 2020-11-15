@@ -6,9 +6,7 @@ class Path extends Original {
     return <path d={this.toString()} {...this.attributes} {...props} />;
   }
 
-  strokeWidth(val) {
-    return this.attr('strokeWidth', val);
-  }
+  strokeWidth = (val) => this.attr('strokeWidth', val);
 }
 
 export default Path;
