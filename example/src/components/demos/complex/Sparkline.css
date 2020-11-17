@@ -1,0 +1,14 @@
+.sparkline-path {
+  stroke-dasharray: 400%;
+  stroke-dashoffset: 400%;
+  animation: dash 5s linear forwards infinite;
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 400%;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}

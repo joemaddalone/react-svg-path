@@ -1,0 +1,10 @@
+svg.clock {
+	stroke: #666;
+	stroke-width: 2 !important;
+	fill: none;
+}
+
+svg.clock text {
+	fill: #222;
+	stroke: none;
+}
