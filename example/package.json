@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
+    "d3-scale": "^3.2.3",
     "dagre": "^0.8.5",
     "react": "file:../node_modules/react",
     "react-dom": "file:../node_modules/react-dom",
