@@ -6,6 +6,7 @@ export default (doc, props) => {
 
   const propsValidation = (obj) => {
     const augment = {};
+    const msg = [];
     const result = Object.keys(componentProps).every((k) => {
       // eslint-disable-next-line no-prototype-builtins
       const hasProp = obj.hasOwnProperty(k);
@@ -19,16 +20,22 @@ export default (doc, props) => {
         return true;
       }
       if (componentProps[k].isRequired && !hasProp) {
+        msg.push(`Required ${k} prop is missing in ${doc.Component}.`);
         return false;
       }
-      return hasProp && componentProps[k].validator(obj[k]);
+      const valid = componentProps[k].validator(obj[k]);
+      if (!valid) {
+        msg.push(`${k} prop is invalid in ${doc.Component}.`);
+      }
+      return hasProp && valid;
     });
-    return { result, augment };
+    return { result, augment, msg };
   };
 
-  const { result } = propsValidation(props);
+  const { result, msg } = propsValidation(props);
   if (!result) {
-    throw new Error('invalid props');
+    msg.forEach((m) => console.error(m));
+    throw new Error(`${msg.join(',')}`);
   }
 
   // pathArgs are the arguments in order for the 'command'.
