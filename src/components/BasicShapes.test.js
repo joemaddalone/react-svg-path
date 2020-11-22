@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import * as Shapes from '../';
-import docs from '../docs/docs';
+import docs, { basicShapes } from '../docs/docs';
 import Path from './Path';
 
 const basicShapeTest = (Component) => {
@@ -34,11 +34,10 @@ const BSP = {
 };
 
 describe('Basic Shapes', () => {
-  Object.keys(docs.basicShapes)
+  Object.keys(basicShapes)
     .filter((k) => k !== 'line')
     .forEach((k) => {
-      const doc = docs.basicShapes[k];
-
+      const doc = docs[k];
       const { args, command, props: componentProps, Component } = doc;
       const props = Object.keys(componentProps)
         .filter((c) => componentProps[c].isRequired)

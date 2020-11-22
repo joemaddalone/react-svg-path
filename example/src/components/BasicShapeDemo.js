@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import * as Shapes from 'react-svg-path';
 import { Knobs } from './Knobs';
-import docs from '../docs/docs';
+import {basicShapes as docs} from '../docs/docs';
 import demoDocs from '../docs/demos';
 
 export const BasicShapeDemo = ({ shape }) => {
-  const { Component, props, description } = docs.basicShapes[shape];
+  const { Component, props, description } = docs[shape];
   const demos = demoDocs.basicShapes[shape];
   const initialState = demos.map((d, i) => {
     return Object.keys(d)

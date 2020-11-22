@@ -19,7 +19,7 @@ const commonProps = {
   ey: 10
 };
 
-const args = docs.curves.cubic.args;
+const args = docs.cubic.args;
 
 describe('Cubic', () => {
   it(`Cubic should render correct S commands`, () => {

@@ -4,7 +4,7 @@ import docs from '../docs/docs';
 import demoDocs from '../docs/demos';
 
 export const CurveDemo = ({ curve }) => {
-  const { Component, props, description } = docs.curves[curve];
+  const { Component, props, description } = docs[curve];
   const demos = demoDocs.curves[curve];
   const C = Shapes[Component];
   const Svg = Shapes.Svg;

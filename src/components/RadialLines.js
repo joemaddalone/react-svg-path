@@ -2,6 +2,6 @@ import docs from '../docs/docs';
 import createSimpleComponent from '../utils/createSimpleComponent';
 
 export const RadialLines = (props) => {
-  const doc = docs.basicShapes.radialLines;
+  const doc = docs.radialLines;
   return createSimpleComponent(doc, props);
 };
