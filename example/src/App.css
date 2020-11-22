@@ -204,6 +204,11 @@ code {
 
 a:link {
   display: inline-block;
+  width: fit-content;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 .flex { display: flex; }
