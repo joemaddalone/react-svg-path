@@ -6,6 +6,7 @@ import Donut from './demos/complex/Donut';
 import SparkLine from './demos/complex/SparkLine';
 import Bars from './demos/complex/Bars';
 import Football from './demos/complex/Football/Football';
+import Clock from './demos/complex/Clock';
 
 const Introduction = () => {
   const pieData = [
@@ -133,7 +134,7 @@ const Introduction = () => {
             source
           </a>
         </div>
-        <Football width={775} />
+        <Football width={800} />
         <a
           href={`https://github.com/joemaddalone/react-svg-path/blob/master/example/src/components/demos/complex/Football/Football.js`}
           rel='noopener noreferrer'
@@ -142,6 +143,14 @@ const Introduction = () => {
           source
         </a>
       </div>
+      <Clock size={400} />
+      <a
+        href={`https://github.com/joemaddalone/react-svg-path/blob/master/example/src/components/demos/complex/Clock.js`}
+        rel='noopener noreferrer'
+        target='_blank'
+      >
+        source
+      </a>
     </>
   );
 };

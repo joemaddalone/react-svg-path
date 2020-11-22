@@ -8,3 +8,7 @@ svg.clock text {
 	fill: #222;
 	stroke: none;
 }
+
+svg.clock.path {
+  transition: all 0.1s ease-in-out;
+}
