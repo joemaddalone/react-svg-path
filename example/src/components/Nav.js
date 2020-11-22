@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import docs from '../docs/docs';
+import {basicShapes, curves} from '../docs/docs';
 
 const Nav = () => {
   return (
@@ -26,15 +26,15 @@ const Nav = () => {
       <div className='item'>
         <div className='active  header'>Shapes</div>
         <div className='menu'>
-          {Object.keys(docs.basicShapes)
+          {Object.keys(basicShapes)
             .sort()
             .map((c, index) => (
               <NavLink
                 key={c}
                 className='item'
-                to={`/${docs.basicShapes[c].Component.toLowerCase()}`}
+                to={`/${basicShapes[c].Component.toLowerCase()}`}
               >
-                {docs.basicShapes[c].Component}
+                {basicShapes[c].Component}
               </NavLink>
             ))}
         </div>
@@ -42,15 +42,15 @@ const Nav = () => {
       <div className='item'>
         <div className='active  header'>Curves</div>
         <div className='menu'>
-          {Object.keys(docs.curves)
+          {Object.keys(curves)
             .sort()
             .map((c, index) => (
               <NavLink
                 key={c}
                 className='item'
-                to={`/${docs.curves[c].Component.toLowerCase()}`}
+                to={`/${curves[c].Component.toLowerCase()}`}
               >
-                {docs.curves[c].Component}
+                {curves[c].Component}
               </NavLink>
             ))}
         </div>

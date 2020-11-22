@@ -17,7 +17,7 @@ const commonProps = {
   ey: 50
 };
 
-const args = docs.curves.quad.args;
+const args = docs.quad.args;
 
 describe('Quad', () => {
   it(`Quad should render correct T commands`, () => {

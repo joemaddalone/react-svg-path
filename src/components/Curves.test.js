@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import * as Shapes from '../';
-import docs from '../docs/docs';
+import docs, { curves } from '../docs/docs';
 import Path from './Path';
 
 const shapeTest = (Component) => {
@@ -27,8 +27,8 @@ const BSP = {
 };
 
 describe('Curves', () => {
-  Object.keys(docs.curves).forEach((k) => {
-    const doc = docs.curves[k];
+  Object.keys(curves).forEach((k) => {
+    const doc = docs[k];
 
     const { args, command, props: componentProps, Component } = doc;
     const props = Object.keys(componentProps).reduce((accum, cur) => {

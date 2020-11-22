@@ -1,6 +1,6 @@
 import React from 'react';
 import { HashRouter as Router, Route, NavLink } from 'react-router-dom';
-import docs from './docs/docs';
+import {basicShapes, curves} from './docs/docs';
 import Introduction from './components/Introduction';
 import Nav from './components/Nav';
 import { PathIntro } from './components/PathIntro';
@@ -13,8 +13,8 @@ import { ToComponent } from './components/ToComponent';
 import './App.css';
 
 const App = () => {
-  const basicShapes = Object.keys(docs.basicShapes);
-  const curves = Object.keys(docs.curves);
+  const shapesDemos = Object.keys(basicShapes);
+  const curveDemos = Object.keys(curves);
 
   return (
     <Router basename='/'>
@@ -39,7 +39,7 @@ const App = () => {
           <Route exact path={`/markers`} render={() => <MarkerDemo />} />
 
           <div className='basic-shapes'>
-            {basicShapes.map((s, i) => (
+            {shapesDemos.map((s, i) => (
               <Route
                 key={s}
                 exact
@@ -47,7 +47,7 @@ const App = () => {
                 render={() => <BasicShapeDemo shape={s} />}
               />
             ))}
-            {curves.map((c, i) => (
+            {curveDemos.map((c, i) => (
               <Route
                 key={c}
                 exact

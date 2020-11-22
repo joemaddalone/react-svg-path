@@ -23,559 +23,585 @@ const centeredShapeNestingProps = {
 };
 
 const docs = {
-  basicShapes: {
-    circle: {
-      Component: 'Circle',
-      command: 'circle',
-      args: ['size', 'cx', 'cy'],
-      description:
-        'Circle is drawn from center points (cx & cy). The cursor is then moved to the center points.',
-      props: {
-        size: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        },
-        cx: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        },
-        cy: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        }
+  circle: {
+    category: 'basicShapes',
+    Component: 'Circle',
+    command: 'circle',
+    args: ['size', 'cx', 'cy'],
+    description:
+      'Circle is drawn from center points (cx & cy). The cursor is then moved to the center points.',
+    props: {
+      size: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
       },
-      nestingProps: centeredShapeNestingProps
-    },
-    ellipse: {
-      Component: 'Ellipse',
-      command: 'ellipse',
-      args: ['width', 'height', 'cx', 'cy'],
-      description:
-        'Ellipse is drawn from center point (cx & cy). The cursor is then moved to the center point.',
-      props: {
-        width: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        },
-        height: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        },
-        cx: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        },
-        cy: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        }
+      cx: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
       },
-      nestingProps: centeredShapeNestingProps
-    },
-    polygon: {
-      Component: 'Polygon',
-      command: 'polygon',
-      args: ['points'],
-      description:
-        'Polygon accepts an array of [x, y] coordinates and then draws lines connecting those points.  The path will start from the first point and end on the first point - closing the shape.',
-      props: {
-        points: {
-          type: 'point-array',
-          isRequired: true,
-          validator: pointArrayValidator
-        }
-      },
-      nestingProps: ({ points }) => {
-        const [sx, sy] = points[0];
-        const [ex, ey] = points[points.length - 1];
-        return { ex: sx, ey: sy, sx: ex, sy: ey };
+      cy: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
       }
     },
-    polygram: {
-      Component: 'Polygram',
-      command: 'polygram',
-      args: ['size', 'points', 'cx', 'cy', 'vertexSkip'],
-      description:
-        'Polygram is drawn from center point (cx & cy). The first outer point of the shape will always be at top center. The cursor is then moved to the center point.  Skipping a vertex is what makes a polygram appear as intersecting lines, a vertexSkip of 1 will result in a regular polygon.',
-      props: {
-        size: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        },
-        points: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        },
-        cx: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        },
-        cy: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        },
-        vertexSkip: {
-          type: 'number',
-          validator: commonNumberValidator,
-          default: 2
-        }
+    nestingProps: centeredShapeNestingProps
+  },
+  ellipse: {
+    category: 'basicShapes',
+    Component: 'Ellipse',
+    command: 'ellipse',
+    args: ['width', 'height', 'cx', 'cy'],
+    description:
+      'Ellipse is drawn from center point (cx & cy). The cursor is then moved to the center point.',
+    props: {
+      width: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
       },
-      nestingProps: centeredShapeNestingProps
-    },
-    polyline: {
-      Component: 'Polyline',
-      command: 'polyline',
-      args: ['points', 'relative'],
-      description:
-        'Polyline accepts an array of [x, y] coordinates and then draws lines connecting those points.  The path will start from the first point and end on the last.  points can be absolute or relative.',
-      props: {
-        points: {
-          type: 'point-array',
-          isRequired: true,
-          validator: pointArrayValidator
-        },
-        relative: { type: 'boolean' }
+      height: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
       },
-      nestingProps: ({ points }) => {
-        const [sx, sy] = points[0];
-        const [ex, ey] = points[points.length - 1];
-        return { ex: sx, ey: sy, sx: ex, sy: ey };
+      cx: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      },
+      cy: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
       }
     },
-    line: {
-      Component: 'Line',
-      command: 'lineTo',
-      args: ['x', 'y'],
-      description:
-        'Line is drawn from starting points (sx & sy) to ending points (ex & ey). sx (starting x) & sy (starting y) will always be absolutely positioned, however with relative=true the ex and ey points can relative to sx & sy.',
-      props: {
-        sx: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        },
-        sy: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        },
-        ex: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        },
-        ey: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        },
-        relative: { type: 'boolean' }
+    nestingProps: centeredShapeNestingProps
+  },
+  polygon: {
+    category: 'basicShapes',
+    Component: 'Polygon',
+    command: 'polygon',
+    args: ['points'],
+    description:
+      'Polygon accepts an array of [x, y] coordinates and then draws lines connecting those points.  The path will start from the first point and end on the first point - closing the shape.',
+    props: {
+      points: {
+        type: 'point-array',
+        isRequired: true,
+        validator: pointArrayValidator
       }
     },
-    radialLines: {
-      Component: 'RadialLines',
-      command: 'radialLines',
-      args: ['outerSize', 'innerSize', 'points', 'cx', 'cy'],
-      description:
-        'RadialLines is drawn from center point (cx & cy). The first outer point of the shape will always be at top center. The cursor is then moved to the center point.',
-      props: {
-        outerSize: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        },
-        innerSize: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        },
-        points: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        },
-        cx: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        },
-        cy: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        }
-      },
-      nestingProps: centeredShapeNestingProps
-    },
-    rect: {
-      Component: 'Rect',
-      command: 'rect',
-      args: ['width', 'height', 'cx', 'cy'],
-      description:
-        'Rect is drawn from center point (cx & cy). The cursor is then moved to the center point.',
-      props: {
-        width: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        },
-        height: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        },
-        cx: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        },
-        cy: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        }
-      },
-      nestingProps: centeredShapeNestingProps
-    },
-    regPolygon: {
-      Component: 'RegPolygon',
-      command: 'regPolygon',
-      args: ['size', 'sides', 'cx', 'cy'],
-      description:
-        'RegPolygon is drawn from center point (cx & cy). The first outer point of the shape will always be at top center. The cursor is then moved to the center point.',
-      props: {
-        size: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        },
-        sides: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        },
-        cx: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        },
-        cy: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        }
-      },
-      nestingProps: centeredShapeNestingProps
-    },
-    sector: {
-      Component: 'Sector',
-      command: 'sector',
-      args: ['cx', 'cy', 'size', 'startAngle', 'endAngle'],
-      description:
-        'Sector is drawn from center point (cx & cy). The cursor is then moved to the center point.',
-      props: {
-        cx: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        },
-        cy: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        },
-        size: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        },
-        startAngle: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        },
-        endAngle: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        }
-      },
-      nestingProps: centeredShapeNestingProps
-    },
-    segment: {
-      Component: 'Segment',
-      command: 'segment',
-      args: ['cx', 'cy', 'size', 'startAngle', 'endAngle'],
-      description:
-        'Segment is drawn from center point (cx & cy). The cursor is then moved to the center point.',
-      props: {
-        cx: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        },
-        cy: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        },
-        size: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        },
-        startAngle: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        },
-        endAngle: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        }
-      },
-      nestingProps: centeredShapeNestingProps
-    },
-    square: {
-      Component: 'Square',
-      command: 'square',
-      args: ['size', 'cx', 'cy'],
-      description:
-        'Square is drawn from center point (cx & cy). The cursor is then moved to the center point.',
-      props: {
-        size: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        },
-        cx: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        },
-        cy: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        }
-      },
-      nestingProps: centeredShapeNestingProps
-    },
-    star: {
-      Component: 'Star',
-      command: 'star',
-      args: ['outerSize', 'innerSize', 'points', 'cx', 'cy'],
-      description:
-        'Star is drawn from center point (cx & cy). The first outer point of the shape will always be at top center. The cursor is then moved to the center point.',
-      props: {
-        outerSize: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        },
-        innerSize: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        },
-        points: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        },
-        cx: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        },
-        cy: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        }
-      },
-      nestingProps: centeredShapeNestingProps
-    },
-    triangle: {
-      Component: 'Triangle',
-      command: 'triangle',
-      args: ['size', 'cx', 'cy'],
-      description:
-        'Triangle draws an equilateral triangle from center point (cx & cy). The cursor is then moved to the center point.',
-      props: {
-        size: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        },
-        cx: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        },
-        cy: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        }
-      },
-      nestingProps: centeredShapeNestingProps
+    nestingProps: ({ points }) => {
+      const [sx, sy] = points[0];
+      const [ex, ey] = points[points.length - 1];
+      return { ex: sx, ey: sy, sx: ex, sy: ey };
     }
   },
-  curves: {
-    arc: {
-      Component: 'Arc',
-      command: 'arc',
-      args: ['rx', 'ry', 'rotation', 'arc', 'sweep', 'ex', 'ey'],
-      description: 'Arc is drawn...',
-      props: {
-        sx: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        },
-        sy: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        },
-        rx: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        },
-        ry: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        },
-        rotation: {
-          type: 'number',
-          validator: commonNumberValidator
-        },
-        arc: {
-          type: 'number',
-          validator: commonNumberValidator
-        },
-        sweep: {
-          type: 'number',
-          validator: commonNumberValidator
-        },
-        ex: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        },
-        ey: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        }
+  polygram: {
+    category: 'basicShapes',
+    Component: 'Polygram',
+    command: 'polygram',
+    args: ['size', 'points', 'cx', 'cy', 'vertexSkip'],
+    description:
+      'Polygram is drawn from center point (cx & cy). The first outer point of the shape will always be at top center. The cursor is then moved to the center point.  Skipping a vertex is what makes a polygram appear as intersecting lines, a vertexSkip of 1 will result in a regular polygon.',
+    props: {
+      size: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      },
+      points: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      },
+      cx: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      },
+      cy: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      },
+      vertexSkip: {
+        type: 'number',
+        validator: commonNumberValidator,
+        default: 2
       }
     },
-    cubic: {
-      Component: 'Cubic',
-      command: 'cCurve',
-      args: ['cx1', 'cy1', 'cx2', 'cy2', 'ex', 'ey'],
-      description: 'Cubic is drawn...',
-      props: {
-        sx: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        },
-        sy: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        },
-        cx1: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        },
-        cy1: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        },
-        cx2: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        },
-        cy2: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        },
-        ex: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        },
-        ey: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        },
-        S: { type: 'point-array' },
-        s: { type: 'point-array' }
+    nestingProps: centeredShapeNestingProps
+  },
+  polyline: {
+    category: 'basicShapes',
+    Component: 'Polyline',
+    command: 'polyline',
+    args: ['points', 'relative'],
+    description:
+      'Polyline accepts an array of [x, y] coordinates and then draws lines connecting those points.  The path will start from the first point and end on the last.  points can be absolute or relative.',
+    props: {
+      points: {
+        type: 'point-array',
+        isRequired: true,
+        validator: pointArrayValidator
+      },
+      relative: { type: 'boolean' }
+    },
+    nestingProps: ({ points }) => {
+      const [sx, sy] = points[0];
+      const [ex, ey] = points[points.length - 1];
+      return { ex: sx, ey: sy, sx: ex, sy: ey };
+    }
+  },
+  line: {
+    category: 'basicShapes',
+    Component: 'Line',
+    command: 'lineTo',
+    args: ['x', 'y'],
+    description:
+      'Line is drawn from starting points (sx & sy) to ending points (ex & ey). sx (starting x) & sy (starting y) will always be absolutely positioned, however with relative=true the ex and ey points can relative to sx & sy.',
+    props: {
+      sx: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      },
+      sy: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      },
+      ex: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      },
+      ey: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      },
+      relative: { type: 'boolean' }
+    }
+  },
+  radialLines: {
+    category: 'basicShapes',
+    Component: 'RadialLines',
+    command: 'radialLines',
+    args: ['outerSize', 'innerSize', 'points', 'cx', 'cy'],
+    description:
+      'RadialLines is drawn from center point (cx & cy). The first outer point of the shape will always be at top center. The cursor is then moved to the center point.',
+    props: {
+      outerSize: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      },
+      innerSize: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      },
+      points: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      },
+      cx: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      },
+      cy: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
       }
     },
-    quad: {
-      Component: 'Quad',
-      command: 'qCurve',
-      args: ['cx', 'cy', 'ex', 'ey'],
-      description: 'Quad is drawn...',
-      props: {
-        sx: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        },
-        sy: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        },
-        cx: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        },
-        cy: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        },
-        ex: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        },
-        ey: {
-          type: 'number',
-          isRequired: true,
-          validator: commonNumberValidator
-        },
-        T: { type: 'point-array' },
-        t: { type: 'point-array' }
+    nestingProps: centeredShapeNestingProps
+  },
+  rect: {
+    category: 'basicShapes',
+    Component: 'Rect',
+    command: 'rect',
+    args: ['width', 'height', 'cx', 'cy'],
+    description:
+      'Rect is drawn from center point (cx & cy). The cursor is then moved to the center point.',
+    props: {
+      width: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      },
+      height: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      },
+      cx: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      },
+      cy: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
       }
+    },
+    nestingProps: centeredShapeNestingProps
+  },
+  regPolygon: {
+    category: 'basicShapes',
+    Component: 'RegPolygon',
+    command: 'regPolygon',
+    args: ['size', 'sides', 'cx', 'cy'],
+    description:
+      'RegPolygon is drawn from center point (cx & cy). The first outer point of the shape will always be at top center. The cursor is then moved to the center point.',
+    props: {
+      size: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      },
+      sides: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      },
+      cx: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      },
+      cy: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      }
+    },
+    nestingProps: centeredShapeNestingProps
+  },
+  sector: {
+    category: 'basicShapes',
+    Component: 'Sector',
+    command: 'sector',
+    args: ['cx', 'cy', 'size', 'startAngle', 'endAngle'],
+    description:
+      'Sector is drawn from center point (cx & cy). The cursor is then moved to the center point.',
+    props: {
+      cx: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      },
+      cy: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      },
+      size: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      },
+      startAngle: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      },
+      endAngle: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      }
+    },
+    nestingProps: centeredShapeNestingProps
+  },
+  segment: {
+    category: 'basicShapes',
+    Component: 'Segment',
+    command: 'segment',
+    args: ['cx', 'cy', 'size', 'startAngle', 'endAngle'],
+    description:
+      'Segment is drawn from center point (cx & cy). The cursor is then moved to the center point.',
+    props: {
+      cx: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      },
+      cy: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      },
+      size: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      },
+      startAngle: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      },
+      endAngle: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      }
+    },
+    nestingProps: centeredShapeNestingProps
+  },
+  square: {
+    category: 'basicShapes',
+    Component: 'Square',
+    command: 'square',
+    args: ['size', 'cx', 'cy'],
+    description:
+      'Square is drawn from center point (cx & cy). The cursor is then moved to the center point.',
+    props: {
+      size: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      },
+      cx: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      },
+      cy: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      }
+    },
+    nestingProps: centeredShapeNestingProps
+  },
+  star: {
+    category: 'basicShapes',
+    Component: 'Star',
+    command: 'star',
+    args: ['outerSize', 'innerSize', 'points', 'cx', 'cy'],
+    description:
+      'Star is drawn from center point (cx & cy). The first outer point of the shape will always be at top center. The cursor is then moved to the center point.',
+    props: {
+      outerSize: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      },
+      innerSize: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      },
+      points: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      },
+      cx: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      },
+      cy: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      }
+    },
+    nestingProps: centeredShapeNestingProps
+  },
+  triangle: {
+    category: 'basicShapes',
+    Component: 'Triangle',
+    command: 'triangle',
+    args: ['size', 'cx', 'cy'],
+    description:
+      'Triangle draws an equilateral triangle from center point (cx & cy). The cursor is then moved to the center point.',
+    props: {
+      size: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      },
+      cx: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      },
+      cy: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      }
+    },
+    nestingProps: centeredShapeNestingProps
+  },
+  arc: {
+    category: 'curves',
+    Component: 'Arc',
+    command: 'arc',
+    args: ['rx', 'ry', 'rotation', 'arc', 'sweep', 'ex', 'ey'],
+    description: 'Arc is drawn...',
+    props: {
+      sx: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      },
+      sy: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      },
+      rx: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      },
+      ry: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      },
+      rotation: {
+        type: 'number',
+        validator: commonNumberValidator
+      },
+      arc: {
+        type: 'number',
+        validator: commonNumberValidator
+      },
+      sweep: {
+        type: 'number',
+        validator: commonNumberValidator
+      },
+      ex: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      },
+      ey: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      }
+    }
+  },
+  cubic: {
+    category: 'curves',
+    Component: 'Cubic',
+    command: 'cCurve',
+    args: ['cx1', 'cy1', 'cx2', 'cy2', 'ex', 'ey'],
+    description: 'Cubic is drawn...',
+    props: {
+      sx: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      },
+      sy: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      },
+      cx1: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      },
+      cy1: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      },
+      cx2: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      },
+      cy2: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      },
+      ex: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      },
+      ey: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      },
+      S: { type: 'point-array' },
+      s: { type: 'point-array' }
+    }
+  },
+  quad: {
+    category: 'curves',
+    Component: 'Quad',
+    command: 'qCurve',
+    args: ['cx', 'cy', 'ex', 'ey'],
+    description: 'Quad is drawn...',
+    props: {
+      sx: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      },
+      sy: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      },
+      cx: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      },
+      cy: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      },
+      ex: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      },
+      ey: {
+        type: 'number',
+        isRequired: true,
+        validator: commonNumberValidator
+      },
+      T: { type: 'point-array' },
+      t: { type: 'point-array' }
     }
   }
 };
+
+const buildBasicShapes = () =>
+  Object.keys(docs)
+    .filter((k) => docs[k].category === 'basicShapes')
+    .reduce((accum, cur) => ({ ...accum, [cur]: docs[cur] }), {});
+
+const buildCurves = () =>
+  Object.keys(docs)
+    .filter((k) => docs[k].category === 'curves')
+    .reduce((accum, cur) => ({ ...accum, [cur]: docs[cur] }), {});
+
+export const basicShapes = buildBasicShapes();
+export const curves = buildCurves();
 
 export default docs;
