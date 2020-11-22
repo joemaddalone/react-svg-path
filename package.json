@@ -16,6 +16,7 @@
     "node": ">=10"
   },
   "scripts": {
+    "commit": "git-cz",
     "build": "rollup -c",
     "start": "rollup -c -w",
     "prepublish": "run-s build",
@@ -26,7 +27,8 @@
     "test:watch": "react-scripts test --env=jsdom",
     "test:coverage": "cross-env CI=1 react-scripts test --coverage --watchAll=false",
     "predeploy": "cd example && npm install && npm run build",
-    "deploy": "gh-pages -d example/build"
+    "deploy": "gh-pages -d example/build",
+    "semantic-release": "semantic-release"
   },
   "peerDependencies": {
     "react": "^16.0.0",
@@ -44,7 +46,9 @@
     "@testing-library/react": "^11.1.2",
     "babel-eslint": "10.1.0",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "commitizen": "^4.2.2",
     "cross-env": "7.0.2",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^7.13.0",
     "eslint-config-prettier": "6.15.0",
     "eslint-config-standard": "16.0.1",
@@ -62,12 +66,16 @@
     "react-dom": "17.0.1",
     "react-scripts": "^4.0.0",
     "rollup": "^2.33.1",
-    "rollup-plugin-terser": "^7.0.2"
+    "rollup-plugin-terser": "^7.0.2",
+    "semantic-release": "^17.3.0"
   },
   "files": [
     "dist"
   ],
   "dependencies": {
     "@joemaddalone/path": "1.0.5"
+  },
+  "commitizen": {
+    "path": "node_modules/cz-conventional-changelog"
   }
 }
