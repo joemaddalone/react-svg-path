@@ -3,6 +3,16 @@ language: node_js
 node_js:
   - 12
 
+cache:
+  directories:
+    - node_modules
+
+stages:
+  - install
+  - test
+  - name: deploy
+    if: branch == master AND (NOT (type IN (push, pull_request)))
+
 jobs:
   include:
     - stage: install
@@ -11,8 +21,7 @@ jobs:
     - stage: test
       script: npm run test
       skip_cleanup: true
-    - stage: Build & publish
+    - stage: deploy
       script:
       - npm run build
       - npm run semantic-release
-      if: branch = master
