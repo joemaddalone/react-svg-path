@@ -11,17 +11,17 @@ stages:
   - install
   - test
   - name: deploy
-    if: branch == master AND (NOT (type IN (push, pull_request)))
+    if: branch = master AND (NOT (type IN (push, pull_request)))
 
 jobs:
   include:
     - stage: install
       script: npm install
-      skip_cleanup: true
-    - stage: test
+    - stage: "Test"
+      name: "Unit Tests"
       script: npm run test
-      skip_cleanup: true
     - stage: deploy
+      name: "Deploy"
       script:
       - npm run build
       - npm run semantic-release
