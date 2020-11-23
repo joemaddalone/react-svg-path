@@ -33,7 +33,24 @@ const BSP = {
   ]
 };
 
+const { error: originalError } = console;
+
 describe('Basic Shapes', () => {
+  beforeAll(() => {
+    jest.spyOn(console, 'error').mockImplementation((...args) => {
+      originalError(...args);
+      // const error = util.format.apply(this, rest);
+      throw new Error();
+    });
+  });
+
+  afterAll(() => {
+    console.error.mockRestore();
+  });
+
+  afterEach(() => {
+    console.error.mockClear();
+  });
   Object.keys(basicShapes)
     .filter((k) => k !== 'line')
     .forEach((k) => {
@@ -55,6 +72,21 @@ describe('Basic Shapes', () => {
         const path = getByTestId('c');
         const p = new Path()[command](...pathArgs);
         expect(path.getAttribute('d')).toEqual(p.toString());
+      });
+      it(`${k} should throw an error`, () => {
+        delete props.cy;
+        expect(() =>
+          basicShapeTest(
+            <C
+              {...props}
+              cx={null}
+              sx='Q'
+              relative={123}
+              points='notanarray'
+              data-testid='c'
+            />
+          )
+        ).toThrow();
       });
     });
 });
