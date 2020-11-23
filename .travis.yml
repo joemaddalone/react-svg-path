@@ -2,18 +2,17 @@ sudo: false
 language: node_js
 node_js:
   - 12
-cache:
-  directories:
-    - node_modules
-branches:
-  only:
-    - master
-notifications:
-  email: false
-before_script:
-  - npm prune
-script:
-  - npm run test
-  - npm run build
-after_success:
-  - npm run semantic-release
+
+jobs:
+  include:
+    - stage: install
+      script: npm install
+      skip_cleanup: true
+    - stage: test
+      script: npm run test
+      skip_cleanup: true
+    - stage: Build & publish
+      script:
+      - npm run build
+      - npm run semantic-release
+      if: branch = master
