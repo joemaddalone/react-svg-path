@@ -2,6 +2,7 @@ import React from 'react';
 import NestingDemo1 from './NestingDemo1';
 import NestingDemo2 from './NestingDemo2';
 import NestingDemo3 from './NestingDemo3';
+import NestingDemo4 from './NestingDemo4';
 
 export const Nesting = () => {
   return (
@@ -15,9 +16,10 @@ export const Nesting = () => {
           will inherit a starting point at the parent's ending point. And you
           can do this endlessly!
         </p>
-        <NestingDemo1 />
+        {/* <NestingDemo1 />
         <NestingDemo2 />
-        <NestingDemo3 />
+        <NestingDemo3 /> */}
+        <NestingDemo4 />
       </div>
     </>
   );
