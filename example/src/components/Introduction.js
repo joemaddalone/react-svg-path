@@ -1,6 +1,6 @@
 import React from 'react';
 import DagNodes from './demos/dag/DagNodes';
-import { Svg } from 'react-svg-path';
+import { Svg, TextPath, Circle } from 'react-svg-path';
 import Pie from './demos/complex/Pie';
 import Donut from './demos/complex/Donut';
 import SparkLine from './demos/complex/SparkLine';
@@ -52,6 +52,8 @@ const Introduction = () => {
         react-svg-path makes composing svg elements dead simple. Everything is a
         path. Have fun.
       </p>
+
+
       <h3>Installation</h3>
       <code>npm i react-svg-path</code>
       <h2>Stuff</h2>

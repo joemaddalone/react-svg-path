@@ -189,22 +189,20 @@ code {
   margin: 8px;
   padding: 8px;
   background-color: #f8f8f8;
-}
-
-path {
-  shape-rendering: geometricPrecision;
-}
-
-code {
   margin-left: 0;
   white-space: pre;
   display: block;
   unicode-bidi: embed;
 }
 
+path {
+  shape-rendering: geometricPrecision;
+}
+
+
+
 a:link {
   display: inline-block;
-  width: fit-content;
 }
 
 a:hover {

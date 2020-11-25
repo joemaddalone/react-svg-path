@@ -24,4 +24,5 @@ export { MarkerArrow } from './components/markers/MarkerArrow';
 export { MarkerTriangle } from './components/markers/MarkerTriangle';
 export { MarkerLine } from './components/markers/MarkerLine';
 export { MarkerSquare } from './components/markers/MarkerSquare';
+export { TextPath } from './components/TextPath';
 export default Path;
