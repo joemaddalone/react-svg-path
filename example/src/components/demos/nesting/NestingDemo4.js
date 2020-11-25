@@ -1,30 +1,43 @@
 import React from 'react';
-import { Svg, RegPolygon, Circle, Square } from 'react-svg-path';
+import { Svg, RegPolygon, Circle, Square, Text } from 'react-svg-path';
 import './NestingDemo4.css';
+
+const fills = ['red', 'green', 'blue'];
 
 const NestingDemo4 = () => (
   <>
     <h3>Nesting example #4</h3>
     <p>Nesting is awesome.</p>
-    <Svg width={200} height={200} className='nesting-example-1'>
-      <Circle order={2} cx={100} cy={100} size={25} style={{ fill: 'red' }}>
-        <Circle order={3} size={10} style={{ stroke: 'none', fill: '#fff' }} />
-        <RegPolygon
-          size={120}
-          sides={4}
-          order={0}
-          style={{ fill: 'rgba(0,0,0,0.9)' }}
-        />
+    <Svg width={220} height={200} className='nesting-example-4'>
+      <Circle size={0} cx={75} cy={75}>
+        {[1, 2, 0].map((order, index) => (
+          <Circle
+            key={index}
+            size={60}
+            ox={index * 50}
+            fill={fills[index]}
+            order={order}
+          >
+            <Circle ox={-8} size={10} fill='yellow' order={2} />
+            <Circle size={10} fill='orange' order={1} />
+            <Circle ox={8} size={10} fill='white' order={0} />
+          </Circle>
+        ))}
       </Circle>
     </Svg>
     <div>
       <code>
         {`
-<RegPolygon size={120} sides={4} cx={100} cy={100} >
-  <Circle size={55}  />
-  <Square size={60}  />
-  <Circle size={25} cy={58}   />
-</RegPolygon>
+const fills = ['red', 'green', 'blue'];
+<Circle size={0} cx={75} cy={75}>
+  {[1,2,0].map((order, index) => (
+    <Circle size={60} ox={index * 40} fill={fills[order]} order={order}>
+      <Text dx={-4} dy={5} fill="white">
+        {order}
+      </Text>
+    </Circle>
+  ))}
+</Circle>
 `.trim()}
       </code>
     </div>
