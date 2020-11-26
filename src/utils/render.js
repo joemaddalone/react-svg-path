@@ -8,7 +8,7 @@ const render = ({ pathMethod, attributes, ex, ey, sx, sy, children }) => {
   if (!children) {
     return pathMethod()[to](restOfComponentProps);
   } else {
-    return [
+    const nestedComponents = [
       pathMethod()[to]({ ...restOfComponentProps, key: -1 }),
       React.Children.map(children, (child, i) =>
         React.cloneElement(child, {
@@ -18,6 +18,10 @@ const render = ({ pathMethod, attributes, ex, ey, sx, sy, children }) => {
         })
       )
     ];
+    const flattened = nestedComponents.flat(Infinity).sort((a, b) => {
+      return Number(a?.props?.order) - Number(b?.props?.order);
+    });
+    return flattened;
   }
 };
 
