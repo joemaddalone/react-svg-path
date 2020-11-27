@@ -5,15 +5,11 @@ node_js:
 
 stages:
   - install
-  - test
   - name: deploy
     if: (NOT type IN (pull_request)) AND (branch = master)
 
 jobs:
   include:
-    - stage: install
-      name: "Install"
-      script: npm install
     - stage: test
       name: "Unit Tests"
       script: npm run test
