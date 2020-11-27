@@ -17,7 +17,7 @@ export default (doc, props) => {
         return true;
       }
       if (componentProps[k].type === 'boolean') {
-        return true;
+        return props?.k ?? componentProps[k]?.default;
       }
       if (componentProps[k].isRequired && !hasProp) {
         msg.push(`Required ${k} prop is missing in ${doc.Component}.`);

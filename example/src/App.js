@@ -10,6 +10,7 @@ import { Nesting } from './components/demos/nesting';
 import { MergeDemo } from './components/demos/merge/MergeDemo';
 import { MarkerDemo } from './components/demos/markers/MarkerDemo';
 import { TextPathDemo } from './components/demos/textpath/TextPathDemo';
+import { CenterEndDemo } from './components/CenterEndDemo'
 import { ToComponent } from './components/ToComponent';
 import './App.css';
 
@@ -39,6 +40,7 @@ const App = () => {
           <Route exact path={`/tocomponent`} render={() => <ToComponent />} />
           <Route exact path={`/markers`} render={() => <MarkerDemo />} />
           <Route exact path={`/textpath`} render={() => <TextPathDemo />} />
+          <Route exact path={`/centerend`} render={() => <CenterEndDemo />} />
 
           <div className='basic-shapes'>
             {shapesDemos.map((s, i) => (
