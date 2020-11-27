@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import * as Shapes from 'react-svg-path';
 import { Knobs } from './Knobs';
-import {basicShapes as docs} from '../docs/docs';
-import demoDocs from '../docs/demos';
+import {basicShapes as docs} from '../../docs/docs';
+import demoDocs from '../../docs/demos';
 
 export const BasicShapeDemo = ({ shape }) => {
   const { Component, props, description } = docs[shape];

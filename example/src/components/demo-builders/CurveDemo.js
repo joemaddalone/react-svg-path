@@ -1,7 +1,7 @@
 import React from 'react';
 import * as Shapes from 'react-svg-path';
-import docs from '../docs/docs';
-import demoDocs from '../docs/demos';
+import docs from '../../docs/docs';
+import demoDocs from '../../docs/demos';
 
 export const CurveDemo = ({ curve }) => {
   const { Component, props, description } = docs[curve];

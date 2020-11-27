@@ -1,17 +1,20 @@
 import React from 'react';
 import { HashRouter as Router, Route, NavLink } from 'react-router-dom';
-import {basicShapes, curves} from './docs/docs';
-import Introduction from './components/Introduction';
-import Nav from './components/Nav';
-import { PathIntro } from './components/PathIntro';
-import { BasicShapeDemo } from './components/BasicShapeDemo';
-import { CurveDemo } from './components/CurveDemo';
-import { Nesting } from './components/demos/nesting';
-import { MergeDemo } from './components/demos/merge/MergeDemo';
-import { MarkerDemo } from './components/demos/markers/MarkerDemo';
-import { TextPathDemo } from './components/demos/textpath/TextPathDemo';
-import { CenterEndDemo } from './components/CenterEndDemo'
-import { ToComponent } from './components/ToComponent';
+import { basicShapes, curves } from './docs/docs';
+import { Nav } from './components/Nav';
+/** demo builders */
+import { BasicShapeDemo } from './components/demo-builders/BasicShapeDemo';
+import { CurveDemo } from './components/demo-builders/CurveDemo';
+/** pages */
+import { Nesting } from './components/pages/nesting';
+import { MergeDemo } from './components/pages/merge/MergeDemo';
+import { Introduction } from './components/pages/Introduction';
+import { MarkerDemo } from './components/pages/markers/MarkerDemo';
+import { TextPathDemo } from './components/pages/textpath/TextPathDemo';
+import { CenterEndDemo } from './components/pages/CenterEndDemo';
+import { ToComponent } from './components/pages/ToComponent';
+import { PathIntro } from './components/pages/PathIntro';
+
 import './App.css';
 
 const App = () => {
@@ -41,7 +44,6 @@ const App = () => {
           <Route exact path={`/markers`} render={() => <MarkerDemo />} />
           <Route exact path={`/textpath`} render={() => <TextPathDemo />} />
           <Route exact path={`/centerend`} render={() => <CenterEndDemo />} />
-
           <div className='basic-shapes'>
             {shapesDemos.map((s, i) => (
               <Route
