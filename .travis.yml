@@ -1,10 +1,10 @@
-sudo: false
+dist: xenial,
 language: node_js
 node_js:
   - 12
 
 stages:
-  - install
+  - test
   - name: deploy
     if: (NOT type IN (pull_request)) AND (branch = master)
 
