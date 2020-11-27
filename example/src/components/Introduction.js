@@ -1,6 +1,6 @@
 import React from 'react';
 import DagNodes from './demos/dag/DagNodes';
-import { Svg, TextPath, Circle } from 'react-svg-path';
+import { Svg } from 'react-svg-path';
 import Pie from './demos/complex/Pie';
 import Donut from './demos/complex/Donut';
 import SparkLine from './demos/complex/SparkLine';
