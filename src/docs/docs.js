@@ -27,7 +27,7 @@ const docs = {
     category: 'basicShapes',
     Component: 'Circle',
     command: 'circle',
-    args: ['size', 'cx', 'cy'],
+    args: ['size', 'cx', 'cy', 'centerEnd'],
     description:
       'Circle is drawn from center points (cx & cy). The cursor is then moved to the center points.',
     props: {
@@ -45,6 +45,11 @@ const docs = {
         type: 'number',
         isRequired: true,
         validator: commonNumberValidator
+      },
+      centerEnd: {
+        default: true,
+        type: 'boolean',
+        isRequired: false
       }
     },
     nestingProps: centeredShapeNestingProps
@@ -53,7 +58,7 @@ const docs = {
     category: 'basicShapes',
     Component: 'Ellipse',
     command: 'ellipse',
-    args: ['width', 'height', 'cx', 'cy'],
+    args: ['width', 'height', 'cx', 'cy', 'centerEnd'],
     description:
       'Ellipse is drawn from center point (cx & cy). The cursor is then moved to the center point.',
     props: {
@@ -76,6 +81,11 @@ const docs = {
         type: 'number',
         isRequired: true,
         validator: commonNumberValidator
+      },
+      centerEnd: {
+        default: true,
+        type: 'boolean',
+        isRequired: false
       }
     },
     nestingProps: centeredShapeNestingProps
@@ -104,7 +114,7 @@ const docs = {
     category: 'basicShapes',
     Component: 'Polygram',
     command: 'polygram',
-    args: ['size', 'points', 'cx', 'cy', 'vertexSkip'],
+    args: ['size', 'points', 'cx', 'cy', 'vertexSkip', 'centerEnd'],
     description:
       'Polygram is drawn from center point (cx & cy). The first outer point of the shape will always be at top center. The cursor is then moved to the center point.  Skipping a vertex is what makes a polygram appear as intersecting lines, a vertexSkip of 1 will result in a regular polygon.',
     props: {
@@ -132,6 +142,11 @@ const docs = {
         type: 'number',
         validator: commonNumberValidator,
         default: 2
+      },
+      centerEnd: {
+        default: true,
+        type: 'boolean',
+        isRequired: false
       }
     },
     nestingProps: centeredShapeNestingProps
@@ -192,7 +207,7 @@ const docs = {
     category: 'basicShapes',
     Component: 'RadialLines',
     command: 'radialLines',
-    args: ['outerSize', 'innerSize', 'points', 'cx', 'cy'],
+    args: ['outerSize', 'innerSize', 'points', 'cx', 'cy', 'centerEnd'],
     description:
       'RadialLines is drawn from center point (cx & cy). The first outer point of the shape will always be at top center. The cursor is then moved to the center point.',
     props: {
@@ -220,6 +235,11 @@ const docs = {
         type: 'number',
         isRequired: true,
         validator: commonNumberValidator
+      },
+      centerEnd: {
+        default: true,
+        type: 'boolean',
+        isRequired: false
       }
     },
     nestingProps: centeredShapeNestingProps
@@ -228,7 +248,7 @@ const docs = {
     category: 'basicShapes',
     Component: 'Rect',
     command: 'rect',
-    args: ['width', 'height', 'cx', 'cy'],
+    args: ['width', 'height', 'cx', 'cy', 'centerEnd'],
     description:
       'Rect is drawn from center point (cx & cy). The cursor is then moved to the center point.',
     props: {
@@ -251,6 +271,11 @@ const docs = {
         type: 'number',
         isRequired: true,
         validator: commonNumberValidator
+      },
+      centerEnd: {
+        default: true,
+        type: 'boolean',
+        isRequired: false
       }
     },
     nestingProps: centeredShapeNestingProps
@@ -259,7 +284,7 @@ const docs = {
     category: 'basicShapes',
     Component: 'RegPolygon',
     command: 'regPolygon',
-    args: ['size', 'sides', 'cx', 'cy'],
+    args: ['size', 'sides', 'cx', 'cy', 'centerEnd'],
     description:
       'RegPolygon is drawn from center point (cx & cy). The first outer point of the shape will always be at top center. The cursor is then moved to the center point.',
     props: {
@@ -282,6 +307,11 @@ const docs = {
         type: 'number',
         isRequired: true,
         validator: commonNumberValidator
+      },
+      centerEnd: {
+        default: true,
+        type: 'boolean',
+        isRequired: false
       }
     },
     nestingProps: centeredShapeNestingProps
@@ -290,7 +320,7 @@ const docs = {
     category: 'basicShapes',
     Component: 'Sector',
     command: 'sector',
-    args: ['cx', 'cy', 'size', 'startAngle', 'endAngle'],
+    args: ['cx', 'cy', 'size', 'startAngle', 'endAngle', 'centerEnd'],
     description:
       'Sector is drawn from center point (cx & cy). The cursor is then moved to the center point.',
     props: {
@@ -318,6 +348,11 @@ const docs = {
         type: 'number',
         isRequired: true,
         validator: commonNumberValidator
+      },
+      centerEnd: {
+        default: true,
+        type: 'boolean',
+        isRequired: false
       }
     },
     nestingProps: centeredShapeNestingProps
@@ -326,7 +361,7 @@ const docs = {
     category: 'basicShapes',
     Component: 'Segment',
     command: 'segment',
-    args: ['cx', 'cy', 'size', 'startAngle', 'endAngle'],
+    args: ['cx', 'cy', 'size', 'startAngle', 'endAngle', 'centerEnd'],
     description:
       'Segment is drawn from center point (cx & cy). The cursor is then moved to the center point.',
     props: {
@@ -354,6 +389,11 @@ const docs = {
         type: 'number',
         isRequired: true,
         validator: commonNumberValidator
+      },
+      centerEnd: {
+        default: true,
+        type: 'boolean',
+        isRequired: false
       }
     },
     nestingProps: centeredShapeNestingProps
@@ -362,7 +402,7 @@ const docs = {
     category: 'basicShapes',
     Component: 'Square',
     command: 'square',
-    args: ['size', 'cx', 'cy'],
+    args: ['size', 'cx', 'cy', 'centerEnd'],
     description:
       'Square is drawn from center point (cx & cy). The cursor is then moved to the center point.',
     props: {
@@ -380,6 +420,11 @@ const docs = {
         type: 'number',
         isRequired: true,
         validator: commonNumberValidator
+      },
+      centerEnd: {
+        default: true,
+        type: 'boolean',
+        isRequired: false
       }
     },
     nestingProps: centeredShapeNestingProps
@@ -388,7 +433,7 @@ const docs = {
     category: 'basicShapes',
     Component: 'Star',
     command: 'star',
-    args: ['outerSize', 'innerSize', 'points', 'cx', 'cy'],
+    args: ['outerSize', 'innerSize', 'points', 'cx', 'cy', 'centerEnd'],
     description:
       'Star is drawn from center point (cx & cy). The first outer point of the shape will always be at top center. The cursor is then moved to the center point.',
     props: {
@@ -416,6 +461,11 @@ const docs = {
         type: 'number',
         isRequired: true,
         validator: commonNumberValidator
+      },
+      centerEnd: {
+        default: true,
+        type: 'boolean',
+        isRequired: false
       }
     },
     nestingProps: centeredShapeNestingProps
@@ -424,7 +474,7 @@ const docs = {
     category: 'basicShapes',
     Component: 'Triangle',
     command: 'triangle',
-    args: ['size', 'cx', 'cy'],
+    args: ['size', 'cx', 'cy', 'centerEnd'],
     description:
       'Triangle draws an equilateral triangle from center point (cx & cy). The cursor is then moved to the center point.',
     props: {
@@ -442,6 +492,11 @@ const docs = {
         type: 'number',
         isRequired: true,
         validator: commonNumberValidator
+      },
+      centerEnd: {
+        default: true,
+        type: 'boolean',
+        isRequired: false
       }
     },
     nestingProps: centeredShapeNestingProps

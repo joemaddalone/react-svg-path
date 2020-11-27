@@ -64,6 +64,9 @@ const Nav = () => {
           <NavLink className='item' to={`/textpath`}>
             TextPath
           </NavLink>
+          <NavLink className='item' to={`/centerend`}>
+            centerEnd
+          </NavLink>
         </div>
       </div>
       <div className='item'>
