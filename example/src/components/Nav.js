@@ -1,8 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import {basicShapes, curves} from '../docs/docs';
+import { basicShapes, curves } from '../docs/docs';
 
-const Nav = () => {
+export const Nav = () => {
   return (
     <div className='nav-area ui vertical menu' style={{ paddingBottom: 50 }}>
       <div className='item'>
@@ -64,9 +64,6 @@ const Nav = () => {
           <NavLink className='item' to={`/textpath`}>
             TextPath
           </NavLink>
-          <NavLink className='item' to={`/centerend`}>
-            centerEnd
-          </NavLink>
         </div>
       </div>
       <div className='item'>
@@ -74,6 +71,9 @@ const Nav = () => {
         <div className='menu'>
           <NavLink className='item' to='/nesting'>
             Nesting
+          </NavLink>
+          <NavLink className='item' to={`/centerend`}>
+            centerEnd
           </NavLink>
           <NavLink className='item' to='/pathmerge'>
             PathMerge
@@ -83,5 +83,3 @@ const Nav = () => {
     </div>
   );
 };
-
-export default Nav;

@@ -1,14 +1,14 @@
 import React from 'react';
-import DagNodes from './demos/dag/DagNodes';
 import { Svg } from 'react-svg-path';
-import Pie from './demos/complex/Pie';
-import Donut from './demos/complex/Donut';
-import SparkLine from './demos/complex/SparkLine';
-import Bars from './demos/complex/Bars';
-import Football from './demos/complex/Football/Football';
-import Clock from './demos/complex/Clock';
+import DagNodes from '../demos/dag/DagNodes';
+import Pie from '../demos/complex/Pie';
+import Donut from '../demos/complex/Donut';
+import SparkLine from '../demos/complex/SparkLine';
+import Bars from '../demos/complex/Bars';
+import Football from '../demos/complex/Football/Football';
+import Clock from '../demos/complex/Clock';
 
-const Introduction = () => {
+export const Introduction = () => {
   const pieData = [
     {
       color: '#086972',
@@ -157,4 +157,3 @@ const Introduction = () => {
   );
 };
 
-export default Introduction;
