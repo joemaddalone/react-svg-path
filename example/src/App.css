@@ -139,8 +139,8 @@ path.merged {
 
 .basic-shapes path {
   fill: none;
-  stroke: rebeccapurple;
-  stroke-width: 1;
+  /* stroke: rebeccapurple;
+  stroke-width: 1; */
   shape-rendering: geometricPrecision;
 }
 
