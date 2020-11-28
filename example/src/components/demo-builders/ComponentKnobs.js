@@ -1,10 +1,10 @@
 import React from 'react';
 
-export const Knobs = ({ label, type, value, onChange }) => {
+export const ComponentKnobs = ({ label, type, value, onChange }) => {
   if (type === 'number') {
     return (
-      <div className='ui labeled input' style={{ display: 'block' }}>
-        <label htmlFor='amount' className='ui label' style={{ width: 100 }}>
+      <div className='ui labeled input'>
+        <label htmlFor='amount' className='ui label'>
           {label}
         </label>
         <input
@@ -14,6 +14,9 @@ export const Knobs = ({ label, type, value, onChange }) => {
         />
       </div>
     );
+  }
+  if (type === 'point-array') {
+    return 'point array knob not yet implemented';
   }
   return null;
 };

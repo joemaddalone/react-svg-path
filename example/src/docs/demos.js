@@ -1,5 +1,5 @@
 const basicSvgDimensions = {
-  w: 170,
+  w: 800,
   h: 150
 };
 const demos = {
@@ -46,10 +46,10 @@ const demos = {
       {
         svgDimensions: { ...basicSvgDimensions },
         points: [
-          [10, 60],
-          [40, 0],
-          [70, 60],
-          [40, 120]
+          [400, 60],
+          [430, 0],
+          [460, 60],
+          [430, 120]
         ]
       }
     ],

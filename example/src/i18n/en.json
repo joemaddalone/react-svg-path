@@ -2,7 +2,10 @@
   "common": {
     "source": "Source",
     "import": "Import",
-    "example": "Example"
+    "example": "Example",
+    "code": "Code",
+    "props": "Props",
+    "attributes": "Attributes"
   },
   "circle": {
     "description": "Circle is drawn from center points (cx & cy). The cursor is then moved to the center points."

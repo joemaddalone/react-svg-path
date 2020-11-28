@@ -110,7 +110,7 @@ body {
 .content-area {
   height: var(--center-scrollable-height);
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: scroll;
   padding: 10px;
   padding-bottom: 100px;
   display: flex;
@@ -138,9 +138,6 @@ path.merged {
 }
 
 .basic-shapes path {
-  fill: none;
-  /* stroke: rebeccapurple;
-  stroke-width: 1; */
   shape-rendering: geometricPrecision;
 }
 
@@ -149,10 +146,10 @@ path.merged {
   border: 0;
 }
 
-.basic-shapes path.filled {
+/* .basic-shapes path.filled {
   fill: #ddd;
   stroke-width: 0;
-}
+} */
 
 .basic-shapes a,
 .complex a {
