@@ -8,6 +8,8 @@ import {
   Square,
   Arc
 } from 'react-svg-path';
+import { translate as t } from '../../../i18n/i18n';
+
 import './NestingDemo2.css';
 
 const genPolylineZag = (centerY) => {
@@ -26,11 +28,8 @@ const genPolylineZag = (centerY) => {
 
 const NestingDemo2 = () => (
   <>
-    <h3>Nesting example #2</h3>
-    <p>
-      Adding one or more shapes or even &lt;Text> to the end of any other shapes
-      requires very little effort.
-    </p>
+    <h3>{t('pages.nesting.example2')}</h3>
+    <p>{t('pages.nesting.end')}</p>
     <Svg width={200} height={200} className='nesting-example-2'>
       <Line sx={10} sy={25} ex={130} ey={25} stroke='#ccc'>
         <Circle size={15} fill='#ccc' />
@@ -89,11 +88,7 @@ const NestingDemo2 = () => (
 </Line>`.trim()}
       </code>
     </div>
-    <p>
-      This can be reversed to use the parent starting point with the{' '}
-      <em>attach</em> prop. The attach prop is set to `end` by default and can
-      be set to `start`.
-    </p>
+    <p><p>{t('pages.nesting.start')}</p></p>
     <Svg width={200} height={45} className='nesting-example-2'>
       <Line sx={10} sy={25} ex={130} ey={25} stroke='#ccc'>
         <Circle size={15} fill='#ccc' attach='start' />
@@ -107,7 +102,7 @@ const NestingDemo2 = () => (
 </Line>`.trim()}
       </code>
     </div>
-    <p>And you can mix an match with multiple nested components</p>
+    <p>{t('pages.nesting.mix')}</p>
     <Svg width={200} height={45} className='nesting-example-2'>
       <Polyline points={genPolylineZag(25)} stroke='red' fill='none'>
         <Text dx={4} dy={5}>

@@ -10,6 +10,8 @@ import {
   MarkerSquare
 } from 'react-svg-path';
 import demos from '../../../docs/demos';
+import { translate as t } from '../../../i18n/i18n';
+
 import './MarkerDemo.css';
 
 const genPolylineZag = (centerY, length = 10, offsetY = 5, offsetX = 10) => {
@@ -53,9 +55,9 @@ export const MarkerDemo = () => {
   };
   return (
     <>
-      <h2>Markers</h2>
+      <h2>{t('pages.markers.title')}</h2>
       <p>
-        Markers can be added to end, middle, or start points of any path.  Markers will "point" in the direction and angle of the path.
+      {t('pages.markers.intro')}
       </p>
       <div className='flex'>
         <Svg width={260} height={225}>
@@ -91,9 +93,9 @@ export const MarkerDemo = () => {
           </g>
         </Svg>
         <div className='ui form' style={{ width: 250, marginLeft: 10 }}>
-          <MarkerSelector label='Marker start' onChange={markerStart} />
-          <MarkerSelector label='Marker end' onChange={markerEnd} />
-          <MarkerSelector label='Marker mid' onChange={markerMid} />
+          <MarkerSelector label={t('pages.markers.startLabel')} onChange={markerStart} />
+          <MarkerSelector label={t('pages.markers.endLabel')} onChange={markerEnd} />
+          <MarkerSelector label={t('pages.markers.midLabel')} onChange={markerMid} />
         </div>
       </div>
       <div>
@@ -114,19 +116,19 @@ export const MarkerDemo = () => {
       </div>
       <div>
         <h3>&lt;MarkerArrow></h3>
-        <p>Accepts any svg path attribute properties</p>
+        <p dangerouslySetInnerHTML={{__html: t('pages.markers.arrow')}} />
       </div>
       <div>
         <h3>&lt;MarkerTriangle></h3>
-        <p>Accepts any svg path attribute properties</p>
+        <p dangerouslySetInnerHTML={{__html: t('pages.markers.triangle')}} />
       </div>
       <div>
         <h3>&lt;MarkerSquare></h3>
-        <p>Accepts any svg path attribute properties & a <b>size</b> prop</p>
+        <p dangerouslySetInnerHTML={{__html: t('pages.markers.square')}} />
       </div>
       <div>
         <h3>&lt;MarkerLine></h3>
-        <p>Accepts any svg path attribute properties & a <b>size</b> prop</p>
+        <p dangerouslySetInnerHTML={{__html: t('pages.markers.line')}} />
       </div>
     </>
   );

@@ -1,16 +1,13 @@
 import React from 'react';
 import { Svg, RegPolygon, Circle, Square, PathMerge } from 'react-svg-path';
+import { translate as t } from '../../../i18n/i18n';
 import './MergeDemo.css';
 
 export const MergeDemo = () => (
   <>
-    <h2>PathMerge example</h2>
-    <p>
-      While having composable components make designing complex svg withmultiple
-      paths simple you may find a situation where a single path is more
-      desirable. Why not do both with &lt;PathMerge>?
-    </p>
-    <p>As shown previously we can compose our paths from multiple components</p>
+    <h2>{t('pages.pathMerge.title')}</h2>
+    <p>{t('pages.pathMerge.intro')}</p>
+    <p>{t('pages.pathMerge.compose')}</p>
     <div style={{ display: 'flex', alignItems: 'center' }}>
       <Svg width={200} height={200} className='nesting-example-1'>
         <RegPolygon size={120} sides={4} cx={100} cy={100} />
@@ -27,7 +24,7 @@ export const MergeDemo = () => (
         </code>
       </div>
     </div>
-    <p>The resulting output of the above looks like this</p>
+    <p>{t('pages.pathMerge.composeResult')}</p>
     <code>
       {`
 <path d="...RegPolygon path data" />
@@ -35,7 +32,7 @@ export const MergeDemo = () => (
 <path d="...Square path data" />
 `.trim()}
     </code>
-    <p>However we can wrap these components in &lt;PathMerge></p>
+    <p>{t('pages.pathMerge.wrapIn')}</p>
     <div style={{ display: 'flex', alignItems: 'center' }}>
       <Svg width={200} height={200} className='nesting-example-1'>
         <PathMerge>
@@ -56,11 +53,8 @@ export const MergeDemo = () => (
         </code>
       </div>
     </div>
-    <p>
-      The resulting output is a single path where all path data has been
-      combined.
-    </p>
-    <p>This is also possible with nested elements</p>
+    <p>{t('pages.pathMerge.wrapInResult')}</p>
+    <p>{t('pages.pathMerge.nested')}</p>
     <div style={{ display: 'flex', alignItems: 'center' }}>
       <Svg width={200} height={200} className='nesting-example-1'>
         <PathMerge>

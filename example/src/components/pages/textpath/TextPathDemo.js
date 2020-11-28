@@ -1,38 +1,31 @@
 import React from 'react';
 import { Svg, TextPath, Circle, Quad } from 'react-svg-path';
+import { translate as t } from '../../../i18n/i18n';
 import './TextPathDemo.css';
 
-const t = 'This is a thing.  There are many like it, but this one is mine.';
-
 export const TextPathDemo = () => {
+  const exampleText = t('pages.textPath.exampleText');
   return (
     <>
-      <h2>TextPath</h2>
-      <p>
-        You can use the TextPath component to have text follow a specific path.
-        The path can be made from any existing path components or your own.
-      </p>
+      <h2>{t('pages.textPath.title')}</h2>
+      <p>{t('pages.textPath.intro')}</p>
       <div className='text-path flex flex-column'>
         <h3>With existing components</h3>
-        <p>
-          Here we've used a &lt;Circle> component as the path. We also passed in
-          an optional "id" value so we can reference the path later if we need
-          to. Otherwise an id will be generated for you.
-        </p>
+        <p>{t('pages.textPath.withCircle')}</p>
         <Svg width={500} height={250}>
           <TextPath id='my-path' path={<Circle cx={250} cy={125} size={125} />}>
-            {t}
+            {exampleText}
           </TextPath>
         </Svg>
         <code>
           {`
 <Svg width={500} height={250}>
   <TextPath id='my-path' path={<Circle cx={250} cy={125} size={125} />}>
-    ${t}
+    ${exampleText}
   </TextPath>
 </Svg>`.trim()}
         </code>
-        <p>Here we've used a &lt;Quad> component as the path.</p>
+        <p>{t('pages.textPath.withQuad')}</p>
         <Svg width={500} height={200}>
           <TextPath
             startOffset={20}
@@ -54,7 +47,7 @@ export const TextPathDemo = () => {
               />
             }
           >
-            {t} {t}
+            {exampleText} {exampleText}
           </TextPath>
         </Svg>
         <code>
@@ -85,14 +78,14 @@ export const TextPathDemo = () => {
   </TextPath>
 </Svg>`.trim()}
         </code>
-        <h3>With a custom path</h3>
-        <p>Here we've passed in our own path commands as the path.</p>
+        <h3>{t('pages.textPath.withCustom')}</h3>
+        <p>{t('pages.textPath.withCustomDescription')}</p>
         <Svg width={500} height={250}>
           <TextPath
             textLength={450}
             path='M25,100 h150 q25 0 40 50 t50 50 t50 -50 v-100'
           >
-            {"→".repeat(25)}
+            {'→'.repeat(25)}
           </TextPath>
         </Svg>
         <code>

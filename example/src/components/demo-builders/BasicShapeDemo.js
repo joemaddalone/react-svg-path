@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import * as Shapes from 'react-svg-path';
 import { Knobs } from './Knobs';
-import {basicShapes as docs} from '../../docs/docs';
+import { basicShapes as docs } from '../../docs/docs';
+import { translate as t } from '../../i18n/i18n';
 import demoDocs from '../../docs/demos';
 
 export const BasicShapeDemo = ({ shape }) => {
-  const { Component, props, description } = docs[shape];
+  const { Component, props } = docs[shape];
   const demos = demoDocs.basicShapes[shape];
   const initialState = demos.map((d, i) => {
     return Object.keys(d)
@@ -31,7 +32,7 @@ export const BasicShapeDemo = ({ shape }) => {
 />
       `.trim()}
       </code>
-      <p>{description}</p>
+      <p>{t(`${shape}.description`)}</p>
       {demos &&
         demos.map(({ svgDimensions, ...rest }, i) => {
           return (
