@@ -1,0 +1,33 @@
+.tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tab-btn {
+  display: block;
+  flex: 1;
+  padding: 8px 20px;
+  background: #eee;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  border-left: 1px solid #fff;
+}
+
+.tab-indicator-container {
+  display: flex;
+  background: #eee;
+  margin-bottom: 10px;
+}
+
+.tab-indicator {
+  height: 2px;
+  background: #0e98dd;
+  transition: transform 0.2s;
+}
+
+.tab-content {
+  padding: 10px;
+  min-height: 500px;
+}

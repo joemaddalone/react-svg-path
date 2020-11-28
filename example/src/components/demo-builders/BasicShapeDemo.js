@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import * as Shapes from 'react-svg-path';
-import { Knobs } from './Knobs';
+import { ComponentKnobs } from './ComponentKnobs';
+import { PathKnobs } from './PathKnobs';
+import { Tabs } from './Tabs';
 import { basicShapes as docs } from '../../docs/docs';
 import { translate as t } from '../../i18n/i18n';
 import demoDocs from '../../docs/demos';
+
+import './BasicShapeDemo.css';
 
 export const BasicShapeDemo = ({ shape }) => {
   const { Component, props } = docs[shape];
@@ -17,6 +21,11 @@ export const BasicShapeDemo = ({ shape }) => {
   });
 
   const [demoValues, setDemoValues] = useState(initialState);
+  const [pathAttributes, setPathAttributes] = useState({
+    stroke: '#0e98dd',
+    strokeWidth: 1,
+    fill: '#ffffff'
+  });
   const C = Shapes[Component];
   const Svg = Shapes.Svg;
   return (
@@ -38,38 +47,66 @@ export const BasicShapeDemo = ({ shape }) => {
           return (
             <span key={i}>
               <Svg width={svgDimensions.w} height={svgDimensions.h}>
-                <C {...demoValues[i]} />
+                <C {...demoValues[i]} {...pathAttributes} />
               </Svg>
-              <code>
-                {`
-        <${Component}
-  ${Object.keys(demoValues[i])
-    .map((k) => `${k}={${JSON.stringify(demoValues[i][k])}}`)
-    .join('\n  ')}
-/>
-      `.trim()}
-              </code>
-              <div>
-                {Object.keys(demoValues[i]).map((k, index) => {
-                  return (
-                    <Knobs
-                      key={k}
-                      label={k}
-                      value={demoValues[i][k]}
-                      type={props[k].type}
-                      onChange={(k, v) => {
-                        setDemoValues((current) => {
-                          current[i][k] = v;
-                          return [...current];
-                        });
-                      }}
-                    />
-                  );
-                })}
-              </div>
             </span>
           );
         })}
+      <div style={{ maxWidth: 800 }}>
+        <Tabs>
+          <div title={t('common.code')}>
+            <code>
+              {`
+        <${Component}
+  ${Object.keys(demoValues[0])
+    .map((k) => `${k}={${JSON.stringify(demoValues[0][k])}}`)
+    .join('\n  ')}
+  ${Object.keys(pathAttributes)
+    .map((k) =>
+      typeof pathAttributes[k] === 'number'
+        ? `${k}={${JSON.stringify(pathAttributes[k])}}`
+        : `${k}=${JSON.stringify(pathAttributes[k])}`
+    )
+    .join('\n  ')}
+/>
+      `.trim()}
+            </code>
+          </div>
+          <div title={t('common.props')}>
+            <div className='knobs'>
+              {Object.keys(demoValues[0]).map((k, index) => {
+                return (
+                  <ComponentKnobs
+                    key={k}
+                    label={k}
+                    value={demoValues[0][k]}
+                    type={props[k].type}
+                    onChange={(k, v) => {
+                      setDemoValues((current) => {
+                        current[0][k] = v;
+                        return [...current];
+                      });
+                    }}
+                  />
+                );
+              })}
+            </div>
+          </div>
+          <div title={t('common.attributes')}>
+            <div className='knobs'>
+              <PathKnobs
+                initData={pathAttributes}
+                onChange={(e, k) => {
+                  setPathAttributes((current) => {
+                    current[k] = e;
+                    return { ...current };
+                  });
+                }}
+              />
+            </div>
+          </div>
+        </Tabs>
+      </div>
     </>
   );
 };

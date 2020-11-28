@@ -1,0 +1,21 @@
+.knobs form {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.knobs {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.knobs .ui.labeled.input {
+  margin: 5px;
+  width: 375px;
+}
+
+.knobs .ui.label {
+  width: 150px;
+}
+

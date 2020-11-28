@@ -24,7 +24,7 @@ export const CurveDemo = ({ curve }) => {
       </code>
       <p>{t(`${curve}.description`)}</p>
       <Svg width={500} height={120}>
-        {demos && demos.map((d, i) => <C key={i} {...d} />)}
+        {demos && demos.map((d, i) => <C key={i} {...d} fill="none" stroke="#0e98dd" />)}
       </Svg>
     </>
   );
