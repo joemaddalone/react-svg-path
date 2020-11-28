@@ -1,4 +1,5 @@
 import React from 'react';
+import { translate as t } from '../../i18n/i18n';
 const pathCommands = {
   primitives: [
     { cmd: 'A', args: 'rx,ry,rotation,arc,sweep,ex,ey' },
@@ -24,183 +25,160 @@ const pathCommands = {
     {
       cmd: 'arc',
       args: 'rx,ry,rotation,arc,sweep,ex,ey,relative = false',
-      description:
-        'relative is optional, its default is false. Setting relative to true is equivalent to a'
+      description: t('pages.path.commands.arc.description')
     },
 
     {
       cmd: 'cCurve',
       args: 'cx,cy,ex,ey,relative = false',
-      description:
-        'relative is optional, its default is false. Setting relative to true is equivalent to c'
+      description: t('pages.path.commands.cCurve.description')
     },
 
     {
       cmd: 'horizontalTo',
       args: 'x,relative = false',
-      description:
-        'relative is optional, its default is false. Setting relative to true is equivalent to h'
+      description: t('pages.path.commands.horizontalTo.description')
     },
 
     {
       cmd: 'verticalTo',
       args: 'x,relative = false',
-      description:
-        'relative is optional, its default is false. Setting relative to true is equivalent to v'
+      description: t('pages.path.commands.verticalTo.description')
     },
 
     {
       cmd: 'lineTo',
       args: 'x,y,relative = false',
-      description:
-        'relative is optional, its default is false. Setting relative to true is equivalent to l'
+      description: t('pages.path.commands.lineTo.description')
     },
 
     {
       cmd: 'moveTo',
       args: 'x,y,relative = false',
-      description:
-        'relative is optional, its default is false. Setting relative to true is equivalent to m'
+      description: t('pages.path.commands.moveTo.description')
     },
 
     {
       cmd: 'qCurve',
       args: 'cx,cy,ex,ey,relative = false',
-      description:
-        'relative is optional, its default is false. Setting relative to true is equivalent to q'
+      description: t('pages.path.commands.qCurve.description')
     },
 
     {
       cmd: 'sCurveTo',
       args: 'cx,cy,ex,ey,relative = false',
-      description:
-        'relative is optional, its default is false. Setting relative to true is equivalent to s'
+      description: t('pages.path.commands.sCurveTo.description')
     },
 
     {
       cmd: 'tCurveTo',
       args: 'cx,cy,ex,ey,relative = false',
-      description:
-        'relative is optional, its default is false. Setting relative to true is equivalent to t	'
+      description: t('pages.path.commands.tCurveTo.description')
     }
   ],
   helpers: [
     {
       cmd: 'down',
       args: 'px',
-      description: 'Draw line from current position down by px'
+      description: t('pages.path.commands.down.description')
     },
     {
       cmd: 'up',
       args: 'px',
-      description: 'Draw line from current position up by px'
+      description: t('pages.path.commands.up.description')
     },
     {
       cmd: 'right',
       args: 'px',
-      description: 'Draw line from current position right by px'
+      description: t('pages.path.commands.right.description')
     },
     {
       cmd: 'left',
       args: 'px',
-      description: 'Draw line from current position left by px'
+      description: t('pages.path.commands.left.description')
     },
     {
       cmd: 'close',
-      description:
-        'Produces a "Z" command which draws a stright line back to the first point of the path.'
+      description: t('pages.path.commands.close.description')
     }
   ],
   shapes: [
     {
       cmd: '.circle',
       args: 'size, cx, cy',
-      description:
-        '.circle is drawn from center points (cx & cy). The cursor is then moved to the center points.'
+      description: t('pages.path.commands.circle.description')
     },
 
     {
       cmd: '.ellipse',
       args: 'width, height, cx, cy',
-      description:
-        '.ellipse is drawn from center point (cx & cy). The cursor is then moved to the center point.'
+      description: t('pages.path.commands.ellipse.description')
     },
 
     {
       cmd: '.polygon',
       args: '[points]',
-      description:
-        '.polygon accepts an array of [x, y] coordinates and then draws lines connecting those points.  The path will start from the first point and end on the first point - closing the shape.'
+      description: t('pages.path.commands.polygon.description')
     },
 
     {
       cmd: '.polygram',
       args: 'size, points, cx, cy, vertexSkip = 2',
-      description:
-        '.polygram is drawn from center point (cx & cy). The first outer point of the shape will always be at top center. The cursor is then moved to the center point.  Skipping a vertex is what makes a polygram appear as intersecting lines, a vertexSkip of 1 will result in a regular polygon.'
+      description: t('pages.path.commands.polygram.description')
     },
 
     {
       cmd: '.polyline',
       args: '[points], relative = false',
-      description:
-        '.polyline accepts an array of [x, y] coordinates and then draws lines connecting those points.  The path will start from the first point and end on the last.  points can be absolute or relative.'
+      description: t('pages.path.commands.polyline.description')
     },
 
     {
       cmd: '.radialLines',
       args: 'outerSize, innerSize, points, cx, cy',
-      description:
-        '.radialLines is drawn from center point (cx & cy). The first outer point of the shape will always be at top center. The cursor is then moved to the center point.'
+      description: t('pages.path.commands.radialLines.description')
     },
 
     {
       cmd: '.rect',
       args: 'width, height, cx, cy',
-      description:
-        '.rect is drawn from center point (cx & cy). The cursor is then moved to the center point.'
+      description: t('pages.path.commands.rect.description')
     },
 
     {
       cmd: '.regPolygon',
       args: 'size, sides, cx, cy',
-      description:
-        '.regPolygon is drawn from center point (cx & cy). The first outer point of the shape will always be at top center. The cursor is then moved to the center point.'
+      description: t('pages.path.commands.regPolygon.description')
     },
 
     {
       cmd: '.sector',
       args: 'cx, cy, size, startAngle, endAngle',
-      description:
-        '.sector is drawn from center point (cx & cy). The cursor is then moved to the center point.'
+      description: t('pages.path.commands.sector.description')
     },
 
     {
       cmd: '.segment',
       args: 'cx, cy, size, startAngle, endAngle',
-      description:
-        '.segment is drawn from center point (cx & cy). The cursor is then moved to the center point.'
+      description: t('pages.path.commands.segment.description')
     },
 
     {
       cmd: '.square',
       args: 'size, cx, cy',
-      description:
-        '.square is drawn from center point (cx & cy). The cursor is then moved to the center point.'
+      description: t('pages.path.commands.square.description')
     },
 
     {
       cmd: '.star',
       args: 'outerSize, innerSize, points, cx, cy',
-      description:
-        '.star is drawn from center point (cx & cy). The first outer point of the shape will always be at top center. The cursor is then moved to the center point.'
+      description: t('pages.path.commands.star.description')
     },
 
     {
       cmd: '.triangle',
       args: 'size, cx, cy',
-      description:
-        '.triangle draws an equilateral triangle from center point (cx & cy). The cursor is then moved to the center point.  '
+      description: t('pages.path.commands.triangle.description')
     }
   ]
 };
@@ -208,40 +186,24 @@ const pathCommands = {
 export const PathIntro = () => {
   return (
     <>
-      <h2>Path</h2>
-      <p>
-        This library wraps{' '}
-        <a
-          target='_blank'
-          rel='noopener noreferrer'
-          href='https://github.com/joemaddalone/path'
-        >
-          https://github.com/joemaddalone/path
-        </a>{' '}
-        and further documentation can be found there. This library adds one
-        additional rendering method to path.
-        <br />
-        <i>Path.toComponent(props)</i> returns a jsx function including
-        attributes and props.
-      </p>
-      <h3>import</h3>
+      <h2>{t('pages.path.title')}</h2>
+      <p dangerouslySetInnerHTML={{ __html: t('pages.path.intro') }} />
+
+      <h3>{t('common.import')}</h3>
       <code>import Path from 'react-svg-path'</code>
 
-      <h3>Example</h3>
+      <h3>{t('common.example')}</h3>
       <code>{`<path d="M0 0, L0 100"></path>`}</code>
 
-      <p>This path can be produced with:</p>
+      <p>{t('pages.path.example')}</p>
 
       <code>
         {`const path = new Path().M(0,0).L(0,100);
 console.log(path.toString()) // M0 0, L0 100`}
       </code>
 
-      <h3>Path Commands</h3>
-      <p>
-        For every svg path command there is an equivalent command available in
-        path.
-      </p>
+      <h3>{t('pages.path.pathCommands')}</h3>
+      <p>{t('pages.path.pathCommandsIntro')}</p>
       <ul>
         {pathCommands.primitives.map(({ cmd, args }, index) => {
           return (
@@ -251,11 +213,7 @@ console.log(path.toString()) // M0 0, L0 100`}
           );
         })}
       </ul>
-      <p>
-        And then for most of these is there is a semantically named helper
-        method. Not required, but for complex paths it may be easier to read for
-        those not familiar with path commmands.
-      </p>
+      <p>{t('pages.path.pathHelpers')}</p>
       <ul>
         {pathCommands.friendly.map(({ cmd, args, description }, index) => {
           return (
@@ -268,7 +226,7 @@ console.log(path.toString()) // M0 0, L0 100`}
           );
         })}
       </ul>
-      <p>Some additional path command helpers:</p>
+      <p>{t('pages.path.pathAdditionalHelpers')}</p>
       <ul>
         {pathCommands.helpers.map(({ cmd, args, description }, index) => {
           return (
@@ -281,7 +239,7 @@ console.log(path.toString()) // M0 0, L0 100`}
           );
         })}
       </ul>
-      <p>Shapes:</p>
+      <p>{t('pages.path.shapes')}</p>
       <ul>
         {pathCommands.shapes.map(({ cmd, args, description }, index) => {
           return (

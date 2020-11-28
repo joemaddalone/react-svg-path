@@ -1,4 +1,5 @@
 import React from 'react';
+import { translate as t } from '../../i18n/i18n';
 import {
   Svg,
   Square,
@@ -14,13 +15,8 @@ import {
 export const CenterEndDemo = () => {
   return (
     <>
-      <h2>centerEnd</h2>
-      <p>
-        Some components in react-svg-path are guaranteed to end at their center
-        points. This behavior can be turned off with{' '}
-        <i>centerEnd={`{false}`}</i>. Nested components will still recieve the
-        center x & y from parents.
-      </p>
+      <h2>{t('pages.centerEnd.title')}</h2>
+      <p dangerouslySetInnerHTML={{ __html: t('pages.centerEnd.intro') }} />
       <div>
         <Svg width={575} height={175}>
           <MarkerSquare id='marker-s' size={10} color='#999' />
@@ -44,7 +40,7 @@ export const CenterEndDemo = () => {
                 markerStart='url(#marker-a)'
               />
               <Text ox={100} oy={4}>
-                Circle still inherits center cx & cy
+                {t('pages.centerEnd.circle')}
               </Text>
             </Circle>
           </Square>
@@ -57,7 +53,7 @@ export const CenterEndDemo = () => {
             markerEnd='url(#marker-a)'
           >
             <Text ox={-140} oy={4} attach='start'>
-              Square new end x & y
+            {t('pages.centerEnd.square')}
             </Text>
           </Line>
         </Svg>
@@ -79,7 +75,7 @@ export const CenterEndDemo = () => {
   >
     <Circle size={10}>
       <Line ox={15} ex={75} ey={0} relative stroke="red" markerStart='url(#marker-a)' />
-      <Text ox={100} oy={4}>Circle still inherits center cx & cy</Text>
+      <Text ox={100} oy={4}>${t('pages.centerEnd.circle')}</Text>
     </Circle>
   </Square>
   <Line
@@ -90,13 +86,13 @@ export const CenterEndDemo = () => {
     stroke='red'
     markerEnd='url(#marker-a)'
   >
-    <Text ox={-140} oy={4} attach='start'>Square new end x & y</Text>
+    <Text ox={-140} oy={4} attach='start'>${t('pages.centerEnd.square')}</Text>
   </Line>
 </Svg>        `.trim()}
         </code>
       </div>
       <div>
-        <h3>Another demo</h3>
+        <h3>${t('pages.centerEnd.another')}</h3>
         <Svg width={500} height={500}>
           <MarkerSquare id='ms' size={10} color='red' />
           <MarkerSquare id='mm' size={10} color='#999' />
@@ -125,7 +121,7 @@ export const CenterEndDemo = () => {
               fill='none'
               markerEnd='url(#marker-explain-start)'
             >
-              <Text oy={15}>Starting point</Text>
+              <Text oy={15}>{t('pages.centerEnd.startingPoint')}</Text>
             </Quad>
             <Quad
               oy={-90}
@@ -139,7 +135,7 @@ export const CenterEndDemo = () => {
               markerEnd='url(#marker-explain-end)'
             >
               <Text ox={-50} oy={15}>
-                Ending point
+              {t('pages.centerEnd.endingPoint')}
               </Text>
             </Quad>
           </RadialLines>
@@ -176,7 +172,7 @@ export const CenterEndDemo = () => {
       fill='none'
       markerEnd='url(#marker-explain-start)'
     >
-      <Text oy={15}>Starting point</Text>
+      <Text oy={15}>${t('pages.centerEnd.startingPoint')}</Text>
     </Quad>
     <Quad
       oy={-90}
@@ -189,7 +185,7 @@ export const CenterEndDemo = () => {
       fill='none'
       markerEnd='url(#marker-explain-end)'
     >
-      <Text ox={-50} oy={15}>Ending point</Text>
+      <Text ox={-50} oy={15}>${t('pages.centerEnd.endingPoint')}</Text>
     </Quad>
   </RadialLines>
 </Svg>`.trim()}

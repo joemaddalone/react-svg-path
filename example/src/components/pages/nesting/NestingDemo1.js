@@ -5,15 +5,14 @@ import {
   Circle,
   Square,
 } from 'react-svg-path';
+import { translate as t } from '../../../i18n/i18n';
+
 import './NestingDemo1.css';
 
 const NestingDemo1 = () => (
   <>
-    <h3>Nesting example #1</h3>
-    <p>
-      Since all of our shape components start and end in the center nesting
-      multiple will result in all of them sharing the same center points.
-    </p>
+    <h3>{t('pages.nesting.example1')}</h3>
+    <p>{t('pages.nesting.centerPoints')}</p>
     <Svg width={200} height={200} className='nesting-example-1'>
       <RegPolygon size={120} sides={4} cx={100} cy={100}>
         <Circle size={55} />
@@ -25,9 +24,9 @@ const NestingDemo1 = () => (
       <code>
         {`
 <RegPolygon size={120} sides={4} cx={100} cy={100}>
-  <Circle size={55} /> // no need for cx or cy
-  <Square size={60} /> // no need for cx or cy
-  <Circle size={25} cy={58} /> // cx inherited, cy overwritten
+  <Circle size={55} /> // ${t('pages.nesting.noCxCy')}
+  <Square size={60} /> // ${t('pages.nesting.noCxCy')}
+  <Circle size={25} cy={58} /> // ${t('pages.nesting.cyOver')}
 </RegPolygon>
 `.trim()}
       </code>

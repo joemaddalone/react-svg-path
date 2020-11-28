@@ -1,5 +1,6 @@
 import React from 'react';
 import { Svg } from 'react-svg-path';
+import { translate as t } from '../../i18n/i18n';
 import DagNodes from '../demos/dag/DagNodes';
 import Pie from '../demos/complex/Pie';
 import Donut from '../demos/complex/Donut';
@@ -47,20 +48,13 @@ export const Introduction = () => {
 
   return (
     <>
-      <h2>Introduction</h2>
-      <p>
-        react-svg-path makes composing svg elements dead simple. Everything is a
-        path. Have fun.
-      </p>
+      <h2>{t('pages.introduction.title')}</h2>
+      <p>{t('pages.introduction.intro')}</p>
 
-
-      <h3>Installation</h3>
+      <h3>{t('pages.introduction.installation')}</h3>
       <code>npm i react-svg-path</code>
-      <h2>Stuff</h2>
-      <p>
-        There are a lot of docs (always a work in progress), but here's some fun
-        stuff made with react-svg-path.
-      </p>
+      <h2>{t('pages.introduction.stuffTitle')}</h2>
+      <p>{t('pages.introduction.stuff')}</p>
       <div>
         <div className='dag'>
           <div style={{ margin: 20, display: 'flex', flexDirection: 'column' }}>
@@ -70,7 +64,7 @@ export const Introduction = () => {
               rel='noopener noreferrer'
               target='_blank'
             >
-              source
+              {t('common.source')}
             </a>
           </div>
         </div>
@@ -81,7 +75,7 @@ export const Introduction = () => {
             rel='noopener noreferrer'
             target='_blank'
           >
-            source
+            {t('common.source')}
           </a>
         </div>
       </div>
@@ -98,7 +92,7 @@ export const Introduction = () => {
             rel='noopener noreferrer'
             target='_blank'
           >
-            source
+            {t('common.source')}
           </a>
         </div>
         <div className='flex flex-column items-center justify-center'>
@@ -110,7 +104,7 @@ export const Introduction = () => {
             rel='noopener noreferrer'
             target='_blank'
           >
-            source
+            {t('common.source')}
           </a>
         </div>
         <Svg width={180} height={180}>
@@ -133,7 +127,7 @@ export const Introduction = () => {
             rel='noopener noreferrer'
             target='_blank'
           >
-            source
+            {t('common.source')}
           </a>
         </div>
         <Football width={800} />
@@ -142,7 +136,7 @@ export const Introduction = () => {
           rel='noopener noreferrer'
           target='_blank'
         >
-          source
+          {t('common.source')}
         </a>
       </div>
       <Clock size={400} />
@@ -151,9 +145,8 @@ export const Introduction = () => {
         rel='noopener noreferrer'
         target='_blank'
       >
-        source
+        {t('common.source')}
       </a>
     </>
   );
 };
-

@@ -1,4 +1,5 @@
 import React from 'react';
+import { translate as t } from '../../i18n/i18n';
 import Path, { Svg } from 'react-svg-path';
 
 const Triangle = ({ x, y, w, h, ...rest }) => {
@@ -14,9 +15,9 @@ const Triangle = ({ x, y, w, h, ...rest }) => {
 export const ToComponent = () => {
   return (
     <>
-      <h2>Path.toComponent(props)</h2>
-      <p>.toComponents returns a componentized path object.</p>
-      <h3>Example</h3>
+      <h2>{t('pages.toComponent.title')}</h2>
+      <p>{t('pages.toComponent.description')}</p>
+      <h3>{t('common.example')}</h3>
       <code>{`const Triangle = ({ x, y, w, h, ...rest }) => {
   const p = new Path();
   return p
@@ -27,8 +28,7 @@ export const ToComponent = () => {
     .toComponent(rest);
 };`}</code>
       <p>
-        By returning .toComponent in our Triangle component we have now created
-        a re-usable building block for ourselves
+      {t('pages.toComponent.description2')}
       </p>
       <div>
       <Svg width={500} height={200}>
