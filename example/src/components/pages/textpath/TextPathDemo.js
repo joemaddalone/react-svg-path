@@ -73,8 +73,8 @@ export const TextPathDemo = () => {
       />
     }
   >
-    ${t}
-    ${t}
+    ${exampleText}
+    ${exampleText}
   </TextPath>
 </Svg>`.trim()}
         </code>
