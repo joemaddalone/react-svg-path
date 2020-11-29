@@ -113,6 +113,7 @@ body {
   border-right: 1px solid #ccc;
   background-color: #000 !important;
   border-radius: 0 !important;
+  scroll-behavior: smooth;
 }
 .content-area {
   overflow-x: hidden;
@@ -121,6 +122,7 @@ body {
   padding-bottom: 25px;
   display: flex;
   flex-direction: column;
+  scroll-behavior: smooth;
 }
 
 svg {
