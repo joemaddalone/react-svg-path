@@ -10,7 +10,7 @@ import './NestingDemo3.css';
 
 const NestingDemo3 = () => (
   <>
-    <h3>{t('pages.nesting.example3')}</h3>
+    <h2>{t('pages.nesting.example3')}</h2>
     <p dangerouslySetInnerHTML={{ __html: t('pages.nesting.oxOy') }} />
     <Svg width={500} height={150} className='nesting-example-3'>
       <Circle size={0} cx={75} cy={75}>

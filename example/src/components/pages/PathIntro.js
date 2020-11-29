@@ -186,13 +186,13 @@ const pathCommands = {
 export const PathIntro = () => {
   return (
     <>
-      <h2>{t('pages.path.title')}</h2>
+      <h1>{t('pages.path.title')}</h1>
       <p dangerouslySetInnerHTML={{ __html: t('pages.path.intro') }} />
 
-      <h3>{t('common.import')}</h3>
+      <h2>{t('common.import')}</h2>
       <code>import Path from 'react-svg-path'</code>
 
-      <h3>{t('common.example')}</h3>
+      <h2>{t('common.example')}</h2>
       <code>{`<path d="M0 0, L0 100"></path>`}</code>
 
       <p>{t('pages.path.example')}</p>
@@ -202,7 +202,7 @@ export const PathIntro = () => {
 console.log(path.toString()) // M0 0, L0 100`}
       </code>
 
-      <h3>{t('pages.path.pathCommands')}</h3>
+      <h2>{t('pages.path.pathCommands')}</h2>
       <p>{t('pages.path.pathCommandsIntro')}</p>
       <ul>
         {pathCommands.primitives.map(({ cmd, args }, index) => {

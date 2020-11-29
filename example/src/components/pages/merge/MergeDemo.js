@@ -5,7 +5,7 @@ import './MergeDemo.css';
 
 export const MergeDemo = () => (
   <>
-    <h2>{t('pages.pathMerge.title')}</h2>
+    <h1>{t('pages.pathMerge.title')}</h1>
     <p>{t('pages.pathMerge.intro')}</p>
     <p>{t('pages.pathMerge.compose')}</p>
     <div style={{ display: 'flex', alignItems: 'center' }}>

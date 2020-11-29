@@ -22,12 +22,26 @@
     "eject": "node ../node_modules/react-scripts/bin/react-scripts.js eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "plugins": [
+      "jsx-a11y"
+    ],
+    "extends": [
+      "react-app",
+      "plugin:jsx-a11y/recommended"
+    ],
+    "rules": {
+      "jsx-a11y/no-onchange": 0,
+      "jsx-a11y/no-noninteractive-tabindex": 0
+    }
   },
   "browserslist": [
     ">0.2%",
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "react-axe": "^3.5.4"
+  }
 }

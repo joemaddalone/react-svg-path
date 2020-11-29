@@ -48,10 +48,10 @@ export const Introduction = () => {
 
   return (
     <>
-      <h2>{t('pages.introduction.title')}</h2>
+      <h1>{t('pages.introduction.title')}</h1>
       <p>{t('pages.introduction.intro')}</p>
 
-      <h3>{t('pages.introduction.installation')}</h3>
+      <h2>{t('pages.introduction.installation')}</h2>
       <code>npm i react-svg-path</code>
       <h2>{t('pages.introduction.stuffTitle')}</h2>
       <p>{t('pages.introduction.stuff')}</p>

@@ -6,7 +6,7 @@ import { translate as t } from '../../../i18n/i18n';
 export const Nesting = () => {
   return (
     <>
-      <h2>{t('pages.nesting.title')}</h2>
+      <h1>{t('pages.nesting.title')}</h1>
       <div className='complex'>
         <p>{t('pages.nesting.intro')}</p>
         <NestingDemo1 />

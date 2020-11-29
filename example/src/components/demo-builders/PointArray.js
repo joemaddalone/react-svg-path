@@ -17,20 +17,20 @@ export const PointArray = ({ label, value, pointLength, onChange }) => {
       }}
     >
       {points.map((p, index) => {
+        const pointValues =
+          pointLength === 2 ? ['x', 'y'] : ['x2', 'y2', 'x', 'y'];
         return (
           <React.Fragment key={index}>
-            <div
-              className='ui labeled input'
-              style={{ width: '92%' }}
-            >
+            <div className='ui labeled input' style={{ width: '92%' }}>
               <label htmlFor='amount' className='ui label'>
-                {label}-{index} {pointLength === 2 ? 'x, y' : 'x2, y2, x, y'}
+                {label}-{index} {pointValues.join(', ')}
               </label>
               {Array.from({ length: pointLength }).map((_, i) => {
                 return (
                   <input
+                    aria-label={pointValues[i]}
                     key={`${index}-${i}`}
-                    style={{ width: `${60/pointLength}%` }}
+                    style={{ width: `${60 / pointLength}%` }}
                     type='number'
                     value={p[i]}
                     onChange={(e) =>
@@ -61,7 +61,10 @@ export const PointArray = ({ label, value, pointLength, onChange }) => {
           </React.Fragment>
         );
       })}
-      <div style={{ width: '100%', padding: 10 }} className='flex justify-center'>
+      <div
+        style={{ width: '100%', padding: 10 }}
+        className='flex justify-center'
+      >
         <button
           onClick={() => {
             setPoints((current) => {

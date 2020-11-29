@@ -28,7 +28,7 @@ const genPolylineZag = (centerY) => {
 
 const NestingDemo2 = () => (
   <>
-    <h3>{t('pages.nesting.example2')}</h3>
+    <h2>{t('pages.nesting.example2')}</h2>
     <p>{t('pages.nesting.end')}</p>
     <Svg width={200} height={200} className='nesting-example-2'>
       <Line sx={10} sy={25} ex={130} ey={25} stroke='#ccc'>
@@ -88,7 +88,7 @@ const NestingDemo2 = () => (
 </Line>`.trim()}
       </code>
     </div>
-    <p><p>{t('pages.nesting.start')}</p></p>
+    <p>{t('pages.nesting.start')}</p>
     <Svg width={200} height={45} className='nesting-example-2'>
       <Line sx={10} sy={25} ex={130} ey={25} stroke='#ccc'>
         <Circle size={15} fill='#ccc' attach='start' />
