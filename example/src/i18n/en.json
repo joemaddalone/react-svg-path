@@ -5,7 +5,8 @@
     "example": "Example",
     "code": "Code",
     "props": "Props",
-    "attributes": "Attributes"
+    "attributes": "Attributes",
+    "addPoint": "Add Point"
   },
   "circle": {
     "description": "Circle is drawn from center points (cx & cy). The cursor is then moved to the center points."

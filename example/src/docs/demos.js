@@ -2,6 +2,10 @@ const basicSvgDimensions = {
   w: 800,
   h: 150
 };
+const curveSvgDimensions = {
+  w: 800,
+  h: 200
+};
 const demos = {
   basicShapes: {
     circle: [
@@ -140,6 +144,7 @@ const demos = {
   curves: {
     arc: [
       {
+        svgDimensions: { ...curveSvgDimensions },
         sx: 10,
         sy: 40,
         rx: 50,
@@ -153,6 +158,7 @@ const demos = {
     ],
     cubic: [
       {
+        svgDimensions: { ...curveSvgDimensions },
         sx: 10,
         sy: 90,
         cx1: 30,
@@ -166,6 +172,7 @@ const demos = {
     ],
     quad: [
       {
+        svgDimensions: { ...curveSvgDimensions },
         sx: 10,
         sy: 50,
         cx: 25,
