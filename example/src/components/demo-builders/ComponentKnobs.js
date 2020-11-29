@@ -1,6 +1,13 @@
 import React from 'react';
+import { PointArray } from './PointArray';
 
-export const ComponentKnobs = ({ label, type, value, onChange }) => {
+export const ComponentKnobs = ({
+  label,
+  type,
+  value,
+  onChange,
+  pointLength
+}) => {
   if (type === 'number') {
     return (
       <div className='ui labeled input'>
@@ -16,7 +23,14 @@ export const ComponentKnobs = ({ label, type, value, onChange }) => {
     );
   }
   if (type === 'point-array') {
-    return 'point array knob not yet implemented';
+    return (
+      <PointArray
+        value={value}
+        pointLength={pointLength}
+        onChange={onChange}
+        label={label}
+      />
+    );
   }
   return null;
 };

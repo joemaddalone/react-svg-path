@@ -81,6 +81,7 @@ export const BasicShapeDemo = ({ shape }) => {
                     label={k}
                     value={demoValues[0][k]}
                     type={props[k].type}
+                    pointLength={props[k].pointsLength}
                     onChange={(k, v) => {
                       setDemoValues((current) => {
                         current[0][k] = v;

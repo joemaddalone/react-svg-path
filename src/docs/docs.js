@@ -100,6 +100,7 @@ const docs = {
     props: {
       points: {
         type: 'point-array',
+        pointsLength: 2,
         isRequired: true,
         validator: pointArrayValidator
       }
@@ -161,6 +162,7 @@ const docs = {
     props: {
       points: {
         type: 'point-array',
+        pointsLength: 2,
         isRequired: true,
         validator: pointArrayValidator
       },
@@ -599,8 +601,8 @@ const docs = {
         isRequired: true,
         validator: commonNumberValidator
       },
-      S: { type: 'point-array' },
-      s: { type: 'point-array' }
+      S: { type: 'point-array', pointsLength: 4 },
+      s: { type: 'point-array', pointsLength: 4 }
     }
   },
   quad: {
@@ -640,8 +642,8 @@ const docs = {
         isRequired: true,
         validator: commonNumberValidator
       },
-      T: { type: 'point-array' },
-      t: { type: 'point-array' }
+      T: { type: 'point-array', pointsLength: 2 },
+      t: { type: 'point-array', pointsLength: 2 }
     }
   }
 };
