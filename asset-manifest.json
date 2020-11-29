@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/react-svg-path/static/css/main.429bc8b8.chunk.css",
-    "main.js": "/react-svg-path/static/js/main.275e6c35.chunk.js",
-    "main.js.map": "/react-svg-path/static/js/main.275e6c35.chunk.js.map",
+    "main.css": "/react-svg-path/static/css/main.bde689f7.chunk.css",
+    "main.js": "/react-svg-path/static/js/main.02f5d267.chunk.js",
+    "main.js.map": "/react-svg-path/static/js/main.02f5d267.chunk.js.map",
     "runtime-main.js": "/react-svg-path/static/js/runtime-main.5f8c702d.js",
     "runtime-main.js.map": "/react-svg-path/static/js/runtime-main.5f8c702d.js.map",
-    "static/js/2.cd8555fc.chunk.js": "/react-svg-path/static/js/2.cd8555fc.chunk.js",
-    "static/js/2.cd8555fc.chunk.js.map": "/react-svg-path/static/js/2.cd8555fc.chunk.js.map",
+    "static/js/2.2bbdb0ab.chunk.js": "/react-svg-path/static/js/2.2bbdb0ab.chunk.js",
+    "static/js/2.2bbdb0ab.chunk.js.map": "/react-svg-path/static/js/2.2bbdb0ab.chunk.js.map",
     "index.html": "/react-svg-path/index.html",
-    "static/css/main.429bc8b8.chunk.css.map": "/react-svg-path/static/css/main.429bc8b8.chunk.css.map",
-    "static/js/2.cd8555fc.chunk.js.LICENSE.txt": "/react-svg-path/static/js/2.cd8555fc.chunk.js.LICENSE.txt"
+    "static/css/main.bde689f7.chunk.css.map": "/react-svg-path/static/css/main.bde689f7.chunk.css.map",
+    "static/js/2.2bbdb0ab.chunk.js.LICENSE.txt": "/react-svg-path/static/js/2.2bbdb0ab.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.5f8c702d.js",
-    "static/js/2.cd8555fc.chunk.js",
-    "static/css/main.429bc8b8.chunk.css",
-    "static/js/main.275e6c35.chunk.js"
+    "static/js/2.2bbdb0ab.chunk.js",
+    "static/css/main.bde689f7.chunk.css",
+    "static/js/main.02f5d267.chunk.js"
   ]
 }
