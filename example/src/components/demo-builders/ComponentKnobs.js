@@ -11,10 +11,11 @@ export const ComponentKnobs = ({
   if (type === 'number') {
     return (
       <div className='ui labeled input'>
-        <label htmlFor='amount' className='ui label'>
+        <label htmlFor={label} className='ui label'>
           {label}
         </label>
         <input
+          id={label}
           type='number'
           value={value}
           onChange={(e) => onChange(label, +e.target.value)}

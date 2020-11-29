@@ -27,7 +27,7 @@ export const CurveDemo = ({ curve }) => {
   const Svg = Shapes.Svg;
   return (
     <>
-      <h2>{Component}</h2>
+      <h1>{Component}</h1>
       <code>{`import { ${Component} } from 'react-svg-path'`}</code>
       <code>
         {`

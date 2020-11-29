@@ -85,7 +85,7 @@
       "nested": "This is also possible with nested elements"
     },
     "markers": {
-      "title": "Makers",
+      "title": "Markers",
       "intro": "Markers can be added to end, middle, or start points of any path. Markers will \"point\" in the direction and angle of the path.",
       "usage": "Usage",
       "arrow": "Accepts any svg path attribute and a <b>color</b> prop",

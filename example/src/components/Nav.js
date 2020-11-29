@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { basicShapes, curves } from '../docs/docs';
+import './Nav.css'
 
 export const Nav = () => {
   return (

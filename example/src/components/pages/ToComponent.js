@@ -15,9 +15,9 @@ const Triangle = ({ x, y, w, h, ...rest }) => {
 export const ToComponent = () => {
   return (
     <>
-      <h2>{t('pages.toComponent.title')}</h2>
+      <h1>{t('pages.toComponent.title')}</h1>
       <p>{t('pages.toComponent.description')}</p>
-      <h3>{t('common.example')}</h3>
+      <h2>{t('common.example')}</h2>
       <code>{`const Triangle = ({ x, y, w, h, ...rest }) => {
   const p = new Path();
   return p

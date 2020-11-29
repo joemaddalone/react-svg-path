@@ -25,11 +25,11 @@ const genPolylineZag = (centerY, length = 10, offsetY = 5, offsetX = 10) => {
   return points;
 };
 
-const MarkerSelector = ({ label, onChange }) => {
+const MarkerSelector = ({ label, onChange, id }) => {
   return (
     <div className='field'>
-      <label>{label}</label>
-      <select className='ui dropdown' onChange={onChange}>
+      <label htmlFor={id}>{label}</label>
+      <select id={id} className='ui dropdown' onChange={onChange}>
         <option value={null}>None</option>
         <option value='marker-arrow'>&lt;MarkerArrow&gt;</option>
         <option value='marker-triangle'>&lt;MarkerTriangle&gt;</option>
@@ -53,9 +53,11 @@ export const MarkerDemo = () => {
   const markerMid = (e) => {
     setMidMarker(e.target.value);
   };
+  const quadDemo = {...demos.curves.quad[0]}
+  delete quadDemo.svgDimensions
   return (
     <>
-      <h2>{t('pages.markers.title')}</h2>
+      <h1>{t('pages.markers.title')}</h1>
       <p>
       {t('pages.markers.intro')}
       </p>
@@ -67,7 +69,7 @@ export const MarkerDemo = () => {
           <MarkerSquare id="marker-square" size={8} />
           <g transform='translate(10,10)'>
             <Quad
-              {...demos.curves.quad[0]}
+              {...quadDemo}
               stroke='#222'
               fill='none'
               markerEnd={`url(#${endMarker})`}
@@ -93,13 +95,13 @@ export const MarkerDemo = () => {
           </g>
         </Svg>
         <div className='ui form' style={{ width: 250, marginLeft: 10 }}>
-          <MarkerSelector label={t('pages.markers.startLabel')} onChange={markerStart} />
-          <MarkerSelector label={t('pages.markers.endLabel')} onChange={markerEnd} />
-          <MarkerSelector label={t('pages.markers.midLabel')} onChange={markerMid} />
+          <MarkerSelector id="start" label={t('pages.markers.startLabel')} onChange={markerStart} />
+          <MarkerSelector id="end" label={t('pages.markers.endLabel')} onChange={markerEnd} />
+          <MarkerSelector id="mid" label={t('pages.markers.midLabel')} onChange={markerMid} />
         </div>
       </div>
       <div>
-        <h3>Basic Usage</h3>
+        <h2>{t('pages.markers.usage')}</h2>
         <code>
 {`<svg>
   <Marker[Arrow|Line|Triangle|Square] id="my-marker-id" />
@@ -115,19 +117,19 @@ export const MarkerDemo = () => {
         </code>
       </div>
       <div>
-        <h3>&lt;MarkerArrow></h3>
+        <h2>&lt;MarkerArrow></h2>
         <p dangerouslySetInnerHTML={{__html: t('pages.markers.arrow')}} />
       </div>
       <div>
-        <h3>&lt;MarkerTriangle></h3>
+        <h2>&lt;MarkerTriangle></h2>
         <p dangerouslySetInnerHTML={{__html: t('pages.markers.triangle')}} />
       </div>
       <div>
-        <h3>&lt;MarkerSquare></h3>
+        <h2>&lt;MarkerSquare></h2>
         <p dangerouslySetInnerHTML={{__html: t('pages.markers.square')}} />
       </div>
       <div>
-        <h3>&lt;MarkerLine></h3>
+        <h2>&lt;MarkerLine></h2>
         <p dangerouslySetInnerHTML={{__html: t('pages.markers.line')}} />
       </div>
     </>

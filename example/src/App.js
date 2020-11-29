@@ -24,8 +24,11 @@ const App = () => {
   return (
     <Router basename='/'>
       <header className='app-header'>
-        <NavLink to='/'>react-svg-path</NavLink>
+        <NavLink to='/' style={{ color: 'white' }}>
+          react-svg-path
+        </NavLink>
         <a
+          style={{ color: 'white' }}
           target='_blank'
           rel='noopener noreferrer'
           href='https://github.com/joemaddalone/react-svg-path'
@@ -35,7 +38,7 @@ const App = () => {
       </header>
       <main className='app-main'>
         <Nav />
-        <div className='content-area'>
+        <div className='content-area' tabIndex={0}>
           <Route exact path='/' component={Introduction} />
           <Route exact path={`/nesting`} render={() => <Nesting />} />
           <Route exact path={`/pathmerge`} render={() => <MergeDemo />} />

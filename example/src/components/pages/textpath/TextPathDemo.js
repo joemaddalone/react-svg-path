@@ -7,10 +7,10 @@ export const TextPathDemo = () => {
   const exampleText = t('pages.textPath.exampleText');
   return (
     <>
-      <h2>{t('pages.textPath.title')}</h2>
+      <h1>{t('pages.textPath.title')}</h1>
       <p>{t('pages.textPath.intro')}</p>
       <div className='text-path flex flex-column'>
-        <h3>With existing components</h3>
+        <h2>With existing components</h2>
         <p>{t('pages.textPath.withCircle')}</p>
         <Svg width={500} height={250}>
           <TextPath id='my-path' path={<Circle cx={250} cy={125} size={125} />}>
@@ -78,7 +78,7 @@ export const TextPathDemo = () => {
   </TextPath>
 </Svg>`.trim()}
         </code>
-        <h3>{t('pages.textPath.withCustom')}</h3>
+        <h2>{t('pages.textPath.withCustom')}</h2>
         <p>{t('pages.textPath.withCustomDescription')}</p>
         <Svg width={500} height={250}>
           <TextPath

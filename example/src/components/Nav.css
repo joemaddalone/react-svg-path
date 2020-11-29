@@ -1,0 +1,14 @@
+
+.nav-area a.item {
+  color: white !important;
+}
+
+.nav-area a.item:hover {
+  text-decoration: underline;
+}
+
+.nav-area .item .header {
+  color: white !important;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #ddd;
+}

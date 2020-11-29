@@ -11,7 +11,7 @@ import './NestingDemo1.css';
 
 const NestingDemo1 = () => (
   <>
-    <h3>{t('pages.nesting.example1')}</h3>
+    <h2>{t('pages.nesting.example1')}</h2>
     <p>{t('pages.nesting.centerPoints')}</p>
     <Svg width={200} height={200} className='nesting-example-1'>
       <RegPolygon size={120} sides={4} cx={100} cy={100}>

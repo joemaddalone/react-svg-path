@@ -15,7 +15,7 @@ import {
 export const CenterEndDemo = () => {
   return (
     <>
-      <h2>{t('pages.centerEnd.title')}</h2>
+      <h1>{t('pages.centerEnd.title')}</h1>
       <p dangerouslySetInnerHTML={{ __html: t('pages.centerEnd.intro') }} />
       <div>
         <Svg width={575} height={175}>
@@ -92,7 +92,7 @@ export const CenterEndDemo = () => {
         </code>
       </div>
       <div>
-        <h3>${t('pages.centerEnd.another')}</h3>
+        <h2>{t('pages.centerEnd.another')}</h2>
         <Svg width={500} height={500}>
           <MarkerSquare id='ms' size={10} color='red' />
           <MarkerSquare id='mm' size={10} color='#999' />
