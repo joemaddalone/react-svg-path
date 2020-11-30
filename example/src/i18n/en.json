@@ -123,6 +123,13 @@
       "offsetY": "offset the y coordinate by -20",
       "offsetX": "offset x to center of line"
     },
+    "svg": {
+      "title": "Svg",
+      "intro": "&lt;Svg> acts mostly as a dumb container component.  It takes in a width & height prop and passes that directly into a standard &lt;svg> element.  It also passes that width and height in the &lt;svg> viewbox attribute as <i>viewBox=\"0 0 width height\"</i>.  You are free to overwrite any attributes as needed by passing them into the component as props.  You can also substitute a standard &lt;svg> element.",
+      "oneFeature": "One special feature of <Svg>",
+      "nesting": "Like most of the components in react-svg-path  <Svg> will pass it's center point to it's children as a starting, ending, or center point depending on the child component.",
+      "exampleText": "Circle at center of svg."
+    },
     "path": {
       "title": "Path",
       "intro": "This library wraps <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://github.com/joemaddalone/path\">https://github.com/joemaddalone/path</a> and further documentation can be found there. This library adds one additional rendering method to path.<br><i>Path.toComponent(props)</i> returns a jsx function including attributes and props.",

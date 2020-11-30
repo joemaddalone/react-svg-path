@@ -6,10 +6,12 @@ const render = ({ pathMethod, attributes, ex, ey, sx, sy, children }) => {
   const { merge, attach: attachProp, ...restOfComponentProps } = attributes;
   const to = merge ? 'toString' : 'toComponent';
   if (!children) {
-    return pathMethod()[to](restOfComponentProps);
+    return pathMethod ? pathMethod()[to](restOfComponentProps) : null;
   } else {
     return [
-      pathMethod()[to]({ ...restOfComponentProps, key: -1 }),
+      pathMethod
+        ? pathMethod()[to]({ ...restOfComponentProps, key: -1 })
+        : null,
       React.Children.map(children, (child, i) =>
         React.cloneElement(child, {
           key: i,
