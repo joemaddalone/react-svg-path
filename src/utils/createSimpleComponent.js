@@ -46,6 +46,10 @@ export default (doc, props) => {
   Object.keys(componentProps).forEach((k) => delete attributes[k]);
   // Remove children.
   delete attributes.children;
+  delete attributes.sx;
+  delete attributes.sy;
+  delete attributes.cy;
+  delete attributes.cx;
 
   // Create nesting ex, ey, sx, and sy values.
   let nesting;
