@@ -9,7 +9,7 @@ import { translate as t } from '../../i18n/i18n';
 
 export const CurveDemo = ({ curve }) => {
   const { Component, props } = docs[curve];
-  const demos = demoDocs.curves[curve];
+  const demos = JSON.parse(JSON.stringify(demoDocs.curves[curve]));
   const initialState = demos.map((d, i) => {
     return Object.keys(d)
       .filter((k) => k !== 'svgDimensions')
