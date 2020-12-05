@@ -1,5 +1,6 @@
 import React from 'react';
 import uuid from '../utils/id';
+import cleanAttributes from '../utils/cleanAttributes';
 
 export const TextPath = ({ path, children, id, ...attributes }) => {
   const pathId = id || uuid();
@@ -22,6 +23,9 @@ export const TextPath = ({ path, children, id, ...attributes }) => {
     }
   });
 
+  const cleanTextPathProps = cleanAttributes(textPathProps);
+  const cleanTextProps = cleanAttributes(textProps);
+
   return (
     <>
       <defs>
@@ -31,8 +35,8 @@ export const TextPath = ({ path, children, id, ...attributes }) => {
           <path id={pathId} d={path} />
         )}
       </defs>
-      <text {...textProps}>
-        <textPath startOffset={0} href={`#${pathId}`} {...textPathProps}>
+      <text {...cleanTextProps}>
+        <textPath startOffset={0} href={`#${pathId}`} {...cleanTextPathProps}>
           {children}
         </textPath>
       </text>
