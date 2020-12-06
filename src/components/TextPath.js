@@ -13,7 +13,7 @@ export const TextPath = ({ path, children, id, ...attributes }) => {
     'side',
     'method',
     'lengthAdjust',
-    'alignmenBaseline'
+    'alignmentBaseline'
   ];
 
   Object.keys(attributes).forEach((k) => {
