@@ -10,9 +10,10 @@ export const TextPath = ({ path, children, id, ...attributes }) => {
     'textLength',
     'startOffset',
     'spacing',
-    'size',
+    'side',
     'method',
-    'lengthAdjust'
+    'lengthAdjust',
+    'alignmenBaseline'
   ];
 
   Object.keys(attributes).forEach((k) => {
