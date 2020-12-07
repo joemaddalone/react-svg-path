@@ -13,6 +13,7 @@ import { MarkerDemo } from './components/pages/markers/MarkerDemo';
 import { TextPathDemo } from './components/pages/textpath/TextPathDemo';
 import { CenterEndDemo } from './components/pages/CenterEndDemo';
 import { SvgDemo } from './components/pages/svg/SvgDemo';
+import { TextDemo } from './components/pages/text/TextDemo';
 import { ToComponent } from './components/pages/ToComponent';
 import { PathIntro } from './components/pages/PathIntro';
 import ScrollToTop from './components/ScrollToTop';
@@ -51,6 +52,7 @@ const App = () => {
             <Route exact path={`/textpath`} render={() => <TextPathDemo />} />
             <Route exact path={`/centerend`} render={() => <CenterEndDemo />} />
             <Route exact path={`/svg`} render={() => <SvgDemo />} />
+            <Route exact path={`/text`} render={() => <TextDemo />} />
             <div className='basic-shapes'>
               {shapesDemos.map((s, i) => (
                 <Route

@@ -62,6 +62,9 @@ export const Nav = () => {
           <NavLink className='item' to={`/markers`}>
             Markers
           </NavLink>
+          <NavLink className='item' to={`/text`}>
+            Text
+          </NavLink>
           <NavLink className='item' to={`/textpath`}>
             TextPath
           </NavLink>
