@@ -1,6 +1,6 @@
 import React from 'react';
 import { Marker } from './Marker';
-import { Line } from '../Line';
+import { Line } from '../BasicShapes';
 
 export const MarkerLine = ({
   id,

@@ -178,7 +178,9 @@ const docs = {
     category: 'basicShapes',
     Component: 'Line',
     command: 'lineTo',
-    args: ['x', 'y'],
+    args: ['ex', 'ey', 'relative'],
+    preCommand: 'moveTo',
+    preArgs: ['sx', 'sy'],
     description:
       'Line is drawn from starting points (sx & sy) to ending points (ex & ey). sx (starting x) & sy (starting y) will always be absolutely positioned, however with relative=true the ex and ey points can relative to sx & sy.',
     props: {
@@ -202,7 +204,10 @@ const docs = {
         isRequired: true,
         validator: commonNumberValidator
       },
-      relative: { type: 'boolean' }
+      relative: { type: 'boolean', default: false }
+    },
+    nestingProps: ({ sx, sy, ex, ey }) => {
+      return { ex: sx, ey: sy, sx: ex, sy: ey };
     }
   },
   radialLines: {
