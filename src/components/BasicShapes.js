@@ -1,14 +1,12 @@
 import createSimpleComponent from '../utils/createSimpleComponent';
 import { basicShapes } from '../docs/docs';
 
-const shapes = Object.keys(basicShapes)
-  .filter((k) => k !== 'line')
-  .reduce((accum, cur) => {
-    const component = (props) => createSimpleComponent(basicShapes[cur], props);
-    component.displayName = basicShapes[cur].Component;
-    accum[basicShapes[cur].Component] = component;
-    return accum;
-  }, {});
+const shapes = Object.keys(basicShapes).reduce((accum, cur) => {
+  const component = (props) => createSimpleComponent(basicShapes[cur], props);
+  component.displayName = basicShapes[cur].Component;
+  accum[basicShapes[cur].Component] = component;
+  return accum;
+}, {});
 
 export const Circle = shapes.Circle;
 export const Ellipse = shapes.Ellipse;
@@ -23,3 +21,4 @@ export const Segment = shapes.Segment;
 export const Square = shapes.Square;
 export const Star = shapes.Star;
 export const Triangle = shapes.Triangle;
+export const Line = shapes.Line;

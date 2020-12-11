@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { PathMerge } from './PathMerge';
-import { Line } from './Line';
+import { Line } from './BasicShapes';
 
 describe('<PathMerge />', () => {
   it('should render combined paths', () => {

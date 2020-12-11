@@ -17,7 +17,7 @@ export default (doc, props) => {
         return true;
       }
       if (componentProps[k].type === 'boolean') {
-        return props?.k ?? componentProps[k]?.default;
+        return props[k] === true || props[k] === false;
       }
       if (componentProps[k].isRequired && !hasProp) {
         msg.push(`Required ${k} prop is missing in ${doc.Component}.`);
@@ -63,6 +63,10 @@ export default (doc, props) => {
   }
 
   const p = new Path();
+  if (doc.preCommand) {
+    const prePathArgs = doc.preArgs.map((k) => props[k]);
+    p[doc.preCommand].apply(p, prePathArgs);
+  }
   const pathMethod = p[command].bind(p, ...pathArgs);
   return render({
     pathMethod,
