@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import Path from './Path';
 import { TextPath } from './TextPath';
-import { Circle } from './Circle';
+import { Circle } from './BasicShapes';
 
 describe('<Text />', () => {
   it('should render correctly with attributes applied to the correct element', () => {

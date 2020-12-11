@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { Svg } from './Svg';
-import { Square } from './Square';
+import { Square } from './BasicShapes';
 
 describe('<Svg />', () => {
   it('should render correctly', () => {
