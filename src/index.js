@@ -17,7 +17,6 @@ export const Star = shapes.Star;
 export const Triangle = shapes.Triangle;
 export const Line = shapes.Line;
 /**  end basicShapes */
-// export { Line } from './components/Line';
 export { Cubic } from './components/Cubic';
 export { Quad } from './components/Quad';
 export { Arc } from './components/Arc';
