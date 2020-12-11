@@ -1,6 +1,6 @@
 import React from 'react';
 import { Marker } from './Marker';
-import { Polyline } from '../Polyline';
+import { Polyline } from '../BasicShapes';
 
 export const MarkerArrow = ({ id, color = '#000', ...attributes }) => {
   const settings = {

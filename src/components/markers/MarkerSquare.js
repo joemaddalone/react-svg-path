@@ -1,6 +1,6 @@
 import React from 'react';
 import { Marker } from './Marker';
-import { Polyline } from '../Polyline';
+import { Polyline } from '../BasicShapes';
 
 export const MarkerSquare = ({
   id,

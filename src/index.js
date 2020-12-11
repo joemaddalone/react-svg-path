@@ -1,17 +1,21 @@
 import Path from './components/Path';
-export { Circle } from './components/Circle';
-export { Ellipse } from './components/Ellipse';
-export { Square } from './components/Square';
-export { Rect } from './components/Rect';
-export { Polygon } from './components/Polygon';
-export { Polyline } from './components/Polyline';
-export { RegPolygon } from './components/RegPolygon';
-export { Polygram } from './components/Polygram';
-export { Star } from './components/Star';
-export { RadialLines } from './components/RadialLines';
-export { Sector } from './components/Sector';
-export { Segment } from './components/Segment';
-export { Triangle } from './components/Triangle';
+import * as shapes from './components/BasicShapes';
+
+/**  begin basicShapes */
+export const Circle = shapes.Circle;
+export const Ellipse = shapes.Ellipse;
+export const Polygon = shapes.Polygon;
+export const Polygram = shapes.Polygram;
+export const Polyline = shapes.Polyline;
+export const RadialLines = shapes.RadialLines;
+export const Rect = shapes.Rect;
+export const RegPolygon = shapes.RegPolygon;
+export const Sector = shapes.Sector;
+export const Segment = shapes.Segment;
+export const Square = shapes.Square;
+export const Star = shapes.Star;
+export const Triangle = shapes.Triangle;
+/**  end basicShapes */
 export { Line } from './components/Line';
 export { Cubic } from './components/Cubic';
 export { Quad } from './components/Quad';

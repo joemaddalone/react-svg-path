@@ -1,7 +1,7 @@
 import render from './render';
 import Path from '../components/Path';
 import React from 'react';
-import { Circle } from '../components/Circle';
+import { Circle } from '../components/BasicShapes';
 
 describe('render', () => {
   it('return the path command when no children are present', () => {
