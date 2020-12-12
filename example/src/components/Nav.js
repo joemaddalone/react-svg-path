@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { basicShapes, curves } from '../docs/docs';
-import './Nav.css'
+import './Nav.css';
 
 export const Nav = () => {
   return (
@@ -57,20 +57,6 @@ export const Nav = () => {
         </div>
       </div>
       <div className='item'>
-        <div className='active  header'>Misc</div>
-        <div className='menu'>
-          <NavLink className='item' to={`/markers`}>
-            Markers
-          </NavLink>
-          <NavLink className='item' to={`/textpath`}>
-            TextPath
-          </NavLink>
-          <NavLink className='item' to={`/svg`}>
-            Svg
-          </NavLink>
-        </div>
-      </div>
-      <div className='item'>
         <div className=' header'>Behaviors</div>
         <div className='menu'>
           <NavLink className='item' to='/nesting'>
@@ -81,6 +67,23 @@ export const Nav = () => {
           </NavLink>
           <NavLink className='item' to='/pathmerge'>
             PathMerge
+          </NavLink>
+        </div>
+      </div>
+      <div className='item'>
+        <div className='active  header'>Misc</div>
+        <div className='menu'>
+          <NavLink className='item' to={`/markers`}>
+            Markers
+          </NavLink>
+          <NavLink className='item' to={`/distance`}>
+            Distance
+          </NavLink>
+          <NavLink className='item' to={`/textpath`}>
+            TextPath
+          </NavLink>
+          <NavLink className='item' to={`/svg`}>
+            Svg
           </NavLink>
         </div>
       </div>

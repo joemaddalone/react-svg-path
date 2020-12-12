@@ -6,8 +6,13 @@ export const MarkerSquare = ({
   id,
   size = 10,
   color = '#000',
+  markerStyle = {},
   ...attributes
 }) => {
+  const style = {
+    fill: color,
+    ...markerStyle
+  };
   return (
     <Marker
       id={id}
@@ -23,7 +28,7 @@ export const MarkerSquare = ({
           [size, size],
           [0, size]
         ]}
-        fill={color}
+        style={style}
         {...attributes}
       />
     </Marker>
