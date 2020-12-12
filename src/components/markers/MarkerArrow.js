@@ -21,3 +21,5 @@ export const MarkerArrow = ({ id, color = '#000', ...attributes }) => {
     </Marker>
   );
 };
+
+MarkerArrow.displayName = 'MarkerArrow';

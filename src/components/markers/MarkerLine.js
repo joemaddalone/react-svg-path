@@ -1,10 +1,10 @@
 import React from 'react';
 import { Marker } from './Marker';
-import { Line } from '../BasicShapes';
+import { Polyline } from '../BasicShapes';
 
 export const MarkerLine = ({
   id,
-  size = 40,
+  size = 10,
   color = '#000',
   ...attributes
 }) => {
@@ -15,19 +15,20 @@ export const MarkerLine = ({
     <Marker
       id={id}
       markerWidth={attributes.strokeWidth || 1}
-      markerHeight={size / 2}
+      markerHeight={size}
       refX={0}
-      refY={size / 4}
+      refY={size / 2}
     >
-      <Line
-        sx={0}
-        sy={0}
-        ex={0}
-        ey={size}
-        relative
+      <Polyline
+        points={[
+          [0, 0],
+          [0, size]
+        ]}
         {...settings}
         {...attributes}
       />
     </Marker>
   );
 };
+
+MarkerLine.displayName = 'MarkerLine';
