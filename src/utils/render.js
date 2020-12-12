@@ -8,7 +8,8 @@ const render = ({ pathMethod, attributes, ex, ey, sx, sy, children }) => {
   const to = merge ? 'toString' : 'toComponent';
   const cleanComponentProps = cleanAttributes(restOfComponentProps);
   if (!children) {
-    return pathMethod ? pathMethod()[to](cleanComponentProps) : null;
+    const response = pathMethod ? pathMethod()[to](cleanComponentProps) : null;
+    return response;
   } else {
     return [
       pathMethod ? pathMethod()[to]({ ...cleanComponentProps, key: -1 }) : null,

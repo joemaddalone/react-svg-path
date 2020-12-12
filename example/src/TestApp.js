@@ -1,5 +1,5 @@
 import React from 'react';
-import { Svg, Arc, Line, Circle } from 'react-svg-path';
+import { Svg, Arc, Line, Circle, Cubic } from 'react-svg-path';
 
 import './App.css';
 
@@ -7,19 +7,20 @@ const App = () => {
   return (
     <div>
       <Svg width={500} height={500}>
-        <Line sx={10} sy={150} ex={100} ey={150} stroke='red'>
-          <Arc
-          sx={100} sy={150}
-            rx={10}
-            ry={10}
-            ex={175}
-            ey={150}
-            fill='none'
-            stroke='red'
-          >
-            <Circle size={15} fill='red' />
-          </Arc>
-        </Line>
+        <Cubic
+          sx={10}
+          sy={90}
+          cx1={30}
+          cy1={90}
+          cx2={25}
+          cy2={10}
+          ex={50}
+          ey={10}
+          S={[[70, 90, 90, 90]]}
+          stroke='#0e98dd'
+          strokeWidth={1}
+          fill='#ffffff'
+        />
       </Svg>
     </div>
   );

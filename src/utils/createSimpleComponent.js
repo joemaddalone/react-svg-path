@@ -64,12 +64,53 @@ export default (doc, props) => {
     );
   }
 
+  let pathMethod;
   const p = new Path();
   if (doc.preCommand) {
     const prePathArgs = doc.preArgs.map((k) => propsWithDefaults[k]);
     p[doc.preCommand].apply(p, prePathArgs);
   }
-  const pathMethod = p[command].bind(p, ...pathArgs);
+
+  if (doc.postCommand) {
+    const pcmd = doc.postCommand;
+    // this is cubic or quad
+    // what are the commands?  s, S, t, T
+    // eslint-disable-next-line no-prototype-builtins
+    const relativePostCommand = propsWithDefaults.hasOwnProperty(pcmd);
+    // eslint-disable-next-line no-prototype-builtins
+    const absolutePostCommand = propsWithDefaults.hasOwnProperty(
+      pcmd.toUpperCase()
+    );
+    if (relativePostCommand || absolutePostCommand) {
+      pathMethod = () => {
+        p[command].apply(p, pathArgs);
+        const relativePropValue = propsWithDefaults[pcmd];
+        const absolutePropValue = propsWithDefaults[pcmd.toUpperCase()];
+        if (
+          relativePostCommand &&
+          relativePropValue &&
+          relativePropValue.length
+        ) {
+          relativePropValue.forEach((cmd) => p[pcmd].apply(p, cmd));
+        }
+        if (
+          absolutePostCommand &&
+          absolutePropValue &&
+          absolutePropValue.length
+        ) {
+          absolutePropValue.forEach((cmd) =>
+            p[pcmd.toUpperCase()].apply(p, cmd)
+          );
+        }
+        return p;
+      };
+    }
+  }
+
+  if (!pathMethod) {
+    pathMethod = p[command].bind(p, ...pathArgs);
+  }
+
   return render({
     pathMethod,
     attributes,
