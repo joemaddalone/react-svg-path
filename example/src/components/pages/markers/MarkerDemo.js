@@ -65,7 +65,7 @@ export const MarkerDemo = () => {
         <Svg width={260} height={225}>
           <MarkerArrow id='marker-arrow' />
           <MarkerTriangle id='marker-triangle' />
-          <MarkerLine id='marker-line' size={30} strokeWidth={3} />
+          <MarkerLine id='marker-line' strokeWidth={3} />
           <MarkerSquare id="marker-square" size={8} />
           <g transform='translate(10,10)'>
             <Quad

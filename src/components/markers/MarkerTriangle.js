@@ -21,3 +21,5 @@ export const MarkerTriangle = ({ id, color = '#000', ...attributes }) => {
     </Marker>
   );
 };
+
+MarkerTriangle.displayName = 'MarkerTriangle';

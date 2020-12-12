@@ -26,3 +26,5 @@ export const Marker = ({
     </defs>
   );
 };
+
+Marker.displayName = 'Marker';

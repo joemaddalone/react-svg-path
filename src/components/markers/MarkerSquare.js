@@ -29,3 +29,5 @@ export const MarkerSquare = ({
     </Marker>
   );
 };
+
+MarkerSquare.displayName = 'MarkerSquare';

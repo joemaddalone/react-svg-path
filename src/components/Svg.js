@@ -35,3 +35,5 @@ export const Svg = ({
     </svg>
   );
 };
+
+Svg.displayName = 'Svg';
