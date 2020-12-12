@@ -1,7 +1,7 @@
 import Path from './components/Path';
 import * as shapes from './components/BasicShapes';
 
-/**  begin basicShapes */
+/**  path basicShapes */
 export const Circle = shapes.Circle;
 export const Ellipse = shapes.Ellipse;
 export const Polygon = shapes.Polygon;
@@ -16,10 +16,14 @@ export const Square = shapes.Square;
 export const Star = shapes.Star;
 export const Triangle = shapes.Triangle;
 export const Line = shapes.Line;
-/**  end basicShapes */
+export const Arc = shapes.Arc;
+
+/** path curves */
 export { Cubic } from './components/Cubic';
 export { Quad } from './components/Quad';
-export { Arc } from './components/Arc';
+// export { Arc } from './components/Arc';
+
+/** react-svg-path specific  */
 export { Text } from './components/Text';
 export { Group } from './components/Group';
 export { Svg } from './components/Svg';

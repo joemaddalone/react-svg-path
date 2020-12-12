@@ -3,7 +3,6 @@ import render from '../utils/render';
 
 export default (doc, props) => {
   const { args, command, props: componentProps, nestingProps } = doc;
-
   const propsValidation = (obj) => {
     const augment = {};
     const msg = [];
@@ -12,7 +11,8 @@ export default (doc, props) => {
       const hasProp = obj.hasOwnProperty(k);
       if (!componentProps[k].isRequired && !hasProp) {
         if (componentProps[k].type !== 'boolean') {
-          augment[k] = null;
+          augment[k] =
+            doc.props[k].default !== undefined ? doc.props[k].default : null;
         }
         return true;
       }
@@ -32,16 +32,18 @@ export default (doc, props) => {
     return { result, augment, msg };
   };
 
-  const { result, msg } = propsValidation(props);
+  const { result, msg, augment } = propsValidation(props);
   if (!result) {
     msg.forEach((m) => console.error(m));
     throw new Error(`${msg.join(',')}`);
   }
 
+  const propsWithDefaults = { ...props, ...augment };
+
   // pathArgs are the arguments in order for the 'command'.
-  const pathArgs = args.map((k) => props[k]);
-  const children = props.children;
-  const attributes = { ...props };
+  const pathArgs = args.map((k) => propsWithDefaults[k]);
+  const children = propsWithDefaults.children;
+  const attributes = { ...propsWithDefaults };
   // Remove any expected props.
   Object.keys(componentProps).forEach((k) => delete attributes[k]);
   // Remove children.
@@ -54,7 +56,7 @@ export default (doc, props) => {
   // Create nesting ex, ey, sx, and sy values.
   let nesting;
   if (typeof nestingProps === 'function') {
-    nesting = nestingProps(props);
+    nesting = nestingProps(propsWithDefaults);
   } else {
     nesting = Object.keys(nestingProps).reduce(
       (a, c) => ({ ...a, [c]: props[nestingProps[c]] }),
@@ -64,7 +66,7 @@ export default (doc, props) => {
 
   const p = new Path();
   if (doc.preCommand) {
-    const prePathArgs = doc.preArgs.map((k) => props[k]);
+    const prePathArgs = doc.preArgs.map((k) => propsWithDefaults[k]);
     p[doc.preCommand].apply(p, prePathArgs);
   }
   const pathMethod = p[command].bind(p, ...pathArgs);
