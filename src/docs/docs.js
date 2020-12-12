@@ -512,7 +512,9 @@ const docs = {
     category: 'curves',
     Component: 'Arc',
     command: 'arc',
-    args: ['rx', 'ry', 'rotation', 'arc', 'sweep', 'ex', 'ey'],
+    args: ['rx', 'ry', 'rotation', 'arc', 'sweep', 'ex', 'ey', 'relative'],
+    preCommand: 'moveTo',
+    preArgs: ['sx', 'sy'],
     description: 'Arc is drawn...',
     props: {
       sx: {
@@ -537,15 +539,18 @@ const docs = {
       },
       rotation: {
         type: 'number',
-        validator: commonNumberValidator
+        validator: commonNumberValidator,
+        default: 0
       },
       arc: {
         type: 'number',
-        validator: commonNumberValidator
+        validator: commonNumberValidator,
+        default: 0
       },
       sweep: {
         type: 'number',
-        validator: commonNumberValidator
+        validator: commonNumberValidator,
+        default: 0
       },
       ex: {
         type: 'number',
@@ -556,7 +561,11 @@ const docs = {
         type: 'number',
         isRequired: true,
         validator: commonNumberValidator
-      }
+      },
+      relative: { type: 'boolean', default: false }
+    },
+    nestingProps: ({ sx, sy, ex, ey }) => {
+      return { ex: sx, ey: sy, sx: ex, sy: ey };
     }
   },
   cubic: {
@@ -607,7 +616,8 @@ const docs = {
         validator: commonNumberValidator
       },
       S: { type: 'point-array', pointsLength: 4 },
-      s: { type: 'point-array', pointsLength: 4 }
+      s: { type: 'point-array', pointsLength: 4 },
+      relative: { type: 'boolean', default: false }
     }
   },
   quad: {
@@ -648,7 +658,8 @@ const docs = {
         validator: commonNumberValidator
       },
       T: { type: 'point-array', pointsLength: 2 },
-      t: { type: 'point-array', pointsLength: 2 }
+      t: { type: 'point-array', pointsLength: 2 },
+      relative: { type: 'boolean', default: false }
     }
   }
 };

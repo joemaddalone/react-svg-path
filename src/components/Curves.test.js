@@ -29,11 +29,13 @@ const BSP = {
 describe('Curves', () => {
   Object.keys(curves).forEach((k) => {
     const doc = docs[k];
-
     const { args, command, props: componentProps, Component } = doc;
     const props = Object.keys(componentProps).reduce((accum, cur) => {
       const propType = componentProps[cur].type;
-      return { ...accum, [cur]: BSP[propType] || BSP[cur] };
+      return {
+        ...accum,
+        [cur]: BSP[propType] || BSP[cur] || componentProps[cur].default
+      };
     }, {});
     const pathArgs = args
       .filter((k) => k !== 'sx' && k !== 'sy')
@@ -43,7 +45,8 @@ describe('Curves', () => {
     it(`${k} should contain correct path commands`, () => {
       const { getByTestId } = shapeTest(<C {...props} data-testid='c' />);
       const path = getByTestId('c');
-      const p = new Path().moveTo(props.sx, props.sy)[command](...pathArgs);
+      const p = new Path();
+      p.moveTo(props.sx, props.sy)[command](...pathArgs);
       expect(path.getAttribute('d')).toEqual(p.toString());
     });
   });
