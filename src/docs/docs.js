@@ -573,6 +573,9 @@ const docs = {
     Component: 'Cubic',
     command: 'cCurve',
     args: ['cx1', 'cy1', 'cx2', 'cy2', 'ex', 'ey'],
+    preCommand: 'moveTo',
+    preArgs: ['sx', 'sy'],
+    postCommand: 's',
     description: 'Cubic is drawn...',
     props: {
       sx: {
@@ -615,9 +618,26 @@ const docs = {
         isRequired: true,
         validator: commonNumberValidator
       },
-      S: { type: 'point-array', pointsLength: 4 },
-      s: { type: 'point-array', pointsLength: 4 },
+      S: {
+        type: 'point-array',
+        pointsLength: 4,
+        validator: pointArrayValidator
+      },
+      s: {
+        type: 'point-array',
+        pointsLength: 4,
+        validator: pointArrayValidator
+      },
       relative: { type: 'boolean', default: false }
+    },
+    nestingProps: ({ sx, sy, ex, ey, S }) => {
+      let endX = ex;
+      let endY = ey;
+      if (S && S.length) {
+        endX = S[S.length - 1][0];
+        endY = S[S.length - 1][1];
+      }
+      return { ex: sx, ey: sy, sx: endX, sy: endY };
     }
   },
   quad: {
@@ -625,6 +645,9 @@ const docs = {
     Component: 'Quad',
     command: 'qCurve',
     args: ['cx', 'cy', 'ex', 'ey'],
+    preCommand: 'moveTo',
+    preArgs: ['sx', 'sy'],
+    postCommand: 't',
     description: 'Quad is drawn...',
     props: {
       sx: {
@@ -657,9 +680,26 @@ const docs = {
         isRequired: true,
         validator: commonNumberValidator
       },
-      T: { type: 'point-array', pointsLength: 2 },
-      t: { type: 'point-array', pointsLength: 2 },
+      T: {
+        type: 'point-array',
+        pointsLength: 2,
+        validator: pointArrayValidator
+      },
+      t: {
+        type: 'point-array',
+        pointsLength: 2,
+        validator: pointArrayValidator
+      },
       relative: { type: 'boolean', default: false }
+    },
+    nestingProps: ({ sx, sy, ex, ey, T }) => {
+      let endX = ex;
+      let endY = ey;
+      if (T && T.length) {
+        endX = T[T.length - 1][0];
+        endY = T[T.length - 1][1];
+      }
+      return { ex: sx, ey: sy, sx: endX, sy: endY };
     }
   }
 };

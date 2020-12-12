@@ -1,19 +1,12 @@
 import createSimpleComponent from '../utils/createSimpleComponent';
-import { basicShapes, curves } from '../docs/docs';
+import docs from '../docs/docs';
 
-const shapes = Object.keys(basicShapes).reduce((accum, cur) => {
-  const component = (props) => createSimpleComponent(basicShapes[cur], props);
-  component.displayName = basicShapes[cur].Component;
-  accum[basicShapes[cur].Component] = component;
+const shapes = Object.keys(docs).reduce((accum, cur) => {
+  const component = (props) => createSimpleComponent(docs[cur], props);
+  component.displayName = docs[cur].Component;
+  accum[docs[cur].Component] = component;
   return accum;
 }, {});
-
-/**
- * Technically arc is categorized as a curve, but it can be rendered with createSimpleComponent
- */
-
-shapes.Arc = (props) => createSimpleComponent(curves.arc, props);
-shapes.Arc.displayName = 'Arc';
 
 export const Circle = shapes.Circle;
 export const Ellipse = shapes.Ellipse;
@@ -30,3 +23,5 @@ export const Star = shapes.Star;
 export const Triangle = shapes.Triangle;
 export const Line = shapes.Line;
 export const Arc = shapes.Arc;
+export const Cubic = shapes.Cubic;
+export const Quad = shapes.Quad;

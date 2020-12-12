@@ -17,11 +17,8 @@ export const Star = shapes.Star;
 export const Triangle = shapes.Triangle;
 export const Line = shapes.Line;
 export const Arc = shapes.Arc;
-
-/** path curves */
-export { Cubic } from './components/Cubic';
-export { Quad } from './components/Quad';
-// export { Arc } from './components/Arc';
+export const Cubic = shapes.Cubic;
+export const Quad = shapes.Quad;
 
 /** react-svg-path specific  */
 export { Text } from './components/Text';
