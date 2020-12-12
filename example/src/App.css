@@ -127,7 +127,7 @@ body {
 
 svg {
   background-color: #fff;
-  border: 1px solid #ccc;
+  outline: 1px solid #ccc;
 }
 
 path {
@@ -152,6 +152,7 @@ path.merged {
 .basic-shapes svg,
 .complex svg {
   border: 0;
+  outline: 0;
 }
 
 .basic-shapes a,

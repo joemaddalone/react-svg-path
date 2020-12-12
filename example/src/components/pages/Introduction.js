@@ -7,6 +7,7 @@ import Donut from '../demos/complex/Donut';
 import SparkLine from '../demos/complex/SparkLine';
 import Bars from '../demos/complex/Bars';
 import Football from '../demos/complex/Football/Football';
+import Dimensions from '../demos/complex/Dimensions/Dimensions'
 import Clock from '../demos/complex/Clock';
 
 export const Introduction = () => {
@@ -67,6 +68,16 @@ export const Introduction = () => {
               {t('common.source')}
             </a>
           </div>
+        </div>
+        <div style={{ margin: 20, display: 'flex', flexDirection: 'column' }}>
+          <Dimensions />
+          <a
+            href='https://github.com/joemaddalone/react-svg-path/blob/master/example/src/components/demos/complex/Dimensions'
+            rel='noopener noreferrer'
+            target='_blank'
+          >
+            {t('common.source')}
+          </a>
         </div>
         <div style={{ margin: 20, display: 'flex', flexDirection: 'column' }}>
           <Bars />

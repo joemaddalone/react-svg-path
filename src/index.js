@@ -30,4 +30,6 @@ export { MarkerTriangle } from './components/markers/MarkerTriangle';
 export { MarkerLine } from './components/markers/MarkerLine';
 export { MarkerSquare } from './components/markers/MarkerSquare';
 export { TextPath } from './components/TextPath';
+export { Distance } from './components/dimension/Distance';
+
 export default Path;

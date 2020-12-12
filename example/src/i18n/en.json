@@ -130,6 +130,22 @@
       "nesting": "Like most of the components in react-svg-path  <Svg> will pass it's center point to it's children as a starting, ending, or center point depending on the child component.",
       "exampleText": "Circle at center of svg."
     },
+    "distance": {
+      "title": "Distance",
+      "intro": "&lt;Distance> acts mostly the same as &ltLine>. It takes in the same props (sx, sy, ex, ey, etc.).  The primary difference being how markers are applied and the fact that it will present a value in the middle if the line representing the distance value of the line.",
+      "pixelsDefault": "Pixels by default",
+      "pixelsDefaultDescription": "By default the distance value will be in pixels.  Passing in a color prop sets the color of both the line and the text.",
+      "color": "Adding color",
+      "colorDescription": "Passing in a color prop sets the color of both the line and the text.",
+      "dotted": "Dotted lines",
+      "dottedDescription": "Make a Distance line dotted by passing in the dotted prop",
+      "text": "Use a custom value",
+      "textDescription": "Add any value you like with the text prop",
+      "markers": "Adding markers",
+      "markersDescription": "Markers can be set at the end with <i>markerEnd</i>, start with <i>markerStart</i>, or both with <i>markers</i>.  Acceptable values are `arrow`, `triangle`, `square`, and `line`",
+      "scale": "Representing a scale",
+      "scaleDescription": "a scale can be presented by passing in scale & scaleUnit props"
+    },
     "path": {
       "title": "Path",
       "intro": "This library wraps <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://github.com/joemaddalone/path\">https://github.com/joemaddalone/path</a> and further documentation can be found there. This library adds one additional rendering method to path.<br><i>Path.toComponent(props)</i> returns a jsx function including attributes and props.",

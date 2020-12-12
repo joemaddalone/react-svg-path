@@ -1,13 +1,17 @@
-import React from "react";
-import { Svg, Rect, Line, Text, MarkerArrow } from "react-svg-path";
-import Dimension from "./Dimension";
-import "./Football.css";
+import React from 'react';
+import { Svg, Rect, Line, Text, MarkerArrow, Distance } from 'react-svg-path';
+import './Football.css';
 
 const Football = ({ width }) => {
   const marginX = 50;
   const marginY = 50;
   const canvasWidth = width || 800;
   const scale = canvasWidth / 360;
+  const scaleUnit = "'";
+  const scaleProps = {
+    scale: 360 / canvasWidth,
+    scaleUnit
+  };
   const canvasHeight = 160 * scale;
 
   const field = {
@@ -16,27 +20,27 @@ const Football = ({ width }) => {
     endzoneWidth: 30 * scale,
     playingWidth: 300 * scale,
     tickLength: 2 * scale,
-    topTickY: 59 * scale,
+    topTickY: 60 * scale,
     bottomTickY: 100 * scale,
     bottomNumY: 130 * scale,
     topNumY: 30 * scale,
     tickCount: 101,
-    scale,
+    scale
   };
   Object.keys(field).forEach((k) => (field[k] = +field[k].toFixed(2)));
 
   const commonTickProps = {
     ex: 0,
     relative: true,
-    ey: -field.tickLength,
+    ey: -field.tickLength
   };
 
   return (
     <Svg width={canvasWidth + marginX} height={canvasHeight + marginY}>
-      <MarkerArrow id="arrow-marker" color="green" open/>
+      <MarkerArrow id='arrow-marker' color='green' open />
       <g
         transform={`translate(${marginX / 2},${marginY / 2})`}
-        className="football-diagram"
+        className='football-diagram'
       >
         <Rect
           cx={field.width / 2}
@@ -87,23 +91,23 @@ const Football = ({ width }) => {
                     {index % 10 === 0 && (
                       <g>
                         <Text
-                          className="field-marker-number"
+                          className='field-marker-number'
                           x={sx - field.tickLength / 2 - (index < 50 ? 12 : 4)}
                           y={field.bottomNumY}
                         >
-                          {index < 50 && "-"}
+                          {index < 50 && '-'}
                           {index <= 50 ? index : 50 - Math.abs(index - 50)}
-                          {index > 50 && "-"}
+                          {index > 50 && '-'}
                         </Text>
                         <Text
-                          className="field-marker-number"
+                          className='field-marker-number'
                           x={sx - field.tickLength / 2 - (index < 50 ? 12 : 4)}
                           y={field.topNumY}
-                          transform="rotate(180)"
+                          transform='rotate(180)'
                         >
-                          {index > 50 && "-"}
+                          {index > 50 && '-'}
                           {index <= 50 ? index : 50 - Math.abs(index - 50)}
-                          {index < 50 && "-"}
+                          {index < 50 && '-'}
                         </Text>
                       </g>
                     )}
@@ -114,54 +118,60 @@ const Football = ({ width }) => {
           );
         })}
 
-        <Dimension
+        <Distance
+          color='green'
           sx={0}
           sy={field.height + 15}
           ex={field.width}
           ey={field.height + 15}
-          text="360'"
-          markerId="arrow-marker"
+          {...scaleProps}
+          markers='arrow'
         />
-        <Dimension
+        <Distance
+          color='green'
           sx={field.width - field.endzoneWidth}
           sy={0}
           ex={field.width}
           ey={0}
-          text="30'"
-          markerId="arrow-marker"
+          {...scaleProps}
+          markers='arrow'
         />
-        <Dimension
+        <Distance
+          color='green'
           sx={-15}
           sy={0}
           ex={-15}
           ey={field.height}
-          text="160'"
-          markerId="arrow-marker"
+          {...scaleProps}
+          markers='arrow'
         />
-        <Dimension
+        <Distance
+          color='green'
           sx={field.endzoneWidth}
           sy={0}
           ex={field.endzoneWidth}
           ey={field.topTickY}
-          text="60'"
-          markerId="arrow-marker"
+          {...scaleProps}
+          markers='arrow'
         />
-        <Dimension
+
+        <Distance
+          color='green'
           sx={field.endzoneWidth}
           sy={field.bottomTickY}
           ex={field.endzoneWidth}
           ey={field.height}
-          text="60'"
-          markerId="arrow-marker"
+          {...scaleProps}
+          markers='arrow'
         />
-        <Dimension
+        <Distance
+          color='green'
           sx={field.width - field.endzoneWidth}
           sy={field.topTickY}
           ex={field.width - field.endzoneWidth}
           ey={field.bottomTickY}
-          scale={field.scale}
-          text="40'"
-          markerId="arrow-marker"
+          {...scaleProps}
+          markers='arrow'
         />
       </g>
     </Svg>

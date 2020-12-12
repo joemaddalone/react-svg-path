@@ -6,10 +6,12 @@ export const MarkerLine = ({
   id,
   size = 10,
   color = '#000',
+  markerStyle = {},
   ...attributes
 }) => {
-  const settings = {
-    stroke: color
+  const style = {
+    stroke: color,
+    ...markerStyle
   };
   return (
     <Marker
@@ -24,7 +26,7 @@ export const MarkerLine = ({
           [0, 0],
           [0, size]
         ]}
-        {...settings}
+        style={style}
         {...attributes}
       />
     </Marker>
