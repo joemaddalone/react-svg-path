@@ -1,12 +1,12 @@
 import React from 'react';
-import Football from './components/demos/complex/Football/Football';
+import Bars from './components/demos/complex/Bars';
 
 import './App.css';
 
 const App = () => {
   return (
     <div>
-      <Football />
+      <Bars />
     </div>
   );
 };
