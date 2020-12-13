@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { basicShapes, curves } from '../docs/docs';
+import { translate as t } from '../i18n/i18n';
 import './Nav.css';
 
 export const Nav = () => {
@@ -9,12 +10,12 @@ export const Nav = () => {
       <div className='item'>
         <div className='menu'>
           <NavLink exact className='item' to='/'>
-            Introduction
+            {t('nav.introduction')}
           </NavLink>
         </div>
       </div>
       <div className='item'>
-        <div className='header'>Usage</div>
+        <div className='header'>{t('nav.usage')}</div>
         <div className='menu'>
           <NavLink className='item' to='/path'>
             Path
@@ -25,7 +26,7 @@ export const Nav = () => {
         </div>
       </div>
       <div className='item'>
-        <div className='active  header'>Shapes</div>
+        <div className='active  header'>{t('nav.shapes')}</div>
         <div className='menu'>
           {Object.keys(basicShapes)
             .sort()
@@ -41,7 +42,7 @@ export const Nav = () => {
         </div>
       </div>
       <div className='item'>
-        <div className='active  header'>Curves</div>
+        <div className='active  header'>{t('nav.curves')}</div>
         <div className='menu'>
           {Object.keys(curves)
             .sort()
@@ -57,33 +58,33 @@ export const Nav = () => {
         </div>
       </div>
       <div className='item'>
-        <div className=' header'>Behaviors</div>
+        <div className=' header'>{t('nav.behaviors')}</div>
         <div className='menu'>
           <NavLink className='item' to='/nesting'>
-            Nesting
+            {t('nav.nesting')}
           </NavLink>
           <NavLink className='item' to={`/centerend`}>
             centerEnd
           </NavLink>
-          <NavLink className='item' to='/pathmerge'>
-            PathMerge
-          </NavLink>
         </div>
       </div>
       <div className='item'>
-        <div className='active  header'>Misc</div>
+        <div className='active  header'>{t('nav.additionalComponents')}</div>
         <div className='menu'>
-          <NavLink className='item' to={`/markers`}>
-            Markers
-          </NavLink>
           <NavLink className='item' to={`/distance`}>
             Distance
           </NavLink>
-          <NavLink className='item' to={`/textpath`}>
-            TextPath
+          <NavLink className='item' to={`/markers`}>
+            Markers
+          </NavLink>
+          <NavLink className='item' to='/pathmerge'>
+            PathMerge
           </NavLink>
           <NavLink className='item' to={`/svg`}>
             Svg
+          </NavLink>
+          <NavLink className='item' to={`/textpath`}>
+            TextPath
           </NavLink>
         </div>
       </div>
