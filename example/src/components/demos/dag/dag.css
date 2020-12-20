@@ -1,0 +1,25 @@
+.dag path {
+  fill: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.dag path.node {
+  cursor: pointer;
+}
+
+.dag path.node.square {
+  fill: rebeccapurple;
+}
+
+.dag path.node.circle {
+  fill: purple;
+}
+
+.dag path.node:hover {
+  opacity: 0.5;
+}
+
+.dag text {
+  font-family: monospace;
+  pointer-events: none;
+}

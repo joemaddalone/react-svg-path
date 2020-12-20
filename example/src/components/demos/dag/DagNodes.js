@@ -1,9 +1,15 @@
-import React from 'react';
-import Path, { Circle, Square, Svg } from 'react-svg-path';
+import React, { useState } from 'react';
+import Path, { Circle, Square, Svg, Text } from 'react-svg-path';
 import dagSetup from './dagSetup';
+import './dag.css';
 
 const DagNodes = () => {
-  const dag = dagSetup();
+  const [dir, setDir] = useState('BT');
+
+  const onChangeValue = (e) => {
+    setDir(e.target.value);
+  };
+  const dag = dagSetup(dir);
   const createConnectors = () => {
     const { edges } = dag;
     const p = new Path();
@@ -20,33 +26,87 @@ const DagNodes = () => {
   const circleNodes = dag.nodes.slice(5);
 
   return (
-    <Svg width={dag.graph.width} height={dag.graph.height}>
-      <path stroke='#222' strokeWidth={1} d={createConnectors()} />
-      {squareNodes.map(({ x, y, width }, index) => {
-        return (
-          <Square
-            key={index}
-            cx={x}
-            cy={y}
-            size={width}
-            style={{ fill: 'rebeccapurple', cursor: 'pointer' }}
-            onClick={() => alert(`clicked node #${index}`)}
-          />
-        );
-      })}
-      {circleNodes.map(({ x, y, width }, index) => {
-        return (
-          <Circle
-            key={index}
-            cx={x}
-            cy={y}
-            size={width}
-            style={{ fill: 'purple', cursor: 'pointer' }}
-            onClick={() => alert(`clicked node #${index + 5}`)}
-          />
-        );
-      })}
-    </Svg>
+    <div>
+      <div className='ui form'>
+        <div className='inline fields'>
+          <div className='field'>
+            <div className='ui radio checkbox'>
+              <input
+                id='bt'
+                type='radio'
+                name='dir'
+                value='BT'
+                checked={dir === 'BT'}
+                tabIndex='0'
+                className='hidden'
+                onChange={onChangeValue}
+              />
+              <label htmlFor='bt'>Top to Bottom</label>
+            </div>
+          </div>
+          <div className='field'>
+            <div className='ui radio checkbox'>
+              <input
+                id='tb'
+                type='radio'
+                name='dir'
+                value='TB'
+                checked={dir === 'TB'}
+                tabIndex='0'
+                className='hidden'
+                onChange={onChangeValue}
+              />
+              <label htmlFor='tb'>Bottom to Top</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <Svg width={dag.graph.width} height={dag.graph.height}>
+        <path stroke='#222' strokeWidth={1} d={createConnectors()} />
+        {squareNodes.map(({ x, y, width }, index) => {
+          return (
+            <Square
+              className='node square'
+              key={index}
+              cx={x}
+              cy={y}
+              size={width}
+              onClick={() => alert(`clicked node #${index}`)}
+            >
+              <Text
+                oy={2}
+                dominantBaseline='middle'
+                textAnchor='middle'
+                fill='#fff'
+              >
+                {index}
+              </Text>
+            </Square>
+          );
+        })}
+        {circleNodes.map(({ x, y, width }, index) => {
+          return (
+            <Circle
+              key={index}
+              cx={x}
+              cy={y}
+              size={width}
+              className='node circle'
+              onClick={() => alert(`clicked node #${index + 5}`)}
+            >
+              <Text
+                oy={2}
+                dominantBaseline='middle'
+                textAnchor='middle'
+                fill='#fff'
+              >
+                {index + 5}
+              </Text>
+            </Circle>
+          );
+        })}
+      </Svg>
+    </div>
   );
 };
 
