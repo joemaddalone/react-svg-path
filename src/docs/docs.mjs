@@ -22,6 +22,30 @@ const centeredShapeNestingProps = {
   sy: 'cy'
 };
 
+const commonNumber = {
+  type: 'number',
+  isRequired: true,
+  validator: commonNumberValidator
+};
+
+const cx = {
+  ...commonNumber,
+  description: 'Center x coordinate of the shape.'
+};
+
+const cy = {
+  ...commonNumber,
+  description: 'Center x coordinate of the shape.'
+};
+
+const centerEnd = {
+  default: true,
+  type: 'boolean',
+  isRequired: false,
+  description:
+    'Determines whether cursor should return to cx & cy as a last step.'
+};
+
 const docs = {
   circle: {
     category: 'basicShapes',
@@ -32,25 +56,12 @@ const docs = {
       'Circle is drawn from center points (cx & cy). The cursor is then moved to the center points.',
     props: {
       size: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
+        ...commonNumber,
+        description: 'Circumference of the Circle.'
       },
-      cx: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
-      },
-      cy: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
-      },
-      centerEnd: {
-        default: true,
-        type: 'boolean',
-        isRequired: false
-      }
+      cx,
+      cy,
+      centerEnd
     },
     nestingProps: centeredShapeNestingProps
   },
@@ -63,30 +74,16 @@ const docs = {
       'Ellipse is drawn from center point (cx & cy). The cursor is then moved to the center point.',
     props: {
       width: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
+        ...commonNumber,
+        description: 'Width of the Ellipse.'
       },
       height: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
+        ...commonNumber,
+        description: 'Height of the Ellipse.'
       },
-      cx: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
-      },
-      cy: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
-      },
-      centerEnd: {
-        default: true,
-        type: 'boolean',
-        isRequired: false
-      }
+      cx,
+      cy,
+      centerEnd
     },
     nestingProps: centeredShapeNestingProps
   },
@@ -102,7 +99,8 @@ const docs = {
         type: 'point-array',
         pointsLength: 2,
         isRequired: true,
-        validator: pointArrayValidator
+        validator: pointArrayValidator,
+        description: 'x, y, points of the polygon.'
       }
     },
     nestingProps: ({ points }) => {
@@ -120,35 +118,23 @@ const docs = {
       'Polygram is drawn from center point (cx & cy). The first outer point of the shape will always be at top center. The cursor is then moved to the center point.  Skipping a vertex is what makes a polygram appear as intersecting lines, a vertexSkip of 1 will result in a regular polygon.',
     props: {
       size: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
+        ...commonNumber,
+        description: 'Size of the underlying polygon.'
       },
       points: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
+        ...commonNumber,
+        description: 'Number of points to create.'
       },
-      cx: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
-      },
-      cy: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
-      },
+      cx,
+      cy,
       vertexSkip: {
-        type: 'number',
-        validator: commonNumberValidator,
-        default: 2
+        ...commonNumber,
+        isRequired: false,
+        default: 2,
+        description:
+          'Integer representing which vertex to go to next relative to current.'
       },
-      centerEnd: {
-        default: true,
-        type: 'boolean',
-        isRequired: false
-      }
+      centerEnd
     },
     nestingProps: centeredShapeNestingProps
   },
@@ -164,9 +150,15 @@ const docs = {
         type: 'point-array',
         pointsLength: 2,
         isRequired: true,
-        validator: pointArrayValidator
+        validator: pointArrayValidator,
+        description: 'x, y, points of the Polyline.'
       },
-      relative: { type: 'boolean' }
+      relative: {
+        type: 'boolean',
+        isRequired: false,
+        default: false,
+        description: 'If set to true all points will be relative.'
+      }
     },
     nestingProps: ({ points }) => {
       const [sx, sy] = points[0];
@@ -185,26 +177,27 @@ const docs = {
       'Line is drawn from starting points (sx & sy) to ending points (ex & ey). sx (starting x) & sy (starting y) will always be absolutely positioned, however with relative=true the ex and ey points can relative to sx & sy.',
     props: {
       sx: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
+        ...commonNumber,
+        description: 'Starting x coordinate for the Line.'
       },
       sy: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
+        ...commonNumber,
+        description: 'Starting y coordinate for the Line.'
       },
       ex: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
+        ...commonNumber,
+        description: 'Ending x coordinate for the Line.'
       },
       ey: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
+        ...commonNumber,
+        description: 'Ending y coordinate for the Line.'
       },
-      relative: { type: 'boolean', default: false }
+      relative: {
+        type: 'boolean',
+        default: false,
+        isRequired: true,
+        description: 'If set to true ex & ey will become relative to sx & sy.'
+      }
     },
     nestingProps: ({ sx, sy, ex, ey }) => {
       return { ex: sx, ey: sy, sx: ex, sy: ey };
@@ -219,35 +212,20 @@ const docs = {
       'RadialLines is drawn from center point (cx & cy). The first outer point of the shape will always be at top center. The cursor is then moved to the center point.',
     props: {
       outerSize: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
+        ...commonNumber,
+        description: 'Circumference of the outer circle.'
       },
       innerSize: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
+        ...commonNumber,
+        description: 'Circumference of the inner circle.'
       },
       points: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
+        ...commonNumber,
+        description: 'Number of lines to draw.'
       },
-      cx: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
-      },
-      cy: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
-      },
-      centerEnd: {
-        default: true,
-        type: 'boolean',
-        isRequired: false
-      }
+      cx,
+      cy,
+      centerEnd
     },
     nestingProps: centeredShapeNestingProps
   },
@@ -260,30 +238,16 @@ const docs = {
       'Rect is drawn from center point (cx & cy). The cursor is then moved to the center point.',
     props: {
       width: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
+        ...commonNumber,
+        description: 'Width of the Rect.'
       },
       height: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
+        ...commonNumber,
+        description: 'Height of the Rect.'
       },
-      cx: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
-      },
-      cy: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
-      },
-      centerEnd: {
-        default: true,
-        type: 'boolean',
-        isRequired: false
-      }
+      cx,
+      cy,
+      centerEnd
     },
     nestingProps: centeredShapeNestingProps
   },
@@ -296,30 +260,16 @@ const docs = {
       'RegPolygon is drawn from center point (cx & cy). The first outer point of the shape will always be at top center. The cursor is then moved to the center point.',
     props: {
       size: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
+        ...commonNumber,
+        description: 'Size of the RegPolygon.'
       },
       sides: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
+        ...commonNumber,
+        description: 'Number of sides of the RegPolygon.'
       },
-      cx: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
-      },
-      cy: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
-      },
-      centerEnd: {
-        default: true,
-        type: 'boolean',
-        isRequired: false
-      }
+      cx,
+      cy,
+      centerEnd
     },
     nestingProps: centeredShapeNestingProps
   },
@@ -331,36 +281,21 @@ const docs = {
     description:
       'Sector is drawn from center point (cx & cy). The cursor is then moved to the center point.',
     props: {
-      cx: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
-      },
-      cy: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
-      },
+      cx,
+      cy,
       size: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
+        ...commonNumber,
+        description: 'Circumference of the Sector.'
       },
       startAngle: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
+        ...commonNumber,
+        description: 'Start angle of the Sector.  0 = top center.'
       },
       endAngle: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
+        ...commonNumber,
+        description: 'End angle of the Sector.  0 = top center.'
       },
-      centerEnd: {
-        default: true,
-        type: 'boolean',
-        isRequired: false
-      }
+      centerEnd
     },
     nestingProps: centeredShapeNestingProps
   },
@@ -372,36 +307,21 @@ const docs = {
     description:
       'Segment is drawn from center point (cx & cy). The cursor is then moved to the center point.',
     props: {
-      cx: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
-      },
-      cy: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
-      },
+      cx,
+      cy,
       size: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
+        ...commonNumber,
+        description: 'Circumference of the Segment.'
       },
       startAngle: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
+        ...commonNumber,
+        description: 'Start angle of the Segment.  0 = top center.'
       },
       endAngle: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
+        ...commonNumber,
+        description: 'End angle of the Segment.  0 = top center.'
       },
-      centerEnd: {
-        default: true,
-        type: 'boolean',
-        isRequired: false
-      }
+      centerEnd
     },
     nestingProps: centeredShapeNestingProps
   },
@@ -414,25 +334,12 @@ const docs = {
       'Square is drawn from center point (cx & cy). The cursor is then moved to the center point.',
     props: {
       size: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
+        ...commonNumber,
+        description: 'Width &  height of the Square.'
       },
-      cx: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
-      },
-      cy: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
-      },
-      centerEnd: {
-        default: true,
-        type: 'boolean',
-        isRequired: false
-      }
+      cx,
+      cy,
+      centerEnd
     },
     nestingProps: centeredShapeNestingProps
   },
@@ -445,35 +352,20 @@ const docs = {
       'Star is drawn from center point (cx & cy). The first outer point of the shape will always be at top center. The cursor is then moved to the center point.',
     props: {
       outerSize: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
+        ...commonNumber,
+        description: 'The outer circumference where points will reach.'
       },
       innerSize: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
+        ...commonNumber,
+        description: 'The inner circumference where points will end.'
       },
       points: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
+        ...commonNumber,
+        description: 'Number of points for the Star.'
       },
-      cx: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
-      },
-      cy: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
-      },
-      centerEnd: {
-        default: true,
-        type: 'boolean',
-        isRequired: false
-      }
+      cx,
+      cy,
+      centerEnd
     },
     nestingProps: centeredShapeNestingProps
   },
@@ -486,25 +378,12 @@ const docs = {
       'Triangle draws an equilateral triangle from center point (cx & cy). The cursor is then moved to the center point.',
     props: {
       size: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
+        ...commonNumber,
+        description: 'Size of the Tirangle.'
       },
-      cx: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
-      },
-      cy: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
-      },
-      centerEnd: {
-        default: true,
-        type: 'boolean',
-        isRequired: false
-      }
+      cx,
+      cy,
+      centerEnd
     },
     nestingProps: centeredShapeNestingProps
   },
@@ -515,54 +394,62 @@ const docs = {
     args: ['rx', 'ry', 'rotation', 'arc', 'sweep', 'ex', 'ey', 'relative'],
     preCommand: 'moveTo',
     preArgs: ['sx', 'sy'],
-    description: 'Arc is drawn...',
+    description: 'An Arc segment draws a segment of an ellipse.',
     props: {
       sx: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
+        ...commonNumber,
+        description: 'Starting x coordinate for the Arc.'
       },
       sy: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
+        ...commonNumber,
+        description: 'Starting y coordinate for the Arc.'
       },
       rx: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
+        ...commonNumber,
+        description: 'Width of the underlying ellipse of the Arc.'
       },
       ry: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
+        ...commonNumber,
+        description: 'Height of the underlying ellipse of the Arc.'
       },
       rotation: {
         type: 'number',
         validator: commonNumberValidator,
-        default: 0
+        default: 0,
+        isRequired: false,
+        description: 'Rotation of the underlying ellipse of the Arc.'
       },
       arc: {
         type: 'number',
         validator: commonNumberValidator,
-        default: 0
+        default: 0,
+        isRequired: false,
+        description:
+          'Large arc flag: this says whether to follow the larger or smaller part of the underlying ellipse.'
       },
       sweep: {
         type: 'number',
         validator: commonNumberValidator,
-        default: 0
+        default: 0,
+        isRequired: false,
+        description:
+          'Sweep flag: think of this as direction flag, follow a clockwise or counterclockwise path along the underlying ellipse.'
       },
       ex: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
+        ...commonNumber,
+        description: 'Ending x coordinate for the Arc.'
       },
       ey: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
+        ...commonNumber,
+        description: 'Ending y coordinate for the Arc.'
       },
-      relative: { type: 'boolean', default: false }
+      relative: {
+        type: 'boolean',
+        default: false,
+        isRequired: false,
+        description:
+          'If set to true all points after sx & sy will become relative to sx & sy.'
+      }
     },
     nestingProps: ({ sx, sy, ex, ey }) => {
       return { ex: sx, ey: sy, sx: ex, sy: ey };
@@ -576,59 +463,64 @@ const docs = {
     preCommand: 'moveTo',
     preArgs: ['sx', 'sy'],
     postCommand: 's',
-    description: 'Cubic is drawn...',
+    description:
+      'Cubic is drawn from an sx and sy to an ex and ey with two control points (cx1+cy1 & cx2+cy2).',
     props: {
       sx: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
+        ...commonNumber,
+        description: 'Starting x coordinate for the Cubic.'
       },
       sy: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
+        ...commonNumber,
+        description: 'Starting y coordinate for the Cubic.'
       },
       cx1: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
+        ...commonNumber,
+        description: 'x coordinate for control point 1.'
       },
       cy1: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
+        ...commonNumber,
+        description: 'y coordinate for control point 1.'
       },
       cx2: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
+        ...commonNumber,
+        description: 'x coordinate for control point 2.'
       },
       cy2: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
+        ...commonNumber,
+        description: 'y coordinate for control point 2.'
       },
       ex: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
+        ...commonNumber,
+        description: 'Ending x coordinate for the Cubic.'
       },
       ey: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
+        ...commonNumber,
+        description: 'Ending y coordinate for the Cubic.'
       },
       S: {
         type: 'point-array',
         pointsLength: 4,
-        validator: pointArrayValidator
+        validator: pointArrayValidator,
+        isRequired: false,
+        description:
+          'Optionally String together multiple Cubic wit an array consisting of 2 or more control points.'
       },
       s: {
         type: 'point-array',
         pointsLength: 4,
-        validator: pointArrayValidator
+        validator: pointArrayValidator,
+        isRequired: false,
+        description:
+          'Optional relative "smoooth curve" array consisting of 2 or more control points.'
       },
-      relative: { type: 'boolean', default: false }
+      relative: {
+        type: 'boolean',
+        default: false,
+        isRequired: false,
+        description:
+          'If set to true all points after sx & sy will become relative to sx & sy.'
+      }
     },
     nestingProps: ({ sx, sy, ex, ey, S }) => {
       let endX = ex;
@@ -648,49 +540,55 @@ const docs = {
     preCommand: 'moveTo',
     preArgs: ['sx', 'sy'],
     postCommand: 't',
-    description: 'Quad is drawn...',
+    description:
+      'Quad is drawn from an sx and sy to an ex and ey with one control points (cx & cy).',
     props: {
       sx: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
+        ...commonNumber,
+        description: 'Starting x coordinate for the Quad.'
       },
       sy: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
+        ...commonNumber,
+        description: 'Starting y coordinate for the Quad.'
       },
       cx: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
+        ...commonNumber,
+        description: 'x coordinate for the control point.'
       },
       cy: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
+        ...commonNumber,
+        description: 'y coordinate for the control point.'
       },
       ex: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
+        ...commonNumber,
+        description: 'Ending x coordinate for the Quad.'
       },
       ey: {
-        type: 'number',
-        isRequired: true,
-        validator: commonNumberValidator
+        ...commonNumber,
+        description: 'Ending y coordinate for the Quad.'
       },
       T: {
         type: 'point-array',
         pointsLength: 2,
-        validator: pointArrayValidator
+        validator: pointArrayValidator,
+        isRequired: false,
+        description: 'String together multiple Quad curves.'
       },
       t: {
         type: 'point-array',
         pointsLength: 2,
-        validator: pointArrayValidator
+        validator: pointArrayValidator,
+        isRequired: false,
+        description:
+          'String together multiple Quad curves where coordinates are relative.'
       },
-      relative: { type: 'boolean', default: false }
+      relative: {
+        type: 'boolean',
+        default: false,
+        isRequired: false,
+        description:
+          'If set to true all points after sx & sy will become relative to sx & sy.'
+      }
     },
     nestingProps: ({ sx, sy, ex, ey, T }) => {
       let endX = ex;

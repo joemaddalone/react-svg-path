@@ -16,12 +16,18 @@ export default (doc, props) => {
         }
         return true;
       }
-      if (componentProps[k].type === 'boolean') {
+      if (hasProp && componentProps[k].type === 'boolean') {
         return props[k] === true || props[k] === false;
       }
       if (componentProps[k].isRequired && !hasProp) {
-        msg.push(`Required ${k} prop is missing in ${doc.Component}.`);
-        return false;
+        // eslint-disable-next-line no-prototype-builtins
+        if (componentProps[k].hasOwnProperty('default')) {
+          augment[k] = doc.props[k].default;
+          return true;
+        } else {
+          msg.push(`Required ${k} prop is missing in ${doc.Component}.`);
+          return false;
+        }
       }
       const valid = componentProps[k].validator(obj[k]);
       if (!valid) {
