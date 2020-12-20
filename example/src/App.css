@@ -203,6 +203,14 @@ path {
   shape-rendering: geometricPrecision;
 }
 
+.csb-iframe {
+  width: 90%;
+  height: 500px;
+  border: 0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
 a:link {
   display: inline-block;
   color: blue;
