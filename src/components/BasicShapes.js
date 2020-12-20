@@ -1,5 +1,5 @@
 import createSimpleComponent from '../utils/createSimpleComponent';
-import docs from '../docs/docs';
+import docs from '../docs/docs.mjs';
 
 const shapes = Object.keys(docs).reduce((accum, cur) => {
   const component = (props) => createSimpleComponent(docs[cur], props);

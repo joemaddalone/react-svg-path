@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import * as Shapes from '../';
-import docs, { basicShapes } from '../docs/docs';
+import docs, { basicShapes } from '../docs/docs.mjs';
 import Path from './Path';
 
 const basicShapeTest = (Component) => {
