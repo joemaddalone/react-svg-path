@@ -45,7 +45,8 @@ ${Object.keys(c.props)
       }`
   )
   .join('\n')}
-  [→Interactive demo of ${c.Component}](${c.demoUrl})
+
+  [→ Interactive demo of ${c.Component}](${c.demoUrl})
 \n-----\n`;
   });
 
