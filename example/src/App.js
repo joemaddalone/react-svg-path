@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import {
   HashRouter as Router,
   Route,
-  NavLink,
-  useLocation
+  NavLink
 } from 'react-router-dom';
 import { basicShapes, curves } from './docs/docs';
 import { Nav } from './components/Nav';
@@ -30,11 +29,6 @@ const App = () => {
   const [overlayNav, setOverlayNav] = useState(false);
   const shapesDemos = Object.keys(basicShapes);
   const curveDemos = Object.keys(curves);
-  // const location = useLocation();
-
-  // useEffect(() => {
-  //   setOverlayNav(false);
-  // }, [location]);
 
   return (
     <Router basename='/'>
@@ -131,6 +125,7 @@ const App = () => {
               ))}
             </div>
           </ScrollToTop>
+          <blockquote style={{paddingTop: 120}} />
         </div>
       </main>
     </Router>

@@ -219,9 +219,10 @@ code {
   padding: 8px;
   background-color: #f8f8f8;
   margin-left: 0;
-  white-space: pre;
-  display: block;
+  white-space: pre-wrap;
   unicode-bidi: embed;
+  display: block;
+
 }
 
 path {

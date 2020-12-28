@@ -27,17 +27,24 @@ export const ToComponent = () => {
     .close()
     .toComponent(rest);
 };`}</code>
-      <p>
-      {t('pages.toComponent.description2')}
-      </p>
+      <p>{t('pages.toComponent.description2')}</p>
       <div>
-      <Svg width={500} height={200}>
-        <g transform="translate(125,0)">
-        {['red', 'blue', 'green'].map((c, i) => (
-          <Triangle key={c} x={i * 100} y={25} w={150} h={150} fill={c} />
-        ))}
-        </g>
-      </Svg>
+        <Svg
+          width={500}
+          height={200}
+          style={{
+            width: `100%`,
+            height: 'auto',
+            maxWidth: `${500}px`,
+            maxHeight: `${200}px`
+          }}
+        >
+          <g transform='translate(125,0)'>
+            {['red', 'blue', 'green'].map((c, i) => (
+              <Triangle key={c} x={i * 100} y={25} w={150} h={150} fill={c} />
+            ))}
+          </g>
+        </Svg>
       </div>
       <code>
         {`

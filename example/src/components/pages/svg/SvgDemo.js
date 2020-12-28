@@ -12,10 +12,20 @@ export const SvgDemo = () => {
         <Svg width={100} height={100} />
       </div>
       <code>{`<Svg width={100} height={100} />}`}</code>
-      <div className='flex flex-column'>
+      <div>
         <h2>{t('pages.svg.oneFeature')}</h2>
         <p>{t('pages.svg.nesting')}</p>
-        <Svg width={500} height={250}>
+        <Svg
+          width={500}
+          height={250}
+          preserveAspectRatio='xMinYMin meet'
+          style={{
+            width: `100%`,
+            height: 'auto',
+            maxWidth: 500,
+            maxHeight: 250
+          }}
+        >
           <Circle size={25} fill='none' stroke='#000' />
           <Line ox={12.5} ex={300} ey={125} stroke='red'>
             <Text ox={5} oy={4} fill='red'>
