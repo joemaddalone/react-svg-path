@@ -9,10 +9,20 @@ export const TextPathDemo = () => {
     <>
       <h1>{t('pages.textPath.title')}</h1>
       <p>{t('pages.textPath.intro')}</p>
-      <div className='text-path flex flex-column'>
+      <div className='text-path '>
         <h2>With existing components</h2>
         <p>{t('pages.textPath.withCircle')}</p>
-        <Svg width={500} height={250}>
+        <Svg
+          width={500}
+          height={250}
+          preserveAspectRatio='xMinYMin meet'
+          style={{
+            width: `100%`,
+            height: 'auto',
+            maxWidth: 500,
+            maxHeight: 250
+          }}
+        >
           <TextPath id='my-path' path={<Circle cx={250} cy={125} size={125} />}>
             {exampleText}
           </TextPath>
@@ -26,7 +36,17 @@ export const TextPathDemo = () => {
 </Svg>`.trim()}
         </code>
         <p>{t('pages.textPath.withQuad')}</p>
-        <Svg width={500} height={200}>
+        <Svg
+          width={500}
+          height={200}
+          preserveAspectRatio='xMinYMin meet'
+          style={{
+            width: `100%`,
+            height: 'auto',
+            maxWidth: 500,
+            maxHeight: 200
+          }}
+        >
           <TextPath
             startOffset={20}
             path={
@@ -80,7 +100,17 @@ export const TextPathDemo = () => {
         </code>
         <h2>{t('pages.textPath.withCustom')}</h2>
         <p>{t('pages.textPath.withCustomDescription')}</p>
-        <Svg width={500} height={250}>
+        <Svg
+          width={500}
+          height={250}
+          preserveAspectRatio='xMinYMin meet'
+          style={{
+            width: `100%`,
+            height: 'auto',
+            maxWidth: 500,
+            maxHeight: 250
+          }}
+        >
           <TextPath
             textLength={450}
             path='M25,100 h150 q25 0 40 50 t50 50 t50 -50 v-100'

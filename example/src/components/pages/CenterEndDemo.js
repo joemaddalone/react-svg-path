@@ -18,7 +18,13 @@ export const CenterEndDemo = () => {
       <h1>{t('pages.centerEnd.title')}</h1>
       <p dangerouslySetInnerHTML={{ __html: t('pages.centerEnd.intro') }} />
       <div>
-        <Svg width={575} height={175}>
+        <Svg width={575} height={175} preserveAspectRatio='xMinYMin meet'
+          style={{
+            width: `100%`,
+            height: 'auto',
+            maxWidth: 575,
+            maxHeight: 175
+          }}>
           <MarkerSquare id='marker-s' size={10} color='#999' />
           <MarkerArrow id='marker-a' size={10} color='red' />
           <Square
@@ -93,7 +99,13 @@ export const CenterEndDemo = () => {
       </div>
       <div>
         <h2>{t('pages.centerEnd.another')}</h2>
-        <Svg width={500} height={500}>
+        <Svg width={500} height={500}preserveAspectRatio='xMinYMin meet'
+          style={{
+            width: `100%`,
+            height: 'auto',
+            maxWidth: 500,
+            maxHeight: 500
+          }}>
           <MarkerSquare id='ms' size={10} color='red' />
           <MarkerSquare id='mm' size={10} color='#999' />
           <MarkerSquare id='me' size={10} color='blue' />

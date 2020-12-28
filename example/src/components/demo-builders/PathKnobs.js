@@ -76,6 +76,7 @@ export const PathKnobs = ({ onChange, initData }) => {
                 <input
                   id={k}
                   type='number'
+                  inputmode="numeric"
                   max={pathAttributes[k].max || null}
                   min={pathAttributes[k].min || null}
                   step={pathAttributes[k].step || null}

@@ -92,13 +92,10 @@ export const Introduction = () => {
       </div>
       <div
         className='complex flex items-center justify-around flex-wrap'
-        style={{ maxWidth: '800px' }}
+        style={{ maxWidth: 800, minHeight: 180 }}
       >
         <div className='flex flex-column items-center justify-center'>
-          <Svg
-            width={160}
-            height={160}
-          >
+          <Svg width={160} height={160}>
             <Pie size={150} cx={80} cy={80} data={pieData} />
           </Svg>
           <a
@@ -121,6 +118,11 @@ export const Introduction = () => {
             {t('common.source')}
           </a>
         </div>
+      </div>
+      <div
+        className='complex flex items-center justify-around flex-wrap'
+        style={{ maxWidth: '800px', minHeight: 160 }}
+      >
         <Svg width={180} height={180}>
           <Pie size={130} cx={90} cy={90} data={pieData} />
           <Donut

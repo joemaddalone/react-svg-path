@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-  Svg,
-  Circle,
-  Line,
-} from 'react-svg-path';
+import { Svg, Circle, Line } from 'react-svg-path';
 import { translate as t } from '../../../i18n/i18n';
 
 import './NestingDemo3.css';
@@ -12,7 +8,18 @@ const NestingDemo3 = () => (
   <>
     <h2>{t('pages.nesting.example3')}</h2>
     <p dangerouslySetInnerHTML={{ __html: t('pages.nesting.oxOy') }} />
-    <Svg width={500} height={150} className='nesting-example-3'>
+    <Svg
+      width={500}
+      height={150}
+      className='nesting-example-3'
+      preserveAspectRatio='xMinYMin meet'
+      style={{
+        width: `100%`,
+        height: 'auto',
+        maxWidth: 500,
+        maxHeight: 150
+      }}
+    >
       <Circle size={0} cx={75} cy={75}>
         <Circle size={60} oy={-20} />
         <Circle size={60} oy={10} ox={-20} />
@@ -33,8 +40,7 @@ const NestingDemo3 = () => (
 
 <Line sx={200} sy={75} ex={400} ey={75}>
   <Circle size={20} ox={-100} /> // ${t('pages.nesting.offsetX')}
-</Line>`
-.trim()}
+</Line>`.trim()}
       </code>
     </div>
   </>

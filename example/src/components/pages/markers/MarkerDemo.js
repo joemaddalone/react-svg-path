@@ -53,20 +53,28 @@ export const MarkerDemo = () => {
   const markerMid = (e) => {
     setMidMarker(e.target.value);
   };
-  const quadDemo = {...demos.curves.quad[0]}
-  delete quadDemo.svgDimensions
+  const quadDemo = { ...demos.curves.quad[0] };
+  delete quadDemo.svgDimensions;
   return (
     <>
       <h1>{t('pages.markers.title')}</h1>
-      <p>
-      {t('pages.markers.intro')}
-      </p>
-      <div className='flex'>
-        <Svg width={260} height={225}>
+      <p>{t('pages.markers.intro')}</p>
+      <div>
+        <Svg
+          width={260}
+          height={225}
+          preserveAspectRatio='xMinYMin meet'
+          style={{
+            width: `100%`,
+            height: 'auto',
+            maxWidth: 260,
+            maxHeight: 225
+          }}
+        >
           <MarkerArrow id='marker-arrow' />
           <MarkerTriangle id='marker-triangle' />
           <MarkerLine id='marker-line' strokeWidth={3} />
-          <MarkerSquare id="marker-square" size={8} />
+          <MarkerSquare id='marker-square' size={8} />
           <g transform='translate(10,10)'>
             <Quad
               {...quadDemo}
@@ -95,15 +103,27 @@ export const MarkerDemo = () => {
           </g>
         </Svg>
         <div className='ui form' style={{ width: 250, marginLeft: 10 }}>
-          <MarkerSelector id="start" label={t('pages.markers.startLabel')} onChange={markerStart} />
-          <MarkerSelector id="end" label={t('pages.markers.endLabel')} onChange={markerEnd} />
-          <MarkerSelector id="mid" label={t('pages.markers.midLabel')} onChange={markerMid} />
+          <MarkerSelector
+            id='start'
+            label={t('pages.markers.startLabel')}
+            onChange={markerStart}
+          />
+          <MarkerSelector
+            id='end'
+            label={t('pages.markers.endLabel')}
+            onChange={markerEnd}
+          />
+          <MarkerSelector
+            id='mid'
+            label={t('pages.markers.midLabel')}
+            onChange={markerMid}
+          />
         </div>
       </div>
       <div>
         <h2>{t('pages.markers.usage')}</h2>
         <code>
-{`<svg>
+          {`<svg>
   <Marker[Arrow|Line|Triangle|Square] id="my-marker-id" />
   <Line
     sx={10}
@@ -118,19 +138,19 @@ export const MarkerDemo = () => {
       </div>
       <div>
         <h2>&lt;MarkerArrow></h2>
-        <p dangerouslySetInnerHTML={{__html: t('pages.markers.arrow')}} />
+        <p dangerouslySetInnerHTML={{ __html: t('pages.markers.arrow') }} />
       </div>
       <div>
         <h2>&lt;MarkerTriangle></h2>
-        <p dangerouslySetInnerHTML={{__html: t('pages.markers.triangle')}} />
+        <p dangerouslySetInnerHTML={{ __html: t('pages.markers.triangle') }} />
       </div>
       <div>
         <h2>&lt;MarkerSquare></h2>
-        <p dangerouslySetInnerHTML={{__html: t('pages.markers.square')}} />
+        <p dangerouslySetInnerHTML={{ __html: t('pages.markers.square') }} />
       </div>
       <div>
         <h2>&lt;MarkerLine></h2>
-        <p dangerouslySetInnerHTML={{__html: t('pages.markers.line')}} />
+        <p dangerouslySetInnerHTML={{ __html: t('pages.markers.line') }} />
       </div>
     </>
   );

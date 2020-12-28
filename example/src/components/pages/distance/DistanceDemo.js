@@ -8,10 +8,20 @@ export const DistanceDemo = () => {
     <>
       <h1>{t('pages.distance.title')}</h1>
       <p dangerouslySetInnerHTML={{ __html: t('pages.distance.intro') }}></p>
-      <div className='flex flex-column'>
+      <div>
         <h2>{t('pages.distance.pixelsDefault')}</h2>
         <p>{t('pages.distance.pixelsDefaultDescription')}</p>
-        <Svg width={600} height={200}>
+        <Svg
+          width={600}
+          height={200}
+          preserveAspectRatio='xMinYMin meet'
+          style={{
+            width: `100%`,
+            height: 'auto',
+            maxWidth: 600,
+            maxHeight: 200
+          }}
+        >
           <Distance sx={0} sy={150} ex={600} ey={150} />
           <Distance sx={150} sy={0} ex={150} ey={200} />
           <Distance sx={400} sy={0} ex={600} ey={200} />
@@ -25,10 +35,20 @@ export const DistanceDemo = () => {
 </Svg>`.trim()}
         </code>
       </div>
-      <div className='flex flex-column'>
+      <div>
         <h2>{t('pages.distance.color')}</h2>
         <p>{t('pages.distance.colorDescription')}</p>
-        <Svg width={600} height={200}>
+        <Svg
+          width={600}
+          height={200}
+          preserveAspectRatio='xMinYMin meet'
+          style={{
+            width: `100%`,
+            height: 'auto',
+            maxWidth: 600,
+            maxHeight: 200
+          }}
+        >
           <Distance sx={0} sy={150} ex={600} ey={150} color='red' />
           <Distance sx={150} sy={0} ex={150} ey={200} color='green' />
           <Distance sx={400} sy={0} ex={600} ey={200} color='blue' />
@@ -42,10 +62,20 @@ export const DistanceDemo = () => {
 </Svg>`.trim()}
         </code>
       </div>
-      <div className='flex flex-column'>
+      <div>
         <h2>{t('pages.distance.dotted')}</h2>
         <p>{t('pages.distance.dottedDescription')}</p>
-        <Svg width={600} height={200}>
+        <Svg
+          width={600}
+          height={200}
+          preserveAspectRatio='xMinYMin meet'
+          style={{
+            width: `100%`,
+            height: 'auto',
+            maxWidth: 600,
+            maxHeight: 200
+          }}
+        >
           <Distance sx={0} sy={150} ex={600} ey={150} dotted />
           <Distance sx={150} sy={0} ex={150} ey={200} dotted />
           <Distance sx={400} sy={0} ex={600} ey={200} dotted />
@@ -59,13 +89,23 @@ export const DistanceDemo = () => {
 </Svg>`.trim()}
         </code>
       </div>
-      <div className='flex flex-column'>
+      <div>
         <h2>{t('pages.distance.text')}</h2>
         <p>{t('pages.distance.textDescription')}</p>
-        <Svg width={600} height={200}>
-          <Distance sx={0} sy={150} ex={600} ey={150} text="world" />
-          <Distance sx={150} sy={0} ex={150} ey={200} text="hello" />
-          <Distance sx={400} sy={0} ex={600} ey={200} text="🔸" />
+        <Svg
+          width={600}
+          height={200}
+          preserveAspectRatio='xMinYMin meet'
+          style={{
+            width: `100%`,
+            height: 'auto',
+            maxWidth: 600,
+            maxHeight: 200
+          }}
+        >
+          <Distance sx={0} sy={150} ex={600} ey={150} text='world' />
+          <Distance sx={150} sy={0} ex={150} ey={200} text='hello' />
+          <Distance sx={400} sy={0} ex={600} ey={200} text='🔸' />
         </Svg>
         <code>
           {`
@@ -77,14 +117,24 @@ export const DistanceDemo = () => {
         </code>
       </div>
 
-      <div className='flex flex-column'>
+      <div>
         <h2>{t('pages.distance.markers')}</h2>
         <p
           dangerouslySetInnerHTML={{
             __html: t('pages.distance.markersDescription')
           }}
         />
-        <Svg width={600} height={200}>
+        <Svg
+          width={600}
+          height={200}
+          preserveAspectRatio='xMinYMin meet'
+          style={{
+            width: `100%`,
+            height: 'auto',
+            maxWidth: 600,
+            maxHeight: 200
+          }}
+        >
           <Distance sx={0} sy={150} ex={600} ey={150} markerEnd='arrow' />
           <Distance sx={150} sy={0} ex={150} ey={200} markerStart='triangle' />
           <Distance sx={400} sy={0} ex={600} ey={200} markers='arrow' />
@@ -99,10 +149,20 @@ export const DistanceDemo = () => {
         </code>
       </div>
 
-      <div className='flex flex-column'>
+      <div>
         <h2>{t('pages.distance.scale')}</h2>
         <p>{t('pages.distance.scaleDescription')}</p>
-        <Svg width={600} height={200}>
+        <Svg
+          width={600}
+          height={200}
+          preserveAspectRatio='xMinYMin meet'
+          style={{
+            width: `100%`,
+            height: 'auto',
+            maxWidth: 600,
+            maxHeight: 200
+          }}
+        >
           <Distance
             sx={0}
             sy={150}
