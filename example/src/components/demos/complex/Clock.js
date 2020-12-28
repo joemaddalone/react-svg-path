@@ -45,7 +45,18 @@ const Clock = ({ size = 400 }) => {
   const hours = [12, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
   return (
     <div className='Clock'>
-      <Svg width={size + margin} height={size + margin} className='clock'>
+      <Svg
+        width={size + margin}
+        height={size + margin}
+        className='clock'
+        preserveAspectRatio='xMinYMin meet'
+        style={{
+          width: `100%`,
+          height: 'auto',
+          maxWidth: `${size + margin}px`,
+          maxHeight: `${size + margin}px`
+        }}
+      >
         <MarkerArrow id='marker-h' color='blue' />
         <MarkerArrow id='marker-s' color='red' />
         <MarkerArrow id='marker-m' color='green' />

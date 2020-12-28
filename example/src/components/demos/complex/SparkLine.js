@@ -59,7 +59,17 @@ const SparkLine = ({ width, height, data }) => {
   const ySize = height + margin;
 
   return (
-    <Svg width={xSize} height={ySize}>
+    <Svg
+      width={xSize}
+      height={ySize}
+      preserveAspectRatio='xMinYMin meet'
+      style={{
+        width: `100%`,
+        height: 'auto',
+        maxWidth: `${xSize}px`,
+        maxHeight: `${ySize}px`
+      }}
+    >
       <g transform={`translate(${margin / 2},${margin / 2})`}>
         <Grid x={0} y={0} width={width} height={height} rows={10} cols={20} />
         <Polyline

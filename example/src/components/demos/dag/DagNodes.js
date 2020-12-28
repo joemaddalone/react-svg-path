@@ -5,10 +5,10 @@ import './dag.css';
 
 const DagNodes = () => {
   const [dir, setDir] = useState('BT');
-
   const onChangeValue = (e) => {
     setDir(e.target.value);
   };
+
   const dag = dagSetup(dir);
   const createConnectors = () => {
     const { edges } = dag;
@@ -61,7 +61,17 @@ const DagNodes = () => {
           </div>
         </div>
       </div>
-      <Svg width={dag.graph.width} height={dag.graph.height}>
+      <Svg
+        width={dag.graph.width}
+        height={dag.graph.height}
+        preserveAspectRatio='xMinYMin meet'
+        style={{
+          width: `100%`,
+          height: 'auto',
+          maxWidth: `${dag.graph.width}px`,
+          maxHeight: `${dag.graph.height}px`
+        }}
+      >
         <path stroke='#222' strokeWidth={1} d={createConnectors()} />
         {squareNodes.map(({ x, y, width }, index) => {
           return (

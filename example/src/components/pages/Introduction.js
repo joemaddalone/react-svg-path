@@ -7,7 +7,7 @@ import Donut from '../demos/complex/Donut';
 import SparkLine from '../demos/complex/SparkLine';
 import Bars from '../demos/complex/Bars';
 import Football from '../demos/complex/Football/Football';
-import Dimensions from '../demos/complex/Dimensions/Dimensions'
+import Dimensions from '../demos/complex/Dimensions/Dimensions';
 import Clock from '../demos/complex/Clock';
 
 export const Introduction = () => {
@@ -91,11 +91,14 @@ export const Introduction = () => {
         </div>
       </div>
       <div
-        className='complex flex items-center justify-around'
-        style={{ width: '800px' }}
+        className='complex flex items-center justify-around flex-wrap'
+        style={{ maxWidth: '800px' }}
       >
         <div className='flex flex-column items-center justify-center'>
-          <Svg width={160} height={160}>
+          <Svg
+            width={160}
+            height={160}
+          >
             <Pie size={150} cx={80} cy={80} data={pieData} />
           </Svg>
           <a
