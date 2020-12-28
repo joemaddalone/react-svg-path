@@ -104,6 +104,7 @@ body {
   grid-template-rows: auto 1fr;
   transition: all 0.1s ease-in-out;
 }
+
 .nav-area {
   height: calc(100vh - 50px);
   padding-top: 15px;
@@ -123,6 +124,30 @@ body {
   display: flex;
   flex-direction: column;
   scroll-behavior: smooth;
+}
+
+.nav-actuator {
+  display: none;
+}
+
+
+
+.nav-actuator:hover path {
+  stroke: yellow;
+}
+
+@media (max-width: 900px) {
+  .app-main {
+    grid-template-columns: 1fr;
+    grid-template-rows: 100vh;
+    height: 100%;
+  }
+  .content-area {
+    overflow-x: scroll;
+  }
+  .nav-actuator {
+    display: block;
+  }
 }
 
 svg {

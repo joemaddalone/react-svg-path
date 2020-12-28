@@ -1,5 +1,10 @@
-import React from 'react';
-import { HashRouter as Router, Route, NavLink } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import {
+  HashRouter as Router,
+  Route,
+  NavLink,
+  useLocation
+} from 'react-router-dom';
 import { basicShapes, curves } from './docs/docs';
 import { Nav } from './components/Nav';
 /** demo builders */
@@ -17,19 +22,73 @@ import { DistanceDemo } from './components/pages/distance/DistanceDemo';
 import { ToComponent } from './components/pages/ToComponent';
 import { PathIntro } from './components/pages/PathIntro';
 import ScrollToTop from './components/ScrollToTop';
+import { Line, Svg } from 'react-svg-path';
 
 import './App.css';
 
 const App = () => {
+  const [overlayNav, setOverlayNav] = useState(false);
   const shapesDemos = Object.keys(basicShapes);
   const curveDemos = Object.keys(curves);
+  // const location = useLocation();
+
+  // useEffect(() => {
+  //   setOverlayNav(false);
+  // }, [location]);
 
   return (
     <Router basename='/'>
       <header className='app-header'>
-        <NavLink to='/' style={{ color: 'white' }}>
-          react-svg-path
-        </NavLink>
+        <div className='flex items-center justify-center pointer'>
+          <Svg
+            className='nav-actuator'
+            width={25}
+            height={25}
+            style={{
+              backgroundColor: 'transparent',
+              outline: 0,
+              marginRight: 10,
+              marginLeft: -10,
+              cursor: 'pointer',
+              borderRadius: '3px',
+              border: '1px solid #999'
+            }}
+            onClick={() => {
+              console.log('onCLick!');
+              setOverlayNav((state) => !state);
+            }}
+          >
+            <Line
+              oy={-7}
+              ox={-10}
+              ex={20}
+              ey={0}
+              stroke='#ddd'
+              strokeWidth={4}
+              relative
+            />
+            <Line
+              ox={-10}
+              ex={20}
+              ey={0}
+              stroke='#ddd'
+              strokeWidth={4}
+              relative
+            />
+            <Line
+              oy={7}
+              ox={-10}
+              ex={20}
+              ey={0}
+              stroke='#ddd'
+              strokeWidth={4}
+              relative
+            />
+          </Svg>
+          <NavLink to='/' style={{ color: 'white' }}>
+            react-svg-path
+          </NavLink>
+        </div>
         <a
           style={{ color: 'white' }}
           target='_blank'
@@ -40,9 +99,9 @@ const App = () => {
         </a>
       </header>
       <main className='app-main'>
-        <Nav />
+        <Nav overlay={overlayNav} />
         <div className='content-area' tabIndex={0}>
-          <ScrollToTop>
+          <ScrollToTop cb={() => setOverlayNav(false)}>
             <Route exact path='/' component={Introduction} />
             <Route exact path={`/nesting`} render={() => <Nesting />} />
             <Route exact path={`/pathmerge`} render={() => <MergeDemo />} />

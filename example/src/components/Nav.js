@@ -4,9 +4,12 @@ import { basicShapes, curves } from '../docs/docs';
 import { translate as t } from '../i18n/i18n';
 import './Nav.css';
 
-export const Nav = () => {
+export const Nav = ({ overlay }) => {
   return (
-    <div className='nav-area ui vertical menu' style={{ paddingBottom: 50 }}>
+    <div
+      className={`nav-area ui vertical menu ${overlay ? 'overlay' : ''}`}
+      style={{ paddingBottom: overlay ? 0 : 50 }}
+    >
       <div className='item'>
         <div className='menu'>
           <NavLink exact className='item' to='/'>
