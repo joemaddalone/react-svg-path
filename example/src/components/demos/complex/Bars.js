@@ -25,14 +25,22 @@ const width = 680;
 const margin = 75;
 const height = 400;
 
-const yScale = scaleLinear()
-  .domain([0, max])
-  .range([0, height]).nice();
+const yScale = scaleLinear().domain([0, max]).range([0, height]).nice();
 
 const Bars = () => {
   return (
     <div className='App'>
-      <Svg width={width + margin} height={height + margin}>
+      <Svg
+        width={width + margin}
+        height={height + margin}
+        preserveAspectRatio='xMinYMin meet'
+        style={{
+          width: `100%`,
+          height: 'auto',
+          maxWidth: `${width + margin}px`,
+          maxHeight: `${height + margin}px`
+        }}
+      >
         <g transform={`translate(${margin / 2}, ${margin / 2})`}>
           <Line
             strokeWidth={0.5}
