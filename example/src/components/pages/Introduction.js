@@ -8,6 +8,7 @@ import SparkLine from '../demos/complex/SparkLine';
 import Bars from '../demos/complex/Bars';
 import Football from '../demos/complex/Football/Football';
 import Dimensions from '../demos/complex/Dimensions/Dimensions';
+import TargetDemo from '../demos/targets/TargetDemo';
 import Clock from '../demos/complex/Clock';
 
 export const Introduction = () => {
@@ -79,10 +80,21 @@ export const Introduction = () => {
             {t('common.source')}
           </a>
         </div>
+
         <div style={{ margin: 20, display: 'flex', flexDirection: 'column' }}>
           <Bars />
           <a
             href='https://github.com/joemaddalone/react-svg-path/blob/master/example/src/components/demos/complex/Bars.js'
+            rel='noopener noreferrer'
+            target='_blank'
+          >
+            {t('common.source')}
+          </a>
+        </div>
+        <div style={{ margin: 20, display: 'flex', flexDirection: 'column' }}>
+          <TargetDemo />
+          <a
+            href={`https://github.com/joemaddalone/react-svg-path/blob/master/example/src/components/demos/targets`}
             rel='noopener noreferrer'
             target='_blank'
           >
