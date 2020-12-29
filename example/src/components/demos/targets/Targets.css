@@ -1,0 +1,39 @@
+:root {
+  --target-dark: #222;
+  --target-high: #20a0c1;
+  --target-low: #1c354f;
+}
+
+.rotate45 {
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: rotate(45deg);
+}
+
+.rotate180 {
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: rotate(180deg);
+}
+
+.bg-dark {
+  background-color: var(--target-dark);
+  fill:  var(--target-dark);
+}
+
+.line-dark {
+  stroke:  var(--target-dark);
+}
+
+.line-high {
+  stroke: var(--target-high);
+  stroke-width: 1.5;
+}
+
+.thin {
+  stroke: 0.25
+}
+
+.fill-low {
+  fill: var(--target-low)
+}
