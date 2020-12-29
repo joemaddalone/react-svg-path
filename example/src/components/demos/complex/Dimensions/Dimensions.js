@@ -7,17 +7,7 @@ const App = () => {
   const quarter = size * 0.25;
   return (
     <div>
-      <Svg
-        width={size}
-        height={size}
-        preserveAspectRatio='xMinYMin meet'
-        style={{
-          width: `100%`,
-          height: 'auto',
-          maxWidth: `${size}px`,
-          maxHeight: `${size}px`
-        }}
-      >
+      <Svg width={size} height={size} scale>
         <Distance color='green' ex={size} ey={quarter * 2} markers='triangle' />
         <Distance
           color='green'

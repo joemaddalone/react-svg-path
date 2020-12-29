@@ -43,17 +43,7 @@ export const CurveDemo = ({ curve }) => {
         demos.map(({ svgDimensions, ...rest }, i) => {
           return (
             <span key={i}>
-              <Svg
-                width={svgDimensions.w}
-                height={svgDimensions.h}
-                preserveAspectRatio='xMinYMin meet'
-                style={{
-                  width: `100%`,
-                  height: 'auto',
-                  maxWidth: svgDimensions.w,
-                  maxHeight: svgDimensions.h
-                }}
-              >
+              <Svg width={svgDimensions.w} height={svgDimensions.h} scale>
                 <C {...demoValues[i]} {...pathAttributes} />
               </Svg>
             </span>

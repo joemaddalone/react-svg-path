@@ -8,18 +8,7 @@ const NestingDemo1 = () => (
   <>
     <h2>{t('pages.nesting.example1')}</h2>
     <p>{t('pages.nesting.centerPoints')}</p>
-    <Svg
-      width={200}
-      height={200}
-      className='nesting-example-1'
-      preserveAspectRatio='xMinYMin meet'
-      style={{
-        width: `100%`,
-        height: 'auto',
-        maxWidth: 200,
-        maxHeight: 200
-      }}
-    >
+    <Svg width={200} height={200} className='nesting-example-1' scale>
       <RegPolygon size={120} sides={4} cx={100} cy={100}>
         <Circle size={55} />
         <Square size={60} />

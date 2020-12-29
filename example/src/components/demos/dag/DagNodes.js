@@ -61,17 +61,7 @@ const DagNodes = () => {
           </div>
         </div>
       </div>
-      <Svg
-        width={dag.graph.width}
-        height={dag.graph.height}
-        preserveAspectRatio='xMinYMin meet'
-        style={{
-          width: `100%`,
-          height: 'auto',
-          maxWidth: `${dag.graph.width}px`,
-          maxHeight: `${dag.graph.height}px`
-        }}
-      >
+      <Svg width={dag.graph.width} height={dag.graph.height} scale>
         <path stroke='#222' strokeWidth={1} d={createConnectors()} />
         {squareNodes.map(({ x, y, width }, index) => {
           return (

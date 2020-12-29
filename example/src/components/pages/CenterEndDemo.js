@@ -18,13 +18,7 @@ export const CenterEndDemo = () => {
       <h1>{t('pages.centerEnd.title')}</h1>
       <p dangerouslySetInnerHTML={{ __html: t('pages.centerEnd.intro') }} />
       <div>
-        <Svg width={575} height={175} preserveAspectRatio='xMinYMin meet'
-          style={{
-            width: `100%`,
-            height: 'auto',
-            maxWidth: 575,
-            maxHeight: 175
-          }}>
+        <Svg width={575} height={175} scale>
           <MarkerSquare id='marker-s' size={10} color='#999' />
           <MarkerArrow id='marker-a' size={10} color='red' />
           <Square
@@ -59,7 +53,7 @@ export const CenterEndDemo = () => {
             markerEnd='url(#marker-a)'
           >
             <Text ox={-140} oy={4} attach='start'>
-            {t('pages.centerEnd.square')}
+              {t('pages.centerEnd.square')}
             </Text>
           </Line>
         </Svg>
@@ -99,13 +93,7 @@ export const CenterEndDemo = () => {
       </div>
       <div>
         <h2>{t('pages.centerEnd.another')}</h2>
-        <Svg width={500} height={500}preserveAspectRatio='xMinYMin meet'
-          style={{
-            width: `100%`,
-            height: 'auto',
-            maxWidth: 500,
-            maxHeight: 500
-          }}>
+        <Svg width={500} height={500} scale>
           <MarkerSquare id='ms' size={10} color='red' />
           <MarkerSquare id='mm' size={10} color='#999' />
           <MarkerSquare id='me' size={10} color='blue' />
@@ -147,7 +135,7 @@ export const CenterEndDemo = () => {
               markerEnd='url(#marker-explain-end)'
             >
               <Text ox={-50} oy={15}>
-              {t('pages.centerEnd.endingPoint')}
+                {t('pages.centerEnd.endingPoint')}
               </Text>
             </Quad>
           </RadialLines>
