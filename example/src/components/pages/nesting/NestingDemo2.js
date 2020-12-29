@@ -22,18 +22,7 @@ const NestingDemo2 = () => (
   <>
     <h2>{t('pages.nesting.example2')}</h2>
     <p>{t('pages.nesting.end')}</p>
-    <Svg
-      width={200}
-      height={200}
-      className='nesting-example-2'
-      preserveAspectRatio='xMinYMin meet'
-      style={{
-        width: `100%`,
-        height: 'auto',
-        maxWidth: 200,
-        maxHeight: 200
-      }}
-    >
+    <Svg width={200} height={200} className='nesting-example-2' scale>
       <Line sx={10} sy={25} ex={130} ey={25} stroke='#ccc'>
         <Circle size={15} fill='#ccc' />
       </Line>

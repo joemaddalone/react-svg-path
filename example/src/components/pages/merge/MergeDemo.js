@@ -9,18 +9,7 @@ export const MergeDemo = () => (
     <p>{t('pages.pathMerge.intro')}</p>
     <p>{t('pages.pathMerge.compose')}</p>
     <div>
-      <Svg
-        width={200}
-        height={200}
-        className='nesting-example-1'
-        preserveAspectRatio='xMinYMin meet'
-        style={{
-          width: `100%`,
-          height: 'auto',
-          maxWidth: 200,
-          maxHeight: 200
-        }}
-      >
+      <Svg width={200} height={200} className='nesting-example-1' scale>
         <RegPolygon size={120} sides={4} cx={100} cy={100} />
         <Circle size={55} cx={100} cy={100} />
         <Square size={60} cx={100} cy={100} />
@@ -45,18 +34,7 @@ export const MergeDemo = () => (
     </code>
     <p>{t('pages.pathMerge.wrapIn')}</p>
     <div>
-      <Svg
-        width={200}
-        height={200}
-        className='nesting-example-1'
-        preserveAspectRatio='xMinYMin meet'
-        style={{
-          width: `100%`,
-          height: 'auto',
-          maxWidth: 200,
-          maxHeight: 200
-        }}
-      >
+      <Svg width={200} height={200} className='nesting-example-1' scale>
         <PathMerge>
           <RegPolygon size={120} sides={4} cx={100} cy={100} />
           <Circle size={55} cx={100} cy={100} />
@@ -78,18 +56,7 @@ export const MergeDemo = () => (
     <p>{t('pages.pathMerge.wrapInResult')}</p>
     <p>{t('pages.pathMerge.nested')}</p>
     <div>
-      <Svg
-        width={200}
-        height={200}
-        className='nesting-example-1'
-        preserveAspectRatio='xMinYMin meet'
-        style={{
-          width: `100%`,
-          height: 'auto',
-          maxWidth: 200,
-          maxHeight: 200
-        }}
-      >
+      <Svg width={200} height={200} className='nesting-example-1' scale>
         <PathMerge>
           <RegPolygon size={120} sides={4} cx={100} cy={100}>
             <Circle size={55} />

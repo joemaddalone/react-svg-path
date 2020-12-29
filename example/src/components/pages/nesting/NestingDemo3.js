@@ -8,18 +8,7 @@ const NestingDemo3 = () => (
   <>
     <h2>{t('pages.nesting.example3')}</h2>
     <p dangerouslySetInnerHTML={{ __html: t('pages.nesting.oxOy') }} />
-    <Svg
-      width={500}
-      height={150}
-      className='nesting-example-3'
-      preserveAspectRatio='xMinYMin meet'
-      style={{
-        width: `100%`,
-        height: 'auto',
-        maxWidth: 500,
-        maxHeight: 150
-      }}
-    >
+    <Svg width={500} height={150} className='nesting-example-3' scale>
       <Circle size={0} cx={75} cy={75}>
         <Circle size={60} oy={-20} />
         <Circle size={60} oy={10} ox={-20} />

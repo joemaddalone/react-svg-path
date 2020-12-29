@@ -60,17 +60,7 @@ export const MarkerDemo = () => {
       <h1>{t('pages.markers.title')}</h1>
       <p>{t('pages.markers.intro')}</p>
       <div>
-        <Svg
-          width={260}
-          height={225}
-          preserveAspectRatio='xMinYMin meet'
-          style={{
-            width: `100%`,
-            height: 'auto',
-            maxWidth: 260,
-            maxHeight: 225
-          }}
-        >
+        <Svg width={260} height={225} scale>
           <MarkerArrow id='marker-arrow' />
           <MarkerTriangle id='marker-triangle' />
           <MarkerLine id='marker-line' strokeWidth={3} />

@@ -36,17 +36,7 @@ const Football = ({ width }) => {
   };
 
   return (
-    <Svg
-      width={canvasWidth + marginX}
-      height={canvasHeight + marginY}
-      preserveAspectRatio='xMinYMin meet'
-      style={{
-        width: `100%`,
-        height: 'auto',
-        maxWidth: `${canvasWidth + marginX}px`,
-        maxHeight: `${canvasHeight + marginY}px`
-      }}
-    >
+    <Svg width={canvasWidth + marginX} height={canvasHeight + marginY} scale>
       <MarkerArrow id='arrow-marker' color='green' open />
       <g
         transform={`translate(${marginX / 2},${marginY / 2})`}

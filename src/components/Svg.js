@@ -12,8 +12,23 @@ export const Svg = ({
   cy,
   width = 0,
   height = 0,
+  scale = false,
   ...attributes
 }) => {
+  const responsiveAttributes = {
+    preserveAspectRatio: 'xMinYMin meet',
+    ...attributes
+  };
+  responsiveAttributes.style = {
+    width: `100%`,
+    height: 'auto',
+    maxWidth: width,
+    maxHeight: height,
+    ...attributes.style
+  };
+
+  const appliedAtrributes = scale ? responsiveAttributes : attributes;
+
   return (
     <svg
       x={x || sx || null}
@@ -22,7 +37,7 @@ export const Svg = ({
       width={width}
       height={height}
       viewBox={`0 0 ${width} ${height}`}
-      {...attributes}
+      {...appliedAtrributes}
     >
       {render({
         attributes: {},
