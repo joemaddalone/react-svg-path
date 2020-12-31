@@ -8,7 +8,7 @@ import { Tabs } from './Tabs';
 import { translate as t } from '../../i18n/i18n';
 
 export const CurveDemo = ({ curve }) => {
-  const { Component, props } = docs[curve];
+  const { Component, props, shorthands } = docs[curve];
   const demos = JSON.parse(JSON.stringify(demoDocs.curves[curve]));
   const initialState = demos.map((d, i) => {
     return Object.keys(d)
@@ -38,6 +38,29 @@ export const CurveDemo = ({ curve }) => {
 />
       `.trim()}
       </code>
+      {shorthands && (
+        <>
+          <p>This component has shorthand props available:</p>
+          <table className='ui table'>
+            <thead>
+              <tr>
+                <th>prop</th>
+                <th>description</th>
+              </tr>
+            </thead>
+            <tbody>
+              {shorthands.map((sh, shi) => {
+                return (
+                  <tr key={shi}>
+                    <td>{sh.k}</td>
+                    <td>{sh.description}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </>
+      )}
       <p>{t(`${curve}.description`)}</p>
       {demos &&
         demos.map(({ svgDimensions, ...rest }, i) => {
