@@ -16,7 +16,7 @@ export const ComponentKnobs = ({
         </label>
         <input
           id={label}
-          inputmode="numeric"
+          inputMode="numeric"
           type='number'
           value={value}
           onChange={(e) => onChange(label, +e.target.value)}
@@ -28,7 +28,7 @@ export const ComponentKnobs = ({
     return (
       <PointArray
         value={value}
-        inputmode="numeric"
+        inputMode="numeric"
         pointLength={pointLength}
         onChange={onChange}
         label={label}
