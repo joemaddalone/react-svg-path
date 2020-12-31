@@ -60,13 +60,13 @@
     "description": "Triangle draws an equilateral triangle from center point (cx & cy). The cursor is then moved to the center point."
   },
   "arc": {
-    "description": "Arc is drawn..."
+    "description": "An Arc draws a segment of an ellipse."
   },
   "cubic": {
-    "description": "Cubic is drawn..."
+    "description": "Cubic is drawn from an sx and sy to an ex and ey with two control points (cx1+cy1 & cx2+cy2)."
   },
   "quad": {
-    "description": "Quad is drawn..."
+    "description": "Quad is drawn from an sx and sy to an ex and ey with one control points (cx & cy)."
   },
   "pages": {
     "introduction": {
