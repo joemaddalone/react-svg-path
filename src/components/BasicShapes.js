@@ -1,8 +1,13 @@
+/* eslint-disable no-prototype-builtins */
 import createSimpleComponent from '../utils/createSimpleComponent';
+import shorthand from '../utils/shorthand';
 import docs from '../docs/docs.mjs';
 
 const shapes = Object.keys(docs).reduce((accum, cur) => {
-  const component = (props) => createSimpleComponent(docs[cur], props);
+  const component = (props) => {
+    const p = props ? shorthand(props) : props;
+    return createSimpleComponent(docs[cur], p);
+  };
   component.displayName = docs[cur].Component;
   accum[docs[cur].Component] = component;
   return accum;

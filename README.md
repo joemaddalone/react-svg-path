@@ -97,6 +97,12 @@ const App = () => {
 
 Writing path commands via the library makes creating paths super simple and intuitive.  However it can seem like overkill for really common patterns you may need.  react-svg-path includes a number of components to allow for a declarative interface for generating the paths you need.
 
+_Note: The following shorthand version of some props are available where applicable:_
+* **sxy**: sx & sy = sxy
+* **exy**: ex & ey = exy
+* **cxy**: cx & cy = cxy
+* **rxy**: rx & cy = rxy
+
 The following components are available
 
 ## Shapes

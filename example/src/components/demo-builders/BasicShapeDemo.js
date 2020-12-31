@@ -10,7 +10,7 @@ import demoDocs from '../../docs/demos';
 import './BasicShapeDemo.css';
 
 export const BasicShapeDemo = ({ shape }) => {
-  const { Component, props } = docs[shape];
+  const { Component, props, shorthands } = docs[shape];
   const demos = demoDocs.basicShapes[shape];
   const initialState = demos.map((d, i) => {
     return Object.keys(d)
@@ -41,6 +41,29 @@ export const BasicShapeDemo = ({ shape }) => {
 />
       `.trim()}
       </code>
+      {shorthands && (
+        <>
+          <p>This component has shorthand props available:</p>
+          <table className='ui table'>
+            <thead>
+              <tr>
+                <th>prop</th>
+                <th>description</th>
+              </tr>
+            </thead>
+            <tbody>
+              {shorthands.map((sh, shi) => {
+                return (
+                  <tr key={shi}>
+                    <td>{sh.k}</td>
+                    <td>{sh.description}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </>
+      )}
       <p>{t(`${shape}.description`)}</p>
       {demos &&
         demos.map(({ svgDimensions, ...rest }, i) => {

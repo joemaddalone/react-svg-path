@@ -38,6 +38,45 @@ const cy = {
   description: 'Center x coordinate of the shape.'
 };
 
+export const shorthands = {
+  sxy: {
+    ...commonNumber,
+    isRequired: false,
+    default: null,
+    k: 'sxy',
+    p: ['sx', 'sy'],
+    description:
+      'If sx and sy are equal values you can use the shortcut "sxy" to set both at once.'
+  },
+  exy: {
+    ...commonNumber,
+    isRequired: false,
+    default: null,
+    k: 'exy',
+    p: ['ex', 'ey'],
+    description:
+      'If ex and ey are equal values you can use the shortcut "exy" to set both at once.'
+  },
+  cxy: {
+    ...commonNumber,
+    isRequired: false,
+    default: null,
+    k: 'cxy',
+    p: ['cx', 'cy'],
+    description:
+      'If cx and cy are equal values you can use the shortcut "cxy" to set both at once.'
+  },
+  rxy: {
+    ...commonNumber,
+    isRequired: false,
+    default: null,
+    k: 'rxy',
+    p: ['rx', 'ry'],
+    description:
+      'If rx and ry are equal values you can use the shortcut "rxy" to set both at once.'
+  }
+};
+
 const centerEnd = {
   default: true,
   type: 'boolean',
@@ -63,7 +102,8 @@ const docs = {
       cy,
       centerEnd
     },
-    nestingProps: centeredShapeNestingProps
+    nestingProps: centeredShapeNestingProps,
+    shorthands: [shorthands.cxy]
   },
   ellipse: {
     category: 'basicShapes',
@@ -85,7 +125,8 @@ const docs = {
       cy,
       centerEnd
     },
-    nestingProps: centeredShapeNestingProps
+    nestingProps: centeredShapeNestingProps,
+    shorthands: [shorthands.cxy]
   },
   polygon: {
     category: 'basicShapes',
@@ -136,7 +177,8 @@ const docs = {
       },
       centerEnd
     },
-    nestingProps: centeredShapeNestingProps
+    nestingProps: centeredShapeNestingProps,
+    shorthands: [shorthands.cxy]
   },
   polyline: {
     category: 'basicShapes',
@@ -201,7 +243,8 @@ const docs = {
     },
     nestingProps: ({ sx, sy, ex, ey }) => {
       return { ex: sx, ey: sy, sx: ex, sy: ey };
-    }
+    },
+    shorthands: [shorthands.exy, shorthands.sxy]
   },
   radialLines: {
     category: 'basicShapes',
@@ -227,7 +270,8 @@ const docs = {
       cy,
       centerEnd
     },
-    nestingProps: centeredShapeNestingProps
+    nestingProps: centeredShapeNestingProps,
+    shorthands: [shorthands.cxy]
   },
   rect: {
     category: 'basicShapes',
@@ -249,7 +293,8 @@ const docs = {
       cy,
       centerEnd
     },
-    nestingProps: centeredShapeNestingProps
+    nestingProps: centeredShapeNestingProps,
+    shorthands: [shorthands.cxy]
   },
   regPolygon: {
     category: 'basicShapes',
@@ -271,7 +316,8 @@ const docs = {
       cy,
       centerEnd
     },
-    nestingProps: centeredShapeNestingProps
+    nestingProps: centeredShapeNestingProps,
+    shorthands: [shorthands.cxy]
   },
   sector: {
     category: 'basicShapes',
@@ -297,7 +343,8 @@ const docs = {
       },
       centerEnd
     },
-    nestingProps: centeredShapeNestingProps
+    nestingProps: centeredShapeNestingProps,
+    shorthands: [shorthands.cxy]
   },
   segment: {
     category: 'basicShapes',
@@ -323,7 +370,8 @@ const docs = {
       },
       centerEnd
     },
-    nestingProps: centeredShapeNestingProps
+    nestingProps: centeredShapeNestingProps,
+    shorthands: [shorthands.cxy]
   },
   square: {
     category: 'basicShapes',
@@ -341,7 +389,8 @@ const docs = {
       cy,
       centerEnd
     },
-    nestingProps: centeredShapeNestingProps
+    nestingProps: centeredShapeNestingProps,
+    shorthands: [shorthands.cxy]
   },
   star: {
     category: 'basicShapes',
@@ -367,7 +416,8 @@ const docs = {
       cy,
       centerEnd
     },
-    nestingProps: centeredShapeNestingProps
+    nestingProps: centeredShapeNestingProps,
+    shorthands: [shorthands.cxy]
   },
   triangle: {
     category: 'basicShapes',
@@ -385,7 +435,8 @@ const docs = {
       cy,
       centerEnd
     },
-    nestingProps: centeredShapeNestingProps
+    nestingProps: centeredShapeNestingProps,
+    shorthands: [shorthands.cxy]
   },
   arc: {
     category: 'curves',
@@ -453,7 +504,8 @@ const docs = {
     },
     nestingProps: ({ sx, sy, ex, ey }) => {
       return { ex: sx, ey: sy, sx: ex, sy: ey };
-    }
+    },
+    shorthands: [shorthands.exy, shorthands.sxy, shorthands.rxy]
   },
   cubic: {
     category: 'curves',
@@ -520,7 +572,7 @@ const docs = {
         isRequired: false,
         description:
           'If set to true all points after sx & sy will become relative to sx & sy.'
-      }
+      },
     },
     nestingProps: ({ sx, sy, ex, ey, S }) => {
       let endX = ex;
@@ -530,7 +582,8 @@ const docs = {
         endY = S[S.length - 1][1];
       }
       return { ex: sx, ey: sy, sx: endX, sy: endY };
-    }
+    },
+    shorthands: [shorthands.exy, shorthands.sxy]
   },
   quad: {
     category: 'curves',
@@ -598,7 +651,8 @@ const docs = {
         endY = T[T.length - 1][1];
       }
       return { ex: sx, ey: sy, sx: endX, sy: endY };
-    }
+    },
+    shorthands: [shorthands.exy, shorthands.sxy, shorthands.cxy]
   }
 };
 

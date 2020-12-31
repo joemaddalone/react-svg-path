@@ -168,7 +168,7 @@ export class Gridset {
       r: rightCell.r,
       b: bottomCell.b,
       cx: (leftCell.l + w) / 2,
-      cx: (topCell.t + h) / 2,
+      cy: (topCell.t + h) / 2,
       cells
     };
   }
