@@ -14,6 +14,6 @@ describe('<PathMerge />', () => {
       </svg>
     );
     const path = getByTestId('pm');
-    expect(path.getAttribute('d')).toEqual('M0 0 L100 100M0 0 L50 50');
+    expect(path.getAttribute('d')).toEqual('M0 0L100 100M0 0L50 50');
   });
 });

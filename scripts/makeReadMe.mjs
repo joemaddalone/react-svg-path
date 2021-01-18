@@ -23,6 +23,7 @@ const makeDocs = (docs, header) => {
       c.signature = `<${component.Component} ${props.join(' ')} \n/>`;
       c.isRequired = c.isRequired || false;
       c.demoUrl = `${demoUrl}${cur}`;
+      console.log(c.Component);
       return { ...accum, [cur]: c };
     }, {});
 
