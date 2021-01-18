@@ -30,3 +30,7 @@ export const Line = shapes.Line;
 export const Arc = shapes.Arc;
 export const Cubic = shapes.Cubic;
 export const Quad = shapes.Quad;
+export const Cross = shapes.Cross;
+export const SymX = shapes.SymX;
+export const SymH = shapes.SymH;
+export const SymI = shapes.SymI;

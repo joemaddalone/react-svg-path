@@ -13,6 +13,7 @@ There are more docs and interactive demos at https://joemaddalone.github.io/reac
 - [Components](#components)
   - [Shapes](#shapes)
     - [Circle](#circle)
+    - [Cross](#cross)
     - [Ellipse](#ellipse)
     - [Line](#line)
     - [Polygon](#polygon)
@@ -25,6 +26,9 @@ There are more docs and interactive demos at https://joemaddalone.github.io/reac
     - [Segment](#segment)
     - [Square](#square)
     - [Star](#star)
+    - [SymH](#symh)
+    - [SymI](#symi)
+    - [SymX](#symx)
     - [Triangle](#triangle)
   - [Curves](#curves)
     - [Arc](#arc)
@@ -108,11 +112,11 @@ The following components are available
 ## Shapes
  ### Circle
 ```js
-<Circle 
-  centerEnd={boolean|default = true} 
-  cx={number} 
-  cy={number} 
-  size={number} 
+<Circle
+  centerEnd={boolean|default = true}
+  cx={number}
+  cy={number}
+  size={number}
 />
 ```
 
@@ -127,14 +131,37 @@ centerEnd|boolean|Determines whether cursor should return to cx & cy as a last s
 
 -----
 
+### Cross
+```js
+<Cross
+  centerEnd={boolean|default = true}
+  cx={number}
+  cy={number}
+  height={number}
+  width={number}
+/>
+```
+
+Prop|Type|Description|Required|Default
+:-|:-|:-|:-|:-
+width|number|Width of the Cross.|true|
+height|number|Height of the Cross.|true|
+cx|number|Center x coordinate of the Cross.|true|
+cy|number|Center x coordinate of the Cross.|true|
+centerEnd|boolean|Determines whether cursor should return to cx & cy as a last step.|false|true
+
+  [→ Interactive demo of Cross](https://joemaddalone.github.io/react-svg-path/#/cross)
+
+-----
+
 ### Ellipse
 ```js
-<Ellipse 
-  centerEnd={boolean|default = true} 
-  cx={number} 
-  cy={number} 
-  height={number} 
-  width={number} 
+<Ellipse
+  centerEnd={boolean|default = true}
+  cx={number}
+  cy={number}
+  height={number}
+  width={number}
 />
 ```
 
@@ -152,12 +179,12 @@ centerEnd|boolean|Determines whether cursor should return to cx & cy as a last s
 
 ### Line
 ```js
-<Line 
-  ex={number} 
-  ey={number} 
-  relative={boolean|default = false} 
-  sx={number} 
-  sy={number} 
+<Line
+  ex={number}
+  ey={number}
+  relative={boolean|default = false}
+  sx={number}
+  sy={number}
 />
 ```
 
@@ -175,8 +202,8 @@ relative|boolean|If set to true ex & ey will become relative to sx & sy.|true|fa
 
 ### Polygon
 ```js
-<Polygon 
-  points={point-array} 
+<Polygon
+  points={point-array}
 />
 ```
 
@@ -190,13 +217,13 @@ points|point-array|x, y, points of the polygon.|true|
 
 ### Polygram
 ```js
-<Polygram 
-  centerEnd={boolean|default = true} 
-  cx={number} 
-  cy={number} 
-  points={number} 
-  size={number} 
-  vertexSkip={number|default = 2} 
+<Polygram
+  centerEnd={boolean|default = true}
+  cx={number}
+  cy={number}
+  points={number}
+  size={number}
+  vertexSkip={number|default = 2}
 />
 ```
 
@@ -215,9 +242,9 @@ centerEnd|boolean|Determines whether cursor should return to cx & cy as a last s
 
 ### Polyline
 ```js
-<Polyline 
-  points={point-array} 
-  relative={boolean|default = false} 
+<Polyline
+  points={point-array}
+  relative={boolean|default = false}
 />
 ```
 
@@ -232,13 +259,13 @@ relative|boolean|If set to true all points will be relative.|false|false
 
 ### RadialLines
 ```js
-<RadialLines 
-  centerEnd={boolean|default = true} 
-  cx={number} 
-  cy={number} 
-  innerSize={number} 
-  outerSize={number} 
-  points={number} 
+<RadialLines
+  centerEnd={boolean|default = true}
+  cx={number}
+  cy={number}
+  innerSize={number}
+  outerSize={number}
+  points={number}
 />
 ```
 
@@ -257,12 +284,12 @@ centerEnd|boolean|Determines whether cursor should return to cx & cy as a last s
 
 ### Rect
 ```js
-<Rect 
-  centerEnd={boolean|default = true} 
-  cx={number} 
-  cy={number} 
-  height={number} 
-  width={number} 
+<Rect
+  centerEnd={boolean|default = true}
+  cx={number}
+  cy={number}
+  height={number}
+  width={number}
 />
 ```
 
@@ -280,12 +307,12 @@ centerEnd|boolean|Determines whether cursor should return to cx & cy as a last s
 
 ### RegPolygon
 ```js
-<RegPolygon 
-  centerEnd={boolean|default = true} 
-  cx={number} 
-  cy={number} 
-  sides={number} 
-  size={number} 
+<RegPolygon
+  centerEnd={boolean|default = true}
+  cx={number}
+  cy={number}
+  sides={number}
+  size={number}
 />
 ```
 
@@ -303,13 +330,13 @@ centerEnd|boolean|Determines whether cursor should return to cx & cy as a last s
 
 ### Sector
 ```js
-<Sector 
-  centerEnd={boolean|default = true} 
-  cx={number} 
-  cy={number} 
-  endAngle={number} 
-  size={number} 
-  startAngle={number} 
+<Sector
+  centerEnd={boolean|default = true}
+  cx={number}
+  cy={number}
+  endAngle={number}
+  size={number}
+  startAngle={number}
 />
 ```
 
@@ -328,13 +355,13 @@ centerEnd|boolean|Determines whether cursor should return to cx & cy as a last s
 
 ### Segment
 ```js
-<Segment 
-  centerEnd={boolean|default = true} 
-  cx={number} 
-  cy={number} 
-  endAngle={number} 
-  size={number} 
-  startAngle={number} 
+<Segment
+  centerEnd={boolean|default = true}
+  cx={number}
+  cy={number}
+  endAngle={number}
+  size={number}
+  startAngle={number}
 />
 ```
 
@@ -353,11 +380,11 @@ centerEnd|boolean|Determines whether cursor should return to cx & cy as a last s
 
 ### Square
 ```js
-<Square 
-  centerEnd={boolean|default = true} 
-  cx={number} 
-  cy={number} 
-  size={number} 
+<Square
+  centerEnd={boolean|default = true}
+  cx={number}
+  cy={number}
+  size={number}
 />
 ```
 
@@ -374,13 +401,13 @@ centerEnd|boolean|Determines whether cursor should return to cx & cy as a last s
 
 ### Star
 ```js
-<Star 
-  centerEnd={boolean|default = true} 
-  cx={number} 
-  cy={number} 
-  innerSize={number} 
-  outerSize={number} 
-  points={number} 
+<Star
+  centerEnd={boolean|default = true}
+  cx={number}
+  cy={number}
+  innerSize={number}
+  outerSize={number}
+  points={number}
 />
 ```
 
@@ -397,13 +424,82 @@ centerEnd|boolean|Determines whether cursor should return to cx & cy as a last s
 
 -----
 
+### SymH
+```js
+<SymH
+  centerEnd={boolean|default = true}
+  cx={number}
+  cy={number}
+  height={number}
+  width={number}
+/>
+```
+
+Prop|Type|Description|Required|Default
+:-|:-|:-|:-|:-
+width|number|Width of the H.|true|
+height|number|Height of the H.|true|
+cx|number|Center x coordinate of the SymH.|true|
+cy|number|Center x coordinate of the SymH.|true|
+centerEnd|boolean|Determines whether cursor should return to cx & cy as a last step.|false|true
+
+  [→ Interactive demo of SymH](https://joemaddalone.github.io/react-svg-path/#/symH)
+
+-----
+
+### SymI
+```js
+<SymI
+  centerEnd={boolean|default = true}
+  cx={number}
+  cy={number}
+  height={number}
+  width={number}
+/>
+```
+
+Prop|Type|Description|Required|Default
+:-|:-|:-|:-|:-
+width|number|Width of the I.|true|
+height|number|Height of the I.|true|
+cx|number|Center x coordinate of the SymI.|true|
+cy|number|Center x coordinate of the SymI.|true|
+centerEnd|boolean|Determines whether cursor should return to cx & cy as a last step.|false|true
+
+  [→ Interactive demo of SymI](https://joemaddalone.github.io/react-svg-path/#/symI)
+
+-----
+
+### SymX
+```js
+<SymX
+  centerEnd={boolean|default = true}
+  cx={number}
+  cy={number}
+  height={number}
+  width={number}
+/>
+```
+
+Prop|Type|Description|Required|Default
+:-|:-|:-|:-|:-
+width|number|Width of the X.|true|
+height|number|Height of the X.|true|
+cx|number|Center x coordinate of the SymX.|true|
+cy|number|Center x coordinate of the SymX.|true|
+centerEnd|boolean|Determines whether cursor should return to cx & cy as a last step.|false|true
+
+  [→ Interactive demo of SymX](https://joemaddalone.github.io/react-svg-path/#/symX)
+
+-----
+
 ### Triangle
 ```js
-<Triangle 
-  centerEnd={boolean|default = true} 
-  cx={number} 
-  cy={number} 
-  size={number} 
+<Triangle
+  centerEnd={boolean|default = true}
+  cx={number}
+  cy={number}
+  size={number}
 />
 ```
 
@@ -420,17 +516,17 @@ centerEnd|boolean|Determines whether cursor should return to cx & cy as a last s
 ## Curves
  ### Arc
 ```js
-<Arc 
-  arc={number|default = 0} 
-  ex={number} 
-  ey={number} 
-  relative={boolean|default = false} 
-  rotation={number|default = 0} 
-  rx={number} 
-  ry={number} 
-  sweep={number|default = 0} 
-  sx={number} 
-  sy={number} 
+<Arc
+  arc={number|default = 0}
+  ex={number}
+  ey={number}
+  relative={boolean|default = false}
+  rotation={number|default = 0}
+  rx={number}
+  ry={number}
+  sweep={number|default = 0}
+  sx={number}
+  sy={number}
 />
 ```
 
@@ -453,18 +549,18 @@ relative|boolean|If set to true all points after sx & sy will become relative to
 
 ### Cubic
 ```js
-<Cubic 
-  S={point-array} 
-  cx1={number} 
-  cx2={number} 
-  cy1={number} 
-  cy2={number} 
-  ex={number} 
-  ey={number} 
-  relative={boolean|default = false} 
-  s={point-array} 
-  sx={number} 
-  sy={number} 
+<Cubic
+  S={point-array}
+  cx1={number}
+  cx2={number}
+  cy1={number}
+  cy2={number}
+  ex={number}
+  ey={number}
+  relative={boolean|default = false}
+  s={point-array}
+  sx={number}
+  sy={number}
 />
 ```
 
@@ -488,16 +584,16 @@ relative|boolean|If set to true all points after sx & sy will become relative to
 
 ### Quad
 ```js
-<Quad 
-  T={point-array} 
-  cx={number} 
-  cy={number} 
-  ex={number} 
-  ey={number} 
-  relative={boolean|default = false} 
-  sx={number} 
-  sy={number} 
-  t={point-array} 
+<Quad
+  T={point-array}
+  cx={number}
+  cy={number}
+  ex={number}
+  ey={number}
+  relative={boolean|default = false}
+  sx={number}
+  sy={number}
+  t={point-array}
 />
 ```
 

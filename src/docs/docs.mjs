@@ -438,6 +438,98 @@ const docs = {
     nestingProps: centeredShapeNestingProps,
     shorthands: [shorthands.cxy]
   },
+  symX: {
+    category: 'basicShapes',
+    Component: 'SymX',
+    command: 'symX',
+    args: ['width', 'height', 'cx', 'cy', 'centerEnd'],
+    description:
+      'SymX draws an X shape from center point (cx & cy). The cursor is then moved to the center point.',
+    props: {
+      width: {
+        ...commonNumber,
+        description: 'Width of the X.'
+      },
+      height: {
+        ...commonNumber,
+        description: 'Height of the X.'
+      },
+      cx,
+      cy,
+      centerEnd
+    },
+    nestingProps: centeredShapeNestingProps,
+    shorthands: [shorthands.cxy]
+  },
+  symI: {
+    category: 'basicShapes',
+    Component: 'SymI',
+    command: 'symI',
+    args: ['width', 'height', 'cx', 'cy', 'centerEnd'],
+    description:
+      'SymI draws an I shape from center point (cx & cy). The cursor is then moved to the center point.',
+    props: {
+      width: {
+        ...commonNumber,
+        description: 'Width of the I.'
+      },
+      height: {
+        ...commonNumber,
+        description: 'Height of the I.'
+      },
+      cx,
+      cy,
+      centerEnd
+    },
+    nestingProps: centeredShapeNestingProps,
+    shorthands: [shorthands.cxy]
+  },
+  symH: {
+    category: 'basicShapes',
+    Component: 'SymH',
+    command: 'symH',
+    args: ['width', 'height', 'cx', 'cy', 'centerEnd'],
+    description:
+      'SymH draws an H shape from center point (cx & cy). The cursor is then moved to the center point.',
+    props: {
+      width: {
+        ...commonNumber,
+        description: 'Width of the H.'
+      },
+      height: {
+        ...commonNumber,
+        description: 'Height of the H.'
+      },
+      cx,
+      cy,
+      centerEnd
+    },
+    nestingProps: centeredShapeNestingProps,
+    shorthands: [shorthands.cxy]
+  },
+  cross: {
+    category: 'basicShapes',
+    Component: 'Cross',
+    command: 'cross',
+    args: ['width', 'height', 'cx', 'cy', 'centerEnd'],
+    description:
+      'Cross draws an "cross" shape from center point (cx & cy). The cursor is then moved to the center point.',
+    props: {
+      width: {
+        ...commonNumber,
+        description: 'Width of the Cross.'
+      },
+      height: {
+        ...commonNumber,
+        description: 'Height of the Cross.'
+      },
+      cx,
+      cy,
+      centerEnd
+    },
+    nestingProps: centeredShapeNestingProps,
+    shorthands: [shorthands.cxy]
+  },
   arc: {
     category: 'curves',
     Component: 'Arc',
@@ -572,7 +664,7 @@ const docs = {
         isRequired: false,
         description:
           'If set to true all points after sx & sy will become relative to sx & sy.'
-      },
+      }
     },
     nestingProps: ({ sx, sy, ex, ey, S }) => {
       let endX = ex;

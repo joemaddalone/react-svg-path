@@ -139,6 +139,42 @@ const demos = {
         cx: basicSvgDimensions.w / 2,
         cy: basicSvgDimensions.h / 2
       }
+    ],
+    cross: [
+      {
+        svgDimensions: { ...basicSvgDimensions },
+        width: 95,
+        height: 95,
+        cx: basicSvgDimensions.w / 2,
+        cy: basicSvgDimensions.h / 2
+      }
+    ],
+    symX: [
+      {
+        svgDimensions: { ...basicSvgDimensions },
+        width: 95,
+        height: 95,
+        cx: basicSvgDimensions.w / 2,
+        cy: basicSvgDimensions.h / 2
+      }
+    ],
+    symI: [
+      {
+        svgDimensions: { ...basicSvgDimensions },
+        width: 95,
+        height: 95,
+        cx: basicSvgDimensions.w / 2,
+        cy: basicSvgDimensions.h / 2
+      }
+    ],
+    symH: [
+      {
+        svgDimensions: { ...basicSvgDimensions },
+        width: 95,
+        height: 95,
+        cx: basicSvgDimensions.w / 2,
+        cy: basicSvgDimensions.h / 2
+      }
     ]
   },
   curves: {

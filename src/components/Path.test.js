@@ -51,7 +51,7 @@ describe('Path', () => {
 
   it('toString is joined toArray', () => {
     path.lineTo(0, 0).Q(1, 1);
-    expect(path.toString() === path.toArray().join(' ')).toBe(true);
+    expect(path.toString() === path.toArray().join('')).toBe(true);
   });
 
   it('toArray is of correct length', () => {
@@ -61,7 +61,7 @@ describe('Path', () => {
 
   it('toString is correct', () => {
     path.moveTo(0, 0).lineTo(1, 1);
-    expect(path.toString()).toBe('M0 0 L1 1');
+    expect(path.toString()).toBe('M0 0L1 1');
   });
 
   it('attributes', () => {

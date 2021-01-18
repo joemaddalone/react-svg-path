@@ -68,6 +68,18 @@
   "quad": {
     "description": "Quad is drawn from an sx and sy to an ex and ey with one control points (cx & cy)."
   },
+  "cross": {
+    "description": "Cross draws a cross shape from center point (cx & cy). The cursor is then moved to the center point."
+  },
+  "symX": {
+    "description": "SymX draws an X shape from center point (cx & cy). The cursor is then moved to the center point."
+  },
+  "symH": {
+    "description": "SymH draws an H shape from center point (cx & cy). The cursor is then moved to the center point."
+  },
+  "symI": {
+    "description": "SymI draws an I shape from center point (cx & cy). The cursor is then moved to the center point."
+  },
   "pages": {
     "introduction": {
       "title": "Introduction",
