@@ -4,7 +4,7 @@ import { PathMerge } from './PathMerge';
 import { Line } from './BasicShapes';
 
 describe('<PathMerge />', () => {
-  it.only('should render combined paths', () => {
+  it('should render combined paths', () => {
     const { getByTestId } = render(
       <svg>
         <PathMerge data-testid='pm'>
