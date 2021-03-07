@@ -1,63 +1,35 @@
 import Path from '../components/Path';
 import render from '../utils/render';
+import validateProps from './validateProps';
+import cleanAttributes from './cleanAttributes';
+
+/**
+ * This process uses the doc for any given component and creates a component where the
+ * output is simply `path.method.toComponent()`. We provide props validation and defaults
+ * and incorporate the nesting function for a component where available.
+ */
 
 export default (doc, props) => {
   const { args, command, props: componentProps, nestingProps } = doc;
-  const propsValidation = (obj) => {
-    const augment = {};
-    const msg = [];
-    const result = Object.keys(componentProps).every((k) => {
-      // eslint-disable-next-line no-prototype-builtins
-      const hasProp = obj.hasOwnProperty(k);
-      if (!componentProps[k].isRequired && !hasProp) {
-        if (componentProps[k].type !== 'boolean') {
-          augment[k] =
-            doc.props[k].default !== undefined ? doc.props[k].default : null;
-        }
-        return true;
-      }
-      if (hasProp && componentProps[k].type === 'boolean') {
-        return props[k] === true || props[k] === false;
-      }
-      if (componentProps[k].isRequired && !hasProp) {
-        // eslint-disable-next-line no-prototype-builtins
-        if (componentProps[k].hasOwnProperty('default')) {
-          augment[k] = doc.props[k].default;
-          return true;
-        } else {
-          msg.push(`Required ${k} prop is missing in ${doc.Component}.`);
-          return false;
-        }
-      }
-      const valid = componentProps[k].validator(obj[k]);
-      if (!valid) {
-        msg.push(`${k} prop is invalid in ${doc.Component}.`);
-      }
-      return hasProp && valid;
-    });
-    return { result, augment, msg };
-  };
-
-  const { result, msg, augment } = propsValidation(props);
+  // Validate props according to the componentProps.
+  const { result, msg, augment } = validateProps(props, doc, componentProps);
   if (!result) {
     msg.forEach((m) => console.error(m));
     throw new Error(`${msg.join(',')}`);
   }
 
+  // Augment contains any defaults where a required prop was not provided - think defaultProps.
   const propsWithDefaults = { ...props, ...augment };
 
   // pathArgs are the arguments in order for the 'command'.
   const pathArgs = args.map((k) => propsWithDefaults[k]);
   const children = propsWithDefaults.children;
-  const attributes = { ...propsWithDefaults };
-  // Remove any expected props.
-  Object.keys(componentProps).forEach((k) => delete attributes[k]);
-  // Remove children.
-  delete attributes.children;
-  delete attributes.sx;
-  delete attributes.sy;
-  delete attributes.cy;
-  delete attributes.cx;
+
+  // Remove any expected props. Leaving only path attributes, merge, and attach.
+  const attributes = cleanAttributes({ ...propsWithDefaults }, [
+    ...Object.keys(componentProps),
+    'children'
+  ]);
 
   // Create nesting ex, ey, sx, and sy values.
   let nesting;
@@ -71,33 +43,44 @@ export default (doc, props) => {
   }
 
   let pathMethod;
-  const p = new Path();
+  const path = new Path();
+
+  // Commands/components like Line require an initial moveTo/M command.
+  // We provide this in the component as sx & sy props, but need to translate
+  // that into path.preCommand(preArgs)
   if (doc.preCommand) {
     const prePathArgs = doc.preArgs.map((k) => propsWithDefaults[k]);
-    p[doc.preCommand].apply(p, prePathArgs);
+    path[doc.preCommand].apply(path, prePathArgs);
   }
 
+  // Commands/components like Quad allow for T/t/S/s commands.
+  // We provide this in the component as T, t, S, & s props, but need
+  // to translate that into path.postCommand()
   if (doc.postCommand) {
-    const pcmd = doc.postCommand;
-    // this is cubic or quad
-    // what are the commands?  s, S, t, T
+    const postCommand = doc.postCommand;
+    // This is cubic or quad
+    // What are the commands?  s, S, t, T
     // eslint-disable-next-line no-prototype-builtins
-    const relativePostCommand = propsWithDefaults.hasOwnProperty(pcmd);
+    const relativePostCommand = propsWithDefaults.hasOwnProperty(postCommand);
     // eslint-disable-next-line no-prototype-builtins
     const absolutePostCommand = propsWithDefaults.hasOwnProperty(
-      pcmd.toUpperCase()
+      postCommand.toUpperCase()
     );
     if (relativePostCommand || absolutePostCommand) {
       pathMethod = () => {
-        p[command].apply(p, pathArgs);
-        const relativePropValue = propsWithDefaults[pcmd];
-        const absolutePropValue = propsWithDefaults[pcmd.toUpperCase()];
+        // Apply our initial command from the component doc.
+        path[command].apply(path, pathArgs);
+        // Determine if this is the relative or absolute command
+        const relativePropValue = propsWithDefaults[postCommand];
+        const absolutePropValue = propsWithDefaults[postCommand.toUpperCase()];
         if (
           relativePostCommand &&
           relativePropValue &&
           relativePropValue.length
         ) {
-          relativePropValue.forEach((cmd) => p[pcmd].apply(p, cmd));
+          relativePropValue.forEach((cmd) =>
+            path[postCommand].apply(path, cmd)
+          );
         }
         if (
           absolutePostCommand &&
@@ -105,16 +88,16 @@ export default (doc, props) => {
           absolutePropValue.length
         ) {
           absolutePropValue.forEach((cmd) =>
-            p[pcmd.toUpperCase()].apply(p, cmd)
+            path[postCommand.toUpperCase()].apply(path, cmd)
           );
         }
-        return p;
+        return path;
       };
     }
   }
 
   if (!pathMethod) {
-    pathMethod = p[command].bind(p, ...pathArgs);
+    pathMethod = path[command].bind(path, ...pathArgs);
   }
 
   return render({
