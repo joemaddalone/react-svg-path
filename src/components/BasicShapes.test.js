@@ -26,6 +26,7 @@ const BSP = {
   height: 300,
   innerSize: 50,
   outerSize: 100,
+  radius: 10,
   rx: 50,
   ry: 85,
   rotation: 0,

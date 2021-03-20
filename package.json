@@ -73,7 +73,7 @@
     "dist"
   ],
   "dependencies": {
-    "@joemaddalone/path": "^1.1.0"
+    "@joemaddalone/path": "^1.2.0"
   },
   "commitizen": {
     "path": "node_modules/cz-conventional-changelog"

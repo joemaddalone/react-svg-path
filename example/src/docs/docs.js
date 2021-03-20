@@ -296,6 +296,33 @@ const docs = {
     nestingProps: centeredShapeNestingProps,
     shorthands: [shorthands.cxy]
   },
+  roundedRect: {
+    category: 'basicShapes',
+    Component: 'RoundedRect',
+    command: 'roundedRect',
+    args: ['width', 'height', 'radius', 'cx', 'cy', 'centerEnd'],
+    description:
+      'Rect is drawn from center point (cx & cy). The cursor is then moved to the center point.',
+    props: {
+      width: {
+        ...commonNumber,
+        description: 'Width of the Rect.'
+      },
+      height: {
+        ...commonNumber,
+        description: 'Height of the Rect.'
+      },
+      radius: {
+        ...commonNumber,
+        description: 'Radius for the corners.'
+      },
+      cx,
+      cy,
+      centerEnd
+    },
+    nestingProps: centeredShapeNestingProps,
+    shorthands: [shorthands.cxy]
+  },
   regPolygon: {
     category: 'basicShapes',
     Component: 'RegPolygon',
@@ -384,6 +411,29 @@ const docs = {
       size: {
         ...commonNumber,
         description: 'Width &  height of the Square.'
+      },
+      cx,
+      cy,
+      centerEnd
+    },
+    nestingProps: centeredShapeNestingProps,
+    shorthands: [shorthands.cxy]
+  },
+  roundedSquare: {
+    category: 'basicShapes',
+    Component: 'RoundedSquare',
+    command: 'roundedSquare',
+    args: ['size', 'radius', 'cx', 'cy', 'centerEnd'],
+    description:
+      'RoundedSquare is drawn from center point (cx & cy). The cursor is then moved to the center point.',
+    props: {
+      size: {
+        ...commonNumber,
+        description: 'Width &  height of the Square.'
+      },
+      radius: {
+        ...commonNumber,
+        description: 'Radius for the corners.'
       },
       cx,
       cy,
@@ -664,7 +714,7 @@ const docs = {
         isRequired: false,
         description:
           'If set to true all points after sx & sy will become relative to sx & sy.'
-      },
+      }
     },
     nestingProps: ({ sx, sy, ex, ey, S }) => {
       let endX = ex;
