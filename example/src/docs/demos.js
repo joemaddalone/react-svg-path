@@ -85,6 +85,16 @@ const demos = {
         cy: basicSvgDimensions.h / 2
       }
     ],
+    roundedRect: [
+      {
+        svgDimensions: { ...basicSvgDimensions },
+        width: 120,
+        height: 60,
+        radius: 20,
+        cx: basicSvgDimensions.w / 2,
+        cy: basicSvgDimensions.h / 2
+      }
+    ],
     regPolygon: [
       {
         svgDimensions: { ...basicSvgDimensions },
@@ -118,6 +128,15 @@ const demos = {
       {
         svgDimensions: { ...basicSvgDimensions },
         size: 100,
+        cx: basicSvgDimensions.w / 2,
+        cy: basicSvgDimensions.h / 2
+      }
+    ],
+    roundedSquare: [
+      {
+        svgDimensions: { ...basicSvgDimensions },
+        size: 100,
+        radius: 20,
         cx: basicSvgDimensions.w / 2,
         cy: basicSvgDimensions.h / 2
       }

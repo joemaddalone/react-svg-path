@@ -34,3 +34,5 @@ export const Cross = shapes.Cross;
 export const SymX = shapes.SymX;
 export const SymH = shapes.SymH;
 export const SymI = shapes.SymI;
+export const RoundedRect = shapes.RoundedRect;
+export const RoundedSquare = shapes.RoundedSquare;
