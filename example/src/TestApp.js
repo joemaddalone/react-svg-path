@@ -21,7 +21,7 @@ const PathThree = ({ x, y, w, h, ...rest }) => {
     .toComponent(rest);
 };
 
-const App = () => {
+const App = ({ active }) => {
   return (
     <>
       <Svg width={300} height={300}>
@@ -35,7 +35,7 @@ const App = () => {
       <Svg width={200} height={200} className='nesting-example-1' scale>
         <PathMerge fill='none' stroke='black'>
           <RegPolygon size={120} sides={4} cx={100} cy={100}>
-            <Circle size={55} />
+            {active > 0 && <Circle size={55} />}
             <Square size={60} />
             <Circle size={25} cy={58} />
           </RegPolygon>
