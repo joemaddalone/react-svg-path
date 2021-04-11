@@ -13,13 +13,16 @@ const render = ({ pathMethod, attributes, ex, ey, sx, sy, children }) => {
   } else {
     return [
       pathMethod ? pathMethod()[to]({ ...cleanComponentProps, key: -1 }) : null,
-      React.Children.map(children, (child, i) =>
-        React.cloneElement(child, {
-          key: i,
-          merge,
-          ...attach(child.props, ex, ey, sx, sy)
-        })
-      )
+      React.Children.map(
+        children,
+        (child, i) =>
+          child &&
+          React.cloneElement(child, {
+            key: i,
+            merge,
+            ...attach(child.props, ex, ey, sx, sy)
+          })
+      ).filter((x) => x)
     ];
   }
 };
