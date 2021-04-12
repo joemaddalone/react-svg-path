@@ -1,4 +1,5 @@
 import { Svg } from 'react-svg-path';
+import { Gridset } from 'gridset';
 import {
   Target1,
   Target2,
@@ -12,7 +13,6 @@ import {
   Target10,
   Target11
 } from './Targets';
-import { Gridset } from './Gridset';
 import './Targets.css';
 
 const TargetDemo = () => {
