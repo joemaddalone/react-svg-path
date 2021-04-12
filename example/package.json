@@ -6,6 +6,7 @@
   "dependencies": {
     "d3-scale": "^3.2.3",
     "dagre": "^0.8.5",
+    "gridset": "0.0.5",
     "i18next": "^19.8.4",
     "i18next-browser-languagedetector": "^6.0.1",
     "i18next-localstorage-cache": "^1.1.1",
