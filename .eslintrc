@@ -4,8 +4,7 @@
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:prettier/recommended",
-    "prettier/standard",
-    "prettier/react"
+    "prettier"
   ],
   "env": {
     "node": true
