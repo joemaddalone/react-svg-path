@@ -15,6 +15,9 @@ export const Nav = ({ overlay }) => {
           <NavLink exact className='item' to='/'>
             {t('nav.introduction')}
           </NavLink>
+          <NavLink exact className='item' to='/demos'>
+            Demos
+          </NavLink>
         </div>
       </div>
       <div className='item'>

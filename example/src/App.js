@@ -11,6 +11,7 @@ import { BasicShapeDemo } from './components/demo-builders/BasicShapeDemo';
 import { CurveDemo } from './components/demo-builders/CurveDemo';
 /** pages */
 import { Nesting } from './components/pages/nesting';
+import { Demos } from './components/pages/demos';
 import { MergeDemo } from './components/pages/merge/MergeDemo';
 import { Introduction } from './components/pages/Introduction';
 import { MarkerDemo } from './components/pages/markers/MarkerDemo';
@@ -97,6 +98,7 @@ const App = () => {
         <div className='content-area' tabIndex={0}>
           <ScrollToTop cb={() => setOverlayNav(false)}>
             <Route exact path='/' component={Introduction} />
+            <Route exact path={`/demos`} render={() => <Demos />} />
             <Route exact path={`/nesting`} render={() => <Nesting />} />
             <Route exact path={`/pathmerge`} render={() => <MergeDemo />} />
             <Route exact path={`/path`} render={() => <PathIntro />} />
