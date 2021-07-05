@@ -84,9 +84,21 @@
     "introduction": {
       "title": "Introduction",
       "intro": "react-svg-path makes composing svg elements dead simple. Everything is a path. Have fun.",
-      "installation": "Installations",
-      "stuffTitle": "Stuff",
-      "stuff": "There are a lot of docs (always a work in progress), but here's some fun stuff made with react-svg-path."
+      "installation": "Installation",
+      "overview": "Svg paths are a powerful tool for display all kinds of graphics including illustrations, icons, diagrams, and interactive data visualizations. However creating paths of even modest complexity usually requires a third part vector design tool and usually a hand off from designer to engineer along with a healthy dose of reducing assets to just the needed code.",
+      "overviewExample": "Let's use the following as an example:",
+      "overviewExampleDescription": "Visually it's just a circle and rectangle both centered in the svg and both outlined in red . Let's build this with standard svg.",
+      "startSvg": "Start with an svg element",
+      "addSvgCircle": "Now we add the circle",
+      "addSvgRect": "And now we add the rectangle",
+      "endSvg": "This required a little math and some tinkering to get the dimensions and positions for the rect element, but overall it wasn't too bad.",
+      "buildWithRSP": "Now Let's build it in react-svg-path",
+      "benefit": "No tinkering, no math, and our code actually looks like a rectangle in a circle in an svg.",
+      "learnMore": "Please read through the docs to see how this magic occurs and how you can use it create beautiful svg graphics in React blissfully."
+    },
+    "demos": {
+      "title": "Demos",
+      "intro": "There are a lot of docs (always a work in progress), but here's some fun stuff made with react-svg-path."
     },
     "centerEnd": {
       "title": "centerEnd",
