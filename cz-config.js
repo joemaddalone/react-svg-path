@@ -91,7 +91,7 @@ module.exports = {
     cz.prompt(questions).then((answers) => {
       const output = [];
       output.push(
-        `${answers.type}${answers.scope ? `(${answers.scope})` : ''} ${
+        `${answers.type}${answers.scope ? `(${answers.scope})` : ''}: ${
           answers.subject
         }`
       );
