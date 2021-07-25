@@ -25,6 +25,15 @@ const demos = {
         cy: basicSvgDimensions.h / 2
       }
     ],
+    lens: [
+      {
+        svgDimensions: { ...basicSvgDimensions },
+        width: 150,
+        height: 75,
+        cx: basicSvgDimensions.w / 2,
+        cy: basicSvgDimensions.h / 2
+      }
+    ],
     polygon: [
       {
         svgDimensions: { ...basicSvgDimensions },

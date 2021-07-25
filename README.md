@@ -15,6 +15,7 @@ There are more docs and interactive demos at https://joemaddalone.github.io/reac
     - [Circle](#circle)
     - [Cross](#cross)
     - [Ellipse](#ellipse)
+    - [Lens](#lens)
     - [Line](#line)
     - [Polygon](#polygon)
     - [Polygram](#polygram)
@@ -176,6 +177,29 @@ cy|number|Center x coordinate of the Ellipse.|true|
 centerEnd|boolean|Determines whether cursor should return to cx & cy as a last step.|false|true
 
   [→ Interactive demo of Ellipse](https://joemaddalone.github.io/react-svg-path/#/ellipse)
+
+-----
+
+### Lens
+```js
+<Lens 
+  centerEnd={boolean|default = true} 
+  cx={number} 
+  cy={number} 
+  height={number} 
+  width={number} 
+/>
+```
+
+Prop|Type|Description|Required|Default
+:-|:-|:-|:-|:-
+width|number|Width of the Lens.|true|
+height|number|Height of the Lens.|true|
+cx|number|Center x coordinate of the Lens.|true|
+cy|number|Center x coordinate of the Lens.|true|
+centerEnd|boolean|Determines whether cursor should return to cx & cy as a last step.|false|true
+
+  [→ Interactive demo of Lens](https://joemaddalone.github.io/react-svg-path/#/lens)
 
 -----
 
