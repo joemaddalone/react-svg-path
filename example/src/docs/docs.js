@@ -128,6 +128,29 @@ const docs = {
     nestingProps: centeredShapeNestingProps,
     shorthands: [shorthands.cxy]
   },
+  lens: {
+    category: 'basicShapes',
+    Component: 'Lens',
+    command: 'lens',
+    args: ['width', 'height', 'cx', 'cy', 'centerEnd'],
+    description:
+      'Lens is drawn from center point (cx & cy). The cursor is then moved to the center point.',
+    props: {
+      width: {
+        ...commonNumber,
+        description: 'Width of the Lens.'
+      },
+      height: {
+        ...commonNumber,
+        description: 'Height of the Lens.'
+      },
+      cx,
+      cy,
+      centerEnd
+    },
+    nestingProps: centeredShapeNestingProps,
+    shorthands: [shorthands.cxy]
+  },
   polygon: {
     category: 'basicShapes',
     Component: 'Polygon',

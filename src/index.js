@@ -4,6 +4,7 @@ import * as shapes from './components/BasicShapes';
 /**  path basicShapes */
 export const Circle = shapes.Circle;
 export const Ellipse = shapes.Ellipse;
+export const Lens = shapes.Lens;
 export const Polygon = shapes.Polygon;
 export const Polygram = shapes.Polygram;
 export const Polyline = shapes.Polyline;
