@@ -90,11 +90,9 @@ module.exports = {
   prompter: (cz, commit) => {
     cz.prompt(questions).then((answers) => {
       const output = [];
-      output.push(
-        `${answers.type}${answers.scope ? `(${answers.scope})` : ''}: ${
-          answers.subject
-        }`
-      );
+      // eslint-disable-next-line prettier/prettier
+      const head = `${answers.type}${answers.scope ? `(${answers.scope})` : ''}: ${answers.subject}`;
+
       if (answers.summary) {
         output.push(`Summary: ${answers.summary}`);
       }
@@ -103,7 +101,7 @@ module.exports = {
       }
       output.push(`Issue: ${answers.issue}`);
 
-      commit(output.join('\n\n'));
+      commit(head + output.length ? '\n\n' + output.join('\n\n') : '');
     });
   }
 };
