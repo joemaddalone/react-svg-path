@@ -101,7 +101,7 @@ module.exports = {
       }
       output.push(`Issue: ${answers.issue}`);
 
-      commit(head + output.length ? '\n\n' + output.join('\n\n') : '');
+      commit(`${head}${output.length ? '\n\n' + output.join('\n\n') : ''}`);
     });
   }
 };
