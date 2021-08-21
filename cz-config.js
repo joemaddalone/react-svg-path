@@ -49,14 +49,7 @@ const questions = [
   {
     type: 'input',
     name: 'issue',
-    message: 'Issue number (ex, #1234)',
-    validate: function (text) {
-      if (!text) {
-        return "Issue is required, if you don't have one please enter n/a";
-      }
-
-      return true;
-    }
+    message: 'Issue number (ex, #1234)'
   },
   {
     type: 'confirm',
@@ -101,7 +94,9 @@ module.exports = {
       if (answers.testplan) {
         output.push(`Test Plan: \n ${answers.testplan}`);
       }
-      output.push(`Issue: ${answers.issue}`);
+      if (answers.issue) {
+        output.push(`Issue: ${answers.issue}`);
+      }
 
       commit(output.join('\n\n'));
     });
