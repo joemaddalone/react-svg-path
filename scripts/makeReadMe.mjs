@@ -28,9 +28,8 @@ const makeDocs = (docs, header) => {
     }, {});
 
   const readme = Object.values(mdDocs).map((c) => {
-    return `### ${c.Component} ([→ Interactive demo of ${c.Component}](${
-      c.demoUrl
-    }))
+    return `### ${c.Component}
+([→ Interactive demo of ${c.Component}](${c.demoUrl}))
 
 \`\`\`js
 ${c.signature}
