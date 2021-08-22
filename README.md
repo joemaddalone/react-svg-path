@@ -17,6 +17,7 @@ There are more docs and interactive demos at https://joemaddalone.github.io/reac
     - [Ellipse](#ellipse)
     - [Lens](#lens)
     - [Line](#line)
+    - [Omino](#omino)
     - [Polygon](#polygon)
     - [Polygram](#polygram)
     - [Polyline](#polyline)
@@ -123,12 +124,18 @@ The following components are available
 />
 ```
 
+<details>
+
+<summary>Props overview</summary>
+
 Prop|Type|Description|Required|Default
 :-|:-|:-|:-|:-
 size|number|Circumference of the Circle.|true|
 cx|number|Center x coordinate of the Circle.|true|
 cy|number|Center x coordinate of the Circle.|true|
 centerEnd|boolean|Determines whether cursor should return to cx & cy as a last step.|false|true
+
+</details>
 
   [→ Interactive demo of Circle](https://joemaddalone.github.io/react-svg-path/#/circle)
 
@@ -145,6 +152,10 @@ centerEnd|boolean|Determines whether cursor should return to cx & cy as a last s
 />
 ```
 
+<details>
+
+<summary>Props overview</summary>
+
 Prop|Type|Description|Required|Default
 :-|:-|:-|:-|:-
 width|number|Width of the Cross.|true|
@@ -152,6 +163,8 @@ height|number|Height of the Cross.|true|
 cx|number|Center x coordinate of the Cross.|true|
 cy|number|Center x coordinate of the Cross.|true|
 centerEnd|boolean|Determines whether cursor should return to cx & cy as a last step.|false|true
+
+</details>
 
   [→ Interactive demo of Cross](https://joemaddalone.github.io/react-svg-path/#/cross)
 
@@ -168,6 +181,10 @@ centerEnd|boolean|Determines whether cursor should return to cx & cy as a last s
 />
 ```
 
+<details>
+
+<summary>Props overview</summary>
+
 Prop|Type|Description|Required|Default
 :-|:-|:-|:-|:-
 width|number|Width of the Ellipse.|true|
@@ -175,6 +192,8 @@ height|number|Height of the Ellipse.|true|
 cx|number|Center x coordinate of the Ellipse.|true|
 cy|number|Center x coordinate of the Ellipse.|true|
 centerEnd|boolean|Determines whether cursor should return to cx & cy as a last step.|false|true
+
+</details>
 
   [→ Interactive demo of Ellipse](https://joemaddalone.github.io/react-svg-path/#/ellipse)
 
@@ -191,6 +210,10 @@ centerEnd|boolean|Determines whether cursor should return to cx & cy as a last s
 />
 ```
 
+<details>
+
+<summary>Props overview</summary>
+
 Prop|Type|Description|Required|Default
 :-|:-|:-|:-|:-
 width|number|Width of the Lens.|true|
@@ -198,6 +221,8 @@ height|number|Height of the Lens.|true|
 cx|number|Center x coordinate of the Lens.|true|
 cy|number|Center x coordinate of the Lens.|true|
 centerEnd|boolean|Determines whether cursor should return to cx & cy as a last step.|false|true
+
+</details>
 
   [→ Interactive demo of Lens](https://joemaddalone.github.io/react-svg-path/#/lens)
 
@@ -214,6 +239,10 @@ centerEnd|boolean|Determines whether cursor should return to cx & cy as a last s
 />
 ```
 
+<details>
+
+<summary>Props overview</summary>
+
 Prop|Type|Description|Required|Default
 :-|:-|:-|:-|:-
 sx|number|Starting x coordinate for the Line.|true|
@@ -222,7 +251,38 @@ ex|number|Ending x coordinate for the Line.|true|
 ey|number|Ending y coordinate for the Line.|true|
 relative|boolean|If set to true ex & ey will become relative to sx & sy.|true|false
 
+</details>
+
   [→ Interactive demo of Line](https://joemaddalone.github.io/react-svg-path/#/line)
+
+-----
+
+### Omino
+```js
+<Omino 
+  lined={boolean|default = false} 
+  shape={2d-array} 
+  size={number} 
+  sx={number} 
+  sy={number} 
+/>
+```
+
+<details>
+
+<summary>Props overview</summary>
+
+Prop|Type|Description|Required|Default
+:-|:-|:-|:-|:-
+size|number|Size of the squares.|true|
+shape|2d-array|2d array of the Omino.|true|
+sx|number|Starting x coordinate for left.|true|
+sy|number|Starting y coordinate for top.|true|
+lined|boolean|Draw inner lines or not.|false|false
+
+</details>
+
+  [→ Interactive demo of Omino](https://joemaddalone.github.io/react-svg-path/#/omino)
 
 -----
 
@@ -233,9 +293,15 @@ relative|boolean|If set to true ex & ey will become relative to sx & sy.|true|fa
 />
 ```
 
+<details>
+
+<summary>Props overview</summary>
+
 Prop|Type|Description|Required|Default
 :-|:-|:-|:-|:-
 points|point-array|x, y, points of the polygon.|true|
+
+</details>
 
   [→ Interactive demo of Polygon](https://joemaddalone.github.io/react-svg-path/#/polygon)
 
@@ -253,6 +319,10 @@ points|point-array|x, y, points of the polygon.|true|
 />
 ```
 
+<details>
+
+<summary>Props overview</summary>
+
 Prop|Type|Description|Required|Default
 :-|:-|:-|:-|:-
 size|number|Size of the underlying polygon.|true|
@@ -261,6 +331,8 @@ cx|number|Center x coordinate of the Polygram.|true|
 cy|number|Center x coordinate of the Polygram.|true|
 vertexSkip|number|Integer representing which vertex to go to next relative to current.|false|2
 centerEnd|boolean|Determines whether cursor should return to cx & cy as a last step.|false|true
+
+</details>
 
   [→ Interactive demo of Polygram](https://joemaddalone.github.io/react-svg-path/#/polygram)
 
@@ -274,10 +346,16 @@ centerEnd|boolean|Determines whether cursor should return to cx & cy as a last s
 />
 ```
 
+<details>
+
+<summary>Props overview</summary>
+
 Prop|Type|Description|Required|Default
 :-|:-|:-|:-|:-
 points|point-array|x, y, points of the Polyline.|true|
 relative|boolean|If set to true all points will be relative.|false|false
+
+</details>
 
   [→ Interactive demo of Polyline](https://joemaddalone.github.io/react-svg-path/#/polyline)
 
@@ -295,6 +373,10 @@ relative|boolean|If set to true all points will be relative.|false|false
 />
 ```
 
+<details>
+
+<summary>Props overview</summary>
+
 Prop|Type|Description|Required|Default
 :-|:-|:-|:-|:-
 outerSize|number|Circumference of the outer circle.|true|
@@ -303,6 +385,8 @@ points|number|Number of lines to draw.|true|
 cx|number|Center x coordinate of the RadialLines.|true|
 cy|number|Center x coordinate of the RadialLines.|true|
 centerEnd|boolean|Determines whether cursor should return to cx & cy as a last step.|false|true
+
+</details>
 
   [→ Interactive demo of RadialLines](https://joemaddalone.github.io/react-svg-path/#/radialLines)
 
@@ -319,6 +403,10 @@ centerEnd|boolean|Determines whether cursor should return to cx & cy as a last s
 />
 ```
 
+<details>
+
+<summary>Props overview</summary>
+
 Prop|Type|Description|Required|Default
 :-|:-|:-|:-|:-
 width|number|Width of the Rect.|true|
@@ -326,6 +414,8 @@ height|number|Height of the Rect.|true|
 cx|number|Center x coordinate of the Rect.|true|
 cy|number|Center x coordinate of the Rect.|true|
 centerEnd|boolean|Determines whether cursor should return to cx & cy as a last step.|false|true
+
+</details>
 
   [→ Interactive demo of Rect](https://joemaddalone.github.io/react-svg-path/#/rect)
 
@@ -342,6 +432,10 @@ centerEnd|boolean|Determines whether cursor should return to cx & cy as a last s
 />
 ```
 
+<details>
+
+<summary>Props overview</summary>
+
 Prop|Type|Description|Required|Default
 :-|:-|:-|:-|:-
 size|number|Size of the RegPolygon.|true|
@@ -349,6 +443,8 @@ sides|number|Number of sides of the RegPolygon.|true|
 cx|number|Center x coordinate of the RegPolygon.|true|
 cy|number|Center x coordinate of the RegPolygon.|true|
 centerEnd|boolean|Determines whether cursor should return to cx & cy as a last step.|false|true
+
+</details>
 
   [→ Interactive demo of RegPolygon](https://joemaddalone.github.io/react-svg-path/#/regPolygon)
 
@@ -366,6 +462,10 @@ centerEnd|boolean|Determines whether cursor should return to cx & cy as a last s
 />
 ```
 
+<details>
+
+<summary>Props overview</summary>
+
 Prop|Type|Description|Required|Default
 :-|:-|:-|:-|:-
 width|number|Width of the Rect.|true|
@@ -374,6 +474,8 @@ radius|number|Radius for the corners.|true|
 cx|number|Center x coordinate of the RoundedRect.|true|
 cy|number|Center x coordinate of the RoundedRect.|true|
 centerEnd|boolean|Determines whether cursor should return to cx & cy as a last step.|false|true
+
+</details>
 
   [→ Interactive demo of RoundedRect](https://joemaddalone.github.io/react-svg-path/#/roundedRect)
 
@@ -390,6 +492,10 @@ centerEnd|boolean|Determines whether cursor should return to cx & cy as a last s
 />
 ```
 
+<details>
+
+<summary>Props overview</summary>
+
 Prop|Type|Description|Required|Default
 :-|:-|:-|:-|:-
 size|number|Width &  height of the Square.|true|
@@ -397,6 +503,8 @@ radius|number|Radius for the corners.|true|
 cx|number|Center x coordinate of the RoundedSquare.|true|
 cy|number|Center x coordinate of the RoundedSquare.|true|
 centerEnd|boolean|Determines whether cursor should return to cx & cy as a last step.|false|true
+
+</details>
 
   [→ Interactive demo of RoundedSquare](https://joemaddalone.github.io/react-svg-path/#/roundedSquare)
 
@@ -414,6 +522,10 @@ centerEnd|boolean|Determines whether cursor should return to cx & cy as a last s
 />
 ```
 
+<details>
+
+<summary>Props overview</summary>
+
 Prop|Type|Description|Required|Default
 :-|:-|:-|:-|:-
 cx|number|Center x coordinate of the Sector.|true|
@@ -422,6 +534,8 @@ size|number|Circumference of the Sector.|true|
 startAngle|number|Start angle of the Sector.  0 = top center.|true|
 endAngle|number|End angle of the Sector.  0 = top center.|true|
 centerEnd|boolean|Determines whether cursor should return to cx & cy as a last step.|false|true
+
+</details>
 
   [→ Interactive demo of Sector](https://joemaddalone.github.io/react-svg-path/#/sector)
 
@@ -439,6 +553,10 @@ centerEnd|boolean|Determines whether cursor should return to cx & cy as a last s
 />
 ```
 
+<details>
+
+<summary>Props overview</summary>
+
 Prop|Type|Description|Required|Default
 :-|:-|:-|:-|:-
 cx|number|Center x coordinate of the Segment.|true|
@@ -447,6 +565,8 @@ size|number|Circumference of the Segment.|true|
 startAngle|number|Start angle of the Segment.  0 = top center.|true|
 endAngle|number|End angle of the Segment.  0 = top center.|true|
 centerEnd|boolean|Determines whether cursor should return to cx & cy as a last step.|false|true
+
+</details>
 
   [→ Interactive demo of Segment](https://joemaddalone.github.io/react-svg-path/#/segment)
 
@@ -462,12 +582,18 @@ centerEnd|boolean|Determines whether cursor should return to cx & cy as a last s
 />
 ```
 
+<details>
+
+<summary>Props overview</summary>
+
 Prop|Type|Description|Required|Default
 :-|:-|:-|:-|:-
 size|number|Width &  height of the Square.|true|
 cx|number|Center x coordinate of the Square.|true|
 cy|number|Center x coordinate of the Square.|true|
 centerEnd|boolean|Determines whether cursor should return to cx & cy as a last step.|false|true
+
+</details>
 
   [→ Interactive demo of Square](https://joemaddalone.github.io/react-svg-path/#/square)
 
@@ -485,6 +611,10 @@ centerEnd|boolean|Determines whether cursor should return to cx & cy as a last s
 />
 ```
 
+<details>
+
+<summary>Props overview</summary>
+
 Prop|Type|Description|Required|Default
 :-|:-|:-|:-|:-
 outerSize|number|The outer circumference where points will reach.|true|
@@ -493,6 +623,8 @@ points|number|Number of points for the Star.|true|
 cx|number|Center x coordinate of the Star.|true|
 cy|number|Center x coordinate of the Star.|true|
 centerEnd|boolean|Determines whether cursor should return to cx & cy as a last step.|false|true
+
+</details>
 
   [→ Interactive demo of Star](https://joemaddalone.github.io/react-svg-path/#/star)
 
@@ -509,6 +641,10 @@ centerEnd|boolean|Determines whether cursor should return to cx & cy as a last s
 />
 ```
 
+<details>
+
+<summary>Props overview</summary>
+
 Prop|Type|Description|Required|Default
 :-|:-|:-|:-|:-
 width|number|Width of the H.|true|
@@ -516,6 +652,8 @@ height|number|Height of the H.|true|
 cx|number|Center x coordinate of the SymH.|true|
 cy|number|Center x coordinate of the SymH.|true|
 centerEnd|boolean|Determines whether cursor should return to cx & cy as a last step.|false|true
+
+</details>
 
   [→ Interactive demo of SymH](https://joemaddalone.github.io/react-svg-path/#/symH)
 
@@ -532,6 +670,10 @@ centerEnd|boolean|Determines whether cursor should return to cx & cy as a last s
 />
 ```
 
+<details>
+
+<summary>Props overview</summary>
+
 Prop|Type|Description|Required|Default
 :-|:-|:-|:-|:-
 width|number|Width of the I.|true|
@@ -539,6 +681,8 @@ height|number|Height of the I.|true|
 cx|number|Center x coordinate of the SymI.|true|
 cy|number|Center x coordinate of the SymI.|true|
 centerEnd|boolean|Determines whether cursor should return to cx & cy as a last step.|false|true
+
+</details>
 
   [→ Interactive demo of SymI](https://joemaddalone.github.io/react-svg-path/#/symI)
 
@@ -555,6 +699,10 @@ centerEnd|boolean|Determines whether cursor should return to cx & cy as a last s
 />
 ```
 
+<details>
+
+<summary>Props overview</summary>
+
 Prop|Type|Description|Required|Default
 :-|:-|:-|:-|:-
 width|number|Width of the X.|true|
@@ -562,6 +710,8 @@ height|number|Height of the X.|true|
 cx|number|Center x coordinate of the SymX.|true|
 cy|number|Center x coordinate of the SymX.|true|
 centerEnd|boolean|Determines whether cursor should return to cx & cy as a last step.|false|true
+
+</details>
 
   [→ Interactive demo of SymX](https://joemaddalone.github.io/react-svg-path/#/symX)
 
@@ -577,12 +727,18 @@ centerEnd|boolean|Determines whether cursor should return to cx & cy as a last s
 />
 ```
 
+<details>
+
+<summary>Props overview</summary>
+
 Prop|Type|Description|Required|Default
 :-|:-|:-|:-|:-
 size|number|Size of the Tirangle.|true|
 cx|number|Center x coordinate of the Triangle.|true|
 cy|number|Center x coordinate of the Triangle.|true|
 centerEnd|boolean|Determines whether cursor should return to cx & cy as a last step.|false|true
+
+</details>
 
   [→ Interactive demo of Triangle](https://joemaddalone.github.io/react-svg-path/#/triangle)
 
@@ -604,6 +760,10 @@ centerEnd|boolean|Determines whether cursor should return to cx & cy as a last s
 />
 ```
 
+<details>
+
+<summary>Props overview</summary>
+
 Prop|Type|Description|Required|Default
 :-|:-|:-|:-|:-
 sx|number|Starting x coordinate for the Arc.|true|
@@ -616,6 +776,8 @@ sweep|number|Sweep flag: think of this as direction flag, follow a clockwise or 
 ex|number|Ending x coordinate for the Arc.|true|
 ey|number|Ending y coordinate for the Arc.|true|
 relative|boolean|If set to true all points after sx & sy will become relative to sx & sy.|false|false
+
+</details>
 
   [→ Interactive demo of Arc](https://joemaddalone.github.io/react-svg-path/#/arc)
 
@@ -638,6 +800,10 @@ relative|boolean|If set to true all points after sx & sy will become relative to
 />
 ```
 
+<details>
+
+<summary>Props overview</summary>
+
 Prop|Type|Description|Required|Default
 :-|:-|:-|:-|:-
 sx|number|Starting x coordinate for the Cubic.|true|
@@ -651,6 +817,8 @@ ey|number|Ending y coordinate for the Cubic.|true|
 S|point-array|Optionally String together multiple Cubic wit an array consisting of 2 or more control points.|false|
 s|point-array|Optional relative "smoooth curve" array consisting of 2 or more control points.|false|
 relative|boolean|If set to true all points after sx & sy will become relative to sx & sy.|false|false
+
+</details>
 
   [→ Interactive demo of Cubic](https://joemaddalone.github.io/react-svg-path/#/cubic)
 
@@ -671,6 +839,10 @@ relative|boolean|If set to true all points after sx & sy will become relative to
 />
 ```
 
+<details>
+
+<summary>Props overview</summary>
+
 Prop|Type|Description|Required|Default
 :-|:-|:-|:-|:-
 sx|number|Starting x coordinate for the Quad.|true|
@@ -682,6 +854,8 @@ ey|number|Ending y coordinate for the Quad.|true|
 T|point-array|String together multiple Quad curves.|false|
 t|point-array|String together multiple Quad curves where coordinates are relative.|false|
 relative|boolean|If set to true all points after sx & sy will become relative to sx & sy.|false|false
+
+</details>
 
   [→ Interactive demo of Quad](https://joemaddalone.github.io/react-svg-path/#/quad)
 

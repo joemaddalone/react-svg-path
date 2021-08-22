@@ -33,6 +33,10 @@ const makeDocs = (docs, header) => {
 ${c.signature}
 \`\`\`
 
+<details>
+
+<summary>Props overview</summary>
+
 Prop|Type|Description|Required|Default
 :-|:-|:-|:-|:-
 ${Object.keys(c.props)
@@ -46,6 +50,8 @@ ${Object.keys(c.props)
       }`
   )
   .join('\n')}
+
+</details>
 
   [→ Interactive demo of ${c.Component}](${c.demoUrl})
 \n-----\n`;
