@@ -23,6 +23,12 @@
   "ellipse": {
     "description": "Ellipse is drawn from center point (cx & cy). The cursor is then moved to the center points."
   },
+  "lens": {
+    "description": "Lens is drawn from center point (cx & cy). The cursor is then moved to the center point."
+  },
+  "omino": {
+    "description": "Omino is drawn based on the positive values positioned in an 2d array. Think Tetris pieces."
+  },
   "polygon": {
     "description": "Polygon accepts an array of [x, y] coordinates and then draws lines connecting those points.  The path will start from the first point and end on the first point - closing the shape."
   },

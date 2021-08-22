@@ -15,6 +15,22 @@ const pointArrayValidator = (arr) => {
   }
 };
 
+const nestedArrayValidator = (arr) => {
+  try {
+    if (
+      !(arr instanceof Array) ||
+      !arr.length ||
+      arr.some((p) => !(p instanceof Array))
+    ) {
+      throw new Error('not a 2s array, bad!.');
+    }
+    const result = arr.every((a) => a instanceof Array);
+    return result;
+  } catch (err) {
+    return err.message;
+  }
+};
+
 const centeredShapeNestingProps = {
   ex: 'cx',
   ey: 'cy',
@@ -150,6 +166,40 @@ const docs = {
     },
     nestingProps: centeredShapeNestingProps,
     shorthands: [shorthands.cxy]
+  },
+  omino: {
+    category: 'basicShapes',
+    Component: 'Omino',
+    command: 'omino',
+    args: ['size', 'shape', 'sx', 'sy', 'lined'],
+    description:
+      'Omino is drawn based on the positive values positioned in an 2d array. Think Tetris pieces.',
+    props: {
+      size: {
+        ...commonNumber,
+        description: 'Size of the squares.'
+      },
+      shape: {
+        type: '2d-array',
+        isRequired: true,
+        validator: nestedArrayValidator,
+        description: '2d array of the shape.'
+      },
+      sx: {
+        ...commonNumber,
+        description: 'Starting x coordinate for left.'
+      },
+      sy: {
+        ...commonNumber,
+        description: 'Starting y coordinate for top.'
+      },
+      lined: {
+        default: false,
+        type: 'boolean',
+        isRequired: false,
+        description: 'Draw inner lines or not.'
+      }
+    }
   },
   polygon: {
     category: 'basicShapes',

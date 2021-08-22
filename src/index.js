@@ -26,6 +26,7 @@ export const SymH = shapes.SymH;
 export const SymI = shapes.SymI;
 export const RoundedRect = shapes.RoundedRect;
 export const RoundedSquare = shapes.RoundedSquare;
+export const Omino = shapes.Omino;
 
 /** react-svg-path specific  */
 export { Text } from './components/Text';
