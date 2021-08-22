@@ -23,13 +23,17 @@ const makeDocs = (docs, header) => {
       c.signature = `<${component.Component} ${props.join(' ')} \n/>`;
       c.isRequired = c.isRequired || false;
       c.demoUrl = `${demoUrl}${cur}`;
+      c.key = cur;
       console.log(c.Component);
       return { ...accum, [cur]: c };
     }, {});
 
   const readme = Object.values(mdDocs).map((c) => {
     return `### ${c.Component}
-([→ Interactive demo of ${c.Component}](${c.demoUrl}))
+
+![](examples/${c.key}.svg)
+
+[→ Interactive demo of ${c.Component}](${c.demoUrl})
 
 \`\`\`js
 ${c.signature}
