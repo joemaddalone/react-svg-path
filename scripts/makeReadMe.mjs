@@ -1,7 +1,7 @@
 import { basicShapes, curves } from '../src/docs/docs.mjs';
 import fs from 'fs';
 
-const demoUrl = 'https://joemaddalone.github.io/react-svg-path/#/';
+const demoUrl = 'https://joemaddalone.github.io/react-svg-path-docs/#/';
 
 const makeDocs = (docs, header) => {
   const mdDocs = Object.keys(docs)
@@ -28,7 +28,10 @@ const makeDocs = (docs, header) => {
     }, {});
 
   const readme = Object.values(mdDocs).map((c) => {
-    return `### ${c.Component}
+    return `### ${c.Component} ([→ Interactive demo of ${c.Component}](${
+      c.demoUrl
+    }))
+
 \`\`\`js
 ${c.signature}
 \`\`\`
@@ -53,7 +56,6 @@ ${Object.keys(c.props)
 
 </details>
 
-  [→ Interactive demo of ${c.Component}](${c.demoUrl})
 \n-----\n`;
   });
 

@@ -114,7 +114,8 @@ _Note: The following shorthand version of some props are available where applica
 The following components are available
 
 ## Shapes
- ### Circle
+ ### Circle ([→ Interactive demo of Circle](https://joemaddalone.github.io/react-svg-path-docs/#/circle))
+
 ```js
 <Circle 
   centerEnd={boolean|default = true} 
@@ -137,11 +138,11 @@ centerEnd|boolean|Determines whether cursor should return to cx & cy as a last s
 
 </details>
 
-  [→ Interactive demo of Circle](https://joemaddalone.github.io/react-svg-path/#/circle)
 
 -----
 
-### Cross
+### Cross ([→ Interactive demo of Cross](https://joemaddalone.github.io/react-svg-path-docs/#/cross))
+
 ```js
 <Cross 
   centerEnd={boolean|default = true} 
@@ -166,11 +167,11 @@ centerEnd|boolean|Determines whether cursor should return to cx & cy as a last s
 
 </details>
 
-  [→ Interactive demo of Cross](https://joemaddalone.github.io/react-svg-path/#/cross)
 
 -----
 
-### Ellipse
+### Ellipse ([→ Interactive demo of Ellipse](https://joemaddalone.github.io/react-svg-path-docs/#/ellipse))
+
 ```js
 <Ellipse 
   centerEnd={boolean|default = true} 
@@ -195,11 +196,11 @@ centerEnd|boolean|Determines whether cursor should return to cx & cy as a last s
 
 </details>
 
-  [→ Interactive demo of Ellipse](https://joemaddalone.github.io/react-svg-path/#/ellipse)
 
 -----
 
-### Lens
+### Lens ([→ Interactive demo of Lens](https://joemaddalone.github.io/react-svg-path-docs/#/lens))
+
 ```js
 <Lens 
   centerEnd={boolean|default = true} 
@@ -224,11 +225,11 @@ centerEnd|boolean|Determines whether cursor should return to cx & cy as a last s
 
 </details>
 
-  [→ Interactive demo of Lens](https://joemaddalone.github.io/react-svg-path/#/lens)
 
 -----
 
-### Line
+### Line ([→ Interactive demo of Line](https://joemaddalone.github.io/react-svg-path-docs/#/line))
+
 ```js
 <Line 
   ex={number} 
@@ -253,11 +254,11 @@ relative|boolean|If set to true ex & ey will become relative to sx & sy.|true|fa
 
 </details>
 
-  [→ Interactive demo of Line](https://joemaddalone.github.io/react-svg-path/#/line)
 
 -----
 
-### Omino
+### Omino ([→ Interactive demo of Omino](https://joemaddalone.github.io/react-svg-path-docs/#/omino))
+
 ```js
 <Omino 
   lined={boolean|default = false} 
@@ -282,11 +283,11 @@ lined|boolean|Draw inner lines or not.|false|false
 
 </details>
 
-  [→ Interactive demo of Omino](https://joemaddalone.github.io/react-svg-path/#/omino)
 
 -----
 
-### Polygon
+### Polygon ([→ Interactive demo of Polygon](https://joemaddalone.github.io/react-svg-path-docs/#/polygon))
+
 ```js
 <Polygon 
   points={point-array} 
@@ -303,11 +304,11 @@ points|point-array|x, y, points of the polygon.|true|
 
 </details>
 
-  [→ Interactive demo of Polygon](https://joemaddalone.github.io/react-svg-path/#/polygon)
 
 -----
 
-### Polygram
+### Polygram ([→ Interactive demo of Polygram](https://joemaddalone.github.io/react-svg-path-docs/#/polygram))
+
 ```js
 <Polygram 
   centerEnd={boolean|default = true} 
@@ -334,11 +335,11 @@ centerEnd|boolean|Determines whether cursor should return to cx & cy as a last s
 
 </details>
 
-  [→ Interactive demo of Polygram](https://joemaddalone.github.io/react-svg-path/#/polygram)
 
 -----
 
-### Polyline
+### Polyline ([→ Interactive demo of Polyline](https://joemaddalone.github.io/react-svg-path-docs/#/polyline))
+
 ```js
 <Polyline 
   points={point-array} 
@@ -357,11 +358,11 @@ relative|boolean|If set to true all points will be relative.|false|false
 
 </details>
 
-  [→ Interactive demo of Polyline](https://joemaddalone.github.io/react-svg-path/#/polyline)
 
 -----
 
-### RadialLines
+### RadialLines ([→ Interactive demo of RadialLines](https://joemaddalone.github.io/react-svg-path-docs/#/radialLines))
+
 ```js
 <RadialLines 
   centerEnd={boolean|default = true} 
@@ -388,11 +389,11 @@ centerEnd|boolean|Determines whether cursor should return to cx & cy as a last s
 
 </details>
 
-  [→ Interactive demo of RadialLines](https://joemaddalone.github.io/react-svg-path/#/radialLines)
 
 -----
 
-### Rect
+### Rect ([→ Interactive demo of Rect](https://joemaddalone.github.io/react-svg-path-docs/#/rect))
+
 ```js
 <Rect 
   centerEnd={boolean|default = true} 
@@ -417,11 +418,11 @@ centerEnd|boolean|Determines whether cursor should return to cx & cy as a last s
 
 </details>
 
-  [→ Interactive demo of Rect](https://joemaddalone.github.io/react-svg-path/#/rect)
 
 -----
 
-### RegPolygon
+### RegPolygon ([→ Interactive demo of RegPolygon](https://joemaddalone.github.io/react-svg-path-docs/#/regPolygon))
+
 ```js
 <RegPolygon 
   centerEnd={boolean|default = true} 
@@ -446,11 +447,11 @@ centerEnd|boolean|Determines whether cursor should return to cx & cy as a last s
 
 </details>
 
-  [→ Interactive demo of RegPolygon](https://joemaddalone.github.io/react-svg-path/#/regPolygon)
 
 -----
 
-### RoundedRect
+### RoundedRect ([→ Interactive demo of RoundedRect](https://joemaddalone.github.io/react-svg-path-docs/#/roundedRect))
+
 ```js
 <RoundedRect 
   centerEnd={boolean|default = true} 
@@ -477,11 +478,11 @@ centerEnd|boolean|Determines whether cursor should return to cx & cy as a last s
 
 </details>
 
-  [→ Interactive demo of RoundedRect](https://joemaddalone.github.io/react-svg-path/#/roundedRect)
 
 -----
 
-### RoundedSquare
+### RoundedSquare ([→ Interactive demo of RoundedSquare](https://joemaddalone.github.io/react-svg-path-docs/#/roundedSquare))
+
 ```js
 <RoundedSquare 
   centerEnd={boolean|default = true} 
@@ -506,11 +507,11 @@ centerEnd|boolean|Determines whether cursor should return to cx & cy as a last s
 
 </details>
 
-  [→ Interactive demo of RoundedSquare](https://joemaddalone.github.io/react-svg-path/#/roundedSquare)
 
 -----
 
-### Sector
+### Sector ([→ Interactive demo of Sector](https://joemaddalone.github.io/react-svg-path-docs/#/sector))
+
 ```js
 <Sector 
   centerEnd={boolean|default = true} 
@@ -537,11 +538,11 @@ centerEnd|boolean|Determines whether cursor should return to cx & cy as a last s
 
 </details>
 
-  [→ Interactive demo of Sector](https://joemaddalone.github.io/react-svg-path/#/sector)
 
 -----
 
-### Segment
+### Segment ([→ Interactive demo of Segment](https://joemaddalone.github.io/react-svg-path-docs/#/segment))
+
 ```js
 <Segment 
   centerEnd={boolean|default = true} 
@@ -568,11 +569,11 @@ centerEnd|boolean|Determines whether cursor should return to cx & cy as a last s
 
 </details>
 
-  [→ Interactive demo of Segment](https://joemaddalone.github.io/react-svg-path/#/segment)
 
 -----
 
-### Square
+### Square ([→ Interactive demo of Square](https://joemaddalone.github.io/react-svg-path-docs/#/square))
+
 ```js
 <Square 
   centerEnd={boolean|default = true} 
@@ -595,11 +596,11 @@ centerEnd|boolean|Determines whether cursor should return to cx & cy as a last s
 
 </details>
 
-  [→ Interactive demo of Square](https://joemaddalone.github.io/react-svg-path/#/square)
 
 -----
 
-### Star
+### Star ([→ Interactive demo of Star](https://joemaddalone.github.io/react-svg-path-docs/#/star))
+
 ```js
 <Star 
   centerEnd={boolean|default = true} 
@@ -626,11 +627,11 @@ centerEnd|boolean|Determines whether cursor should return to cx & cy as a last s
 
 </details>
 
-  [→ Interactive demo of Star](https://joemaddalone.github.io/react-svg-path/#/star)
 
 -----
 
-### SymH
+### SymH ([→ Interactive demo of SymH](https://joemaddalone.github.io/react-svg-path-docs/#/symH))
+
 ```js
 <SymH 
   centerEnd={boolean|default = true} 
@@ -655,11 +656,11 @@ centerEnd|boolean|Determines whether cursor should return to cx & cy as a last s
 
 </details>
 
-  [→ Interactive demo of SymH](https://joemaddalone.github.io/react-svg-path/#/symH)
 
 -----
 
-### SymI
+### SymI ([→ Interactive demo of SymI](https://joemaddalone.github.io/react-svg-path-docs/#/symI))
+
 ```js
 <SymI 
   centerEnd={boolean|default = true} 
@@ -684,11 +685,11 @@ centerEnd|boolean|Determines whether cursor should return to cx & cy as a last s
 
 </details>
 
-  [→ Interactive demo of SymI](https://joemaddalone.github.io/react-svg-path/#/symI)
 
 -----
 
-### SymX
+### SymX ([→ Interactive demo of SymX](https://joemaddalone.github.io/react-svg-path-docs/#/symX))
+
 ```js
 <SymX 
   centerEnd={boolean|default = true} 
@@ -713,11 +714,11 @@ centerEnd|boolean|Determines whether cursor should return to cx & cy as a last s
 
 </details>
 
-  [→ Interactive demo of SymX](https://joemaddalone.github.io/react-svg-path/#/symX)
 
 -----
 
-### Triangle
+### Triangle ([→ Interactive demo of Triangle](https://joemaddalone.github.io/react-svg-path-docs/#/triangle))
+
 ```js
 <Triangle 
   centerEnd={boolean|default = true} 
@@ -740,11 +741,11 @@ centerEnd|boolean|Determines whether cursor should return to cx & cy as a last s
 
 </details>
 
-  [→ Interactive demo of Triangle](https://joemaddalone.github.io/react-svg-path/#/triangle)
 
 -----
 ## Curves
- ### Arc
+ ### Arc ([→ Interactive demo of Arc](https://joemaddalone.github.io/react-svg-path-docs/#/arc))
+
 ```js
 <Arc 
   arc={number|default = 0} 
@@ -779,11 +780,11 @@ relative|boolean|If set to true all points after sx & sy will become relative to
 
 </details>
 
-  [→ Interactive demo of Arc](https://joemaddalone.github.io/react-svg-path/#/arc)
 
 -----
 
-### Cubic
+### Cubic ([→ Interactive demo of Cubic](https://joemaddalone.github.io/react-svg-path-docs/#/cubic))
+
 ```js
 <Cubic 
   S={point-array} 
@@ -820,11 +821,11 @@ relative|boolean|If set to true all points after sx & sy will become relative to
 
 </details>
 
-  [→ Interactive demo of Cubic](https://joemaddalone.github.io/react-svg-path/#/cubic)
 
 -----
 
-### Quad
+### Quad ([→ Interactive demo of Quad](https://joemaddalone.github.io/react-svg-path-docs/#/quad))
+
 ```js
 <Quad 
   T={point-array} 
@@ -857,7 +858,6 @@ relative|boolean|If set to true all points after sx & sy will become relative to
 
 </details>
 
-  [→ Interactive demo of Quad](https://joemaddalone.github.io/react-svg-path/#/quad)
 
 -----
 
