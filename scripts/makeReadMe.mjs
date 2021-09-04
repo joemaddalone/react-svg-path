@@ -151,7 +151,7 @@ const toc = `
 
 react-svg-path makes composing svg elements dead simple. Everything is a path. Have fun.
 
-There are more docs and interactive demos at https://joemaddalone.github.io/react-svg-path/
+There are more docs and interactive demos at https://joemaddalone.github.io/react-svg-path-docs/
 
 ## Table of contents
 
