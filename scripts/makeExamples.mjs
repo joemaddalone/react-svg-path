@@ -22,7 +22,7 @@ for (const doc in docs) {
       ...rest,
       stroke: '#0e98dd',
       strokeWidth: '1',
-      fill: '#fff'
+      fill: 'none'
     })
   );
   fs.writeFile(
