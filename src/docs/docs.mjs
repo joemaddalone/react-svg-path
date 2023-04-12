@@ -144,6 +144,34 @@ const docs = {
     nestingProps: centeredShapeNestingProps,
     shorthands: [shorthands.cxy]
   },
+  kite: {
+    category: 'basicShapes',
+    Component: 'Kite',
+    command: 'kite',
+    args: ['width', 'height', 'dh', 'cx', 'cy', 'centerEnd'],
+    description:
+      '.kite is drawn from center point (cx & cy). dh = position of the left & right points from the top of the shape. The cursor is then moved to the center point.',
+    props: {
+      width: {
+        ...commonNumber,
+        description: 'Width of the Kite.'
+      },
+      height: {
+        ...commonNumber,
+        description: 'Height of the Kite.'
+      },
+      dh: {
+        ...commonNumber,
+        description:
+          'Vertical position of the left and right points from the top.'
+      },
+      cx,
+      cy,
+      centerEnd
+    },
+    nestingProps: centeredShapeNestingProps,
+    shorthands: [shorthands.cxy]
+  },
   lens: {
     category: 'basicShapes',
     Component: 'Lens',

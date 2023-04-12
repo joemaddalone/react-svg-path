@@ -25,6 +25,16 @@ const demos = {
         cy: basicSvgDimensions.h / 2
       }
     ],
+    kite: [
+      {
+        svgDimensions: { ...basicSvgDimensions },
+        width: 60,
+        height: 75,
+        dh: 25,
+        cx: basicSvgDimensions.w / 2,
+        cy: basicSvgDimensions.h / 2
+      }
+    ],
     lens: [
       {
         svgDimensions: { ...basicSvgDimensions },
