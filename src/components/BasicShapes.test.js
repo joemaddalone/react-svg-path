@@ -24,6 +24,7 @@ const BSP = {
   ey: 100,
   width: 100,
   height: 300,
+  dh: 100,
   innerSize: 50,
   outerSize: 100,
   radius: 10,

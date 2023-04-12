@@ -15,6 +15,7 @@ There are more docs and interactive demos at https://joemaddalone.github.io/reac
     - [Circle](#circle)
     - [Cross](#cross)
     - [Ellipse](#ellipse)
+    - [Kite](#kite)
     - [Lens](#lens)
     - [Line](#line)
     - [Omino](#omino)
@@ -204,6 +205,41 @@ width|number|Width of the Ellipse.|true|
 height|number|Height of the Ellipse.|true|
 cx|number|Center x coordinate of the Ellipse.|true|
 cy|number|Center x coordinate of the Ellipse.|true|
+centerEnd|boolean|Determines whether cursor should return to cx & cy as a last step.|false|true
+
+</details>
+
+
+-----
+
+### Kite
+
+![](examples/kite.svg)
+
+[→ Interactive demo of Kite](https://joemaddalone.github.io/react-svg-path-docs/#/kite)
+
+```js
+<Kite 
+  centerEnd={boolean|default = true} 
+  cx={number} 
+  cy={number} 
+  dh={number} 
+  height={number} 
+  width={number} 
+/>
+```
+
+<details>
+
+<summary>Props overview</summary>
+
+Prop|Type|Description|Required|Default
+:-|:-|:-|:-|:-
+width|number|Width of the Kite.|true|
+height|number|Height of the Kite.|true|
+dh|number|Vertical position of the left and right points from the top.|true|
+cx|number|Center x coordinate of the Kite.|true|
+cy|number|Center x coordinate of the Kite.|true|
 centerEnd|boolean|Determines whether cursor should return to cx & cy as a last step.|false|true
 
 </details>

@@ -14,6 +14,7 @@ const shapes = Object.keys(docs).reduce((accum, cur) => {
 }, {});
 
 export const Circle = shapes.Circle;
+export const Kite = shapes.Kite;
 export const Ellipse = shapes.Ellipse;
 export const Lens = shapes.Lens;
 export const Polygon = shapes.Polygon;
