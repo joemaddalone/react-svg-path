@@ -12,6 +12,7 @@
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "browser": "dist/index.js",
+  "types": "dist/react-svg-path.d.ts",
   "engines": {
     "node": ">=10"
   },
@@ -43,6 +44,8 @@
     "@rollup/plugin-commonjs": "^19.0.0",
     "@rollup/plugin-node-resolve": "^13.0.0",
     "@testing-library/react": "^11.2.7",
+    "@types/react": "^18.0.35",
+    "@types/react-dom": "^18.0.11",
     "babel-eslint": "10.1.0",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "commitizen": "^4.2.4",
