@@ -15,6 +15,7 @@ There are more docs and interactive demos at https://joemaddalone.github.io/reac
     - [Circle](#circle)
     - [Cross](#cross)
     - [Ellipse](#ellipse)
+    - [Isocube](#isocube)
     - [Kite](#kite)
     - [Lens](#lens)
     - [Line](#line)
@@ -33,6 +34,7 @@ There are more docs and interactive demos at https://joemaddalone.github.io/reac
     - [Star](#star)
     - [SymH](#symh)
     - [SymI](#symi)
+    - [SymV](#symv)
     - [SymX](#symx)
     - [Triangle](#triangle)
   - [Curves](#curves)
@@ -205,6 +207,37 @@ width|number|Width of the Ellipse.|true|
 height|number|Height of the Ellipse.|true|
 cx|number|Center x coordinate of the Ellipse.|true|
 cy|number|Center x coordinate of the Ellipse.|true|
+centerEnd|boolean|Determines whether cursor should return to cx & cy as a last step.|false|true
+
+</details>
+
+
+-----
+
+### Isocube
+
+![](examples/isocube.svg)
+
+[→ Interactive demo of Isocube](https://joemaddalone.github.io/react-svg-path-docs/#/isocube)
+
+```js
+<Isocube 
+  centerEnd={boolean|default = true} 
+  cx={number} 
+  cy={number} 
+  size={number} 
+/>
+```
+
+<details>
+
+<summary>Props overview</summary>
+
+Prop|Type|Description|Required|Default
+:-|:-|:-|:-|:-
+size|number|Size of the Isocube.|true|
+cx|number|Center x coordinate of the Isocube.|true|
+cy|number|Center x coordinate of the Isocube.|true|
 centerEnd|boolean|Determines whether cursor should return to cx & cy as a last step.|false|true
 
 </details>
@@ -797,6 +830,39 @@ width|number|Width of the I.|true|
 height|number|Height of the I.|true|
 cx|number|Center x coordinate of the SymI.|true|
 cy|number|Center x coordinate of the SymI.|true|
+centerEnd|boolean|Determines whether cursor should return to cx & cy as a last step.|false|true
+
+</details>
+
+
+-----
+
+### SymV
+
+![](examples/symV.svg)
+
+[→ Interactive demo of SymV](https://joemaddalone.github.io/react-svg-path-docs/#/symV)
+
+```js
+<SymV 
+  centerEnd={boolean|default = true} 
+  cx={number} 
+  cy={number} 
+  height={number} 
+  width={number} 
+/>
+```
+
+<details>
+
+<summary>Props overview</summary>
+
+Prop|Type|Description|Required|Default
+:-|:-|:-|:-|:-
+width|number|Width of the V.|true|
+height|number|Height of the V.|true|
+cx|number|Center x coordinate of the SymV.|true|
+cy|number|Center x coordinate of the SymV.|true|
 centerEnd|boolean|Determines whether cursor should return to cx & cy as a last step.|false|true
 
 </details>
