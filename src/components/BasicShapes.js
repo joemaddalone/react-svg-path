@@ -14,6 +14,7 @@ const shapes = Object.keys(docs).reduce((accum, cur) => {
 }, {});
 
 export const Circle = shapes.Circle;
+export const Isocube = shapes.Isocube;
 export const Kite = shapes.Kite;
 export const Ellipse = shapes.Ellipse;
 export const Lens = shapes.Lens;
@@ -33,6 +34,7 @@ export const Arc = shapes.Arc;
 export const Cubic = shapes.Cubic;
 export const Quad = shapes.Quad;
 export const Cross = shapes.Cross;
+export const SymV = shapes.SymV;
 export const SymX = shapes.SymX;
 export const SymH = shapes.SymH;
 export const SymI = shapes.SymI;

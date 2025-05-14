@@ -144,6 +144,25 @@ const docs = {
     nestingProps: centeredShapeNestingProps,
     shorthands: [shorthands.cxy]
   },
+  isocube: {
+    category: 'basicShapes',
+    Component: 'Isocube',
+    command: 'isocube',
+    args: ['size', 'cx', 'cy', 'centerEnd'],
+    description:
+      'Isocube is drawn from center point (cx & cy). The cursor is then moved to the center point.',
+    props: {
+      size: {
+        ...commonNumber,
+        description: 'Size of the Isocube.'
+      },
+      cx,
+      cy,
+      centerEnd
+    },
+    nestingProps: centeredShapeNestingProps,
+    shorthands: [shorthands.cxy]
+  },
   kite: {
     category: 'basicShapes',
     Component: 'Kite',
@@ -608,6 +627,29 @@ const docs = {
       height: {
         ...commonNumber,
         description: 'Height of the X.'
+      },
+      cx,
+      cy,
+      centerEnd
+    },
+    nestingProps: centeredShapeNestingProps,
+    shorthands: [shorthands.cxy]
+  },
+  symV: {
+    category: 'basicShapes',
+    Component: 'SymV',
+    command: 'symV',
+    args: ['width', 'height', 'cx', 'cy', 'centerEnd'],
+    description:
+      'SymV draws a V shape from center point (cx & cy). The cursor is then moved to the center point.',
+    props: {
+      width: {
+        ...commonNumber,
+        description: 'Width of the V.'
+      },
+      height: {
+        ...commonNumber,
+        description: 'Height of the V.'
       },
       cx,
       cy,

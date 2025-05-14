@@ -25,6 +25,14 @@ const demos = {
         cy: basicSvgDimensions.h / 2
       }
     ],
+    isocube: [
+      {
+        svgDimensions: { ...basicSvgDimensions },
+        size: 100,
+        cx: basicSvgDimensions.w / 2,
+        cy: basicSvgDimensions.h / 2
+      }
+    ],
     kite: [
       {
         svgDimensions: { ...basicSvgDimensions },
@@ -179,6 +187,15 @@ const demos = {
       }
     ],
     cross: [
+      {
+        svgDimensions: { ...basicSvgDimensions },
+        width: 95,
+        height: 95,
+        cx: basicSvgDimensions.w / 2,
+        cy: basicSvgDimensions.h / 2
+      }
+    ],
+    symV: [
       {
         svgDimensions: { ...basicSvgDimensions },
         width: 95,
