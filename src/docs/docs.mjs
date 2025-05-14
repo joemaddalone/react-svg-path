@@ -154,7 +154,7 @@ const docs = {
     props: {
       size: {
         ...commonNumber,
-        description: 'Size of the Isocube.'
+        description: 'Equal size of the Isocube.'
       },
       cx,
       cy,
