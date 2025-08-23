@@ -1,4 +1,3 @@
-/* eslint-disable no-prototype-builtins */
 import createSimpleComponent from '../utils/createSimpleComponent';
 import shorthand from '../utils/shorthand';
 import docs from '../docs/docs.mjs';

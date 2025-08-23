@@ -60,9 +60,7 @@ export default (doc, props) => {
     const postCommand = doc.postCommand;
     // This is cubic or quad
     // What are the commands?  s, S, t, T
-    // eslint-disable-next-line no-prototype-builtins
     const relativePostCommand = propsWithDefaults.hasOwnProperty(postCommand);
-    // eslint-disable-next-line no-prototype-builtins
     const absolutePostCommand = propsWithDefaults.hasOwnProperty(
       postCommand.toUpperCase()
     );

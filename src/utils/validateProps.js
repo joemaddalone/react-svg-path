@@ -2,7 +2,6 @@ const validateProps = (props, componentDoc, componentProps) => {
   const augment = {};
   const msg = [];
   const result = Object.keys(componentProps).every((k) => {
-    // eslint-disable-next-line no-prototype-builtins
     const hasProp = props.hasOwnProperty(k);
     if (!componentProps[k].isRequired && !hasProp) {
       if (componentProps[k].type !== 'boolean') {
@@ -17,7 +16,6 @@ const validateProps = (props, componentDoc, componentProps) => {
       return props[k] === true || props[k] === false;
     }
     if (componentProps[k].isRequired && !hasProp) {
-      // eslint-disable-next-line no-prototype-builtins
       if (componentProps[k].hasOwnProperty('default')) {
         augment[k] = componentDoc.props[k].default;
         return true;

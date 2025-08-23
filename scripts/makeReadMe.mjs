@@ -11,7 +11,6 @@ const makeDocs = (docs, header) => {
       const props = Object.keys(component.props)
         .sort()
         .map((p) => {
-          // eslint-disable-next-line no-prototype-builtins
           if (component.props[p].hasOwnProperty('default')) {
             return `\n  ${p}={${component.props[p].type}|default = ${component.props[p].default}}`;
           } else {

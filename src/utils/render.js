@@ -3,7 +3,6 @@ import attach from './attach';
 import cleanAttributes from './cleanAttributes';
 
 const render = ({ pathMethod, attributes, ex, ey, sx, sy, children }) => {
-  // eslint-disable-next-line no-unused-vars
   const { merge, attach: attachProp, ...restOfComponentProps } = attributes;
   const to = merge ? 'toString' : 'toComponent';
   const cleanComponentProps = cleanAttributes(restOfComponentProps);

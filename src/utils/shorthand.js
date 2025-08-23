@@ -3,7 +3,6 @@ const shorthand = (componentProps) => {
   const props = { ...componentProps };
   const shorts = Object.values(shorthands);
   shorts.forEach((sh) => {
-    // eslint-disable-next-line no-prototype-builtins
     if (props.hasOwnProperty(sh.k)) {
       if (isNaN(props[sh.k])) {
         throw new Error(`${sh.k} isNaN.`);
