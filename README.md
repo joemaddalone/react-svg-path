@@ -235,7 +235,7 @@ centerEnd|boolean|Determines whether cursor should return to cx & cy as a last s
 
 Prop|Type|Description|Required|Default
 :-|:-|:-|:-|:-
-size|number|Size of the Isocube.|true|
+size|number|Equal size of the Isocube.|true|
 cx|number|Center x coordinate of the Isocube.|true|
 cy|number|Center x coordinate of the Isocube.|true|
 centerEnd|boolean|Determines whether cursor should return to cx & cy as a last step.|false|true
