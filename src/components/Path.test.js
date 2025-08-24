@@ -63,16 +63,4 @@ describe('Path', () => {
     path.moveTo(0, 0).lineTo(1, 1);
     expect(path.toString()).toBe('M0 0L1 1');
   });
-
-  it('attributes', () => {
-    path.attr('fill', 'white');
-    expect(path.attributes.fill).toBe('white');
-  });
-
-  ['fill', 'stroke', 'style', 'strokeWidth'].forEach((shortcut, index) => {
-    it(`correctly populates attr with shortcut ${shortcut}`, () => {
-      path[shortcut](index);
-      expect(path.attributes[shortcut]).toBe(index);
-    });
-  });
 });

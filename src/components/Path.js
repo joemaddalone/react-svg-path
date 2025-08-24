@@ -3,7 +3,7 @@ import Original from '@joemaddalone/path';
 
 class Path extends Original {
   toComponent(props = {}) {
-    return <path d={this.toString()} {...this.attributes} {...props} />;
+    return <path d={this.toString()} {...props} />;
   }
 
   strokeWidth = (val) => this.attr('strokeWidth', val);

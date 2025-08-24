@@ -70,7 +70,7 @@
     "dist"
   ],
   "dependencies": {
-    "@joemaddalone/path": "^1.4.0"
+    "@joemaddalone/path": "^2.0.0"
   },
   "config": {
     "commitizen": {
