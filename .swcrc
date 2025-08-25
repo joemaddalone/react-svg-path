@@ -1,0 +1,20 @@
+{
+  "jsc": {
+    "parser": {
+      "syntax": "typescript",
+      "tsx": true
+    },
+    "target": "es2018",
+    "loose": true,
+    "minify": {
+      "compress": true,
+      "mangle": true
+    },
+    "transform": {
+      "legacyDecorator": true,
+      "decoratorMetadata": false,
+      "useDefineForClassFields": false
+    }
+  },
+  "sourceMaps": true
+}

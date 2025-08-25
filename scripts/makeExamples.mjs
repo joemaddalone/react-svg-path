@@ -1,10 +1,12 @@
 import React from 'react';
-import ReactDOMServer from 'react-dom/server.js';
-import R from '../dist/index.js';
+import { renderToStaticMarkup } from 'react-dom/server';
+import * as R from '../dist/esm/index.js';
 import { basicShapes, curves } from '../src/docs/docs.mjs';
 import demos from '../src/docs/demos.mjs';
 import fs from 'fs';
 import { resolve } from 'path';
+
+// console.log('R', R.Svg);
 
 const Svg = R.Svg;
 const docPath = resolve('../examples') + '/';
@@ -27,8 +29,9 @@ for (const doc in docs) {
   );
   fs.writeFile(
     docPath + doc + '.svg',
-    ReactDOMServer.renderToStaticMarkup(rendered),
+    renderToStaticMarkup(rendered),
     (err) => {
+      // eslint-disable-next-line no-undef
       console.log('ERR', err);
     }
   );
