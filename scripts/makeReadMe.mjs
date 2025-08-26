@@ -24,6 +24,7 @@ const makeDocs = (docs, header) => {
       c.isRequired = c.isRequired || false;
       c.demoUrl = `${demoUrl}${cur}`;
       c.key = cur;
+      // eslint-disable-next-line no-undef
       console.log(c.Component);
       return { ...accum, [cur]: c };
     }, {});
@@ -177,5 +178,6 @@ const content = toc + manual + shapeDocs + curveDocs + footer;
 
 fs.writeFile('../README.md', content, (err) => {
   if (err) throw err;
+  // eslint-disable-next-line no-undef
   console.log('The file has been saved!');
 });

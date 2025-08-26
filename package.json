@@ -4,29 +4,39 @@
   "description": "Generate svg path commands.",
   "author": "joemaddalone",
   "license": "MIT",
+  "type": "module",
   "homepage": "https://joemaddalone.github.io/react-svg-path-docs/",
   "repository": {
     "type": "git",
     "url": "https://github.com/joemaddalone/react-svg-path"
   },
   "main": "dist/index.cjs.js",
-  "module": "dist/index.esm.js",
-  "browser": "dist/index.js",
-  "engines": {
-    "node": ">=10"
+  "module": "dist/esm/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/index.cjs.js"
+    }
   },
+  "files": [
+    "dist",
+    "src/*.js"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "sideEffects": false,
   "scripts": {
-    "commit": "git-cz",
     "build": "rollup -c",
-    "start": "rollup -c -w",
-    "prepublish": "run-s build",
-    "test": "run-s test:unit test:lint",
-    "test:build": "run-s build",
-    "test:lint": "eslint .",
-    "test:unit": "cross-env CI=1 react-scripts test --env=jsdom",
-    "test:watch": "react-scripts test --env=jsdom",
-    "test:coverage": "cross-env CI=1 react-scripts test --coverage --watchAll=false",
-    "predeploy": "cd example && npm install && npm run build",
+    "prepare": "npm run types && npm run build",
+    "prepublish": "npm run build",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "clean": "rm -rf dist",
+    "types": "tsc",
     "semantic-release": "semantic-release"
   },
   "peerDependencies": {
@@ -34,47 +44,34 @@
     "react-dom": ">=16.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.14.3",
-    "@babel/plugin-proposal-class-properties": "^7.13.0",
-    "@babel/plugin-transform-runtime": "^7.14.3",
-    "@babel/preset-env": "^7.14.2",
-    "@babel/preset-react": "^7.13.13",
-    "@rollup/plugin-babel": "^5.3.0",
-    "@rollup/plugin-commonjs": "^19.0.0",
-    "@rollup/plugin-node-resolve": "^13.0.0",
-    "@testing-library/react": "^11.2.7",
-    "babel-eslint": "10.1.0",
-    "babel-plugin-syntax-dynamic-import": "^6.18.0",
-    "commitizen": "^4.2.4",
-    "cross-env": "7.0.3",
-    "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^7.27.0",
-    "eslint-config-prettier": "8.3.0",
-    "eslint-config-standard": "16.0.2",
-    "eslint-config-standard-react": "11.0.1",
-    "eslint-plugin-import": "2.23.3",
-    "eslint-plugin-node": "11.1.0",
-    "eslint-plugin-prettier": "3.4.0",
-    "eslint-plugin-promise": "^4.3.1",
-    "eslint-plugin-react": "7.23.2",
-    "npm-run-all": "4.1.5",
-    "prettier": "2.3.0",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "react-scripts": "^4.0.3",
-    "rollup": "^2.48.0",
-    "rollup-plugin-terser": "^7.0.2",
-    "semantic-release": "^17.4.3"
+    "@eslint/js": "^9.13.0",
+    "@rollup/plugin-commonjs": "^28.0.1",
+    "@rollup/plugin-node-resolve": "^15.3.0",
+    "@rollup/plugin-swc": "^0.4.0",
+    "@rollup/plugin-typescript": "^12.1.4",
+    "@swc/core": "^1.7.36",
+    "@swc/helpers": "^0.5.13",
+    "@testing-library/jest-dom": "^6.8.0",
+    "@testing-library/react": "^16.3.0",
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.1",
+    "@typescript-eslint/eslint-plugin": "^8.10.0",
+    "@typescript-eslint/parser": "^8.10.0",
+    "@vitejs/plugin-react": "^5.0.1",
+    "eslint": "^9.13.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-react": "^7.37.1",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "globals": "^16.3.0",
+    "jsdom": "^26.1.0",
+    "prettier": "^3.3.3",
+    "rollup": "^4.24.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "typescript": "^5.6.3",
+    "vitest": "^3.2.4"
   },
-  "files": [
-    "dist"
-  ],
   "dependencies": {
-    "@joemaddalone/path": "^2.0.0"
-  },
-  "config": {
-    "commitizen": {
-      "path": "node_modules/cz-conventional-changelog"
-    }
+    "@joemaddalone/path": "^2.0.0",
+    "semantic-release": "^24.2.7"
   }
 }

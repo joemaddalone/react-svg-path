@@ -863,7 +863,13 @@ const docs = {
           'If set to true all points after sx & sy will become relative to sx & sy.'
       }
     },
-    nestingProps: ({ sx, sy, ex, ey, S }) => {
+    nestingProps: ({
+      sx,
+      sy,
+      ex,
+      ey,
+      S
+    }) => {
       let endX = ex;
       let endY = ey;
       if (S && S.length) {

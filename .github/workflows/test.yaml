@@ -6,7 +6,7 @@ jobs:
   lint:
     name: Run tests
     runs-on: ubuntu-latest
-    container: 'node:16-alpine'
+    container: 'node:22-alpine'
     steps:
     - uses: actions/checkout@v2
     - run: npm ci
