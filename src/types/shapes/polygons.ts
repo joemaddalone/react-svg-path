@@ -18,7 +18,7 @@ export interface PolygonProps extends Omit<React.SVGProps<SVGPathElement>, 'poin
 
 export interface PolygramProps extends BasicShapeWithCenterEnd {
   size: number;
-  pointCount: number;
+  points: number;
   cx?: number;
   cy?: number;
   vertexSkip?: number;
@@ -43,7 +43,7 @@ export interface RegPolygonProps extends BasicShapeWithCenterEnd {
 export interface StarProps extends BasicShapeWithCenterEnd {
   outerSize: number;
   innerSize: number;
-  pointCount: number;
+  points: number;
   cx?: number;
   cy?: number;
 }

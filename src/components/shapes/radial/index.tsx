@@ -1,4 +1,3 @@
-/* eslint-disable no-prototype-builtins */
 import React from 'react';
 import { LensProps, RadialLinesProps, SectorProps, SegmentProps } from '../../../types/shapes/radial';
 import { shapes } from '../../../utils/shapeFactory';

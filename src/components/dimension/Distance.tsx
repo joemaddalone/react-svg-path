@@ -14,7 +14,7 @@ const getDistance = (sx: number, sy: number, ex: number, ey: number, precision: 
   return Number(Math.sqrt(a * a + b * b).toFixed(precision));
 };
 
-const getMarker = (type: string): React.ComponentType<any> | null => {
+const getMarker = (type: string | undefined): React.ComponentType<any> | null => {
   switch (type) {
     case 'arrow':
       return MarkerArrow;
@@ -47,6 +47,8 @@ export const Distance: React.FC<DistanceProps> = ({
   rectStyle = {},
   ...attributes
 }) => {
+  sx = sx || 0;
+  sy = sy || 0
   const markerStartId = markerId ? `${markerId}-marker-start` : id();
   const markerEndId = markerId ? `${markerId}-marker-end` : id();
   const distanceInPixels = getDistance(sx, sy, ex, ey, precision);

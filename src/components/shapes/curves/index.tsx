@@ -1,4 +1,3 @@
-/* eslint-disable no-prototype-builtins */
 import React from 'react';
 import { ArcProps, CubicProps, QuadProps } from '../../../types/shapes/curves';
 import { shapes } from '../../../utils/shapeFactory';

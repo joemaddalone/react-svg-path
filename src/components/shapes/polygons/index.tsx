@@ -1,4 +1,3 @@
-/* eslint-disable no-prototype-builtins */
 import React from 'react';
 import { KiteProps, PolygonProps, PolygramProps, PolylineProps, RegPolygonProps, StarProps } from '../../../types/shapes/polygons';
 import { shapes } from '../../../utils/shapeFactory';

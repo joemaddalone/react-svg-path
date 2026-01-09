@@ -1,4 +1,3 @@
-/* eslint-disable no-prototype-builtins */
 import React from 'react';
 import { SymVProps, SymXProps, SymHProps, SymIProps, CrossProps } from '../../../types/shapes/symbols';
 import { shapes } from '../../../utils/shapeFactory';
