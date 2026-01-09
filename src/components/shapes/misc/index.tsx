@@ -1,4 +1,3 @@
-/* eslint-disable no-prototype-builtins */
 import React from 'react';
 import { IsocubeProps, OminoProps } from '../../../types/shapes/misc';
 import { shapes } from '../../../utils/shapeFactory';

@@ -1,9 +1,9 @@
 import React from 'react';
 
-export interface BasicShapeProps extends React.SVGProps<SVGPathElement> {
+export interface BasicShapeProps extends Omit<React.SVGProps<SVGPathElement>, 'points'> {
 	attach?: string;
-  ox?: number;
-  oy?: number;
+	ox?: number;
+	oy?: number;
 }
 
 export interface BasicShapeWithCenterEnd extends BasicShapeProps {

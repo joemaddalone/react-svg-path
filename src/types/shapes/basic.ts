@@ -15,8 +15,8 @@ export interface EllipseProps extends BasicShapeWithCenterEnd {
 }
 
 export interface LineProps extends BasicShapeProps {
-  sx: number;
-  sy: number;
+  sx?: number;
+  sy?: number;
   ex: number;
   ey: number;
   relative?: boolean;

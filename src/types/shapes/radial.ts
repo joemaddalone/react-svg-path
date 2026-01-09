@@ -11,7 +11,7 @@ export interface LensProps extends BasicShapeWithCenterEnd {
 export interface RadialLinesProps extends BasicShapeWithCenterEnd {
   outerSize: number;
   innerSize: number;
-  lineCount: number;
+  points?: number;
   cx?: number;
   cy?: number;
 }

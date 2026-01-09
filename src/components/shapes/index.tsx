@@ -1,4 +1,3 @@
-/* eslint-disable no-prototype-builtins */
 export { Arc, Cubic, Quad } from "./curves";
 export { Cross, SymV, SymX, SymH, SymI } from "./symbols";
 export { Isocube, Omino } from "./misc";

@@ -13,30 +13,31 @@ export interface MarkerProps {
 
 export interface MarkerArrowProps {
   id: string,
-  color: string,
-  markerStyle: { [key: string]: any },
-  attributes: { [key: string]: any }
+  color?: string,
+  markerStyle?: { [key: string]: any },
+  attributes?: { [key: string]: any }
+  open?: boolean
 }
 
 export interface MarkerSquareProps {
   id: string,
   size: number,
-  color: string,
-  markerStyle: { [key: string]: any },
-  attributes: { [key: string]: any }
+  color?: string,
+  markerStyle?: { [key: string]: any },
+  attributes?: { [key: string]: any }
 }
 
 export interface MarkerTriangleProps {
   id: string,
-  color: string,
-  markerStyle: { [key: string]: any },
-  attributes: { [key: string]: any }
+  color?: string,
+  markerStyle?: { [key: string]: any },
+  attributes?: { [key: string]: any }
 }
 
 export interface MarkerLineProps {
   id: string,
   size: number,
-  color: string,
-  markerStyle: { [key: string]: any },
-  attributes: { [key: string]: any }
+  color?: string,
+  markerStyle?: { [key: string]: any },
+  attributes?: { [key: string]: any }
 }
