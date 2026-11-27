@@ -28,23 +28,9 @@ function validateAndAugmentProps(doc: any, props: any) {
 }
 
 /**
- * Creates nesting ex, ey, sx, and sy values
+ * Executes the path commands based on the component documentation
  */
-function handleNesting(nestingProps: any, props: any, propsWithDefaults: any) {
-  if (typeof nestingProps === 'function') {
-    return nestingProps(propsWithDefaults);
-  } else {
-    return Object.keys(nestingProps).reduce(
-      (a: any, c: any) => ({ ...a, [c]: props[nestingProps[c]] }),
-      {}
-    );
-  }
-}
-
-/**
- * Creates the path method based on the component documentation
- */
-function createPathMethod(doc: any, propsWithDefaults: any, path: Path) {
+function applyPathCommands(doc: any, propsWithDefaults: any, path: Path): Path {
   const { args, command, preCommand, preArgs, postCommand } = doc;
 
   // Commands/components like Line require an initial moveTo/M command.
@@ -55,66 +41,76 @@ function createPathMethod(doc: any, propsWithDefaults: any, path: Path) {
     (path[preCommand as keyof Path] as any).apply(path, prePathArgs);
   }
 
+  // Apply our initial command from the component doc.
+  (path[command as keyof Path] as any).apply(
+    path,
+    args.map((k: any) => propsWithDefaults[k])
+  );
+
   // Commands/components like Quad allow for T/t/S/s commands.
   // We provide this in the component as T, t, S, & s props, but need
   // to translate that into path.postCommand()
   if (postCommand) {
-    const relativePostCommand = Object.prototype.hasOwnProperty.call(propsWithDefaults, postCommand);
-    const absolutePostCommand = Object.prototype.hasOwnProperty.call(propsWithDefaults, postCommand.toUpperCase());
+    const relativePostCommand = Object.prototype.hasOwnProperty.call(
+      propsWithDefaults,
+      postCommand
+    );
+    const absolutePostCommand = Object.prototype.hasOwnProperty.call(
+      propsWithDefaults,
+      postCommand.toUpperCase()
+    );
 
-    if (relativePostCommand || absolutePostCommand) {
-      return () => {
-        // Apply our initial command from the component doc.
-        (path[command as keyof Path] as any).apply(path, args.map((k: any) => propsWithDefaults[k]));
+    if (relativePostCommand) {
+      const relativePropValue = propsWithDefaults[postCommand];
+      if (relativePropValue && relativePropValue.length) {
+        relativePropValue.forEach((cmd: any) =>
+          (path[postCommand as keyof Path] as any).apply(path, cmd)
+        );
+      }
+    }
 
-        // Determine if this is the relative or absolute command
-        const relativePropValue = propsWithDefaults[postCommand];
-        const absolutePropValue = propsWithDefaults[postCommand.toUpperCase()];
-
-        if (relativePostCommand && relativePropValue && relativePropValue.length) {
-          relativePropValue.forEach((cmd: any) =>
-            (path[postCommand as keyof Path] as any).apply(path, cmd)
-          );
-        }
-
-        if (absolutePostCommand && absolutePropValue && absolutePropValue.length) {
-          absolutePropValue.forEach((cmd: any) =>
-            (path[postCommand.toUpperCase() as keyof Path] as any).apply(path, cmd)
-          );
-        }
-
-        return path;
-      };
+    if (absolutePostCommand) {
+      const absolutePropValue = propsWithDefaults[postCommand.toUpperCase()];
+      if (absolutePropValue && absolutePropValue.length) {
+        absolutePropValue.forEach((cmd: any) =>
+          (path[postCommand.toUpperCase() as keyof Path] as any).apply(path, cmd)
+        );
+      }
     }
   }
 
-  // Default path method
-  return (path[command as keyof Path] as any).bind(path, ...args.map((k: any) => propsWithDefaults[k]));
+  return path;
+}
+
+/**
+ * Builds a Path instance, cleaned attributes, and cursor-derived nesting anchors
+ * for a shape component.
+ */
+export function buildPath(doc: any, props: any) {
+  const { propsWithDefaults, attributes } = validateAndAugmentProps(doc, props);
+  const path = applyPathCommands(doc, propsWithDefaults, new Path());
+  const { x: sx, y: sy } = path.startPoint;
+  const { x: ex, y: ey } = path.currentPoint;
+
+  return {
+    path,
+    propsWithDefaults,
+    attributes,
+    nesting: { sx, sy, ex, ey }
+  };
 }
 
 /**
  * This process uses the doc for any given component and creates a component where the
- * output is simply `path.method.toComponent()`. We provide props validation and defaults
- * and incorporate the nesting function for a component where available.
+ * output is simply `path.toComponent()`. We provide props validation and defaults
+ * and derive nesting anchors directly from the Path cursor state.
  */
 export default (doc: any, props: any) => {
-  const { nestingProps } = doc;
-
-  // Validate props and get augmented props with defaults
-  const { propsWithDefaults, attributes } = validateAndAugmentProps(doc, props);
-
-  // Get children
+  const { path, propsWithDefaults, attributes, nesting } = buildPath(doc, props);
   const children = propsWithDefaults.children;
 
-  // Create nesting ex, ey, sx, and sy values
-  const nesting = handleNesting(nestingProps, props, propsWithDefaults);
-
-  // Create the path method
-  const path = new Path();
-  const pathMethod = createPathMethod(doc, propsWithDefaults, path);
-
   return renderElement({
-    pathMethod,
+    pathMethod: () => path,
     attributes,
     ...nesting,
     children

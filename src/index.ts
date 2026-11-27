@@ -44,4 +44,19 @@ export { MarkerSquare } from "./components/markers/MarkerSquare";
 export { TextPath } from "./components/text/TextPath";
 export { Distance } from "./components/dimension/Distance";
 
+export type {
+  BoundingBox,
+  CanvasPathSink,
+  DocumentLike,
+  Matrix,
+  PathDescriptor,
+  PathSegment,
+  Point,
+  SegmentType,
+  Subpath,
+  Tangent,
+  ToCanvasOptions,
+  ToElementOptions,
+} from "@joemaddalone/path";
+
 export default Path;

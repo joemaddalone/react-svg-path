@@ -106,3 +106,56 @@ describe('Basic Shapes', () => {
       });
     });
 });
+
+describe('Cursor-derived nesting', () => {
+  it('attaches children to resolved start and end points of a relative Line', () => {
+    const { getByTestId } = basicShapeTest(
+      <Shapes.Line sx={10} sy={20} ex={50} ey={30} relative>
+        <Shapes.Circle size={10} attach='start' data-testid='start-dot' />
+        <Shapes.Circle size={10} attach='end' data-testid='end-dot' />
+      </Shapes.Line>
+    );
+    expect(getByTestId('start-dot').getAttribute('d')).toEqual(
+      new Path().circle(10, 10, 20).toString()
+    );
+    expect(getByTestId('end-dot').getAttribute('d')).toEqual(
+      new Path().circle(10, 60, 50).toString()
+    );
+  });
+
+  it('attaches children to resolved endpoint of Cubic with S smooth continuation', () => {
+    const { getByTestId } = basicShapeTest(
+      <Shapes.Cubic
+        sx={0}
+        sy={0}
+        cx1={10}
+        cy1={20}
+        cx2={30}
+        cy2={40}
+        ex={50}
+        ey={60}
+        S={[[70, 80, 120, 140]]}
+      >
+        <Shapes.Circle size={10} attach='end' data-testid='end-dot' />
+      </Shapes.Cubic>
+    );
+    expect(getByTestId('end-dot').getAttribute('d')).toEqual(
+      new Path().circle(10, 120, 140).toString()
+    );
+  });
+
+  it('attaches children to resolved endpoint of relative Polyline', () => {
+    const { getByTestId } = basicShapeTest(
+      <Shapes.Polyline points={[[10, 10], [20, 30], [5, -10]]} relative>
+        <Shapes.Circle size={10} attach='start' data-testid='start-dot' />
+        <Shapes.Circle size={10} attach='end' data-testid='end-dot' />
+      </Shapes.Polyline>
+    );
+    expect(getByTestId('start-dot').getAttribute('d')).toEqual(
+      new Path().circle(10, 10, 10).toString()
+    );
+    expect(getByTestId('end-dot').getAttribute('d')).toEqual(
+      new Path().circle(10, 35, 30).toString()
+    );
+  });
+});

@@ -30,7 +30,7 @@ const renderElement = ({ pathMethod, attributes, ex, ey, sx, sy, children }: Ren
           return React.cloneElement(child, {
             key: i,
             merge,
-            ...attach(child.props, ex, ey, sx, sy)
+            ...attach(child.props, sx, sy, ex, ey)
           });
         }
       )?.filter((x: any) => x) ?? []

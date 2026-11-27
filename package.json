@@ -69,6 +69,6 @@
     "vitest": "^3.2.4"
   },
   "dependencies": {
-    "@joemaddalone/path": "^2.0.0"
+    "@joemaddalone/path": "^2.4.0"
   }
 }

@@ -31,13 +31,6 @@ const nestedArrayValidator = (arr) => {
   }
 };
 
-const centeredShapeNestingProps = {
-  ex: 'cx',
-  ey: 'cy',
-  sx: 'cx',
-  sy: 'cy'
-};
-
 const commonNumber = {
   type: 'number',
   isRequired: true,
@@ -118,7 +111,6 @@ const docs = {
       cy,
       centerEnd
     },
-    nestingProps: centeredShapeNestingProps,
     shorthands: [shorthands.cxy]
   },
   ellipse: {
@@ -141,7 +133,6 @@ const docs = {
       cy,
       centerEnd
     },
-    nestingProps: centeredShapeNestingProps,
     shorthands: [shorthands.cxy]
   },
   isocube: {
@@ -160,7 +151,6 @@ const docs = {
       cy,
       centerEnd
     },
-    nestingProps: centeredShapeNestingProps,
     shorthands: [shorthands.cxy]
   },
   kite: {
@@ -188,7 +178,6 @@ const docs = {
       cy,
       centerEnd
     },
-    nestingProps: centeredShapeNestingProps,
     shorthands: [shorthands.cxy]
   },
   lens: {
@@ -211,7 +200,6 @@ const docs = {
       cy,
       centerEnd
     },
-    nestingProps: centeredShapeNestingProps,
     shorthands: [shorthands.cxy]
   },
   omino: {
@@ -247,10 +235,7 @@ const docs = {
         description: 'Draw inner lines or not.'
       }
     },
-    shorthands: [shorthands.sxy],
-    nestingProps: ({ sx, sy }) => {
-      return { ex: sx, ey: sy, sx, sy };
-    }
+    shorthands: [shorthands.sxy]
   },
   polygon: {
     category: 'basicShapes',
@@ -267,11 +252,6 @@ const docs = {
         validator: pointArrayValidator,
         description: 'x, y, points of the polygon.'
       }
-    },
-    nestingProps: ({ points }) => {
-      const [sx, sy] = points[0];
-      const [ex, ey] = points[points.length - 1];
-      return { ex: sx, ey: sy, sx: ex, sy: ey };
     }
   },
   polygram: {
@@ -301,7 +281,6 @@ const docs = {
       },
       centerEnd
     },
-    nestingProps: centeredShapeNestingProps,
     shorthands: [shorthands.cxy]
   },
   polyline: {
@@ -325,11 +304,6 @@ const docs = {
         default: false,
         description: 'If set to true all points will be relative.'
       }
-    },
-    nestingProps: ({ points }) => {
-      const [sx, sy] = points[0];
-      const [ex, ey] = points[points.length - 1];
-      return { ex: sx, ey: sy, sx: ex, sy: ey };
     }
   },
   line: {
@@ -365,9 +339,6 @@ const docs = {
         description: 'If set to true ex & ey will become relative to sx & sy.'
       }
     },
-    nestingProps: ({ sx, sy, ex, ey }) => {
-      return { ex: sx, ey: sy, sx: ex, sy: ey };
-    },
     shorthands: [shorthands.exy, shorthands.sxy]
   },
   radialLines: {
@@ -394,7 +365,6 @@ const docs = {
       cy,
       centerEnd
     },
-    nestingProps: centeredShapeNestingProps,
     shorthands: [shorthands.cxy]
   },
   rect: {
@@ -417,7 +387,6 @@ const docs = {
       cy,
       centerEnd
     },
-    nestingProps: centeredShapeNestingProps,
     shorthands: [shorthands.cxy]
   },
   roundedRect: {
@@ -444,7 +413,6 @@ const docs = {
       cy,
       centerEnd
     },
-    nestingProps: centeredShapeNestingProps,
     shorthands: [shorthands.cxy]
   },
   regPolygon: {
@@ -467,7 +435,6 @@ const docs = {
       cy,
       centerEnd
     },
-    nestingProps: centeredShapeNestingProps,
     shorthands: [shorthands.cxy]
   },
   sector: {
@@ -494,7 +461,6 @@ const docs = {
       },
       centerEnd
     },
-    nestingProps: centeredShapeNestingProps,
     shorthands: [shorthands.cxy]
   },
   segment: {
@@ -521,7 +487,6 @@ const docs = {
       },
       centerEnd
     },
-    nestingProps: centeredShapeNestingProps,
     shorthands: [shorthands.cxy]
   },
   square: {
@@ -540,7 +505,6 @@ const docs = {
       cy,
       centerEnd
     },
-    nestingProps: centeredShapeNestingProps,
     shorthands: [shorthands.cxy]
   },
   roundedSquare: {
@@ -563,7 +527,6 @@ const docs = {
       cy,
       centerEnd
     },
-    nestingProps: centeredShapeNestingProps,
     shorthands: [shorthands.cxy]
   },
   star: {
@@ -590,7 +553,6 @@ const docs = {
       cy,
       centerEnd
     },
-    nestingProps: centeredShapeNestingProps,
     shorthands: [shorthands.cxy]
   },
   triangle: {
@@ -609,7 +571,6 @@ const docs = {
       cy,
       centerEnd
     },
-    nestingProps: centeredShapeNestingProps,
     shorthands: [shorthands.cxy]
   },
   symX: {
@@ -632,7 +593,6 @@ const docs = {
       cy,
       centerEnd
     },
-    nestingProps: centeredShapeNestingProps,
     shorthands: [shorthands.cxy]
   },
   symV: {
@@ -655,7 +615,6 @@ const docs = {
       cy,
       centerEnd
     },
-    nestingProps: centeredShapeNestingProps,
     shorthands: [shorthands.cxy]
   },
   symI: {
@@ -678,7 +637,6 @@ const docs = {
       cy,
       centerEnd
     },
-    nestingProps: centeredShapeNestingProps,
     shorthands: [shorthands.cxy]
   },
   symH: {
@@ -701,7 +659,6 @@ const docs = {
       cy,
       centerEnd
     },
-    nestingProps: centeredShapeNestingProps,
     shorthands: [shorthands.cxy]
   },
   cross: {
@@ -724,7 +681,6 @@ const docs = {
       cy,
       centerEnd
     },
-    nestingProps: centeredShapeNestingProps,
     shorthands: [shorthands.cxy]
   },
   arc: {
@@ -790,9 +746,6 @@ const docs = {
         description:
           'If set to true all points after sx & sy will become relative to sx & sy.'
       }
-    },
-    nestingProps: ({ sx, sy, ex, ey }) => {
-      return { ex: sx, ey: sy, sx: ex, sy: ey };
     },
     shorthands: [shorthands.exy, shorthands.sxy, shorthands.rxy]
   },
@@ -863,21 +816,6 @@ const docs = {
           'If set to true all points after sx & sy will become relative to sx & sy.'
       }
     },
-    nestingProps: ({
-      sx,
-      sy,
-      ex,
-      ey,
-      S
-    }) => {
-      let endX = ex;
-      let endY = ey;
-      if (S && S.length) {
-        endX = S[S.length - 1][0];
-        endY = S[S.length - 1][1];
-      }
-      return { ex: sx, ey: sy, sx: endX, sy: endY };
-    },
     shorthands: [shorthands.exy, shorthands.sxy]
   },
   quad: {
@@ -937,15 +875,6 @@ const docs = {
         description:
           'If set to true all points after sx & sy will become relative to sx & sy.'
       }
-    },
-    nestingProps: ({ sx, sy, ex, ey, T }) => {
-      let endX = ex;
-      let endY = ey;
-      if (T && T.length) {
-        endX = T[T.length - 1][0];
-        endY = T[T.length - 1][1];
-      }
-      return { ex: sx, ey: sy, sx: endX, sy: endY };
     },
     shorthands: [shorthands.exy, shorthands.sxy, shorthands.cxy]
   }

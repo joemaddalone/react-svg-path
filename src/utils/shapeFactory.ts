@@ -1,15 +1,20 @@
-import createSimpleComponent from "./createSimpleComponent";
+import createSimpleComponent, { buildPath } from "./createSimpleComponent";
 import shorthand from "./shorthand";
 import docs from "../docs/docs.mjs";
 
 export const shapes = Object.keys(docs).reduce(
   (accum, cur) => {
+    const doc = docs[cur as keyof typeof docs];
     const component = (props: any) => {
       const p = props ? shorthand(props) : props;
-      return createSimpleComponent(docs[cur as keyof typeof docs], p);
+      return createSimpleComponent(doc, p);
     };
-    component.displayName = docs[cur as keyof typeof docs].Component;
-    accum[docs[cur as keyof typeof docs].Component] = component;
+    component.displayName = doc.Component;
+    (component as any).__buildPath = (props: any) => {
+      const p = props ? shorthand(props) : props;
+      return buildPath(doc, p);
+    };
+    accum[doc.Component] = component;
     return accum;
   },
   {} as Record<string, any>
