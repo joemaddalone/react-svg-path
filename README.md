@@ -10,6 +10,14 @@ There are more docs and interactive demos at https://joemaddalone.github.io/reac
 - [Installation](#install)
 - [Path](#path)
 - [toComponent](#tocomponent)
+- [Transforms & Manipulation Props](#transforms--manipulation-props)
+- [Attachment & Orientation](#attachment--orientation)
+- [Hooks & Additional Components](#hooks--additional-components)
+  - [usePath](#usepath)
+  - [AlongPath](#alongpath)
+  - [CanvasPath](#canvaspath)
+  - [Svg autoFit](#svg-autofit)
+  - [TextPath](#textpath)
 - [Components](#components)
   - [Shapes](#shapes)
     - [Circle](#circle)
@@ -99,9 +107,113 @@ const App = () => {
       height={height}
     >
       <CustomSquare x={50} y={50} size={50} />
-    </svg>
+    </Svg>
   );
 };
+```
+
+## Transforms & Manipulation Props
+
+Every shape component and `<PathMerge>` supports baked geometric transforms and path normalization powered by `@joemaddalone/path`:
+
+- `rotate`: `number | [degrees, originX?, originY?]` — rotates clockwise in degrees (defaults pivot to shape center when omitted)
+- `scale`: `number | [sx, sy?, originX?, originY?]` — uniform or non-uniform scale (defaults pivot to shape center when omitted)
+- `translate`: `[dx, dy]` — shifts all coordinates
+- `matrix`: `[a, b, c, d, e, f]` — applies a 2D affine matrix
+- `reverse`: `boolean` — flips traversal direction and winding order (useful for `fillRule="evenodd"` cutouts in `<PathMerge>` or reversed stroke draw-ins)
+- `coordinateMode`: `'absolute' | 'relative'` — normalizes output commands
+
+```jsx
+<PathMerge fillRule="evenodd" rotate={15}>
+  <Rect width={120} height={120} cx={100} cy={100} />
+  <Circle size={50} cx={100} cy={100} reverse />
+</PathMerge>
+```
+
+## Attachment & Orientation
+
+Nested children automatically attach to their parent's resolved path geometry via `attach`:
+
+- `'start'` | `'end'` (default `'end'`)
+- `number` (`0` to `1`) — parametric position along the path via `getPointAtLength()`
+- Bounding-box anchors — `'top'`, `'bottom'`, `'left'`, `'right'`, `'topLeft'`, `'topRight'`, `'bottomLeft'`, `'bottomRight'`, `'center'`
+- `orientToPath`: `boolean` — rotates the nested child to follow the parent path's tangent at the attachment point
+
+```jsx
+<Line sx={20} sy={100} ex={220} ey={40}>
+  <Triangle size={16} attach={0.5} orientToPath />
+  <Text attach="top" oy={-8}>Midpoint</Text>
+</Line>
+```
+
+## Hooks & Additional Components
+
+### usePath
+
+Memoizes a `Path` builder and returns SSR-safe geometry metrics synchronously during render:
+
+```jsx
+import { usePath } from 'react-svg-path';
+
+const AnimatedCurve = ({ progress }) => {
+  const { d, length, bbox, pointAtPercent, tangentAtPercent } = usePath(
+    (p) => p.M(10, 80).C(60, 10, 140, 10, 190, 80),
+    []
+  );
+  return (
+    <path
+      d={d}
+      fill="none"
+      stroke="black"
+      strokeDasharray={length}
+      strokeDashoffset={length * (1 - progress)}
+    />
+  );
+};
+```
+
+### AlongPath
+
+Distributes items evenly along any `Path` instance or shape component, with optional tangent orientation:
+
+```jsx
+import { AlongPath, Arc, Triangle } from 'react-svg-path';
+
+<AlongPath path={<Arc sx={20} sy={100} rx={80} ry={80} ex={180} ey={100} />} count={5} orient showPath>
+  <Triangle size={12} fill="coral" />
+</AlongPath>
+```
+
+### CanvasPath
+
+Renders a `Path` instance or child shape components onto an HTML5 `<canvas>` 2D context via `toCanvas()`:
+
+```jsx
+import { CanvasPath, Star } from 'react-svg-path';
+
+<CanvasPath width={200} height={200} fill="gold" stroke="#333" lineWidth={2}>
+  <Star outerSize={140} innerSize={60} points={5} cx={100} cy={100} />
+</CanvasPath>
+```
+
+### Svg autoFit
+
+Computes a tight `viewBox` (and default `width`/`height`) from child path bounding boxes without requiring a DOM:
+
+```jsx
+<Svg autoFit padding={16}>
+  <Circle size={100} cx={120} cy={120} />
+</Svg>
+```
+
+### TextPath
+
+Accepts a `Path` instance, shape component, or `d` string, and supports `reverse` to flip text orientation along arcs or circles:
+
+```jsx
+<TextPath path={<Circle size={120} cx={100} cy={100} />} reverse>
+  Text along a reversed path
+</TextPath>
 ```
 
 ## Components
