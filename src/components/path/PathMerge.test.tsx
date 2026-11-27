@@ -66,4 +66,31 @@ describe('<PathMerge />', () => {
       .toString();
     expect(path.getAttribute('d')).toEqual(expected);
   });
+  it('should support reversed child shapes for cutouts and transforms on PathMerge', () => {
+    const { getByTestId } = render(
+      <svg>
+        <PathMerge
+          data-testid='pm'
+          fillRule='evenodd'
+          translate={[10, 20]}
+          rotate={[90, 100, 100]}
+        >
+          <Circle size={100} cx={100} cy={100} />
+          <Circle size={40} cx={100} cy={100} reverse />
+        </PathMerge>
+      </svg>
+    );
+    const el = getByTestId('pm');
+    const expected = new Path()
+      .circle(100, 100, 100)
+      .concat(new Path().circle(40, 100, 100).reverse())
+      .rotate(90, 100, 100)
+      .translate(10, 20)
+      .toString();
+
+    expect(el.getAttribute('d')).toEqual(expected);
+    expect(el.getAttribute('fill-rule')).toEqual('evenodd');
+    expect(el.getAttribute('rotate')).toBeNull();
+    expect(el.getAttribute('translate')).toBeNull();
+  });
 });

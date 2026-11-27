@@ -159,3 +159,64 @@ describe('Cursor-derived nesting', () => {
     );
   });
 });
+
+describe('1:1 Path transform and manipulation props', () => {
+  it('bakes rotate, scale, translate, reverse, and coordinateMode into d without leaking DOM attributes', () => {
+    const { getByTestId } = basicShapeTest(
+      <Shapes.Square
+        size={50}
+        cx={100}
+        cy={100}
+        rotate={45}
+        scale={2}
+        translate={[10, -20]}
+        reverse
+        coordinateMode='relative'
+        data-testid='sq'
+      />
+    );
+    const el = getByTestId('sq');
+    const expected = new Path()
+      .square(50, 100, 100)
+      .rotate(45, 100, 100)
+      .scale(2, 2, 100, 100)
+      .translate(10, -20)
+      .reverse()
+      .toRelative()
+      .toString();
+
+    expect(el.getAttribute('d')).toBe(expected);
+    expect(el.getAttribute('rotate')).toBeNull();
+    expect(el.getAttribute('scale')).toBeNull();
+    expect(el.getAttribute('translate')).toBeNull();
+    expect(el.getAttribute('matrix')).toBeNull();
+    expect(el.getAttribute('reverse')).toBeNull();
+    expect(el.getAttribute('coordinateMode')).toBeNull();
+  });
+
+  it('supports matrix prop on Polygon', () => {
+    const { getByTestId } = basicShapeTest(
+      <Shapes.Polygon
+        points={[[0, 0], [100, 0], [100, 100]]}
+        matrix={[2, 0, 0, 2, 10, 20]}
+        data-testid='poly'
+      />
+    );
+    const expected = new Path()
+      .polygon([[0, 0], [100, 0], [100, 100]])
+      .transform([2, 0, 0, 2, 10, 20])
+      .toString();
+    expect(getByTestId('poly').getAttribute('d')).toBe(expected);
+  });
+
+  it('attaches nested children to transformed cursor endpoints', () => {
+    const { getByTestId } = basicShapeTest(
+      <Shapes.Line sx={0} sy={0} ex={100} ey={0} rotate={[90, 0, 0]}>
+        <Shapes.Circle size={10} attach='end' data-testid='end-dot' />
+      </Shapes.Line>
+    );
+    expect(getByTestId('end-dot').getAttribute('d')).toEqual(
+      new Path().circle(10, 0, 100).toString()
+    );
+  });
+});

@@ -59,4 +59,12 @@ export type {
   ToElementOptions,
 } from "@joemaddalone/path";
 
+export type {
+  PathTransformProps,
+  RotateProp,
+  ScaleProp,
+  TranslateProp,
+  CoordinateMode,
+} from "./types/shapes/common";
+
 export default Path;

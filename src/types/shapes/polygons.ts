@@ -1,5 +1,4 @@
-import React from 'react';
-import { BasicShapeWithCenterEnd } from './common';
+import { BasicShapeProps, BasicShapeWithCenterEnd } from './common';
 
 
 // Polygons
@@ -11,8 +10,7 @@ export interface KiteProps extends BasicShapeWithCenterEnd {
   cy?: number;
 }
 
-export interface PolygonProps extends Omit<React.SVGProps<SVGPathElement>, 'points'> {
-  attach?: string;
+export interface PolygonProps extends BasicShapeProps {
   points: [number, number][];
 }
 
@@ -24,10 +22,7 @@ export interface PolygramProps extends BasicShapeWithCenterEnd {
   vertexSkip?: number;
 }
 
-export interface PolylineProps extends Omit<React.SVGProps<SVGPathElement>, 'points'> {
-  attach?: string;
-  ox?: number;
-  oy?: number;
+export interface PolylineProps extends BasicShapeProps {
   points: [number, number][];
   relative?: boolean;
 }

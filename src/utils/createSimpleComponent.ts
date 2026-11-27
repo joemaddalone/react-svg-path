@@ -2,6 +2,7 @@ import Path from '../components/path/Path';
 import renderElement from './renderElement';
 import validateProps from './validateProps';
 import cleanAttributes from './cleanAttributes';
+import applyPathTransforms from './applyPathTransforms';
 
 /**
  * Validates props and augments them with defaults
@@ -89,6 +90,10 @@ function applyPathCommands(doc: any, propsWithDefaults: any, path: Path): Path {
 export function buildPath(doc: any, props: any) {
   const { propsWithDefaults, attributes } = validateAndAugmentProps(doc, props);
   const path = applyPathCommands(doc, propsWithDefaults, new Path());
+  applyPathTransforms(path, propsWithDefaults, {
+    cx: propsWithDefaults.cx,
+    cy: propsWithDefaults.cy
+  });
   const { x: sx, y: sy } = path.startPoint;
   const { x: ex, y: ey } = path.currentPoint;
 

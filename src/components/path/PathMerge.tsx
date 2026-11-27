@@ -1,6 +1,7 @@
 import React from 'react';
 import Path from './Path';
 import attach from '../../utils/attach';
+import applyPathTransforms from '../../utils/applyPathTransforms';
 import cleanAttributes from '../../utils/cleanAttributes';
 import { PathMergeProps } from '../../types/pathmerge';
 
@@ -81,9 +82,37 @@ const collectPaths = (
   });
 };
 
-export const PathMerge: React.FC<PathMergeProps> = ({ children, ...rest }) => {
+export const PathMerge: React.FC<PathMergeProps> = ({
+  children,
+  rotate,
+  scale,
+  translate,
+  matrix,
+  reverse,
+  coordinateMode,
+  ...rest
+}) => {
   const parts: MergePart[] = [];
   collectPaths(children, rest, parts);
+
+  const transformProps = {
+    rotate,
+    scale,
+    translate,
+    matrix,
+    reverse,
+    coordinateMode
+  };
+  const pivotHint = {
+    cx: (rest as any).cx,
+    cy: (rest as any).cy
+  };
+
+  parts.forEach((part) => {
+    if (part instanceof Path) {
+      applyPathTransforms(part, transformProps, pivotHint);
+    }
+  });
 
   const d = parts
     .map((part) => (part instanceof Path ? part.toString() : part))
