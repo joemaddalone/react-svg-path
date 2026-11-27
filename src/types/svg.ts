@@ -11,4 +11,8 @@ export interface SvgProps extends Omit<SVGProps<SVGSVGElement>, 'x' | 'y' | 'wid
   width?: number;
   height?: number;
   scale?: boolean;
+  /** Automatically compute a tight viewBox from child path bounding boxes (SSR-safe). */
+  autoFit?: boolean;
+  /** Extra padding around the computed bounding box when autoFit is enabled. */
+  padding?: number;
 }

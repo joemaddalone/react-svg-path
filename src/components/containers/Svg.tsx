@@ -1,5 +1,7 @@
 import React from 'react';
 import renderElement from '../../utils/renderElement';
+import { collectPathsFromChildren } from '../../utils/resolvePath';
+import Path from '../path/Path';
 import { SvgProps } from '../../types/svg';
 
 export const Svg = ({
@@ -12,11 +14,47 @@ export const Svg = ({
   cx,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   cy,
-  width = 0,
-  height = 0,
+  width,
+  height,
   scale = false,
+  autoFit = false,
+  padding = 0,
+  viewBox: explicitViewBox,
   ...attributes
 }: SvgProps) => {
+  let computedWidth = width ?? 0;
+  let computedHeight = height ?? 0;
+  let computedViewBox = explicitViewBox ?? `0 0 ${computedWidth} ${computedHeight}`;
+
+  if (autoFit) {
+    const parts = collectPathsFromChildren(children, {
+      sx: computedWidth / 2,
+      sy: computedHeight / 2,
+      cx: computedWidth / 2,
+      cy: computedHeight / 2
+    });
+    const combined = new Path();
+    let hasPath = false;
+    parts.forEach((part) => {
+      if (part instanceof Path) {
+        combined.concat(part);
+        hasPath = true;
+      }
+    });
+    if (hasPath) {
+      const bbox = combined.getBBox();
+      const vbX = bbox.minX - padding;
+      const vbY = bbox.minY - padding;
+      const vbW = bbox.width + padding * 2;
+      const vbH = bbox.height + padding * 2;
+      if (!explicitViewBox) {
+        computedViewBox = `${vbX} ${vbY} ${vbW} ${vbH}`;
+      }
+      if (width === undefined) computedWidth = vbW;
+      if (height === undefined) computedHeight = vbH;
+    }
+  }
+
   const responsiveAttributes = {
     preserveAspectRatio: 'xMinYMin meet',
     ...attributes
@@ -24,8 +62,8 @@ export const Svg = ({
   (responsiveAttributes as any).style = {
     width: `100%`,
     height: 'auto',
-    maxWidth: width,
-    maxHeight: height,
+    maxWidth: computedWidth,
+    maxHeight: computedHeight,
     ...(attributes as any).style
   };
 
@@ -36,18 +74,18 @@ export const Svg = ({
       x={x || sx || undefined}
       y={y || sy || undefined}
       xmlns='http://www.w3.org/2000/svg'
-      width={width}
-      height={height}
-      viewBox={`0 0 ${width} ${height}`}
+      width={computedWidth}
+      height={computedHeight}
+      viewBox={computedViewBox}
       {...appliedAtrributes}
     >
       {renderElement({
         attributes: {} as any,
-        ex: width / 2 as number,
-        ey: height / 2 as number,
-        sx: width / 2 as number,
-        sy: height / 2 as number,
-        children: children as React.ReactNode | undefined,
+        ex: computedWidth / 2,
+        ey: computedHeight / 2,
+        sx: computedWidth / 2,
+        sy: computedHeight / 2,
+        children: children as React.ReactNode | undefined
       })}
     </svg>
   );

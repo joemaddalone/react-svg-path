@@ -11,6 +11,7 @@ const cleanAttributes = (attributes: any, additionalRemoves: string[] = []) => {
     'ox',
     'ex',
     'ey',
+    'orientToPath',
     ...TRANSFORM_PROP_KEYS,
     ...additionalRemoves
   ];

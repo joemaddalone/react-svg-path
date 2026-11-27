@@ -43,6 +43,9 @@ export { MarkerLine } from "./components/markers/MarkerLine";
 export { MarkerSquare } from "./components/markers/MarkerSquare";
 export { TextPath } from "./components/text/TextPath";
 export { Distance } from "./components/dimension/Distance";
+export { AlongPath } from "./components/path/AlongPath";
+export { CanvasPath } from "./components/canvas/CanvasPath";
+export { usePath } from "./hooks/usePath";
 
 export type {
   BoundingBox,
@@ -60,11 +63,17 @@ export type {
 } from "@joemaddalone/path";
 
 export type {
+  AttachTarget,
+  BBoxAnchor,
   PathTransformProps,
   RotateProp,
   ScaleProp,
   TranslateProp,
   CoordinateMode,
 } from "./types/shapes/common";
+
+export type { UsePathResult } from "./hooks/usePath";
+export type { AlongPathProps, AlongPathSample } from "./components/path/AlongPath";
+export type { CanvasPathProps } from "./types/canvas";
 
 export default Path;

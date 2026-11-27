@@ -13,6 +13,19 @@ export type TranslateProp = [dx: number, dy: number];
 
 export type CoordinateMode = 'absolute' | 'relative';
 
+export type BBoxAnchor =
+  | 'top'
+  | 'bottom'
+  | 'left'
+  | 'right'
+  | 'topLeft'
+  | 'topRight'
+  | 'bottomLeft'
+  | 'bottomRight'
+  | 'center';
+
+export type AttachTarget = 'start' | 'end' | BBoxAnchor | number;
+
 export interface PathTransformProps {
   /** Rotate clockwise in degrees. Defaults pivot to shape center when omitted. */
   rotate?: RotateProp;
@@ -34,9 +47,11 @@ export interface BasicShapeProps
       'points' | 'rotate' | 'scale' | 'translate'
     >,
     PathTransformProps {
-  attach?: string;
+  attach?: AttachTarget;
   ox?: number;
   oy?: number;
+  /** Rotate this nested child to align with the parent path's tangent at the attachment point. */
+  orientToPath?: boolean;
 }
 
 export interface BasicShapeWithCenterEnd extends BasicShapeProps {

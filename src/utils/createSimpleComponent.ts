@@ -115,6 +115,7 @@ export default (doc: any, props: any) => {
   const children = propsWithDefaults.children;
 
   return renderElement({
+    path,
     pathMethod: () => path,
     attributes,
     ...nesting,

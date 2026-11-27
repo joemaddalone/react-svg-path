@@ -25,4 +25,17 @@ describe('<Svg />', () => {
     const d = getByTestId('child').getAttribute('d');
     expect(d?.endsWith(`M${width / 2} ${height / 2}`)).toBeDefined();
   });
+
+  it('should compute a tight viewBox and dimensions when autoFit is enabled', () => {
+    const { container } = render(
+      <Svg autoFit padding={10}>
+        <Square size={100} cx={100} cy={100} />
+      </Svg>
+    );
+    const svg = container.querySelector('svg');
+    // Square bbox: minX=50, minY=50, width=100, height=100 -> with padding=10: 40 40 120 120
+    expect(svg?.getAttribute('viewBox')).toBe('40 40 120 120');
+    expect(svg?.getAttribute('width')).toBe('120');
+    expect(svg?.getAttribute('height')).toBe('120');
+  });
 });
